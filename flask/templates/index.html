@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Animated Book Selection</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="/https://code.jquery.com/jquery3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/swiper.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/information_book_form.css"/>
+    <link rel="stylesheet" href="static/css/chat.css"/>
+    <link rel="stylesheet" href="static/css/form.css"/>
+    <link rel="stylesheet" href="static/css/camera.css"/>
+    <script src="./static/js/test.js"></script>
+    <script src="./static/js/reveal_list_book.js"></script>
+    <script src="./static/js/create_form.js"></script>
+    <script>var socket = io();
+        pre_type = '';
+    </script>
+</head>
+
+<body>
+    <div class="LargeCotainer">
+        <!-- Camera container -->
+        <script> 
+            socket.on('container_visibility_change', function(data) {
+                if (!data.visible) {
+                    document.getElementById("camera-container_id").style.display = 'none';
+                    console.log ("invisibily");
+                }
+                else {
+                    document.getElementById("camera-container_id").style.display = "block";
+                    console.log ("visibily")
+                }
+            });
+        </script>
+        <!-- Form container -->
+        <div class="form-container" id = "form_container_id">
+            <div class="content">
+                <form action="#" id="form_action_id">
+                    <div class="topic">Xác Nhận Đi Ạ</div>
+                    <div class="swiper mineSwiper" id="return-book-container">
+                        <div class="swiper-wrapper" id="return-book-info">
+                          <!-- <div class="swiper-slide">Slide 8</div>
+                          <div class="swiper-slide">Slide 9</div> -->
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                        <div class="input-box">
+                        <input type="submit" value="Send Message" />
+                    </div>
+                </form>
+            </div>
+            <div class="camera-container" id = "camera-container_id">
+                <img src="{{ url_for('video_feed') }}" id="camera-frame" class="camera-frame">
+            </div>
+        </div>
+        <script>
+            var mineswiper = new Swiper(".mineSwiper", {
+                slidesPerView: "auto",
+                // spaceBetween: 30,
+                pagination: {
+                    el: ".swiper-pagination",
+                    // clickable: true,
+                },
+            });
+          </script>
+        <!-- Robot Animation -->
+        <div id="robotContainer" >
+            <div class="robot" id="lottie-container"></div>            
+        </div>
+        <div class="tools">
+            <div class="small-tools tools-item">
+                <div class="voice-icon small-tools-item" id="voice-icon-container"></div>
+                <div class="chat-icon small-tools-item" id="chat-icon-container"></div>
+            </div>
+            <div class="bar-icon tools-item" id="bar-icon-container"></div>
+        </div>
+        <!-- Micro Icon -->
+
+        <!-- Reveal Infomation when finding book -->
+        <div id="bookFinded" >
+            <div class="swiper mySwiper" id='bookContainer'>
+            </div>
+            <div class ='information-table' id='bookTable'>
+                <div id='imageOfSelectedBook'>
+
+                </div>
+                <form action="#" id="info_book_form">
+                    <div class="form-left-decoration"></div>
+                    <div class="form-right-decoration"></div>
+                    <div class="circle"></div>
+                    <div class="form-inner">
+                        <h1>Thông tin sách</h1> 
+                        <!-- <input type="text" placeholder="Username">
+                        <input type="email" placeholder="Email"> -->
+                        <textarea placeholder="Tên sách: ..." rows="1"></textarea>
+                        <textarea placeholder="Tác giả:..." rows="1"></textarea>
+                        <textarea placeholder="ID:..." rows="1"></textarea>
+                        <textarea placeholder="Vị trí:..." rows="1"></textarea>
+
+                        <h2>Đây có phải sách bạn muốn tìm không ?</h2>
+                        <!-- <button type="submit" id="confirm_info" href="/">Submit</button> -->
+                        <div id="confirm_info_row">
+                            <button id="confirm_info" onclick="buttonClicked()">Yes</button>
+                            <button id="unconfirm_info" onclick="buttonClicked()">No</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+        
+
+        <!-- Chat frame -->
+        <div class="chat-frame-container">
+            <!-- <div class="container-fluid h-100"> -->
+                <!-- <div class="row justify-content-center h-100"> -->
+            <div class="chat">
+                <div class="card">
+                    <div class="card-header msg_head">
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <div class="lottie-container_face" id="lottie-container_face"></div>
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <span>Librarios</span>
+                                <!-- <p>M nhìn cái chóa gì!</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messageFormeight" class="card-body msg_card_body">
+                    </div>
+                    <div class="card-footer">
+                        <form id="messageArea" class="input-group">
+                            <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                            <div class="input-group-append">
+                                <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <script>
+        // const socket2 = io();
+        tool_message = '';
+        tool_current_time  = '';
+        check_tool_running = false;
+        // Event handler for receiving message from Flask server
+        socket.on('update_html', function (data) {
+            console.log(data.data);
+            if (tool_current_time!=data.time){
+            // handleEvent(null,"voice", data.data);
+            add_bot_message(data.data, data.time);
+        }
+        // tool_message = data.data;
+        });
+        socket.on('user_input_state', function (data) {
+            console.log("user input state " +data.state)
+            check_tool_running = data.state;
+        });
+
+    </script>
+          <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../static/js/chat.js"></script>
+    <script src="../static/js/load_icon.js"></script>
+   
+    <script>
+        // Reveal list of book when user want to search book ( in reveal_list_book.js)
+        // setInterval(reveal_book, 500);
+        // const swiper_visibility = document.querySelector(".swiper");
+        const swiper_visibility = document.getElementById('bookContainer');
+        const list_book_find = document.getElementById('bookFinded');
+        
+        socket.on('book_images', function(data) {
+            if (data.visible) {
+                swiper_visibility.style.visibility= "visible";
+                list_book_find.style.visibility= "visible";
+                $("#bookContainer").show();
+                reveal_book(data.image);
+                // console.log (data.visible)
+            }
+            else {
+                // swiper_visibility.style.visibility= "hidden";
+                list_book_find.style.visibility= "visible";
+                // console.log (data.visible)
+            }
+        });        
+    </script>
+
+    <script>
+        const form_container_visibility = document.getElementById('form_container_id');
+        socket.on('return_form_visiblity', function(data) {
+            if (data.visible) {
+                form_container_visibility.style.visibility= "visible";
+                robotContainer.style.visibility= "hidden";
+                //console.log ("visibily return_form");
+            }
+            else {
+                var messagesDiv = document.getElementById('return-book-info');
+                messagesDiv.innerHTML = '';
+                form_container_visibility.style.visibility= "hidden";
+                robotContainer.style.visibility= "visible";
+                //console.log ("invisibily return_form");
+            }
+        });
+    </script>
+
+    <script>
+        socket.on('student-book_info_socket', function(data) {
+            var messagesDiv = document.getElementById('return-book-info');
+            //static pre_type = '';
+            var newBookData = data;
+            
+            
+            if (newBookData.type == 'return'){
+
+                // Create new book item
+                var infoItem = document.createElement('div');
+                infoItem.classList.add('form-book-item');
+                infoItem.classList.add('swiper-slide');
+                // Create image element
+                var image = document.createElement('img');
+                image.src = 'data:image/png;base64,' + newBookData.images;
+                image.alt = "Base64 Encoded Image";
+                infoItem.appendChild(image);
+
+                // Create details div
+                var detailsDiv = document.createElement('div');
+                detailsDiv.classList.add('details');
+
+                // Create title element
+                var title = document.createElement('p');
+                title.textContent = newBookData.borrow_date || 'Untitled';
+
+                // Create author element
+                var author = document.createElement('p');
+                author.textContent = 'Tên sinh viên: ' + (newBookData.student_name || 'Unknown');
+
+                // Create genre element
+                var genre = document.createElement('p');
+                genre.textContent = 'MSSV: ' + (newBookData.student_ID || 'Unknown');
+
+                // Append elements to details div
+                detailsDiv.appendChild(title);
+                detailsDiv.appendChild(author);
+                detailsDiv.appendChild(genre);
+
+                // Append elements to book item
+                var form1 = create_student_info(newBookData.student_name, newBookData.student_ID, newBookData.borrow_date);
+                infoItem.appendChild(form1);
+
+                // Append new book item to messagesDiv
+                messagesDiv.appendChild(infoItem);
+                pre_type = 'return';
+                // messagesDiv.appendChild(form);
+            }
+            else if (newBookData.type == 'student'){
+                // Create new book item
+                var infoItem = document.createElement('div');
+                infoItem.classList.add('form-book-item');
+                infoItem.classList.add('swiper-slide');
+                // Create image element
+                var image = document.createElement('img');
+                image.src = 'data:image/png;base64,' + newBookData.images;
+                image.alt = "Base64 Encoded Image";
+                infoItem.appendChild(image);
+
+                // Create details div
+                var detailsDiv = document.createElement('div');
+                detailsDiv.classList.add('details');
+
+                
+                // Create author element
+                var name = document.createElement('p');
+                name.textContent = 'Tên sinh viên: ' + (newBookData.name || 'Unknown');
+
+                // Create genre element
+                var ID = document.createElement('p');
+                ID.textContent = 'MSSV: ' + (newBookData.ID || 'Unknown');
+
+                // Create genre element
+                var year = document.createElement('p');
+                year.textContent = 'Niên khóa: ' + (newBookData.year || 'Unknown');
+
+                // Create genre element
+                var faculty = document.createElement('p');
+                faculty.textContent = 'Khoa: ' + (newBookData.faculty || 'Unknown');
+
+                // Create genre element
+                var major = document.createElement('p');
+                major.textContent = 'Ngành: ' + (newBookData.major || 'Unknown');
+
+                // Append elements to details div
+                detailsDiv.appendChild(name);
+                detailsDiv.appendChild(ID);
+                detailsDiv.appendChild(year);
+                detailsDiv.appendChild(faculty);
+                detailsDiv.appendChild(major);
+
+                // Append elements to book item
+                var form2 = create_student_info();
+                infoItem.appendChild(form2);
+
+                // Append new book item to messagesDiv
+                messagesDiv.appendChild(infoItem);
+                pre_type = 'student';
+            }
+            else if (newBookData.type == 'borrow'){
+                console.log('///////////////////borrow///////////||||||||');
+                console.log(pre_type);
+                if (pre_type=='student'){
+                    console.log('//////////////////////////////||||||||');
+                    messagesDiv.innerHTML = '';
+                }
+                // Create new book item
+                var infoItem = document.createElement('div');
+                infoItem.classList.add('swiper-slide');
+                infoItem.classList.add('borrow-image-item');
+                // Create image element
+                var image = document.createElement('img');
+                image.src = 'data:image/png;base64,' + newBookData.images;
+                image.alt = "Base64 Encoded Image";
+                infoItem.appendChild(image);
+                // Append new book item to messagesDiv
+                messagesDiv.appendChild(infoItem);
+                pre_type = 'borrow';
+            }
+        });
+       
+    </script>
+
+    
+</body>
+</html>
