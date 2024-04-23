@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Animated Book Selection</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="/https://code.jquery.com/jquery3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/swiper.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/chat.css"/>
+    <link rel="stylesheet" href="static/css/form.css"/>
+    <link rel="stylesheet" href="static/css/camera.css"/>
+</head>
+
+<body>
+    <div class="LargeCotainer">
+        <!-- Camera container -->
+        {% if camera_state %}
+        <div class="camera-container">
+            <img src="{{ url_for('video_feed') }}" id="camera-frame" class="camera-frame">
+        </div>
+        {% endif %}
+
+        <!-- Form container -->
+        <div class="form-container">
+            <div class="content">
+              <div class="image-box">
+                <img src="../static/resources/contact.png" alt="" />
+              </div>
+              <form action="#">
+                <div class="topic">Xác Nhận Đi Ạ</div>
+                <div class="input-box">
+                  <input type="text" required />
+                  <label>Enter your name</label>
+                </div>
+                <div class="input-box">
+                  <input type="text" required />
+                  <label>Enter your email</label>
+                </div>
+                <div class="message-box">
+                  <textarea></textarea>
+                  <label>Enter your message</label>
+                </div>
+                <div class="input-box">
+                  <input type="submit" value="Send Message" />
+                </div>
+              </form>
+            </div>
+          </div>
+        <!-- Robot Animation -->
+        <div id="robotContainer" >
+            <div class="robot" id="lottie-container"></div>            
+        </div>
+        <div class="tools">
+            <div class="small-tools tools-item">
+                <div class="voice-icon small-tools-item" id="voice-icon-container"></div>
+                <div class="chat-icon small-tools-item" id="chat-icon-container"></div>
+            </div>
+            <div class="bar-icon tools-item" id="bar-icon-container"></div>
+        </div>
+        <!-- Micro Icon -->
+
+        <!-- Reveal Infomation when finding book -->
+        <div class="swiper mySwiper" id='bookContainer'>
+            {% set images = images %}
+        </div>
+        <div class="chat-frame-container">
+            <!-- <div class="container-fluid h-100"> -->
+                <!-- <div class="row justify-content-center h-100"> -->
+            <div class="chat">
+                <div class="card">
+                    <div class="card-header msg_head">
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <div class="lottie-container_face" id="lottie-container_face"></div>
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <span>Librarios</span>
+                                <!-- <p>M nhìn cái chóa gì!</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messageFormeight" class="card-body msg_card_body">
+                    </div>
+                    <div class="card-footer">
+                        <form id="messageArea" class="input-group">
+                            <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                            <div class="input-group-append">
+                                <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+        
+          <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <!--
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            loop :true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 120,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+    <script>
+        const swiperSlides = document.querySelectorAll('.swiper-slide');
+    
+        swiperSlides.forEach(slide => {
+            const infoBox = slide.querySelector('.info-box');
+    
+            slide.addEventListener('mouseover', () => {
+                infoBox.style.display = 'block';
+            });
+    
+            slide.addEventListener('mouseout', () => {
+                infoBox.style.display = 'none';
+            });
+        });
+    </script> -->
+    <script>
+        // Load the Lottie animation
+        const myImage = document.getElementById('bookContainer');
+        const animationContainer = document.getElementById('lottie-container');
+        const robotContainer = document.getElementById('robotContainer');
+        var chatButton = document.getElementById('chat-icon-container');
+        var isSmaller = false;
+        var isChatframeVisible = false;
+        const animation = bodymovin.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../static/resources/robot_2.json' // Replace with the path to your Lottie JSON file
+        });
+
+        chatButton.addEventListener('click', function() {
+            if (!isChatframeVisible) {
+                var chat_element = document.querySelector(".chat-frame-container");
+                chat_element.style.visibility= "visible";
+                chat_element.classList.add("animate");
+                chat_element.classList.remove("reverse_animate");
+
+                robotContainer.classList.add('smaller-animation');
+
+                var element = document.querySelector(".swiper");
+                element.classList.add("animate_fadein");
+                element.classList.remove("animate_fadeout");
+
+                isChatframeVisible = true;
+
+            } else {
+                var chat_element = document.querySelector(".chat-frame-container");
+                
+                chat_element.classList.add("reverse_animate");
+                chat_element.classList.remove("animate");
+                // chat_element.style.visibility= "hidden";
+
+                robotContainer.classList.remove('smaller-animation');
+
+                var element = document.querySelector(".swiper");
+                element.classList.add("animate_fadeout");
+                element.classList.remove("animate_fadein");
+                
+                isChatframeVisible = false;
+            }
+        });
+
+
+        const voiceContainer = document.getElementById('voice-icon-container');
+
+        // Function to change the animation path
+        function changeAnimationPath(newPath) {
+            voiceAnimation.destroy(); // Destroy the current animation instance
+            voiceAnimation = bodymovin.loadAnimation({ // Load new animation with the updated path
+                container: voiceContainer,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: newPath
+            });
+        }
+
+        // Initial animation setup
+        let voiceAnimation = bodymovin.loadAnimation({
+            container: voiceContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../static/resources/mic_static_2.json' 
+        });
+        var isStatic = true;
+        // Click event listener to change animation path
+        voiceContainer.addEventListener('click', function() {
+            if(!isStatic){
+                const newPath = '../static/resources/mic_static_2.json'; // Specify the new path here
+                changeAnimationPath(newPath);
+                isStatic = true;
+            }
+            else {
+                const newPath = '../static/resources/mic_2.json'; // Specify the new path here
+                changeAnimationPath(newPath);
+                isStatic = false;
+            }
+        });
+    </script>
+        
+    <script>
+        const chatContainer = document.getElementById('chat-icon-container');
+        // Initial animation setup
+        let chatAnimation = bodymovin.loadAnimation({
+            container: chatContainer,   
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../static/resources/chat_icon.json' 
+        });
+    </script>
+
+    <script>
+        const barContainer = document.getElementById('bar-icon-container');
+        // Initial animation setup
+        let barAnimation = bodymovin.loadAnimation({
+            container: barContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../static/resources/bar_1.json' 
+        });
+    </script>
+
+    <script>
+        let barIconContainer = document.getElementById('bar-icon-container');
+        let toolContainer  = document.getElementsByClassName('tools');
+        let isToolsVisible = false;
+        let startY, offsetY = 0;
+
+        barIconContainer.addEventListener('mousedown', function(event) {
+            if (!isToolsVisible) {
+                var element = document.querySelector(".small-tools");
+                // element.style.visibility= "visible";
+                element.classList.add("smallTools_animate");
+                element.classList.remove("reverse_smallTools_animate");
+            }
+            else {
+                var element = document.querySelector(".small-tools");
+                element.classList.add("reverse_smallTools_animate");
+                element.classList.remove("smallTools_animate");
+                // element.style.visibility= "hidden";
+            }
+            isToolsVisible = !isToolsVisible;
+        });
+
+        
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#messageArea").on("submit", function(event) {
+                const date = new Date();
+                const hour = date.getHours();
+                const minute = date.getMinutes();
+                const str_time = hour+":"+minute;
+                var rawText = $("#text").val();
+
+                var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">'+ str_time + '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
+                
+                $("#text").val("");
+                $("#messageFormeight").append(userHtml);
+
+
+               
+                $.ajax({
+                    data: {
+                        msg: rawText,
+                    },
+                    type: "POST",
+                    url: "/get",
+                }).done(function(data) {
+                    console.log("Request succeeded!");
+                    // console.log("image: ", images);
+                    // console.log("Response data:", data);
+
+                    var animationContainer = $('<div class="img_cont_msg"><div class="lottie-container_face"></div></div>');
+
+                    // Load animation for the current container
+                    var animation = lottie.loadAnimation({
+                        container: animationContainer.find('.lottie-container_face')[0],
+                        renderer: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        path: '../static/resources/robot_2.json' 
+                    });
+
+                    // Construct the message HTML with the animation container
+                    var botHtml = $('<div class="d-flex justify-content-start mb-4"><div class="msg_cotainer">' + data + '<span class="msg_time">' + str_time + '</span></div></div>');
+                    botHtml.prepend(animationContainer);
+
+                    // // Append the message HTML to the message form
+                    $("#messageFormeight").append(botHtml);
+
+                    // Scroll to the bottom of the message form
+                    scrollToBottom();
+
+                    // Create a container for the animation
+                   
+                });
+                
+                event.preventDefault();
+            });
+        });
+        function scrollToBottom() {
+            var messageFormeight = document.getElementById("messageFormeight");
+            messageFormeight.scrollTop = messageFormeight.scrollHeight;
+        }
+        var animation_icon = lottie.loadAnimation({
+            container: document.getElementById('lottie-container_face'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '../static/resources/robot_2.json' 
+        }); 
+
+    </script>
+
+    
+    <script>
+        // Get the video feed URL from the template
+        // var videoFeedUrl = $.get("/image");
+        
+        // // Function to print the URL to console every second
+        // function printUrlToConsole() {
+        //     console.log("Video Feed URL:", videoFeedUrl);
+        // }
+        
+        // // Call the function every second
+        // setInterval(printUrlToConsole, 1000); // 1000 milliseconds = 1 second
+    </script>
+    <script>
+        function makerequest(){
+            $.ajax({
+                type: "GET", // Change POST to GET
+                url: "/image",
+            }).done(function(data) {
+                // Here you can handle the response data received from the server
+                async function getans(){
+                    // while(true) {
+                    // console.log("Image:", data);
+                    finale =  await $.get("/image");
+                    if(finale != data){
+                        // console.log("Finale:", finale);
+                        images = ['1','2','3'];
+
+                        var swiperWrapper = $('<div class="swiper-wrapper"></div>');
+
+                        // Loop through each image URL
+                        
+                        images.forEach(function(image) {
+                            var swiperSlide = $('<div class="swiper-slide"></div>');
+                            var infoBox = $('<div class="info-box">Information about Image</div>');
+                            var imgElement = $('<img src="../static/resources/background_3.jpg">');
+                            // Append info box and image to swiper slide
+                            swiperSlide.append(infoBox, imgElement);
+
+                            // Append swiper slide to swiper wrapper
+                            swiperWrapper.append(swiperSlide);
+                            
+                        });
+                        
+
+                        // Create swiper pagination div
+                        var swiperPagination = $('<div class="swiper-pagination"></div>');
+
+                        // Append swiper wrapper and pagination to a container
+                        $("#bookContainer").append(swiperWrapper,swiperPagination);
+
+                        var swiper = new Swiper(".mySwiper", {
+                            effect: "coverflow",
+                            grabCursor: true,
+                            centeredSlides: true,
+                            loop :true,
+                            slidesPerView: "auto",
+                            coverflowEffect: {
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 120,
+                                modifier: 1,
+                                slideShadows: false,
+                            },
+                            pagination: {
+                                el: ".swiper-pagination",
+                            },
+                        });
+                        const swiperSlides = document.querySelectorAll('.swiper-slide');
+                    
+                        swiperSlides.forEach(slide => {
+                            const infoBox = slide.querySelector('.info-box');
+                    
+                            slide.addEventListener('mouseover', () => {
+                                infoBox.style.display = 'block';
+                            });
+                    
+                            slide.addEventListener('mouseout', () => {
+                                infoBox.style.display = 'none';
+                            });
+                        });
+                        // break;
+                        
+                    }         
+                    // }
+                }
+                getans();
+                //         finale =  await $.get("/get");
+                // You can perform further actions based on the response data
+                // For example, updating the UI, processing the data, etc.
+            });
+        }
+
+        setInterval(makerequest, 2000);
+    </script>
+
+
+    
+</body>
+</html>
