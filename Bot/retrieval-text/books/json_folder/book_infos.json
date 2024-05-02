@@ -1,0 +1,23 @@
+{
+    "book_infos": [
+        {
+            "Tên sách": "Giáo trình lập trình python căn bản",
+            "Loại sách": "Giáo trình",
+            "ID": "31",
+            "Tác giả": "Trần Nhật Quang, Phạm Văn Khoa",
+            "Nhà xuất bản": "Đại học Quốc gia Tp. Hồ Chí Minh",
+            "Năm xuất bản": "2023",
+            "Vị trí": "kệ số 3",
+            "Mục lục": "LỜI NÓI ĐẦU - 3\nMỤC LỤC - 5\nDANH MỤC HÌNH ẢNH - 8\nChương 1 GIỚI THIỆU VÀ CÀI ĐẶT PYTHON - 9\n1.1 Đôi nét về ngôn ngữ lập trình Python\n1.2 Lịch sử phát triển Python\n1.3 Cài đặt Python\n1.4 Một số lời khuyên hữu ích cho những người mới\nChương 2 PHÉP TOÁN CƠ BẢN, BIẾN VÀ NHẬP XUẤT TRONG PYTHON - 18\n2.1 Sử dụng VS Code như một máy tính cầm tay\n2.2 Các phép toán\n2.3 Biến\n2.4 Nhập xuất cơ bản\n2.5 Lệnh if\nChương 3 VÒNG LẶP VÀ CẤU TRÚC DỮ LIỆU MẢNG - 35\n3.1 Vòng lặp while\n3.2 Cấu trúc dữ liệu mảng\n3.3 Vòng lặp for\n3.4 Break, continue và pass\nChương 4 NUMPY - 54\n4.1 Giới thiệu về Numpy\n4.2 Cài đặt thư viện numpy\n4.3 Numpy arrays\nChương 5 SETS VÀ DICTIONARIES - 60\n5.1 Sets\n5.2 Dictionaries\nChương 6 STRINGS - 69\n6.1 Khái niệm và khởi tạo strings\n6.2 Hàm xử lý strings\nChương 7 HÀM - 74\n7.1 Khái niệm và cú pháp\n7.2 Một số ví dụ\n7.3 Biến đoạn code bất kỳ thành hàm\nChương 8 LỖI VÀ SỬA LỖI - 86\n8.1 Các dạng lỗi trong lập trình\n8.2 Xử lý lỗi runtime\n8.3 Xử lý lỗi logic\n8.4 Các lưu ý khi viết code để hạn chế lỗi\nChương 9 VẼ VỚI MATPLOTLIB - 99\n9.1 Cách thức vẽ trên màn hình kỹ thuật số\n9.2 Vẽ với thư viện matplotlib\n9.3 Vẽ đồ thị trong tọa độ cực\n9.4 Tùy chỉnh hình vẽ\n9.5 Vẽ trên nhiều phân vùng với subplotlib\nPHỤ LỤC - 122\nMã nguồn bài tập có lời giải chương 2\nMã nguồn bài tập có lời giải chương 3\nMã nguồn bài tập có lời giải chương 5\nMã nguồn bài tập có lời giải chương 7\nINDEX - 161\nTÀI LIỆU THAM KHẢO - 163\n"
+        },
+        {
+            "Tên sách": "CƠ SỞ CÔNG NGHỆ CHẾ TẠO MÁY",
+            "Loại sách": "Giáo trình",
+            "Tác giả": "Phan Minh Thanh, Hồ Viết Bình",
+            "Nhà xuất bản": "Nhà Xuất Bản Đại Học Quốc Gia",
+            "Năm xuất bản": "2013",
+            "Vị trí": "Kệ số 3",
+            "Mục lục": "LỜI NÓI ĐẦU - 3\nCƠ SỞ CÔNG NGHỆ CHẾ TẠO MÁY là môn học cơ sở cho sinh viên các ngành cơ khí và có vị trí rất quan trọng. Kiến thức của môn học này sẽ giúp ích cho kỹ sư và cán bộ kỹ thuật trong việc thiết kế, chế tạo các loại máy móc thiết bị phục vụ cho mọi ngành kinh tế\n\nNội dung của học phần này cung cấp cho người học những nguyên lý cơ bản của quá trình cắt kim loại, những hiện tượng cơ lý hóa xảy ra trong khi cắt, những đặc trưng và vai trò của hệ thống công nghệ, các phương pháp gia công cắt gọt, các vấn đề liên quan đến sai số gia công và các biện pháp khắc phục chúng để nâng cao độ chính xác gia công, chất lượng bề mặt của sản phẩm và giảm giá thành. Cách tính sai số gá đặt khi gia công, đặc biệt là sai số chuẩn và tính chuỗi kích thước công nghệ khi gá đặt.\n\nĐể có thể chế tạo ra các chi tiết máy đạt chất lượng cao cần phải\n\nnắm vững các kiến thức cơ bản của nội dung học phần này.\n\nDo thời gian và khả năng có hạn, kinh nghiệm còn thiếu trong việc biên soạn giáo trình nên chắc chắn tài liệu chưa thể đáp ứng đầy đủ mong muốn của bạn đọc. Rất mong nhận được sự đóng góp ý kiến của thầy cô và các độc giả.\n\nCÁC TÁC GIẢ\n\nMỤC LỤC - 5\nChƣơng 1: NHỮNG KHÁI NIỆM CƠ BẢN - 15\n1.1 Khái niệm về quá trình hình thành sản phẩm cơ khí - 16\n1.1.1 Khái niệm về sản phẩm cơ khí - 16\n1.1.2 Mô hình hình hình thành sản phẩm cơ khí1 - 16\n1.2 Quá trình sản xuất và quá trình công nghệ - 18\n1.2.1 Quá trình sản xuất - 18\n1.2.2 Quá trình công nghệ - 19\n1.2.3 Các thành phần của quy trình công nghệ - 19\n1.3 Hình thức tổ chức sản xuất và dạng sản xuất - 21\n1.3.1 Các hình thức tổ chức sản xuất - 21\n1.3.2 Dạng sản xuất - 21\nTóm tắt nội dung và câu hỏi ôn tập - 24\nChƣơng 2: CƠ SỞ LÝ THUYẾT CĂT GỌT KIM LOẠI - 25\n2.1 Khái niệm chung - 26\n2.1.1 Định nghĩa cắt gọt kim loại - 26\n2.1.2 Hệ thống công nghệ - 26\n2.1.3 Các dạng bề mặt thường gặp trong chi tiết máy - 27\n2.1.4 Các chuyển động tạo hình bề mặt - 27\n2.1.5 Các phương pháp cắt gọt kim loại - 33\n2.2 Khái niệm cơ bản về dụng cụ cắt - 34\n2.2.1 Kết cấu tổng quát của dao tiện ngoài - 34\n2.2.2 Thông số hình học của dao khi thiết kế - 36\n2.2.3 Thông số hình học của dao khi làm việc - 43\n2.2.4 Thông số hình học tiết diện phoi cắt - 48\n2.3 Vật liệu chế tạo dụng cụ cắt - 53"
+        }
+    ]
+}
