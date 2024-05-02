@@ -35,8 +35,9 @@ def UserInput():
 
 ##### LOAD DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
-BookInfo =  DATABASE(db_path='/var/www/html/Bot/book_info', embedding=embedding, parent_path="/var/www/html/Bot/book_parents")  # Load book_info database
+BookInfo =  DATABASE(db_path='/home/xuanai/html/Bot/rerievel-text/robot_knowledge_3', embedding=embedding, parent_path="/home/xuanai/html/Bot/rerievel-text/parents_3")  # Load book_info database
 # RobotInfo =  DATABASE(db_path='/var/www/html/Bot/robot_info', embedding=embedding)    # Load robot_info database
+
 
 
 ##### WEB SEARCH TOOL
@@ -46,9 +47,9 @@ python_repl_tool = PythonREPLTool() # This executes code locally, which can be u
 
 
 ##### BOOK SEARCH TOOL
-book_retriever = BookInfo.db.as_retriever(
-    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.3, "k": 4}
-)
+# book_retriever = BookInfo.db.as_retriever(
+#     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.3, "k": 4}
+# )
 
 def load_book(book_ids: str):
     # turn_on_camera()
