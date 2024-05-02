@@ -25,10 +25,7 @@ import ast
 import uuid
 import re
 import unicodedata
-<<<<<<< HEAD
 from Global_variable import *
-=======
->>>>>>> 8f66922c7d98c0a959e6cce350ea41ba65462aa9
 
 
 
@@ -51,11 +48,7 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
                 query, **self.search_kwargs
             )
         else:
-<<<<<<< HEAD
             # print('similarity_search   ', self.search_kwargs)
-=======
-            print('similarity_search   ', self.search_kwargs)
->>>>>>> 8f66922c7d98c0a959e6cce350ea41ba65462aa9
             sub_docs = self.vectorstore.similarity_search(query, **self.search_kwargs)
             print(len(sub_docs))
         for doc in sub_docs:
@@ -170,13 +163,8 @@ class DATABASE:
         for idx in range(len(documents)):
             # Add to parents
             self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
-<<<<<<< HEAD
             child_doc_file_path = AbsoluteBotPath + documents[idx]['Nội dung đầu sách']
             pdf_loader = UnstructuredPDFLoader(child_doc_file_path)
-=======
-            child_doc_file = documents[idx]['Nội dung đầu sách']
-            pdf_loader = UnstructuredPDFLoader(child_doc_file)
->>>>>>> 8f66922c7d98c0a959e6cce350ea41ba65462aa9
             child_doc = pdf_loader.load()
             text = re.sub(r'\.{6,}', '-', child_doc[0].page_content)  #Repalce multiple dot with '-'
             text = self.fix_invalid_characters(text)
