@@ -41,18 +41,18 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
         Returns:
             List of relevant documents
         """
-        print('Query: ', query)
+        # print('Query: ', query)
         if self.search_type == 'mmr':
-            print('max_marginal_relevance_search')
+            # print('max_marginal_relevance_search')
             sub_docs = self.vectorstore.max_marginal_relevance_search(
                 query, **self.search_kwargs
             )
         else:
             # print('similarity_search   ', self.search_kwargs)
             sub_docs = self.vectorstore.similarity_search(query, **self.search_kwargs)
-            print(len(sub_docs))
-        for doc in sub_docs:
-            print(doc.page_content)
+            # print(len(sub_docs))
+        # for doc in sub_docs:
+            # print(doc.page_content)
         # We do this to maintain the order of the ids that are returned
         context = {}
         
@@ -74,7 +74,7 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
                 dict['Nội dung đầu sách'] = context[ids[i]]
                 result.append(Document(str(dict)))
         # result = [d for d in docs if d is not None]
-        print('result: ', result)
+        # print('result: ', result)
         return result
 
 
