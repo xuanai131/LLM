@@ -1,0 +1,34 @@
+{
+    "book_infos": [
+        {
+            "Tên sách": "Giáo trình lập trình python căn bản",
+            "Loại sách": "Giáo trình",
+            "ID": "1",
+            "Tác giả": "Trần Nhật Quang, Phạm Văn Khoa",
+            "Nhà xuất bản": "Đại học Quốc gia Tp. Hồ Chí Minh",
+            "Năm xuất bản": "2023",
+            "Vị trí": "kệ số 2",
+            "Nội dung đầu sách": "/home/xuanai/html/Bot/rerievel-text/books/pdf_folder/gt_lap_trinh_python_can_ban.pdf"
+        },
+        {
+            "Tên sách": "Cơ sở lập trình chế tạo máy",
+            "Loại sách": "Giáo trình",
+            "ID": "2",
+            "Tác giả": "Phan Minh Thanh, Hồ Viết Bình",
+            "Nhà xuất bản": "Nhà Xuất Bản Đại Học Quốc Gia",
+            "Năm xuất bản": "2013",
+            "Vị trí": "Kệ số 3",
+            "Nội dung đầu sách": "/home/xuanai/html/Bot/rerievel-text/books/pdf_folder/gt_co_so_cong_nghe_che_tao_may.pdf"
+        },
+        {
+            "Tên sách": "Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm",
+            "Loại sách": "Giáo trình",
+            "ID": "3",
+            "Tác giả": "Phạm Thị Hoàn",
+            "Nhà xuất bản": "Nhà Xuất Bản Đại Học Quốc Gia",
+            "Năm xuất bản": "2023",
+            "Vị trí": "Kệ số 4",
+            "Nội dung đầu sách": "/home/xuanai/html/Bot/rerievel-text/books/pdf_folder/cac_phuong_phap_co_ban_trong_danh_gia_cam_quan_thuc_pham.pdf"
+        }
+    ]
+}
