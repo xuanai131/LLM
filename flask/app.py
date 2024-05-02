@@ -20,6 +20,7 @@ import subaudio
 camera = cv2.VideoCapture(0)
 
 sys.path.append("../Bot")
+from Global_variable import *
 import book_search
 import Helper_Utilities
 from langchain_core.messages import HumanMessage, AIMessage
@@ -30,7 +31,7 @@ new_frame_event = threading.Event()
 OpenAIHistoryConversation = []
 graph = Helper_Utilities.CreateGraph(OpenAIHistoryConversation)
 DoRecord = voice_record.Voice_Record()
-sys.path.append("database")
+# sys.path.append("database")
 import book_search
 import setting
 app = Flask(__name__)

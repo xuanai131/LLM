@@ -5,6 +5,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain.tools.retriever import create_retriever_tool
 from methods import *
+from Global_variable import *
 import cv2
 from langchain.agents import Tool
 from pyzbar.pyzbar import decode
@@ -33,10 +34,10 @@ def UserInput():
     
 
 
-##### LOAD DATABASE
+##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
-BookInfo =  DATABASE(db_path='/home/xuanai/html/Bot/rerievel-text/robot_knowledge_3', embedding=embedding, parent_path="/home/xuanai/html/Bot/rerievel-text/parents_3")  # Load book_info database
-# RobotInfo =  DATABASE(db_path='/var/www/html/Bot/robot_info', embedding=embedding)    # Load robot_info database
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', embedding=embedding, parent_path=AbsoluteBotPath+"/vector_database/book_parents")
+# RobotInfo =  DATABASE(db_path=AbsoluteBotPath'/robot_info', embedding=embedding)    # Load robot_info database
 
 
 
