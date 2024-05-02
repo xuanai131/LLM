@@ -110,7 +110,7 @@ def get_image():
     if request.method == 'POST':
         msg = request.get_json()
         print("MSG", type(msg['id']))
-        image_of_book = msg['id'][1:-1].split(',');
+        image_of_book = msg['id'].replace("'", "").replace('"', '').split(',')
         print(image_of_book)
         print(type(image_of_book))
 
