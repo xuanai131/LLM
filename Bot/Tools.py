@@ -36,8 +36,28 @@ def UserInput():
 
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', embedding=embedding, parent_path=AbsoluteBotPath+"/vector_database/book_parents")
-# RobotInfo =  DATABASE(db_path=AbsoluteBotPath'/robot_info', embedding=embedding)    # Load robot_info database
+BookInfoRetriever = RETRIEVER_CONFIG()
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', 
+                     embedding=embedding, 
+                     parent_path=AbsoluteBotPath+"/vector_database/book_parents", 
+                     retriever_config=BookInfoRetriever)
+
+SelfKnowledgeRetriever = RETRIEVER_CONFIG()
+SelfKnowledgeRetriever.child_splitter = RecursiveCharacterTextSplitter(
+                separators=["\n","\n\n" "\\n", "\\n\\n", '",', '. ', "-", "--"],
+                chunk_size=120,
+                chunk_overlap=20,
+                length_function=len,
+                is_separator_regex=False,
+            )
+SelfKnowledgeRetriever.parent_splitter = RecursiveCharacterTextSplitter(chunk_size=500, 
+                                                 chunk_overlap= 20, 
+                                                 separators=[".", "-", "--"])
+SelfKnowledgeRetriever.retriever_type = "NoCustom"
+SelfKnowledge =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/self_knowledge', 
+                          embedding=embedding, 
+                          parent_path=AbsoluteBotPath+"/vector_database/self_knowledge_parents", 
+                          retriever_config=SelfKnowledgeRetriever)
 
 
 
