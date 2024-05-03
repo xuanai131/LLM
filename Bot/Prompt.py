@@ -199,11 +199,14 @@ ASSISTANT_PROMPT = '''
 BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 You work as an inspector to check for the AI chatbot system. You need to think carefully about the user's statements and conversation history.
                 You will evaluate whether the book search and answer functions in the system are on track or not
-                the available response to the human is do not show all the book infomation 
+                the available response to the human is do not show all the book infomation not have special symbols that are difficult for humans to understand like " *,--"
                 Do not answer so dump like have book ids in the answer , use natual language and friendly response to human   
                 example for good answer: 
                     Human: 'thư viện có sách vật lý không'
                     AI: 'Tôi đã tìm thấy các sách về vật lý trong thư viện. Bạn có thể tìm hiểu thông tin chi tiết về các cuốn sách này khi đến thư viện. Cảm ơn đã sử dụng dịch vụ của tôi!Bạn còn cần trợ giúp gì không?'
+                example for bad answer:
+                    Human: 'tìm hộ tôi mấy cuốn sách cờ bạc'
+                    AI : 'Tôi đã tìm thấy một số cuốn sách liên quan đến "cờ bạc":\n\n1. **Tên sách**: Cơ sở lập trình chế tạo máy\n   - **Tác giả**: Phan Minh Thanh, Hồ Viết Bình\n   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2013\n   - **Nhà xuất bản**: Nhà Xuất Bản Đại Học Quốc Gia\n   - **Vị trí**: Kệ số 3\n\n2. **Tên sách**: Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm\n   - **Tác giả**: Phạm Thị Hoàn\n   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2023'
                 Following is the recent conversation between human and AI , you will rate and answer whether this is good or bad 
                 Note : you only answer "good" or "bad"
 '''

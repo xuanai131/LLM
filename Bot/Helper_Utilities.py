@@ -152,11 +152,11 @@ prompt = ChatPromptTemplate.from_messages(
         (
             "system",
             "each worker have specific function :"
-            "[Assistant] to help the bot interact with human by natural communication"
-            "[Researcher] to help answer the knowledge the need to search in the internet or any thing that book_researcher do not know"
-            "[Book_researcher] to find the infomation of the book in database, if not userful infomation in it, go to [Researcher] to find more infomation"
-            "[Borrow_book] to handle chain of action relate to borrow book"
-            "[Return_book] to handle chain of action relate to return book"
+            "*Assistant* to help the bot interact with human by natural communication when human says like :hello , thank you, sorry"
+            "*Researcher* to help answer the knowledge the need to search in the internet or any thing that book_researcher do not know"
+            "*Book_researcher* to find the infomation of the book in database, if not userful infomation in it, go to [Researcher] to find more infomation"
+            "*Borrow_book* to handle chain of action relate to borrow book"
+            "*Return_book* to handle chain of action relate to return book"
             "Based on the conversation above, which worker should be called next? "
             "Or should we call the Assistant? Choose one of: {options}."
         ),
@@ -246,14 +246,22 @@ class AgentState(TypedDict):
     next: str
     inspector:str
 
-def print_text():
-    global redirect_state 
-    print(redirect_state)
+def read_state():
+    # Open the file in read mode
+    with open('./state', 'r') as file:
+        # Read the entire file contents into a variable
+        file_contents = file.read()
+        print(file_contents)
+    return file_contents
+def write_state(state):
+    with open('./state', 'w') as file:
+    # Write new content to the file
+        file.write(state)
 def redirect_fun(data):
     global redirect_state 
     # print(data)
-    data["next"] = redirect_state
-    print(data)
+    data["next"] = read_state()
+    print("from redirect node ",data)
 
     # last_index = len(data["messages"])
     # if (last_index>0) :
