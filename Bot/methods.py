@@ -77,20 +77,28 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
         # print('result: ', result)
         return result
 
-
+class RETRIEVER_CONFIG:
+    def  __init__(self, ):
+        self.parent_splitter = None
+        self.child_splitter = None
+        
 class DATABASE:
-    def __init__(self, db_path, embedding, parent_path=None):
+    def __init__(self, db_path, embedding, parent_path=None, retriever_config:RETRIEVER_CONFIG=None):
         self.db_path = db_path
         self.parent_path = parent_path
         self.db = Chroma(collection_name="split_parents", persist_directory=db_path, embedding_function=embedding)
-        self.parent_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap= 20, separators=[" {'"])
-        self.child_splitter = RecursiveCharacterTextSplitter(
-            separators=["\n","\n\n" "\\n", "\\n\\n", '",', '. '],
-            chunk_size=120,
-            chunk_overlap=20,
-            length_function=len,
-            is_separator_regex=False,
-        )
+        if retriever_config is None:
+            self.parent_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap= 20, separators=[" {'"])
+            self.child_splitter = RecursiveCharacterTextSplitter(
+                separators=["\n","\n\n" "\\n", "\\n\\n", '",', '. '],
+                chunk_size=120,
+                chunk_overlap=20,
+                length_function=len,
+                is_separator_regex=False,
+            )
+        else:
+            self.parent_splitter = retriever_config.parent_splitter
+            self.child_splitter = retriever_config.child_splitter
         self.store = self.initial_store()
         self.retriever = self.initial_retriever()
         
