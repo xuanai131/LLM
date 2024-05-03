@@ -33,7 +33,7 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
     def _get_relevant_documents(
         self, query: str, *, run_manager: CallbackManagerForRetrieverRun
     ) -> List[Document]:
-        print('/////////////////////////////////////')
+        # print('/////////////////////////////////////')
         """Get documents relevant to a query.
         Args:
             query: String to find relevant documents for
