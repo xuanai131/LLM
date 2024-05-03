@@ -1,1 +1,1 @@
-play /var/www/html/flask/audio.wav
+play ./audio.wav
