@@ -17,7 +17,7 @@ import API_keys
 from Prompt import *
 import Tools
 
-
+redirect_state = "supervisor"
 
 
 
@@ -30,7 +30,7 @@ llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
 
 
 ##### CREATE CLASSIFY CHAIN
-function_def = {
+classify_function_def = {
     "name": "route",
     "description": "Classify user questions into affirm or deny.",
     "parameters": {
@@ -62,7 +62,7 @@ prompt = ChatPromptTemplate.from_messages(
 
 classify_chain = (
     prompt
-    | llm.bind_functions(functions=[function_def], function_call="route")
+    | llm.bind_functions(functions=[classify_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
 
@@ -97,11 +97,15 @@ def agent_node(state, agent, name):
 ##### CHAIN NODE
 def chain_node(state, chain, name, conversation):
     print('///////////', state)
-    if state["messages"][-1].content==conversation[-1].content:
+    if name=="Book_researcher_inspector":
         result = chain.invoke(state)
-        return {"messages": [HumanMessage(content=result['messages'][0], name=name)]}
+        return result
     else:
-        return state
+        if state["messages"][-1].content==conversation[-1].content:
+            result = chain.invoke(state)
+            return {"messages": [HumanMessage(content=result['messages'][0], name=name)]}
+        else:
+            return state
 
 
 
@@ -111,11 +115,12 @@ def chain_node(state, chain, name, conversation):
 ##### CREATE AGENT SUPERVISOR
 members = ["Researcher", "Book_researcher", "Borrow_book", "Return_book", "Coder"]
 system_prompt = (
-    "You are an intelligent robot serving in the HCMUTE library, your name is Librarios. You are a mobile robot with 2 wheels, "
-    "allowing you to move freely within the library, thus you can guide users to the location of the books that students or lecturers desire."
+    "You are an intelligent robot serving in the HCMUTE library, your name is Librarios. "
+    "you can guide users to the location of the books that students or lecturers desire."
     "To perform your duties well, you are granted authority as an observer managing the conversation between the following workers: {members}."
     "Note: for requests related to books, prioritize using the Book_researcher worker over the Researcher. For the following user requests, "
     "provide feedback to the worker on what to do next. Each worker will perform a task and respond with their results and status. "
+    "when The research done its task it always response with FINISH "
     "When finished, respond with FINISH."
     )
 # Our team supervisor is an LLM node. It just picks the next agent to process
@@ -146,6 +151,12 @@ prompt = ChatPromptTemplate.from_messages(
         MessagesPlaceholder(variable_name="messages"),
         (
             "system",
+            "each worker have specific function :"
+            "[Assistant] to help the bot interact with human by natural communication"
+            "[Researcher] to help answer the knowledge the need to search in the internet or any thing that book_researcher do not know"
+            "[Book_researcher] to find the infomation of the book in database, if not userful infomation in it, go to [Researcher] to find more infomation"
+            "[Borrow_book] to handle chain of action relate to borrow book"
+            "[Return_book] to handle chain of action relate to return book"
             "Based on the conversation above, which worker should be called next? "
             "Or should we call the Assistant? Choose one of: {options}."
         ),
@@ -177,12 +188,8 @@ function_def = {
         "required": ["messages"],
     },
 }
-system_assistant_prompt = (
-        "You are an intelligent robot assistant serving in the HCMUTE library, your name is Librarios. "
-        "You are a mobile robot with 2 wheels, allowing you to move freely within the library, "
-        "thus you can guide users to the location of the books that students or lecturers desire."
-)
 
+system_assistant_prompt = (ASSISTANT_PROMPT)
 assistant_prompt = ChatPromptTemplate.from_messages(
     [
         ("system", system_assistant_prompt),
@@ -196,8 +203,36 @@ assistant_chain = (
     | llm.bind_functions(functions=[function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
-
-
+classify_function_def = {
+    "name": "route",
+    "description": "Classify the response to be good or bad",
+    "parameters": {
+        "title": "routeSchema",
+        "type": "object",
+        "properties": {
+            "inspector": {
+                "title": "inspector",
+                "ouput": 'text',
+                "anyOf": [
+                    {"enum": ['good', 'bad']},
+                ],
+            }
+        },
+        "required": ["inspector"],
+    },
+}
+book_research_inspector_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", (BOOK_RESEARCHER_INSPECTOR_PROMPT)),
+        # MessagesPlaceholder(variable_name="history"),
+        MessagesPlaceholder(variable_name="messages"),
+    ]
+)
+book_research_inspector_chain = (
+    book_research_inspector_prompt
+    | llm.bind_functions(functions=[classify_function_def], function_call="route")
+    | JsonOutputFunctionsParser()
+)
 
 ##### CONSTRUCT GRAPH
 
@@ -209,7 +244,22 @@ class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], operator.add]
     # The 'next' field indicates where to route to next
     next: str
+    inspector:str
 
+def print_text():
+    global redirect_state 
+    print(redirect_state)
+def redirect_fun(data):
+    global redirect_state 
+    # print(data)
+    data["next"] = redirect_state
+    print(data)
+
+    # last_index = len(data["messages"])
+    # if (last_index>0) :
+    #     data["messages"].pop(last_index-1)
+    # del data["messages"]
+    return data 
 def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
@@ -234,13 +284,12 @@ def CreateGraph(conversation):
 
     return_book_agent = create_agent(llm, Tools.return_book_tool, RETURN_BOOK_PROMPT)
     return_book_node = functools.partial(agent_node, agent=return_book_agent, name="Return_book")
-
     # confirm_return_agent = create_agent(llm, Tools.confirm_return_conpletely_tool, CONFIRM_RETURN_PROMPT)
     # confirm_return_node = functools.partial(agent_node, agent=confirm_return_agent, name="Confirm_return")
 
     # process_return_agent = create_agent(llm, Tools.process_return_tool, "Bạn hữu ích trong việc xử lí dưới cơ sở dữ liệu của thư viện để hoàn thành quá trinh trả sách. Lưu ý: bạn phải thực hiện process_return_tool trước khi đưa ra câu trả lời.")
     # process_return_node = functools.partial(agent_node, agent=process_return_agent, name="Process_return")
-
+    # book_research_inspector_node = functools.partial(chain_node, chain=book_research_inspector_chain, name="Book_researcher_inspector",conversation=conversation)
 
     assistant_node = functools.partial(chain_node, chain=assistant_chain, name="Assistant", conversation=conversation)
 
@@ -251,7 +300,6 @@ def CreateGraph(conversation):
         "You can create safe Python code to analyze and generate graphs using the matplotlib library.",
     )
     code_node = functools.partial(agent_node, agent=code_agent, name="Coder")
-
     workflow = StateGraph(AgentState)
     workflow.add_node("Book_researcher", book_research_node)
     # workflow.add_node("Robot_researcher", robot_research_node)
@@ -265,7 +313,6 @@ def CreateGraph(conversation):
     workflow.add_node("Coder", code_node)
     workflow.add_node("supervisor", supervisor_chain)
     workflow.add_node("Assistant", assistant_node)
-
     #2. Now connect all the edges in the graph.
     for member in members:
         # We want our workers to ALWAYS "report back" to the supervisor when done
@@ -278,6 +325,8 @@ def CreateGraph(conversation):
     conditional_map["Assistant"] = "Assistant"
     # conditional_map["FINISH"] = END
     workflow.add_conditional_edges("supervisor", lambda x: x["next"], conditional_map)
+    # conditional_map["supervisor"] = "supervisor"
+    # workflow.add_conditional_edges("redirect", lambda x: x["next"], conditional_map)
     # conditional_map["Assistant"] = END
     workflow.add_edge("Book_researcher","Assistant")
     workflow.add_edge("Assistant", END)
