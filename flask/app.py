@@ -9,7 +9,7 @@ import numpy as np
 import time
 import threading
 from flask_socketio import SocketIO
-import requests 
+import requests
 import os 
 from openai import OpenAI
 import soundfile as sf
@@ -17,6 +17,7 @@ import sounddevice as sd
 import multiprocessing
 import urllib.request
 import subaudio
+import re
 camera = cv2.VideoCapture(0)
 
 sys.path.append("../Bot")
@@ -111,7 +112,7 @@ def get_image():
     if request.method == 'POST':
         msg = request.get_json()
         print("MSG", type(msg['id']))
-        image_of_book = msg['id'].replace("'", "").replace('"', '').split(',')
+        image_of_book = re.sub(r'[^0-9,]', '', msg['id']).split(',')
         print(image_of_book)
         print(type(image_of_book))
 
