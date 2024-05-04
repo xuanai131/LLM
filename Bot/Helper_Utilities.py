@@ -15,8 +15,9 @@ from langgraph.graph import StateGraph, END
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 import API_keys
 from Prompt import *
+from Global_variable import *
 import Tools
-
+from colorama import Fore, Back, Style
 redirect_state = "supervisor"
 
 
@@ -248,13 +249,13 @@ class AgentState(TypedDict):
 
 def read_state():
     # Open the file in read mode
-    with open('./state', 'r') as file:
+    with open(AbsoluteBotPath+'/state', 'r') as file:
         # Read the entire file contents into a variable
         file_contents = file.read()
         print(file_contents)
     return file_contents
 def write_state(state):
-    with open('./state', 'w') as file:
+    with open(AbsoluteBotPath+'/state', 'w') as file:
     # Write new content to the file
         file.write(state)
 def redirect_fun(data):
@@ -292,12 +293,13 @@ def CreateGraph(conversation):
 
     return_book_agent = create_agent(llm, Tools.return_book_tool, RETURN_BOOK_PROMPT)
     return_book_node = functools.partial(agent_node, agent=return_book_agent, name="Return_book")
+
     # confirm_return_agent = create_agent(llm, Tools.confirm_return_conpletely_tool, CONFIRM_RETURN_PROMPT)
     # confirm_return_node = functools.partial(agent_node, agent=confirm_return_agent, name="Confirm_return")
 
     # process_return_agent = create_agent(llm, Tools.process_return_tool, "Bạn hữu ích trong việc xử lí dưới cơ sở dữ liệu của thư viện để hoàn thành quá trinh trả sách. Lưu ý: bạn phải thực hiện process_return_tool trước khi đưa ra câu trả lời.")
     # process_return_node = functools.partial(agent_node, agent=process_return_agent, name="Process_return")
-    # book_research_inspector_node = functools.partial(chain_node, chain=book_research_inspector_chain, name="Book_researcher_inspector",conversation=conversation)
+    book_research_inspector_node = functools.partial(chain_node, chain=book_research_inspector_chain, name="Book_researcher_inspector",conversation=conversation)
 
     assistant_node = functools.partial(chain_node, chain=assistant_chain, name="Assistant", conversation=conversation)
 
@@ -321,6 +323,8 @@ def CreateGraph(conversation):
     workflow.add_node("Coder", code_node)
     workflow.add_node("supervisor", supervisor_chain)
     workflow.add_node("Assistant", assistant_node)
+    workflow.add_node("redirect",redirect_fun)
+    workflow.add_node("Book_researcher_inspector",book_research_inspector_node)
     #2. Now connect all the edges in the graph.
     for member in members:
         # We want our workers to ALWAYS "report back" to the supervisor when done
@@ -333,11 +337,16 @@ def CreateGraph(conversation):
     conditional_map["Assistant"] = "Assistant"
     # conditional_map["FINISH"] = END
     workflow.add_conditional_edges("supervisor", lambda x: x["next"], conditional_map)
-    # conditional_map["supervisor"] = "supervisor"
-    # workflow.add_conditional_edges("redirect", lambda x: x["next"], conditional_map)
+    redirect_map = {}
+    redirect_map["Borrow_book"] = "Borrow_book"
+    redirect_map["supervisor"] = "supervisor"
+    redirect_map["Return_book"] = "Return_book"
+    redirect_map["Book_researcher"] = "Book_researcher"
+    workflow.add_conditional_edges("redirect", lambda x: x["next"], redirect_map)
     # conditional_map["Assistant"] = END
-    workflow.add_edge("Book_researcher","Assistant")
+    workflow.add_edge("Book_researcher","Book_researcher_inspector")
     workflow.add_edge("Assistant", END)
+    workflow.add_edge("Book_researcher_inspector",END)
     # workflow.add_edge("Borrow_book", "Confirm_borrow")
     # workflow.add_edge("Confirm_borrow", END)
     # workflow.add_edge("Borrow_book", "Book_researcher")
@@ -347,11 +356,9 @@ def CreateGraph(conversation):
     # workflow.add_edge("Process_return", END)
     # workflow.add_conditional_edges("Assistant", lambda x: x["next"], {'Finish': END})
     # Finally, add entrypoint
-    workflow.set_entry_point("supervisor")
-
+    workflow.set_entry_point("redirect")
     graph = workflow.compile()
     return graph
-
 
 ##### FUNCTION CREATE NEW SESSION
 # def CreateNewSession(sessionID):
