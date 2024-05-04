@@ -156,6 +156,7 @@ prompt = ChatPromptTemplate.from_messages(
             "*Assistant* to help the bot interact with human by natural communication when human says like :hello , thank you, sorry"
             "*Researcher* to help answer the knowledge the need to search in the internet or any thing that book_researcher do not know"
             "*Book_researcher* to find the infomation of the book in database, if not userful infomation in it, go to [Researcher] to find more infomation"
+            "*Self_nkowledge_search* search and anwser the questions related to your work or library"
             "*Borrow_book* to handle chain of action relate to borrow book"
             "*Return_book* to handle chain of action relate to return book"
             "Based on the conversation above, which worker should be called next? "
