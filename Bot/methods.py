@@ -74,7 +74,7 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
                 dict['Nội dung đầu sách'] = context[ids[i]]
                 result.append(Document(str(dict)))
         # result = [d for d in docs if d is not None]
-        # print('result: ', result)
+        print('Retriever result: ', result)
         return result
 
 class RETRIEVER_CONFIG:

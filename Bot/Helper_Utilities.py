@@ -114,7 +114,7 @@ def chain_node(state, chain, name, conversation):
 
 
 ##### CREATE AGENT SUPERVISOR
-members = ["Researcher", "Book_researcher", "Borrow_book", "Return_book", "Coder"]
+members = ["Researcher", "Book_researcher", "Self_nkowledge_search", "Borrow_book", "Return_book", "Coder"]
 system_prompt = (
     "You are an intelligent robot serving in the HCMUTE library, your name is Librarios. "
     "you can guide users to the location of the books that students or lecturers desire."
@@ -156,7 +156,7 @@ prompt = ChatPromptTemplate.from_messages(
             "*Assistant* to help the bot interact with human by natural communication when human says like :hello , thank you, sorry"
             "*Researcher* to help answer the knowledge the need to search in the internet or any thing that book_researcher do not know"
             "*Book_researcher* to find the infomation of the book in database, if not userful infomation in it, go to [Researcher] to find more infomation"
-            "*Self_nkowledge_search* search and anwser the questions related to your work or library"
+            "*Self_nkowledge_search* to search and anwser the questions related to your work or library"
             "*Borrow_book* to handle chain of action relate to borrow book"
             "*Return_book* to handle chain of action relate to return book"
             "Based on the conversation above, which worker should be called next? "
@@ -274,7 +274,7 @@ def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
 
-    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT)
+    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT1)
     book_research_node = functools.partial(agent_node, agent=book_research_agent, name="Book_researcher")
 
     # robot_research_agent = create_agent(llm, [robot_search_tool], "Bạn hữu ích cho việc trả lời các thông tin về chính bạn")
@@ -294,6 +294,9 @@ def CreateGraph(conversation):
 
     return_book_agent = create_agent(llm, Tools.return_book_tool, RETURN_BOOK_PROMPT)
     return_book_node = functools.partial(agent_node, agent=return_book_agent, name="Return_book")
+    
+    self_knowledge_agent = create_agent(llm, Tools.self_knowledge_tool, SELF_KNOWLEDGE_PROMPT)
+    self_knowledge_node = functools.partial(agent_node, agent=self_knowledge_agent, name="Self_nkowledge_search")
 
     # confirm_return_agent = create_agent(llm, Tools.confirm_return_conpletely_tool, CONFIRM_RETURN_PROMPT)
     # confirm_return_node = functools.partial(agent_node, agent=confirm_return_agent, name="Confirm_return")
@@ -315,6 +318,7 @@ def CreateGraph(conversation):
     workflow.add_node("Book_researcher", book_research_node)
     # workflow.add_node("Robot_researcher", robot_research_node)
     workflow.add_node("Researcher", research_node)
+    workflow.add_node("Self_nkowledge_search", self_knowledge_node)
     # workflow.add_node("Scan_barcode", scan_barcode_node)
     workflow.add_node("Borrow_book", borrow_book_node)
     # workflow.add_node("Confirm_borrow", confirm_borrow_node)
