@@ -19,7 +19,7 @@ import urllib.request
 import subaudio
 import re
 camera = cv2.VideoCapture(0)
-
+from colorama import Fore, Back, Style
 sys.path.append("../Bot")
 from Global_variable import *
 import book_search
@@ -43,8 +43,39 @@ camera_st = False
 voice_st = False
 user_input_st = False
 user_input_message = ""
-
-
+def run_graph(inputs):
+    for s in graph.stream(inputs):
+        if "__end__" not in s:
+            print(s)
+            print('------------------------')
+        else:
+            print(s)
+            try:
+                answer = AIMessage(s.get('__end__')['messages'][-1].content)
+                print(answer)
+                attitude = s.get('__end__')['inspector']
+                print("the inspector check that the response is ",attitude)
+                res = handle_event_response(attitude,answer)
+                return res
+            except:
+                pass
+def handle_event_response(attitude,answer):
+    global OpenAIHistoryConversation,redirect_state
+    print("check history: ",OpenAIHistoryConversation)
+    if (attitude == "bad"):
+        print(Fore.RED +"in the bad request")
+        print(Style.RESET_ALL)
+        redirect_state = "Book_researcher"
+        Helper_Utilities.write_state(redirect_state)
+        inputs = {
+        "messages": OpenAIHistoryConversation
+    }
+        res  = run_graph(inputs)
+        return res
+    else:
+        redirect_state = "supervisor"
+        Helper_Utilities.write_state(redirect_state)
+        return answer
 def play_wav(file_path):
     data, fs = sf.read(file_path, dtype='float32')
     sd.play(data, fs)
@@ -229,21 +260,11 @@ def get_Chat_response(text):
         "messages": OpenAIHistoryConversation
     }
     
-    for s in graph.stream(inputs):
-        if "__end__" not in s:
-            print(s)
-        else:
-            print("-------------------------------------")
-            print(s)
-            try:
-                answer = AIMessage(s.get('__end__')['messages'][-1].content)
-                print("-------------------------------------")
-                print(answer)
-            except:
-                pass
+    answer = run_graph(inputs)
     OpenAIHistoryConversation.append(answer)
     
     return answer.content
+
 
 def generate_frames(image_data):
     global count

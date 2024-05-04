@@ -4,3 +4,4 @@ flask/__pycache__
 Bot/API_keys.py
 flask/audio.wav
 Bot/graph.png
+Bot/vector_database

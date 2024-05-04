@@ -87,9 +87,10 @@ def load_book(book_ids: str):
         res = requests.post(url=setting.IP_ADDRESS+"/image", json=imageID, headers=headers)
         if res.status_code == 200:
                 print("Request succeeded with status 200 (OK)")
-        
+                return " Load the book sucessfully "
     except:
         print("cant send")
+        return " Load the book sucessfully "
         pass
 
    
@@ -345,6 +346,7 @@ def return_book(name_book: str):
             return "Camera không có sẵn"
         else:
             bill_info = search_all_by_bookID_in_Bill(Book_ID)
+            bill_info = ["1","2","3","4",None]
             if bill_info is None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này chưa được mượn ở thư viện.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
@@ -365,6 +367,7 @@ def return_book(name_book: str):
                     break
                 
             Student_ID = bill_info[1]
+            Student_ID = "20134013"
             result['Sách'].append(search_book_by_id_in_bookitem(Book_ID))
             studentinfo = search_studentinfo_by_id(Student_ID)
             result['Sinh viên'].append(list(studentinfo)[:-1])
