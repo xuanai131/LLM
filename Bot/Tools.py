@@ -61,6 +61,16 @@ SelfKnowledge =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/self_knowled
 
 
 
+##### SELF KNOWLEDGE SEARCH TOOL
+self_knowledge_tool=[
+    create_retriever_tool(
+        SelfKnowledge.retriever,
+        "self_knowledge",
+        "trả lời các câu hỏi liên quan đến công việc của bạn, hoặc liên quan đến thư viện trường.",
+    )
+]
+
+
 ##### WEB SEARCH TOOL
 tavily_tool = TavilySearchResults(max_results=5)
 python_repl_tool = PythonREPLTool() # This executes code locally, which can be unsafe
