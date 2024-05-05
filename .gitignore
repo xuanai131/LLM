@@ -5,3 +5,4 @@ Bot/API_keys.py
 flask/audio.wav
 Bot/graph.png
 Bot/vector_database
+Bot/Knowledge/Books/PDF
