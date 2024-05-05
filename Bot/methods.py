@@ -1,4 +1,5 @@
 from langchain_community.document_loaders.pdf import UnstructuredPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings.sentence_transformer import SentenceTransformerEmbeddings
@@ -182,25 +183,38 @@ class DATABASE:
             doc_ids = ids
         docs = []
         for idx in range(len(documents)):
-            # Add to parents
-            self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
             child_doc_file_path = AbsoluteBotPath + documents[idx]['Nội dung đầu sách']
-            pdf_loader = UnstructuredPDFLoader(child_doc_file_path)
-            child_doc = pdf_loader.load()
-            text = re.sub(r'\.{6,}', '-', child_doc[0].page_content)  #Repalce multiple dot with '-'
-            text = self.fix_invalid_characters(text)
-            child_doc[0].page_content = text
-            
-            _id = doc_ids[idx]
-            sub_docs = self.child_splitter.split_documents(child_doc)
-            if self.retriever.child_metadata_fields is not None:
+            try:
+                try:
+                    pdf_loader = UnstructuredPDFLoader(child_doc_file_path)
+                    child_doc = pdf_loader.load()
+                except:
+                    pdf_loader = PyMuPDFLoader(child_doc_file_path,extract_images=True)
+                    child_doc = pdf_loader.load()
+                text = ''
+                for doc in child_doc:
+                    text += doc.page_content
+                text = re.sub(r'\.{6,}', '-', text)  #Repalce multiple dot with '-'
+                text = self.fix_invalid_characters(text)
+                print(".....  Adding ", documents[idx]['Nội dung đầu sách'], '  .....')
+                documents[idx]['Nội dung đầu sách'] = text
+                # Add to parents
+                self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
+                print(documents[idx])
+                # child_doc[0].page_content = text
+                
+                _id = doc_ids[idx]
+                sub_docs = self.child_splitter.split_documents([Document(str(documents[idx]))])
+                if self.retriever.child_metadata_fields is not None:
+                    for _doc in sub_docs:
+                        _doc.metadata = {
+                            k: _doc.metadata[k] for k in self.retriever.child_metadata_fields
+                        }
                 for _doc in sub_docs:
-                    _doc.metadata = {
-                        k: _doc.metadata[k] for k in self.retriever.child_metadata_fields
-                    }
-            for _doc in sub_docs:
-                _doc.metadata[self.retriever.id_key] = _id
-            docs.extend(sub_docs)
+                    _doc.metadata[self.retriever.id_key] = _id
+                docs.extend(sub_docs)
+            except:
+                pass
         self.retriever.vectorstore.add_documents(docs)
 
     def similarity_search(self, query, k=4):

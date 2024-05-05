@@ -7,6 +7,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import sys
+sys.path.append("../")
+from Global_variable import *
 # from captcha_solver import CaptchaSolver
 # from python3_anticaptcha import ImageToTextTask
 # from twocaptcha import TwoCaptcha
@@ -69,20 +72,22 @@ def download_pdf_file(url, topic_name):
     pdf_file_name = os.path.basename(url)
     if response.status_code == 200:
         # Save in current working directory
-        filepath = os.path.join(os.getcwd(), "PDF", topic_name , pdf_file_name)
-        with open(filepath, 'wb') as pdf_object:
+        filepath = f'/Knowledge/Books/PDF/{topic_name}/{pdf_file_name}'.split('?')[0]
+        fullfilepath = AbsoluteBotPath+filepath
+        with open(fullfilepath, 'wb') as pdf_object:
             pdf_object.write(response.content)
             print(f'{pdf_file_name} was successfully saved!')
+        return filepath
     else:
         print(f'Uh oh! Could not download {pdf_file_name},')
         print(f'HTTP response status code: {response.status_code}')
     
-def write_json(new_data, filename='sample.json'):
+def write_json(new_data, filename=AbsoluteBotPath+'/Knowledge/Books/Json/sample.json', js_schema="book_infos"):
     with open(filename,'r+', encoding='utf-8') as file:
           # First we load existing data into a dict.
         file_data = json.load(file)
         # Join new_data with file_data inside emp_details
-        file_data["DATABASE"].append(new_data)
+        file_data[js_schema].append(new_data)
         # Sets file's current position at offset.
         file.seek(0)
         # convert back to json.
@@ -117,7 +122,7 @@ next_button = wait.until(EC.presence_of_element_located((By.XPATH,"//*[@id='pass
 next_button.click()
 
 sleep(10)
-
+count = 0
 for i in range (20, 30):
     wait = WebDriverWait(driver, 20)
     
@@ -132,7 +137,7 @@ for i in range (20, 30):
     #Tao folder cho tung topic
     
     # Path 
-    path = os.path.join("PDF", topic_name) 
+    path = os.path.join("Books/PDF", topic_name) 
    
     os.mkdir(path) 
 
@@ -150,29 +155,45 @@ for i in range (20, 30):
         find_title_articles = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/h1")
         find_keyword = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/p[1]")
         find_introduction = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
-        try:
-            link = pdf_link[0].get_attribute('src')
-            title_articles = find_title_articles[0].text
-            keyword = [i.text for i in find_keyword]
-            introduction = find_introduction[0].text
-            print("PDF LINK: ", link)
-            print("title_articles: ", title_articles)
-            print("keyword: ", keyword)
-            
-            download_pdf_file(link, topic_name)
-            
-            new_data = {"Topic": topic_name,
-                        "Tiêu đề": title_articles,
-                        "Tác giả": "none",
-                        "NXB": "None",
-                        "Từ khóa": keyword,
-                        "Giới thiệu": introduction,
-                        "Lời nói đầu": "None",
-                        "Mục lục": "None"
-                        }
-            write_json(new_data) 
-        except:
-            print("Error")
+        find_description = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
+        # try:
+        link = pdf_link[0].get_attribute('src')
+        title_articles = find_title_articles[0].text
+        keyword = [i.text for i in find_keyword]
+        introduction = find_introduction[0].text
+        description = find_description[0].text
+        print("PDF LINK: ", link)
+        print("title_articles: ", title_articles)
+        print("description: ", description)
+        print("keyword: ", keyword)
+        
+        
+        file_path = download_pdf_file(link, topic_name)
+        count += 1
+        if count == 10:
+            break
+        
+        new_data = {}
+        new_data["Tên sách"] = title_articles
+        new_data["Loại sách"] = None
+        new_data["ID"] = count
+        new_data["Keyword"] = keyword
+        new_data["Mô tả"] = description
+        new_data["Vị trí"] = "Kệ số " + str(count)
+        new_data["Nội dung đầu sách"] = file_path
+        # new_data = {"Topic": topic_name,
+        #             "Tiêu đề": title_articles,
+        #             "Tác giả": "none",
+        #             "NXB": "None",
+        #             "Từ khóa": keyword,
+        #             "Giới thiệu": introduction,
+        #             "Lời nói đầu": "None",
+        #             "Mục lục": "None"
+        #             }
+        print(new_data)
+        write_json(new_data) 
+        # except:
+        #     print("Error")
         
         index_of_articles += 1  
         driver.back()
