@@ -15,6 +15,13 @@ import json
 from pathlib import Path
 from numpy.linalg import norm
 from numpy import dot
+import fitz  # PyMuPDF
+import base64
+import barcode
+from barcode.writer import ImageWriter
+import random
+import string
+
 
 from langchain.retrievers import ParentDocumentRetriever
 from typing import List
@@ -84,6 +91,34 @@ class RETRIEVER_CONFIG:
         self.child_splitter = None
         self.retriever_type = 'Custom'
         
+def pdf_page_to_base64(pdf_path, page_number=0): # Extract the first page of pdf and convert it into base64 image
+    pdf_document = fitz.open(pdf_path)
+    # Extract the page
+    page = pdf_document[page_number]
+    # Convert the page to an image
+    image = page.get_pixmap()
+    # Convert the image to a base64 string
+    image_bytes = image.tobytes("png", "RGB")
+    base64_image = base64.b64encode(image_bytes).decode("utf-8")
+    pdf_document.close()
+    
+    return base64_image
+
+def generate_barcode(ID, filename): # Generate barcode from ID
+    # Generate the barcode object
+    barcode_class = barcode.get_barcode_class('code128')
+    barcode_instance = barcode_class(ID, writer=ImageWriter())
+    
+    # Save the barcode image
+    barcode_instance.save(filename)
+    
+def generate_unique_id(existing_ids): # Generate unique ID
+    while True:
+        new_id = ''.join(random.choices(string.ascii_letters + string.digits, k=9))
+        if new_id not in existing_ids:
+            return new_id
+
+
 class DATABASE:
     def __init__(self, db_path, embedding, parent_path=None, retriever_config:RETRIEVER_CONFIG=None):
         self.db_path = db_path
@@ -107,6 +142,7 @@ class DATABASE:
             
         self.store = self.initial_store()
         self.retriever = self.initial_retriever()
+        self.existing_ids = set()
         
     def fix_invalid_characters(self, text):
         # Replace invalid characters with hyphen '-'
