@@ -34,6 +34,7 @@ import uuid
 import re
 import unicodedata
 from Global_variable import *
+from table_handle import *
 
 
 
@@ -117,8 +118,9 @@ def generate_unique_id(existing_ids): # Generate unique ID
         new_id = ''.join(random.choices(string.ascii_letters + string.digits, k=9))
         if new_id not in existing_ids:
             return new_id
-
-
+    
+    
+    
 class DATABASE:
     def __init__(self, db_path, embedding, parent_path=None, retriever_config:RETRIEVER_CONFIG=None):
         self.db_path = db_path
@@ -206,6 +208,19 @@ class DATABASE:
         texts = text_splitter.split_documents(documents)
         self.retriever.add_documents(texts, ids=None)
         
+        
+    def add_info_to_database(self, ID, name_of_book, kind_of_book, shelve, cover_image):
+        # Books table
+        InsertToBookTable(ID,name_of_book,None,kind_of_book,None,None,shelve,cover_image)
+        # Book items table
+        ran = random.randint(1, 6)
+        for i in range(ran):
+            barcode = generate_unique_id(self.existing_ids)
+            self.existing_ids.add(barcode)
+            filename = AbsoluteBotPath+f'/Knowledge/Barcode/{name_of_book}-{barcode}.png'
+            generate_barcode(barcode, filename)
+            InsertToBookItemTable(barcode,ID)
+        
     def insert_book(self, json_file: str, jq_schema, ids=None):
         documents = json.loads(Path(json_file).read_text())[jq_schema]
         if ids is None:
@@ -237,6 +252,9 @@ class DATABASE:
                 # Add to parents
                 self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
                 print(documents[idx])
+                # Add info to database
+                base64_img = pdf_page_to_base64(child_doc_file_path)
+                self.add_info_to_database(idx+1, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
                 # child_doc[0].page_content = text
                 
                 _id = doc_ids[idx]

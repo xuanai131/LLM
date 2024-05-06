@@ -2,42 +2,139 @@ import sqlite3
 import setting
 import base64
 # Connect to the database
-def create_book_table() :
+def DeleteTable(table_name):
     conn = sqlite3.connect(setting.database_name)
     cursor = conn.cursor()
-
+    sql_drop_table = "DROP TABLE IF EXISTS {};".format(table_name)
     # Create a table for books if it doesn't exist
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS books (
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            author TEXT,
-            type TEXT,
-            location_x REAL,
-            location_y REAL,
-            publisher TEXT,
-            image BLOB,
-            info TEXT
-        )
-    ''')
+    cursor.execute(sql_drop_table)
 
     # Commit the changes and close the connection
     conn.commit()
     conn.close()
-def insert_data_to_book_table(book_name,author,type,location_x,location_y,publisher,image_path,info_text):
+# Book table
+def CreateBookTable():
     conn = sqlite3.connect(setting.database_name)
     cursor = conn.cursor()
-    with open(image_path, 'rb') as image_file:
-        image_data = image_file.read()
+    sql = 'CREATE TABLE IF NOT EXISTS Books (\
+            ID INTEGER PRIMARY KEY,\
+            name_of_book TEXT,\
+            author TEXT,\
+            kind_of_book TEXT,\
+            publisher TEXT,\
+            position TEXT,\
+            shelve TEXT,\
+            cover_image TEXT,\
+            information TEXT)'
+    # Create a table for books if it doesn't exist
+    cursor.execute(sql)
+
+    # Commit the changes and close the connection
+    conn.commit()
+    conn.close()
+def InsertToBookTable(ID, name_of_book,author,kind_of_book,publisher,position,shelve,cover_image,info=None):
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    # with open(image_path, 'rb') as image_file:
+    #     image_data = image_file.read()
     # Insert data into the books table
     cursor.execute("""
-        INSERT INTO books (name, author, type, location_x, location_y, publisher, image, info)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    """, (book_name, author, type, location_x, location_y, publisher, image_data,info_text))
+        INSERT INTO books (ID, name_of_book, author, kind_of_book, publisher, position, shelve, cover_image, information)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (ID, name_of_book, author, kind_of_book, publisher, position, shelve, cover_image,info))
 
     # Commit the changes and close the connection
     conn.commit()
     conn.close()
+
+# Book item table
+def CreateBookItemTable():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    sql = 'CREATE TABLE IF NOT EXISTS Book_items (\
+            barcode TEXT,\
+            book_ID INTEGER,\
+            is_available BOOL)'
+    # Create a table for books if it doesn't exist
+    cursor.execute(sql)
+
+    # Commit the changes and close the connection
+    conn.commit()
+    conn.close()
+def InsertToBookItemTable(barcode, book_ID, is_available=True):
+    try:
+        with sqlite3.connect(setting.database_name) as conn:
+            cursor = conn.cursor()
+            # with open(image_path, 'rb') as image_file:
+            #     student_image = image_file.read()
+            # Insert data into the student_info table
+            cursor.execute('''
+                INSERT INTO Book_items (
+                    barcode, book_ID, is_available
+                ) VALUES (?, ?, ?)
+            ''', (barcode, book_ID, is_available))
+
+            conn.commit()
+            # print("Data inserted successfully.")
+    except sqlite3.Error as e:
+        print(f"SQLite error: {e}")
+    
+# Bill table
+def CreateBillTable():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    sql = 'CREATE TABLE IF NOT EXISTS Bill (\
+            barcode TEXT,\
+            student_ID INTEGER,\
+            borrow_date TEXT,\
+            return_date TEXT)'
+    # Create a table for books if it doesn't exist
+    cursor.execute(sql)
+
+    # Commit the changes and close the connection
+    conn.commit()
+    conn.close()
+    
+# Student table
+def CreateStudentTable():
+    try:
+        with sqlite3.connect(setting.database_name) as conn:
+            cursor = conn.cursor()
+
+            # Create the student_info table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS Student_info (
+                    ID INTEGER PRIMARY KEY,
+                    student_ID TEXT,
+                    student_name TEXT,
+                    school_year TEXT,
+                    faculty TEXT,
+                    major TEXT,
+                    student_image TEXT
+                )
+            ''')
+            conn.commit()
+    except sqlite3.Error as e:
+        print(f"SQLite error: {e}")
+def InsertStudentInfo(student_ID, student_name, school_year, faculty, major, image_path):
+    try:
+        with sqlite3.connect(setting.database_name) as conn:
+            cursor = conn.cursor()
+            base64_string = png_to_base64(image_path)
+            # Insert data into the student_info table
+            cursor.execute('''
+                INSERT INTO Student_info (
+                    student_ID, student_name, school_year, faculty, major, student_image
+                ) VALUES (?, ?, ?, ?, ?, ?)
+            ''', (student_ID, student_name, school_year, faculty, major, base64_string))
+
+            conn.commit()
+            print("Data inserted successfully.")
+    except sqlite3.Error as e:
+        print(f"SQLite error: {e}")
+        
+           
+
     
 def png_to_base64(file_path):
     with open(file_path, "rb") as image_file:
@@ -78,24 +175,6 @@ def update_image_book_by_book_id(book_id, image_path):
     conn.commit()
     conn.close()
 
-def create_book_id_table():
-
-    conn = sqlite3.connect(setting.database_name)
-    cursor = conn.cursor()
-
-    # Create the book_item table
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS book_item (
-            id INTEGER PRIMARY KEY,
-            book_id TEXT,
-            book_name TEXT,
-            isborrow BOOLEAN,
-            borrow_day DATE,
-            id_student_borrow TEXT
-        )
-    ''')
-    conn.commit()
-    conn.close()
 def insert_data_to_book_item_table(book_id, book_name, isborrow,borrowday,student_id):
     conn = sqlite3.connect(setting.database_name)
     cursor = conn.cursor()
@@ -109,26 +188,7 @@ def insert_data_to_book_item_table(book_id, book_name, isborrow,borrowday,studen
     conn.commit()
     conn.close()
 
-def create_student_info_table():
-    try:
-        with sqlite3.connect(setting.database_name) as conn:
-            cursor = conn.cursor()
 
-            # Create the student_info table
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS student_info (
-                    id INTEGER PRIMARY KEY,
-                    student_id TEXT ,
-                    student_name TEXT,
-                    student_year INTEGER,
-                    student_department TEXT,
-                    student_major TEXT,
-                    student_image BLOB
-                )
-            ''')
-            conn.commit()
-    except sqlite3.Error as e:
-        print(f"SQLite error: {e}")
 
 def insert_student_info(student_id, student_name, student_year, student_department, student_major, image_path):
     try:
