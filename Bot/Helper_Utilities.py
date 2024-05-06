@@ -242,7 +242,7 @@ classify_function_def = {
                 "title": "inspector",
                 "ouput": 'text',
                 "anyOf": [
-                    {"enum": ['good', 'bad']},
+                    {"enum": ['yes', 'no']},
                 ],
             }
         },
@@ -257,11 +257,40 @@ book_research_inspector_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_research_inspector_chain = (
-    book_research_inspector_prompt
+    book_research_inspector_prompt 
     | llm.bind_functions(functions=[classify_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
-
+interrupt_function_def = {
+    "name": "route",
+    "description": "Check the user request interrupt event to be yes or no",
+    "parameters": {
+        "title": "routeSchema",
+        "type": "object",
+        "properties": {
+            "messages": {
+                "title": "messages",
+                "output": 'text',
+                "anyOf": [
+                    {"enum": ['yes', 'no']},
+                ],
+            }
+        },
+        "required": ["messages"],
+    },
+}
+book_return_interrupt_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", (BOOK_RETURN_INTERRUPT_PROMPT)),
+        # MessagesPlaceholder(variable_name="history"),
+        MessagesPlaceholder(variable_name="messages"),
+    ]
+)
+book_return_interrupt_chain = (
+    book_research_inspector_prompt 
+    | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
+    | JsonOutputFunctionsParser()
+)
 ##### CONSTRUCT GRAPH
 
 # 1. The agent state is the input to each node in the graph
