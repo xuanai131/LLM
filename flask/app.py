@@ -63,7 +63,7 @@ def handle_event_response(attitude,answer):
     global OpenAIHistoryConversation,redirect_state
     print("check history: ",OpenAIHistoryConversation)
     if (attitude == "bad"):
-        print(Fore.RED +"in the bad request")
+        print(Fore.RED +"in the bad response")
         print(Style.RESET_ALL)
         redirect_state = "Book_researcher"
         Helper_Utilities.write_state(redirect_state)
@@ -361,11 +361,6 @@ def video_feed():
 @app.route('/download_audio', methods=['POST'])
 def download_audio_from_url():
     data = request.get_json().get('url')
-    # print("the url in front end side :",data)
-    # data = "https://chunk.lab.zalo.ai/a745e9c971a198ffc1b0/a745e9c971a198ffc1b0/"
-    # download_audio_in_web(data,'audio.wav')
-    # data = request.get_json().get('data')
-    # text_to_speech(data,'audio.wav')
     audio_thread = threading.Thread(target=text_to_speech, args=(data,'audio.wav'))
     audio_thread.start()
     audio_thread.join()
