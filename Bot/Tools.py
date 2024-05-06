@@ -18,7 +18,9 @@ import book_search
 import requests
 import base64
 import setting
-    
+import threading
+load_tool_execute = False
+lock = threading.Lock()
 def turn_on_camera():
     response = requests.get(setting.IP_ADDRESS+'/camera_status')
     if response.status_code == 200:
@@ -83,6 +85,8 @@ python_repl_tool = PythonREPLTool() # This executes code locally, which can be u
 # )
 
 def load_book(book_ids: str):
+    global load_tool_execute
+    load_tool_execute = True
     # turn_on_camera()
     imageID= {
         "id": book_ids
@@ -333,12 +337,10 @@ def send_returnbook_to_form(Book_ID, borrow_date, studentinfo):
     data['student_ID'] = studentinfo[1]
     requests.post(url=setting.IP_ADDRESS+"/student-book_info", json=data)
     print('SENT.......................')
-    
-def return_book(name_book: str):
+def do_return_book(name_book:str):
     result = {'Sách': [], 'Sinh viên': []}
     send_mess("start", "return_form")
     send_mess("Xin hãy đưa sách vào khe bên dưới.")
-   
     while True:
         Book_ID = scan_barcode('') # Quét mã vạch sách
         if Book_ID == "OVERTIME":
@@ -402,9 +404,12 @@ def return_book(name_book: str):
             return "Quá trình trả sách Hoàn tất"
         else:
             user_input_request(False)
-            
+            return "Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
     send_mess("stop", "return_form")
     return "Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
+def return_book(name_book: str):
+    res = do_return_book(name_book)
+    return res
     
     
     
