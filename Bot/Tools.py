@@ -9,12 +9,10 @@ from Global_variable import *
 import cv2
 from langchain.agents import Tool
 from pyzbar.pyzbar import decode
-from book_search import *
+from Database_handle import *
 import time
 from datetime import datetime
 import Helper_Utilities
-import random
-import book_search
 import requests
 import base64
 import setting
@@ -195,23 +193,23 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
 
 
 def send_borrowstudent_to_form(student_id):
-    student_info = search_all_by_studentID_in_studentinfo(student_id)
+    student_info = SearchStudentInfo(student_id)
     data = {}
     data['type'] = 'student'
-    data['name'] = student_info[2]
-    data['ID'] = student_info[1]
-    data['year'] = student_info[3]
-    data['faculty'] = student_info[4]
-    data['major'] = student_info[5]
-    data['images'] = student_info[-1]
+    data['name'] = student_info['student_name']
+    data['ID'] = student_info['student_ID']
+    data['year'] = student_info['school_year']
+    data['faculty'] = student_info['faculty']
+    data['major'] = student_info['major']
+    data['images'] = student_info['student_image']
     requests.post(url=setting.IP_ADDRESS+"/student-book_info", json=data)
     requests.post(url=setting.IP_ADDRESS+"/borrow_book_student_info", json=data)
     print('///////////////////////////// student')
-def send_borrowbook_to_form(book_name):
-    book_info = search_book_by_name_in_books(book_name)
+def send_borrowbook_to_form(book_ID):
+    book_info = SearchBookByID(book_ID)
     data = {}
     data['type'] = 'borrow'
-    data['images'] = book_info[-2]
+    data['images'] = book_info['cover_image']
     requests.post(url=setting.IP_ADDRESS+"/student-book_info", json=data)
     print('///////////////////////////// borrow book')
 
@@ -219,6 +217,7 @@ def borrow_book(name_book: str):
     send_mess("start", "return_form")
     result = {'Sinh viên': '', 'Sách': []}
     Student_ID = ''
+    barcode_list = []
     while True:
         send_mess("Xin hãy đưa thẻ sinh viên vào khe bên dưới.")
         Student_ID = scan_barcode('')
@@ -245,8 +244,8 @@ def borrow_book(name_book: str):
     time.sleep(1)
     while True:
         send_mess("Xin hãy đưa sách vào khe bên dưới.")
-        Book_ID = scan_barcode('')
-        if Book_ID == "OVERTIME":
+        barcode = scan_barcode('')
+        if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # user_input = UserInput()
@@ -258,21 +257,24 @@ def borrow_book(name_book: str):
                 user_input_request(False)
                 # send_mess("stop", "return_form")
                 break
-        elif Book_ID == "ERROR":
+        elif barcode == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
         else:
-            book_item = search_book_by_id_in_bookitem(Book_ID)
-            if book_item[2]=='false':
+            state = SearchIsavailableState(barcode)
+            if state==False:
                 send_mess('Xin lỗi nhưng cuốn sách này đã được ai đó mượn rồi, bạn có muốn mướn cuốn nào khác không?')
                 user_input = user_input_request(True)
                 if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
                     continue
                 else:
                     break
-            book_name = search_name_by_bookID_in_bookitem(Book_ID)
-            send_borrowbook_to_form(book_name)
-            result['Sách'].append(str(search_book_by_id_in_bookitem(Book_ID)))
+            barcode_list.append(barcode)
+            book_ID = SearchBookIDByBarcode(barcode)
+            send_borrowbook_to_form(book_ID)
+            temp_book_info = SearchBookByID(book_ID)
+            temp_book_info.pop('cover_image')
+            result['Sách'].append(temp_book_info)
             send_mess("Bạn có muốn mượn cuốn sách nào nữa không?")
             user_input = user_input_request(True)
             if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
@@ -280,7 +282,11 @@ def borrow_book(name_book: str):
             else:
                 break
     if len(result['Sách']) > 0:
+        print('////////............/////', result['Sách'])
         # Xử lí mượn sách tại đây
+        for bc in barcode_list:
+            CreateBill(bc, Student_ID, datetime.now())
+            UpdateIsavailableState(False, bc)
         user_input_request(False)
         send_mess("stop", "return_form")
         return str(result)
@@ -326,24 +332,25 @@ def show_return_form(book_ids):
     headers = {'Content-Type': 'application/json'}
     requests.post(url=setting.IP_ADDRESS+"/image", json=imageID, headers=headers)
 ##### RETURN BOOK TOOL
-def send_returnbook_to_form(Book_ID, borrow_date, studentinfo):
-    book_name = search_name_by_bookID_in_bookitem(Book_ID)
-    book_info = search_book_by_name_in_books(book_name)
+def send_returnbook_to_form(barcode, borrow_date, studentinfo):
+    book_ID = SearchBookIDByBarcode(barcode)
+    book_info = SearchBookByID(book_ID)
     data = {}
     data['type'] = 'return'
-    data['images'] = book_info[-2]
+    data['images'] = book_info['cover_image']
     data['borrow_date'] = borrow_date
-    data['student_name'] = studentinfo[2]
-    data['student_ID'] = studentinfo[1]
+    data['student_name'] = studentinfo['student_name']
+    data['student_ID'] = studentinfo['student_ID']
     requests.post(url=setting.IP_ADDRESS+"/student-book_info", json=data)
     print('SENT.......................')
 def do_return_book(name_book:str):
     result = {'Sách': [], 'Sinh viên': []}
     send_mess("start", "return_form")
     send_mess("Xin hãy đưa sách vào khe bên dưới.")
+    barcode_list = []
     while True:
-        Book_ID = scan_barcode('') # Quét mã vạch sách
-        if Book_ID == "OVERTIME":
+        barcode = scan_barcode('') # Quét mã vạch sách
+        if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # print("user input ",user_input)
@@ -353,12 +360,12 @@ def do_return_book(name_book:str):
             else:
                 user_input_request(False)
                 break
-        elif Book_ID == "ERROR":
+        elif barcode == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
         else:
-            bill_info = search_all_by_bookID_in_Bill(Book_ID)
-            bill_info = ["1","2","3","4",None]
+            bill_info = SearchBillByBarcode(barcode)
+            # bill_info = ["1","2","3","4",None]
             if bill_info is None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này chưa được mượn ở thư viện.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
@@ -368,7 +375,7 @@ def do_return_book(name_book:str):
                 else:
                     user_input_request(False)
                     break
-            if bill_info[4] is not None:
+            if bill_info['return_date'] is not None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này đã được trả rồi.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
                 user_input = user_input_request(True)
@@ -378,28 +385,33 @@ def do_return_book(name_book:str):
                     user_input_request(False)
                     break
                 
-            Student_ID = bill_info[1]
-            Student_ID = "20134013"
-            result['Sách'].append(search_book_by_id_in_bookitem(Book_ID))
-            studentinfo = search_studentinfo_by_id(Student_ID)
-            result['Sinh viên'].append(list(studentinfo)[:-1])
+            Student_ID = bill_info['student_ID']
+            # Student_ID = "20134013"
+            barcode_list.append(barcode)
+            book_ID = SearchBookIDByBarcode(barcode)
+            temp_book_info = SearchBookByID(book_ID)
+            temp_book_info.pop('cover_image')
+            result['Sách'].append(temp_book_info)
+            student_info = SearchStudentInfo(Student_ID)
+            result['Sinh viên'].append(student_info)
             # Send info return to the website
-            send_returnbook_to_form(Book_ID, bill_info[3], studentinfo)
+            send_returnbook_to_form(barcode, bill_info['borrow_date'], student_info)
             send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
             user_input = user_input_request(True)
             if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
                 continue
             else:
                 break
-    if len(result['Sách']) > 0:
-        send_mess(f"Có phải bạn muốn trả những cuốn sách {[_[1] for _ in result['Sách']]} không. Xin hãy xác nhận lại để mình hoàn thành việc trả sách")
+    if len(barcode_list) > 0:
+        send_mess(f"Có phải bạn muốn trả những cuốn sách {[_['name_of_book'] for _ in result['Sách']]} không. Xin hãy xác nhận lại để mình hoàn thành việc trả sách")
         user_input = user_input_request(True)
         if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
-            books_return_id = [_[0] for _ in result['Sách']]
+            # books_return_id = [_[ID] for _ in result['Sách']]
             # show_return_form(books_return_id)
-            for s in result['Sách']:
-                send_mess("stop", "return_form")
-                update_bill_return(s[0], datetime.now())
+            for bc in barcode_list:
+                UpdateBillReturn(bc, datetime.now())
+                UpdateIsavailableState(True, bc)
+            send_mess("stop", "return_form")
             user_input_request(False)
             return "Quá trình trả sách Hoàn tất"
         else:
@@ -428,9 +440,8 @@ def process_return(book_IDs: str):
     # print(list_ID)
     for ID in list_ID:
         return_day = datetime.datetime.now()
-        book_search.update_bill_return(ID, return_day)
-        book_search.update_isavailable_state('true', ID)
-        update_bill_return(ID, return_day)
+        UpdateBillReturn(ID, return_day)
+        UpdateIsavailableState(True, ID)
     return "Return successfully"
 
 # return_book_tool = [

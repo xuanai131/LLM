@@ -21,8 +21,8 @@ import re
 camera = cv2.VideoCapture(0)
 from colorama import Fore, Back, Style
 sys.path.append("../Bot")
+from Database_handle import *
 from Global_variable import *
-import book_search
 import Helper_Utilities
 from langchain_core.messages import HumanMessage, AIMessage
 import voice_record
@@ -33,7 +33,6 @@ OpenAIHistoryConversation = []
 graph = Helper_Utilities.CreateGraph(OpenAIHistoryConversation)
 DoRecord = voice_record.Voice_Record()
 # sys.path.append("database")
-import book_search
 import setting
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -88,7 +87,7 @@ def hello_world():
 def LoadBookCovers(book_ids):
     images = []
     for book_id in book_ids:
-        images.append("data:image/jpeg;base64," + str(book_search.search_book_image_by_id(book_id)[0]))
+        images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
     return images
 def use_open_ai_audio(data):
     client = OpenAI()
