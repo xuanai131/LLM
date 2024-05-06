@@ -239,7 +239,7 @@ def borrow_book(name_book: str):
         else:
             break
     send_borrowstudent_to_form(Student_ID)
-    result['Sinh viên'] = str(list(search_studentinfo_by_id(Student_ID))[:-1])
+    result['Sinh viên'] = SearchStudentInfo(Student_ID)
     
     time.sleep(1)
     while True:
