@@ -1,257 +1,2116 @@
 {
           "book_infos": [
                     {
-                              "Tên sách": "Dành cho những cô gái đang yêu = How to marry the man of your choice",
-                              "Loại sách": null,
+                              "Tên sách": "Sổ tay hướng dẫn sử dụng dịch vụ Thư viện",
+                              "Loại sách": "UTE. Thông tin -Thư viện",
                               "ID": 1,
+                              "Keyword": [
+                                        "Từ khóa: Thư viện, Sổ tay, Dịch vụ"
+                              ],
+                              "Mô tả": "Nhằm góp phần phục vụ tốt nhất cho người dùng trong quá trình sử dụng dịch vụ thư viện, Tổ tư vấn viên đã biên soạn cuốn “Sổ tay tư vấn và hướng dẫn sử dụng thư viện” cung cấp những thông tin bao quát và chi tiết về Thư viện, giúp quá trình tìm kiếm và tiếp cận nguồn tài nguyên thông tin của người dùng trở nên nhanh chóng, chính xác và dễ dàng nhất đáp ứng cho người dạy và người học những tài liệu để nghiên cứu, giảng dạy và học tập.",
+                              "Vị trí": "Kệ số 1",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin -Thư viện/final_so_tay_thu_vien_nh23_24_8223.pdf"
+                    },
+                    {
+                              "Tên sách": "Quyết định Số: 1117/QĐ-TTg Phê duyệt Chương trình xây dựng mô hình nguồn tài nguyên giáo dục mở trong giáo dục đại học",
+                              "Loại sách": "UTE. Thông tin -Thư viện",
+                              "ID": 2,
+                              "Keyword": [
+                                        "Từ khóa: Chương trình; nguồn tài nguyên giáo dục mở; trong giáo dục đại học"
+                              ],
+                              "Mô tả": "☘ Quyết định Số: 1117/QĐ-TTg Phê duyệt Chương trình xây dựng mô hình nguồn tài nguyên giáo dục mở trong giáo dục đại học",
+                              "Vị trí": "Kệ số 2",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin -Thư viện/1117_qd_ttg_25092023_1_signed_4246.pdf"
+                    },
+                    {
+                              "Tên sách": "Thông tư 27/2016/TT-BGDĐT Quy định thời hạn bảo quản tài liệu chuyên môn nghiệp vụ của ngành Giáo dục",
+                              "Loại sách": "UTE. Thông tin -Thư viện",
+                              "ID": 3,
+                              "Keyword": [
+                                        "Từ khóa: Quy định thời hạn; bảo quản tài liệu; chuyên môn nghiệp vụ của ngành Giáo dục"
+                              ],
+                              "Mô tả": "☘ Thông tư 27/2016/TT-BGDĐT Quy định thời hạn bảo quản tài liệu chuyên môn nghiệp vụ của ngành Giáo dục",
+                              "Vị trí": "Kệ số 3",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin -Thư viện/thong_tu_27_2016_tt_bgddt_0949.pdf"
+                    },
+                    {
+                              "Tên sách": "Thông tư 10/2022/TT-BNV Quy định về thời hạn bảo quản tài liệu",
+                              "Loại sách": "UTE. Thông tin -Thư viện",
+                              "ID": 4,
+                              "Keyword": [
+                                        "Từ khóa: Thông tư; Quy định; thời hạn bảo quản tài liệu"
+                              ],
+                              "Mô tả": "☘ Thông tư 10/2022/TT-BNV Quy định về thời hạn bảo quản tài liệu",
+                              "Vị trí": "Kệ số 4",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin -Thư viện/vanbangoc_10_2022_tt_bnv_quy_dinh_thoi_han_bao_quan_tai_lieu_6875.pdf"
+                    },
+                    {
+                              "Tên sách": "Thông tư 35/2021/TT-BGDĐT Quy định việc biên soạn, lựa chọn, thẩm định, duyệt và sử dụng tài liệu giảng dạy, giáo trình giáo dục đại học",
+                              "Loại sách": "UTE. Thông tin -Thư viện",
+                              "ID": 5,
+                              "Keyword": [
+                                        "Từ khóa: Thông tư; tài liệu giảng dạy; giáo trình giáo dục đại học"
+                              ],
+                              "Mô tả": "☘ Thông tư 35/2021/TT-BGDĐT Quy định việc biên soạn, lựa chọn, thẩm định, duyệt và sử dụng tài liệu giảng dạy, giáo trình giáo dục đại học",
+                              "Vị trí": "Kệ số 5",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin -Thư viện/vanbangoc_35_2021_tt_bgddt_0377.pdf"
+                    },
+                    {
+                              "Tên sách": "The 2023 International Conference On System Science And Engineering ICSSE 2023 (Hybrid Conference): Conference Program",
+                              "Loại sách": "UTE. Giáo trình 65 Năm",
+                              "ID": 6,
+                              "Keyword": [
+                                        "Từ khóa: International Conference; Conference Program"
+                              ],
+                              "Mô tả": "The 2023 International Conference On System Science And Engineering ICSSE 2023 (Hybrid Conference): Conference Program",
+                              "Vị trí": "Kệ số 6",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Giáo trình 65 Năm/booklet_icsse2023_v5_05july_officialfinal_final_in_100723_2316.pdf"
+                    },
+                    {
+                              "Tên sách": "Proceedings of 2022 6th International Conference on System Science and Engineering",
+                              "Loại sách": "UTE. Giáo trình 65 Năm",
+                              "ID": 7,
+                              "Keyword": [
+                                        "Từ khóa: Proceedings; Engineering; ICSSE"
+                              ],
+                              "Mô tả": "Proceedings of 2022 6th International Conference on System Science and Engineering (ICSSE)",
+                              "Vị trí": "Kệ số 7",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Giáo trình 65 Năm/icsse2023_ebook_2023_0591.pdf"
+                    },
+                    {
+                              "Tên sách": "Proceedings of the International Conference on Language Teaching and Learning Today 2023: Diversity and Learner Autonomy in Language Learning",
+                              "Loại sách": "UTE. Giáo trình 65 Năm",
+                              "ID": 8,
+                              "Keyword": [
+                                        "Từ khóa: Language Teaching; Proceedings; Language Learning"
+                              ],
+                              "Mô tả": "Proceedings of the International Conference on Language Teaching and Learning Today 2023: Diversity and Learner Autonomy in Language Learning",
+                              "Vị trí": "Kệ số 8",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Giáo trình 65 Năm/proceedings_ltlt_2023_ebook_2522.pdf"
+                    },
+                    {
+                              "Tên sách": "Nâng cao chất lượng giảng dạy lý luận chính trị và pháp luật theo quan điểm Đại hội XIII của Đảng",
+                              "Loại sách": "UTE. Giáo trình 65 Năm",
+                              "ID": 9,
+                              "Keyword": [
+                                        "Từ khóa: Lý luận chính trị; Pháp luật"
+                              ],
+                              "Mô tả": "Nâng cao chất lượng giảng dạy lý luận chính trị và pháp luật theo quan điểm Đại hội XIII của Đảng",
+                              "Vị trí": "Kệ số 9",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Giáo trình 65 Năm/_kyht_nang_cao_chat_luong_giang_day_ly_luan_chinh_tri_ebook_in_6919.pdf"
+                    },
+                    {
+                              "Tên sách": "Vai trò và xu hướng của lĩnh vực Sư phạm kĩ thuật trong kĩ nguyên số",
+                              "Loại sách": "UTE. Kỷ yếu hội thảo",
+                              "ID": 11,
+                              "Keyword": [
+                                        "Từ khóa: Giáo dục, Giáo dục đại học, Sư phạm kĩ thuật."
+                              ],
+                              "Mô tả": "Vai trò và xu hướng của lĩnh vực Sư phạm kĩ thuật trong kĩ nguyên số. -- Tp.Hồ Chí Minh: Đại học Quốc gia TP.Hồ Chí Minh, 2023. 503tr.; 24cm\nCall no. : 378 K99",
+                              "Vị trí": "Kệ số 11",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Kỷ yếu hội thảo/skd002728_8988.pdf"
+                    },
+                    {
+                              "Tên sách": "Kỷ yếu 60 năm thành lập trường Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh",
+                              "Loại sách": "UTE. Kỷ yếu hội thảo",
+                              "ID": 12,
+                              "Keyword": [
+                                        "Từ khóa: Kỷ yếu; Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh"
+                              ],
+                              "Mô tả": "Trường Đại học Sư phạm Kỹ thuật Thành phố Hồ Chí Minh đã trải qua chặng đường 60 năm hình thành, xây dựng và phát triển. Để có được thành quả như hôm nay, Nhà trường đã không ngừng phấn đấu, nâng cao chất lượng dạy và học để khẳng định vị thế trong hệ thống giáo dục đại học Việt Nam.\nNhân dịp kỷ niệm đặc biệt này, Nhà trường xin gửi lời tri ân sâu sắc tới các đồng chí lãnh đạo Đảng và Nhà nước, lãnh đạo Bộ Giáo dục và Đào tạo, lãnh đạo các Bộ, Ban ngành, địa phương, các đối tác, các thế hệ nhà giáo, cán bộ viên chức và người học của nhà trường đã chung tay, góp sức, gắn bó, tin tưởng vào chất lượng giáo dục của Nhà trường. Nhà trường mong muốn sẽ tiếp tục đón nhận sự đồng hành của Quý vị trên bước đường tương lai.",
+                              "Vị trí": "Kệ số 12",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Kỷ yếu hội thảo/60_nam_hcmute_ky_yeu_4976.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75B (02/2023)",
+                              "Loại sách": "UTE. Tạp chí",
+                              "ID": 13,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí Khoa học Giáo dục Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75B (02/2023)",
+                              "Vị trí": "Kệ số 13",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Tạp chí/tap_chi_khgdkt_so_75b_tv_ebook_2498.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75A (02/2023)",
+                              "Loại sách": "UTE. Tạp chí",
+                              "ID": 14,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75A (02/2023)",
+                              "Vị trí": "Kệ số 14",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Tạp chí/tap_chi_khgdkt_so_75a_ta_ebook_555.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 74 (01/2023)",
+                              "Loại sách": "UTE. Tạp chí",
+                              "ID": 15,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.74 (01/2023)",
+                              "Vị trí": "Kệ số 15",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Tạp chí/tap_chi_khgdkt_so_74_ta_ebook_2558.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 73 (12/2022)",
+                              "Loại sách": "UTE. Tạp chí",
+                              "ID": 16,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.73 (12/2022)",
+                              "Vị trí": "Kệ số 16",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Tạp chí/tap_chi_khgdkt_so_73_ta_ebook_3005.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 72B (10/2022)",
+                              "Loại sách": "UTE. Tạp chí",
+                              "ID": 17,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.72B (10/2022)",
+                              "Vị trí": "Kệ số 17",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Tạp chí/tap_chi_khgdkt_so_72b_tv_ebook_911.pdf"
+                    },
+                    {
+                              "Tên sách": "Quản lý chi thường xuyên ngân sách nhà nước tại Kho bạc Nhà nước Hồng Ngự, tỉnh Đồng Tháp",
+                              "Loại sách": "UTE. Luận văn, Luận án",
+                              "ID": 18,
+                              "Keyword": [
+                                        "Từ khóa: Đồng Tháp, Ngân sách nhà nước, Quản lý"
+                              ],
+                              "Mô tả": "Quản lý chi thường xuyên ngân sách nhà nước tại Kho bạc Nhà nước Hồng Ngự, tỉnh Đồng Tháp: Luận văn thạc sĩ ngành Quản lý kinh tế/ Trần Thị Bích Phượng; Đàng Quang Vắng (Giáo viên hướng dẫn)--Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: 8310110 352.4 T772-P577",
+                              "Vị trí": "Kệ số 18",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Luận văn, Luận án/skc008427_8971.pdf"
+                    },
+                    {
+                              "Tên sách": "Đánh giá quản lý nhà nước về đất đai trên địa bàn thành phố Sa Đéc, tỉnh Đồng Tháp",
+                              "Loại sách": "UTE. Luận văn, Luận án",
+                              "ID": 19,
+                              "Keyword": [
+                                        "Từ khóa: Đất đai, Đồng Tháp, Quản lý nhà nước"
+                              ],
+                              "Mô tả": "Đánh giá quản lý nhà nước về đất đai trên địa bàn thành phố Sa Đéc, tỉnh Đồng Tháp: Luận văn thạc sĩ ngành Quản lý kinh tế/ Huỳnh Trương Phi; Trần Văn Hiển (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: 8310110 354.34 H987-P543",
+                              "Vị trí": "Kệ số 19",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Luận văn, Luận án/skc008426_9342.pdf"
+                    },
+                    {
+                              "Tên sách": "Trí tuệ cảm xúc ảnh hưởng đến kết quả làm việc của cán bộ, công chức, viên chức thành phố Sa Đéc, tỉnh Đồng Tháp",
+                              "Loại sách": "UTE. Luận văn, Luận án",
+                              "ID": 20,
+                              "Keyword": [
+                                        "Từ khóa: Đồng Tháp, Kết quả công việc, Nhân lực"
+                              ],
+                              "Mô tả": "Trí tuệ cảm xúc ảnh hưởng đến kết quả làm việc của cán bộ, công chức, viên chức thành phố Sa Đéc, tỉnh Đồng Tháp: Luận văn thạc sĩ ngành Quản lý kinh tế/ Phan Toàn Thắng; Lê Thị Tuyết Thanh (Giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no. : 8310110 658.3 P535-T367",
+                              "Vị trí": "Kệ số 20",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Luận văn, Luận án/skc008425_824.pdf"
+                    },
+                    {
+                              "Tên sách": "Các nhân tố ảnh hưởng đến động lực làm việc của viên chức Trung tâm y tế thành phố Sa Đéc tỉnh Đồng Tháp",
+                              "Loại sách": "UTE. Luận văn, Luận án",
+                              "ID": 21,
+                              "Keyword": [
+                                        "Từ khóa: Đồng Tháp, Động lực làm việc, Trung tâm y tế"
+                              ],
+                              "Mô tả": "Các nhân tố ảnh hưởng đến động lực làm việc của viên chức Trung tâm y tế thành phố Sa Đéc tỉnh Đồng Tháp: Luận văn thạc sĩ ngành Quản lý kinh tế/ Dương Hữu Nghĩa; Trần Thanh Toàn (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: 8310110 658.3 D928-N576",
+                              "Vị trí": "Kệ số 21",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Luận văn, Luận án/skc008424_0044.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu sơ bộ: Cảm hứng sinh học từ cá cho hệ thống phân phối thuốc trong cơ thể Bioinspiration from fish for drug delivery system a preliminary study",
+                              "Loại sách": "UTE. Luận văn, Luận án",
+                              "ID": 22,
+                              "Keyword": [
+                                        "Từ khóa: Cát xi măng, Hệ thống phân phối, Thuốc"
+                              ],
+                              "Mô tả": "Nghiên cứu sơ bộ: Cảm hứng sinh học từ cá cho hệ thống phân phối thuốc trong cơ thể Bioinspiration from fish for drug delivery system a preliminary study: Luận văn thạc sĩ ngành Kỹ thuật cơ khí/ Đỗ Thị Thu Hiền; Prita Dewi Basoeki (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: 8520103 615.1 Đ631-H633",
+                              "Vị trí": "Kệ số 22",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Luận văn, Luận án/skc008423_2156.pdf"
+                    },
+                    {
+                              "Tên sách": "Ứng dụng Multimedia vào việc giảng dạy môn học \"Hệ thống truyền lực trên ô tô\"",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 23,
+                              "Keyword": [
+                                        "Từ khóa: Đa phương tiện, Ô tô"
+                              ],
+                              "Mô tả": "Ứng dụng Multimedia vào việc giảng dạy môn học \"Hệ thống truyền lực trên ô tô\": Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Nguyễn Văn An; Lâm Phát Vinh; Nguyễn Văn Toàn (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022. - 159tr.: bảng, hình ảnh; 01 file.\nKhông có bản giấy\nCall no.: CKĐ-45 378.17 N573-A531",
+                              "Vị trí": "Kệ số 23",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012103_3769.pdf"
+                    },
+                    {
+                              "Tên sách": "Kế toán mua bán hàng hoá tại Công ty TNHH Thương mại - Dịch vụ Phú An Đông",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 24,
+                              "Keyword": [
+                                        "Từ khóa: , Doanh nghiệp, Hàng hóa"
+                              ],
+                              "Mô tả": "Kế toán mua bán hàng hoá tại Công ty TNHH Thương mại - Dịch vụ Phú An Đông: Đồ án tốt nghiệp ngành Kế toán/ Cao Trịnh Anh Đào; Nguyễn Thị Hoàng Anh (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no.: KTO-25 657.7 C235-Đ211",
+                              "Vị trí": "Kệ số 24",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012102_5514.pdf"
+                    },
+                    {
+                              "Tên sách": "Sử dụng dao động ký trong chẩn đoán hệ thống điện động cơ",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 25,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Điện động cơ, Ô tô"
+                              ],
+                              "Mô tả": "Sử dụng dao động ký trong chẩn đoán hệ thống điện động cơ: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Lò Tiến Phú, Nguyễn Bạch Xuân Tường; Đỗ Quốc Ấm (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.2502 L795-P577",
+                              "Vị trí": "Kệ số 25",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012101_2394.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu hệ thống mạng Can trên Ford Everest 2020 và mô phỏng Can trên Matlab/Simulink",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 26,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Ô tô, Hệ thống thông tin"
+                              ],
+                              "Mô tả": "Nghiên cứu hệ thống mạng Can trên Ford Everest 2020 và mô phỏng Can trên Matlab/Simulink: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Lê Đức Minh Nhân, Trần Nhật Đại; Nguyễn Văn Long Giang (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.2 L433-N576",
+                              "Vị trí": "Kệ số 26",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012100_4272.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu, thiết kế và chế tạo Module trợ lý ảo hệ thống điều hòa ô tô Toyota Vios 2007",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 27,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Điều hòa không khí, Ô tô"
+                              ],
+                              "Mô tả": "Nghiên cứu, thiết kế và chế tạo Module trợ lý ảo hệ thống điều hòa ô tô Toyota Vios 2007: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Nguyễn Văn Thanh Phúc; Nguyễn Thành Tuyên (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.2772 N573-P577",
+                              "Vị trí": "Kệ số 27",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012099_8528.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế, xây dựng mô hình hệ thống gạt mưa tự động trên Ô tô",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 28,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Điều khiển tự động, Ô tô"
+                              ],
+                              "Mô tả": "Thiết kế, xây dựng mô hình hệ thống gạt mưa tự động trên Ô tô: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Nguyễn Tấn Đạt, Lê Văn Ven; Vũ Đình Huấn (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.276 N573-Đ232",
+                              "Vị trí": "Kệ số 28",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012098_3707.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế, thực hiện mô hình hệ thống điện thân xe điều khiển bằng BCM phục vụ giảng dạy",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 29,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Ô tô, Hệ thống điện"
+                              ],
+                              "Mô tả": "Thiết kế, thực hiện mô hình hệ thống điện thân xe điều khiển bằng BCM phục vụ giảng dạy: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Trương Đức Phương Tân, Phan Quốc Thái; Nguyễn Quang Trãi (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.272 T871-T161",
+                              "Vị trí": "Kệ số 29",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012097_2698.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu và xây dựng mô hình mô phỏng hệ thống lái thi sát hạch B1",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 30,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Ảo ảnh, Hệ thống lái"
+                              ],
+                              "Mô tả": "Nghiên cứu và xây dựng mô hình mô phỏng hệ thống lái thi sát hạch B1: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Lê Dương Chánh, Nguyễn Duy Anh; Nguyễn Thiện Dinh (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 006.8 L433-C456",
+                              "Vị trí": "Kệ số 30",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012096_8274.pdf"
+                    },
+                    {
+                              "Tên sách": "Ứng dụng Simscape trong mô phỏng hệ thống kiểm soát ắc - quy cao áp trên xe điện",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 31,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Ắc quy, Xe điện"
+                              ],
+                              "Mô tả": "Ứng dụng Simscape trong mô phỏng hệ thống kiểm soát ắc - quy cao áp trên xe điện: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Lâm Hùng Minh, Đỗ Văn Thuận; Huỳnh Quốc Việt (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 621.31242 L213-M664",
+                              "Vị trí": "Kệ số 31",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012095_1134.pdf"
+                    },
+                    {
+                              "Tên sách": "Chuyên đề động cơ phun xăng trực tiếp",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 32,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Động cơ xăng, Chuyên đề"
+                              ],
+                              "Mô tả": "Chuyên đề động cơ phun xăng trực tiếp: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Ngô Thành Minh, Nguyễn Sỹ Đức; Phan Nguyễn Quí Tâm (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 621.434 N569-M664",
+                              "Vị trí": "Kệ số 32",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012094_4753.pdf"
+                    },
+                    {
+                              "Tên sách": "Chuyên đề động cơ 1NR-FE",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 33,
+                              "Keyword": [
+                                        "Từ khóa: Động cơ, Ô tô, Nguyễn Hữu Lương"
+                              ],
+                              "Mô tả": "Chuyên đề động cơ 1NR-FE: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Đặng Tiến Xuyên, Nguyễn Hữu Lương; Nguyễn Tấn Lộc (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.25 Đ182-X188",
+                              "Vị trí": "Kệ số 33",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012093_1564.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu sự ảnh hưởng kích nổ trên động cơ",
+                              "Loại sách": "UTE. Báo cáo, Đồ án",
+                              "ID": 34,
+                              "Keyword": [
+                                        "Từ khóa: Không có bản giấy, Động cơ, Ô tô"
+                              ],
+                              "Mô tả": "Nghiên cứu sự ảnh hưởng kích nổ trên động cơ: Đồ án tốt nghiệp ngành Công nghệ kỹ thuật Ô tô/ Nguyễn Thành Đạt, Võ Huỳnh Đức; Đinh Tấn Ngọc (Giảng viên hướng dẫn)--Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2023\nCall no.: CKĐ-45 629.25 N573-Đ232",
+                              "Vị trí": "Kệ số 34",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo, Đồ án/skl012092_9017.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu depolymer hóa nhựa PET bằng acid sử dụng Microwave Reactor",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 35,
+                              "Keyword": [
+                                        "Từ khóa: Nhựa, Huỳnh Nguyễn Anh Tuấn, Nguyễn Thị Phương Dung, Trịnh Bảo Tín"
+                              ],
+                              "Mô tả": "Nghiên cứu depolymer hóa nhựa PET bằng acid sử dụng Microwave Reactor: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-42/ Nguyễn Hoàn Mỹ Duyên, Trịnh Bảo Tín, Nguyễn Thị Phương Dung; Huỳnh Nguyễn Anh Tuấn (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 668.4 N573-D988",
+                              "Vị trí": "Kệ số 35",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008137_7091.pdf"
+                    },
+                    {
+                              "Tên sách": "Xây dựng nền tảng Capture the Flag và hệ thống các kịch bản tập luyện, thi đấu về kiến thức an toàn thông tin cho sinh viên",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 36,
+                              "Keyword": [
+                                        "Từ khóa: An toàn thông tin, Sinh viên, Huỳnh Anh Thế Vinh, Lã Minh Phúc, Lưu Văn Cụi, Nguyễn Thị Thanh Vân, Trần Minh Hiếu, Trần Quốc Tuấn."
+                              ],
+                              "Mô tả": "Xây dựng nền tảng Capture the Flag và hệ thống các kịch bản tập luyện, thi đấu về kiến thức an toàn thông tin cho sinh viên: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-35/ Lã Minh Phúc, Huỳnh Anh Thế Vinh, Trần Minh Hiếu, Lưu Văn Cụi, Trần Quốc Tuấn; Nguyễn Thị Thanh Vân (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 005.8 L111-P577",
+                              "Vị trí": "Kệ số 36",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008136_5671.pdf"
+                    },
+                    {
+                              "Tên sách": "Xây dựng website hỗ trợ luyện tập và thi Olympic tin học",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 37,
+                              "Keyword": [
+                                        "Từ khóa: Luyện tập, Trang web, Website, Nguyễn Thành Văn, Trần Quốc Tuấn"
+                              ],
+                              "Mô tả": "Xây dựng website hỗ trợ luyện tập và thi Olympic tin học: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-37/ Nguyễn Thành Văn; Trần Công Tú (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\n\nCall no. : ĐSV 006.7 N573-V217",
+                              "Vị trí": "Kệ số 37",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008135_2673.pdf"
+                    },
+                    {
+                              "Tên sách": "Dự báo hiện trạng giao thông đô thị bằng phương pháp lát cắt thời gian - Trường hợp nghiên cứu tại TP.HCM",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 38,
+                              "Keyword": [
+                                        "Từ khóa: Đường bộ, Giao thông đô thị, Nhựa, Lữ Huỳnh Nhật An, Nguyễn Thanh Vân, Trần Vũ Tự"
+                              ],
+                              "Mô tả": "Dự báo hiện trạng giao thông đô thị bằng phương pháp lát cắt thời gian - Trường hợp nghiên cứu tại TP.HCM: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-73/ Nguyễn Khánh Chi, Lữ Huỳnh Nhật An, Nguyễn Thanh Vân; Trần Vũ Tự ( giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\n68tr.: minh họa; 30 cm + 1 file\n\nCall no. : ĐSV 625.7 N573-C532\n\n\nDỰ BÁO HIỆN TRẠNG GIAO THÔNG ĐÔ THỊ BẰNG\nPHƯƠNG PHÁP LÁT CẮT THỜI GIAN - TRƯỜNG\nHỢP NGHIÊN CỨU TẠI TP.HCM\nS\n\nK\n\nC\n\n0\n\n0\n\n3\n\n9\n\n5\n\n9\n\nMÃ SỐ: SV2022-73\nCHỦ NHIỆM ĐỀ TÀI: NGUYỄN KHÁNH CHI\n\nSKC008134\n\nTp. Hồ Chí Minh, tháng 11/2022\n\nBỘ GIÁO DỤC VÀ ĐÀO TẠO\nTRƯỜNG ĐH SƯ PHẠM KỸ THUẬT TPHCM\n\nBÁO CÁO TỔNG KẾT\nĐỀ TÀI NGHIÊN CỨU KHOA HỌC CỦA SINH VIÊN\n\nDỰ BÁO HIỆN TRẠNG GIAO THÔNG ĐÔ THỊ BẰNG\nPHƯƠNG PHÁP LÁT CẮT THỜI GIAN-TRƯỜNG\nHỢP NGHIÊN CỨU TẠI TP.HCM\nSV2022-73\nThuộc nhóm ngành khoa học:\nSV thực hiện: Nguyễn Khánh Chi\n\nNam, Nữ: Nữ\n\nDân tộc: Kinh\nLớp, khoa: 21160- Khoa Xây Dựng\n\nNăm thứ: 2/Số năm đào tạo: 4\n\nNgành học: Quản lý và Vận hành hạ tầng\nNgười hướng",
+                              "Vị trí": "Kệ số 38",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008134_1421.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu chế tạo tấm vách ngăn từ khẩu trang y tế đã qua sử dụng",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 39,
+                              "Keyword": [
+                                        "Từ khóa: Rác thải nhựa, Rác thải y tế, Vách ngăn, Bùi Ngọc Tiến, Nguyễn Vũ Việt Linh"
+                              ],
+                              "Mô tả": "Nghiên cứu chế tạo tấm vách ngăn từ khẩu trang y tế đã qua sử dụng: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-85/ Hồ Hoàng Bảo Như, Bùi Ngọc Tiến; Nguyễn Vũ Việt Linh (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 668.4 H678-N576",
+                              "Vị trí": "Kệ số 39",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008133_0104.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu thiết kế mô phỏng linh kiện bán dẫn Ga2O3 Shottky Barrier Diode ứng dụng làm linh kiện điện tử công suất",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 40,
+                              "Keyword": [
+                                        "Từ khóa: Linh kiện điện tử, Linh kiện bán dẫn, Đỗ Huy Bình, Huỳnh Thanh Diệu, Nguyễn Khánh."
+                              ],
+                              "Mô tả": "Nghiên cứu thiết kế mô phỏng linh kiện bán dẫn Ga2O3 Shottky Barrier Diode ứng dụng làm linh kiện điện tử công suất: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-84/ Nguyễn Thị Duyên, Huỳnh Thanh Diệu, Nguyễn Khánh; Đỗ Huy Bình (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 621.3815 N573-D988",
+                              "Vị trí": "Kệ số 40",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008132_8804.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu các yếu tố ảnh hưởng đến quá trình chế biến rượu vang đỏ từ thanh long ruột đỏ",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 41,
+                              "Keyword": [
+                                        "Từ khóa: Rượu, Thanh long ruột đỏ, Vang đỏ, Nguyễn Gia Hân, Nguyễn Thị Cẩm Duyên, Nguyễn Thị Hạnh Hương, Nguyễn Tiến Lực"
+                              ],
+                              "Mô tả": "Nghiên cứu các yếu tố ảnh hưởng đến quá trình chế biến rượu vang đỏ từ thanh long ruột đỏ: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-119/ Võ Văn Đô, Nguyễn Thị Hạnh Hương, Nguyễn Gia Hân, Nguyễn Thị Cẩm Duyên; Nguyễn Tiến Lực (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 641.22 V872-Đ631",
+                              "Vị trí": "Kệ số 41",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008131_7536.pdf"
+                    },
+                    {
+                              "Tên sách": "Đánh giá hiệu quả xử lý Tetracycline trong nước thải bằng công nghệ Fenton điện hóa kết hợp xúc tác từ bùn thải",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 42,
+                              "Keyword": [
+                                        "Từ khóa: Nước thải, Xử lý nước, Nghiêm Phụng Anh, Nguyễn Mỹ Linh"
+                              ],
+                              "Mô tả": "Đánh giá hiệu quả xử lý Tetracycline trong nước thải bằng công nghệ Fenton điện hóa kết hợp xúc tác từ bùn thải: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-48/ Trần Thị Diệu Huyền, Nghiêm Phụng Anh; Nguyễn Mỹ Linh(giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 628.43 T772-H987",
+                              "Vị trí": "Kệ số 42",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008130_5847.pdf"
+                    },
+                    {
+                              "Tên sách": "Thực nghiệm hệ thống cung cấp phụ nhiên liệu HHO cho xe gắn máy từ bộ điện phân nước cỡ nhỏ",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 43,
+                              "Keyword": [
+                                        "Từ khóa: Nhựa, Nhiên liệu, Xe máy, Lê Quang Vũ, Trần Minh Ngọc Châu"
+                              ],
+                              "Mô tả": "Thực nghiệm hệ thống cung cấp phụ nhiên liệu HHO cho xe gắn máy từ bộ điện phân nước cỡ nhỏ: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-01/ Hoàng Văn Thịnh, Trần Minh Ngọc Châu; Lê Quang Vũ (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 629.2275 H678-T443",
+                              "Vị trí": "Kệ số 43",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008129_4462.pdf"
+                    },
+                    {
+                              "Tên sách": "Các yếu tố ảnh hưởng đến việc tham gia nghiên cứu khoa học của sinh viên kinh tế Trường Đại Học Sư Phạm Kỹ Thuật TP.HCM",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 44,
+                              "Keyword": [
+                                        "Từ khóa: Nghiên cứu khoa học, Sinh viên, Trường Đại Học Sư Phạm Kỹ Thuật TP.HCM, Bùi Võ Thanh Ngân, Hồ Thị Hồng Xuyên, Huỳnh An Như, Mai Phú Thọ, Nguyễn Thị Lưu"
+                              ],
+                              "Mô tả": "Các yếu tố ảnh hưởng đến việc tham gia nghiên cứu khoa học của sinh viên kinh tế Trường Đại Học Sư Phạm Kỹ Thuật TP.HCM: Báo cáo tổng kết Đề tài nghiên cứu khoa học của Sinh viên - Mã số: SV2022-106/ Nguyễn Thiên Thanh, Bùi Võ Thanh Ngân, Nguyễn Thị Lưu, Mai Phú Thọ, Huỳnh An Như; Hồ Thị Hồng Xuyên (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 378.1 N573-T367",
+                              "Vị trí": "Kệ số 44",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008128_3338.pdf"
+                    },
+                    {
+                              "Tên sách": "Ứng dụng CNN phân loại bệnh lá cây",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 45,
+                              "Keyword": [
+                                        "Từ khóa: Bệnh lá cây, Mạng thần kinh, Xử lý ảnh, Lê Phi Yến, Nguyễn Chí Cường, Nguyễn Thanh Hải, Phạm Hiếu Hạnh"
+                              ],
+                              "Mô tả": "Ứng dụng CNN phân loại bệnh lá cây: Báo cáo tổng kết Đề tài nghiên cứu khoa học của sinh viên - Mã số: SV2022-173/ Đặng Thanh Hưng, Nguyễn Chí Cường, Lê Phi Yến, Phạm Hiếu Hạnh; Nguyễn Thanh Hải (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 006.3 Đ182-H936",
+                              "Vị trí": "Kệ số 45",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008127_2241.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế hệ thống đo SpO2, nhiệt độ, nhịp tim cho người già có cảnh báo cho người thân theo thời gian thực",
+                              "Loại sách": "UTE. Báo cáo NCKH",
+                              "ID": 46,
+                              "Keyword": [
+                                        "Từ khóa: Thiết bị y tế, Thiết kế, Châu thanh Tùng, Thái Hoàng Tiển, Võ Đức Dũng, Võ Quang Trường"
+                              ],
+                              "Mô tả": "Thiết kế hệ thống đo SpO2, nhiệt độ, nhịp tim cho người già có cảnh báo cho người thân theo thời gian thực: Báo cáo tổng kết Đề tài nghiên cứu khoa học của sinh viên - Mã số: SV2022-162/ Lê Duy Linh, Nguyễn Trần Quốc Bảo, Võ Quang Trường, Châu thanh Tùng, Thái Hoàng Tiển; Võ Đức Dũng (giảng viên hướng dẫn). -- Tp. Hồ Chí Minh: Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : ĐSV 681.761 L433-L755",
+                              "Vị trí": "Kệ số 46",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Báo cáo NCKH/skc008126_0684.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghị định 17/2023/NĐ-CP hướng dẫn Luật Sở hữu trí tuệ về quyền tác giả, quyền liên quan",
+                              "Loại sách": "UTE. Ngành Luật",
+                              "ID": 47,
+                              "Keyword": [
+                                        "Từ khóa: Luật Sở hữu trí tuệ; quyền tác giả"
+                              ],
+                              "Mô tả": "☘ Nghị định 17/2023/NĐ-CP hướng dẫn Luật Sở hữu trí tuệ về quyền tác giả, quyền liên quan",
+                              "Vị trí": "Kệ số 47",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Ngành Luật/nghi_dinh_17_2023_nd_cp_huong_dan_luat_so_huu_tri_tue_ve_quyen_tac_gia_quyen_lien_quan_6987.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghị định 65/2023/NĐ-CP hướng dẫn Luật Sở hữu trí tuệ về sở hữu công nghiệp, bảo vệ quyền sở hữu công nghiệp, quyền đối với giống cây trồng và quản lý Nhà nước về sở hữu trí tuệ",
+                              "Loại sách": "UTE. Ngành Luật",
+                              "ID": 48,
+                              "Keyword": [
+                                        "Từ khóa: khoa học công nghệ; nghị định; luật sở hữu trí tuệ; thủ tục hành chính"
+                              ],
+                              "Mô tả": "Nghị định 65/2023/NĐ-CP hướng dẫn Luật Sở hữu trí tuệ về sở hữu công nghiệp, bảo vệ quyền sở hữu công nghiệp, quyền đối với giống cây trồng và quản lý Nhà nước về sở hữu trí tuệ",
+                              "Vị trí": "Kệ số 48",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Ngành Luật/nghi_dinh_so_65_2023_nd_cp_0832.pdf"
+                    },
+                    {
+                              "Tên sách": "Giáo trình luật chứng khoán",
+                              "Loại sách": "UTE. Ngành Luật",
+                              "ID": 49,
+                              "Keyword": [
+                                        "Từ khóa: 1. Luật chứng khoán. 2. Việt Nam. I. Võ Thị Mỹ Hương."
+                              ],
+                              "Mô tả": "Giáo trình luật chứng khoán Viên Thế Giang, Võ Thị Mỹ Hương. -- TP. Hồ Chí Minh: Đại học Quốc gia TP. Hồ Chí Minh, 2023. - xvii, 324tr. 24cm.\nCall no. : 346.5970922 V662-G433",
+                              "Vị trí": "Kệ số 49",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Ngành Luật/skd002441_2443.pdf"
+                    },
+                    {
+                              "Tên sách": "Bảo đảm tiền vay bằng quyền sử dụng đất trong giao dịch cho vay của tổ chức tín dụng đối với khách hàng ở Việt Nam: Sách chuyên khảo",
+                              "Loại sách": "UTE. Ngành Luật",
+                              "ID": 50,
+                              "Keyword": [
+                                        "Từ khóa: Giao dịch bảo đảm, Pháp luật, Tín dụng, Việt Nam"
+                              ],
+                              "Mô tả": "Bảo đảm tiền vay bằng quyền sử dụng đất trong giao dịch cho vay của tổ chức tín dụng đối với khách hàng ở Việt Nam: Sách chuyên khảo/ Viên Thế Giang, Võ Thị Mỹ Hương, Võ Mạnh Tiến. -- TP. Hồ Chí Minh: Đại học Quốc gia TP. Hồ Chí Minh, 2023. - xvi, 204tr. 24cm.\nCall no. : 346.597073 V662-G433",
+                              "Vị trí": "Kệ số 50",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Ngành Luật/skd002436_0185.pdf"
+                    },
+                    {
+                              "Tên sách": "Giáo trình nhập môn luật học: Những vấn đề cơ bản cho học tập, nghiên cứu ngành Luật",
+                              "Loại sách": "UTE. Ngành Luật",
+                              "ID": 51,
+                              "Keyword": [
+                                        "Từ khóa: Luật học, Sách chuyên khảo."
+                              ],
+                              "Mô tả": "Giáo trình nhập môn luật học: Những vấn đề cơ bản cho học tập, nghiên cứu ngành Luật/ Viên Thế Giang, Bùi Hữu Toàn. -- H.: Chính trị Quốc gia, 2020. - 428tr.; 21cm.\nDùng cho môn học Nhập môn ngành Luật.\nCall no. : 340.0711 V662-G433",
+                              "Vị trí": "Kệ số 51",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Ngành Luật/skd002368_4979.pdf"
+                    },
+                    {
+                              "Tên sách": "Tổng kết công tác tuyển sinh giai đoạn 2015-2023 và triển khai công tác tuyển sinh năm 2024, 2025 khối đại học và cao đẳng sư phạm",
+                              "Loại sách": "UTE. Thông tin Tuyển sinh",
+                              "ID": 52,
+                              "Keyword": [
+                                        "Từ khóa: Tổng kết; tuyển sinh; kỹ thuật; sư phạm"
+                              ],
+                              "Mô tả": "☘ Tuyển sinh năm 2024: Đúng hơn, tốt hơn, hiệu quả hơn\nNgày 15/3, tại Trường Đại học Ngân hàng TPHCM, Bộ Giáo dục và Đào tạo (GDĐT) tổ chức Hội nghị tổng kết công tác tuyển sinh giai đoạn 2015-2023, triển khai công tác tuyển sinh năm 2024, 2025. Thứ trưởng Hoàng Minh Sơn chủ trì Hội nghị.\n- Hội nghị nhằm nhìn lại 9 năm đổi mới tuyển sinh từ 2015; tổng kết, đánh giá công tác tuyển sinh trình độ đại học, trình độ cao đẳng ngành giáo dục mầm non năm 2023 và triển khai công tác tuyển sinh năm 2024, định hướng 2025.\n- 8 điểm mới trong tuyển sinh đại học từ năm 2015 đến nay\n* Nhìn lại 9 năm đổi mới tuyển sinh từ năm 2015, Vụ trưởng Vụ Giáo dục Đại học Nguyễn Thu Thuỷ đề cập tới 8 vấn đề đổi mới. Đó là, đổi mới tổ chức thi để xét tuyển, phương thức xét tuyển; đổi mới đăng ký, điều chỉnh nguyện vọng xét tuyển; đổi mới ưu tiên khu vực và ưu tiên đối tượng; đổi mới trong quy định về ngưỡng đảm bảo chất lượng; đổi mới trong quy trình xét tuyển và lọc ảo; đổi mới về cơ sở dữ liệu; đổi mới về chỉ tiêu tuyển sinh và một số điểm đổi mới khác như đề án tuyển sinh, xác nhận nhập học, nộp lệ phí xét tuyển trực tuyến, xác nhận nhập học trực tuyến…",
+                              "Vị trí": "Kệ số 52",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin Tuyển sinh/2_bao_cao_tai_hoi_nghi_tuyen_sinh_final_15_3__838.pdf"
+                    },
+                    {
+                              "Tên sách": "Điểm chuẩn năm 2023 bằng hình thức xét học bạ",
+                              "Loại sách": "UTE. Thông tin Tuyển sinh",
+                              "ID": 53,
+                              "Keyword": [
+                                        "Từ khóa: Điểm chuẩn; bằng hình thức xét học bạ"
+                              ],
+                              "Mô tả": "Điểm chuẩn năm 2023 bằng hình thức xét học bạ",
+                              "Vị trí": "Kệ số 53",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin Tuyển sinh/diem_chuan_nam_2023_bang_hinh_thuc_xet_hoc_ba_8442.pdf"
+                    },
+                    {
+                              "Tên sách": "Điểm chuẩn năm 2023 bằng điểm thi THPT",
+                              "Loại sách": "UTE. Thông tin Tuyển sinh",
+                              "ID": 54,
+                              "Keyword": [
+                                        "Từ khóa: Điểm chuẩn; thi THPT"
+                              ],
+                              "Mô tả": "Điểm chuẩn năm 2023 bằng điểm thi THPT",
+                              "Vị trí": "Kệ số 54",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin Tuyển sinh/diem_chuan_nam_2023_bang_diem_thi_thpt_9937.pdf"
+                    },
+                    {
+                              "Tên sách": "Tra cứu điểm chuẩn tuyển sinh Đại học hệ chính quy các năm trước (Theo kết quả thi THPT & Điểm thi năng khiếu)",
+                              "Loại sách": "UTE. Thông tin Tuyển sinh",
+                              "ID": 55,
+                              "Keyword": [
+                                        "Từ khóa: điểm chuẩn; tuyển sinh Đại học"
+                              ],
+                              "Mô tả": "Tra cứu điểm chuẩn tuyển sinh Đại học hệ chính quy các năm trước (Theo kết quả thi THPT & Điểm thi năng khiếu)",
+                              "Vị trí": "Kệ số 55",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin Tuyển sinh/876382.pdf"
+                    },
+                    {
+                              "Tên sách": "NGÀNH KỸ THUẬT THIẾT KẾ VI MẠCH (MÃ NGÀNH 7520208V)",
+                              "Loại sách": "UTE. Thông tin Tuyển sinh",
+                              "ID": 56,
+                              "Keyword": [
+                                        "Từ khóa: Kỹ thuật; Thiết kế; Vi mạch"
+                              ],
+                              "Mô tả": "- Ngành Thiết kế vi mạch, có tên tiếng Anh là Integrated circuit design hay VLSI design. Một ngành nghề chuyên nghiên cứu, phát triển và chế tạo các chip điện tử, còn gọi là mạch tích hợp (IC - Integrated Circuit). Đây là chuyên ngành của ngành Kỹ thuật Điện – Điện tử.\n- Thiết kế vi mạch (Integrated circuit design) là quá trình tạo ra các mạch tích hợp trên một chip bán dẫn. Các vi mạch tích hợp này có thể chứa hàng triệu hoặc thậm chí hàng tỷ thành phần điện tử như transistor, điện trở, tụ điện, và nhiều thành phần khác trên một chip nhỏ.\n- Ứng Dụng: Thiết kế vi mạch được sử dụng rộng rãi trong nhiều lĩnh vực, bao gồm điện tử tiêu dùng, viễn thông, ô tô, y tế, năng lượng, và nhiều ứng dụng công nghiệp khác. Thiết kế vi mạch không chỉ dừng lại ở điện tử tiêu dùng. Nó đã mở ra cửa cho nhiều ứng dụng khác nhau như trí tuệ nhân tạo, xe tự hành, y tế số, IoT (Internet of Things), và nhiều lĩnh vực công nghiệp khác.\n- Tự động hóa và trí tuệ nhân tạo: Công nghệ tự động hóa và trí tuệ nhân tạo đang được tích hợp vào quá trình thiết kế vi mạch, giúp tối ưu hóa hiệu suất và tăng tốc quá trình phát triển sản phẩm.\n- Ở Việt Nam, hiện nay, vi mạch là lĩnh vực rất quan trọng, có thể coi là lĩnh vực nền tảng quan trọng cho nhiều lĩnh vực khác. Sự phát triển của những quốc gia giàu mạnh, phát triển trên thế giới hiện tại đều có sự đóng góp quan trọng của công nghiệp vi mạch.\n- Những công ty về vi mạch hàng đầu thế giới đều có mặt tại TP.HCM như: Intel(Mỹ), Renesas (Nhật), Marvell (Mỹ), Applied Micro(Mỹ), Esilicon(Mỹ), Arrive Technology (Mỹ), Uniquify (Mỹ), Grey Stones (Mỹ),... Hiện tại có khoảng 2000 kỹ sư Việt Nam đang làm việc tại các tập đoàn trên.",
+                              "Vị trí": "Kệ số 56",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/UTE. Thông tin Tuyển sinh/7_nganh_ky_thuat_thiet_ke_vi_mach_7520208v__6074.pdf"
+                    },
+                    {
+                              "Tên sách": "Parallel Robots/J. P. Merlet, , Springer, 2006",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 57,
+                              "Keyword": [
+                                        "Từ khóa: Robots"
+                              ],
+                              "Mô tả": "Parallel robots are closed-loop mechanisms presenting very good performances in terms of accuracy, velocity, rigidity and ability to manipulate large loads. They have been used in a large number of applications ranging from astronomy to flight simulators and are becoming increasingly popular in the field of machine-tool industry. This book presents a complete synthesis of the latest results on the possible mechanical architectures, analysis and synthesis of this type of mechanism. It is intended to be used by students (with over 150 exercises and numerous internet addresses), researchers (with over 650 references and anonymous ftp access to the code of some algorithms presented in this book) and engineers (for which practical results, mistakes to avoid, and applications are presented).",
+                              "Vị trí": "Kệ số 57",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/33_691.pdf"
+                    },
+                    {
+                              "Tên sách": "Cẩm nang thông gió mỏ hầm lò các đường hầm giao thông và quạt gió",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 58,
+                              "Keyword": [
+                                        "Từ khóa: Đường hầm, Hầm mỏ, Thông gió, Thiết kế."
+                              ],
+                              "Mô tả": "Cẩm nang thông gió mỏ hầm lò các đường hầm giao thông và quạt gió/ Trần Xuân Hà (ch.b.), Lê Văn Thao, Đào Văn Chi... -- H.: Xây Dựng, 2019. - 739 tr.: minh họa; 27cm.\nCall no. : 622.25 T772-H111",
+                              "Vị trí": "Kệ số 58",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skv124952_073.pdf"
+                    },
+                    {
+                              "Tên sách": "Chuyên ngành Cơ khí",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 59,
+                              "Keyword": [
+                                        "Từ khóa: Cơ khí."
+                              ],
+                              "Mô tả": "Chuyên ngành Cơ khí/ Ủy ban tương trợ người Việt Nam tại Cộng Hòa Liên Ban Đức. -- Tp.Hồ Chí Minh: Trẻ, 2013. - 624tr.; 24cm.\nCall no. : 621.8 C564",
+                              "Vị trí": "Kệ số 59",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skd002715_0949.pdf"
+                    },
+                    {
+                              "Tên sách": "Cẩm nang cơ khí",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 60,
+                              "Keyword": [
+                                        "Từ khóa: Cơ khí, Sổ tay hướng dẫn."
+                              ],
+                              "Mô tả": "Cẩm nang cơ khí/ Nhiều tác giả; nhiều dịch giả. -- Xuất bản lần thứ I . -- TP. Hồ Chí Minh: Trẻ, 2022. - 482tr.; 24cm.\nCall no. : 621.81 C172",
+                              "Vị trí": "Kệ số 60",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skd002443_8383.pdf"
+                    },
+                    {
+                              "Tên sách": "Tính toán thiết kế hệ dẫn động cơ khí: Tập 2",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 61,
+                              "Keyword": [
+                                        "Từ khóa: Hệ dẫn động cơ khí, Thiết kế máy -- Thiết kế."
+                              ],
+                              "Mô tả": "Tính toán thiết kế hệ dẫn động cơ khí: Tập 2/ Trịnh Chất, Lê Văn Uyển. -- Tái bản lần thứ 14. -- H.: Giáo dục, 2020. - 231tr.; 27cm.\nCall no. : 621.85 T883-C492",
+                              "Vị trí": "Kệ số 61",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skd002413_2731.pdf"
+                    },
+                    {
+                              "Tên sách": "Guide to research projects for engineering students: planning, writing and presenting",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 62,
+                              "Keyword": [
+                                        "Từ khóa: Engineering -- Research."
+                              ],
+                              "Mô tả": "\"Are you a student facing your first serious research project? If you are, it is likely that you'll be, firstly, overwhelmed by the magnitude of the task, and secondly, lost as to how to go about it. What you really need is a guide to walk you through all aspects of the research project, from planning and conducting your research project to writing and presenting it. Guide to Research Projects for Engineering Students: Planning, Writing and Presenting is the guide you need to do the job efficiently. Specifically Designed with Engineering and Technical Science Students in Mind The book is organized into three sections, broken down into concise chapters that focus on a specific topic and the skills required. The section on planning shows you how to choose a project, research a topic, write a project proposal, plan the project, select methods and methodologies, and keep records. The section on writing provides help on writing the different sections of a research report as well as introduces you to the strategies and language conventions required for writing an effective research report. Finally, the section on presenting covers creating effective figures and layout, preparing for a project presentation, and the dos and don'ts in delivering a presentation. Advice on how to use IT tools effectively is given throughout the book.\"--Publisher's website\nCall no: 620.0072 L583",
+                              "Vị trí": "Kệ số 62",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skn010388_9097.pdf"
+                    },
+                    {
+                              "Tên sách": "Engineering project management",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 63,
+                              "Keyword": [
+                                        "Từ khóa: Engineering -- Management, Project management."
+                              ],
+                              "Mô tả": "A hands-on guide for creating a winning engineering project Engineering Project Management is a practical, step-by-step guide to project management for engineers. The author - a successful, long-time practicing engineering project manager - describes the techniques and strategies for creating a successful engineering project. The book introduces engineering projects and their management, and then proceeds stage-by-stage through the engineering life-cycle project, from requirements, implementation, to phase-out. The book offers information for understanding the needs of the end user of a product and other stakeholders associated with a project, and is full of techniques based on real, hands-on management of engineering projects. The book starts by explaining how we perform the actual engineering on projects; the techniques for project management contained in the rest of the book use those engineering methods to create superior management techniques. Every topic - from developing a work-breakdown structure and an effective project plan, to creating credible predictions for schedules and costs, through monitoring the progress of your engineering project - is infused with actual engineering techniques, thereby vastly increasing the effectivity and credibility of those management techniques. The book also teaches you how to draw the right conclusions from numeric data and calculations, avoiding the mistakes that often cause managers to make incorrect decisions. The book also provides valuable insight about what the author calls the social aspects of engineering project management: aligning and motivating people, interacting successfully with your stakeholders, and many other important people-oriented topics. The book ends with a section on ethics in engineering. This important book: -Offers a hands-on guide for developing and implementing a project management plan -Includes background information, strategies, and techniques on project management designed for engineers -Takes an easy-to-understand, step-by-step approach to project management -Contains ideas for launching a project, managing large amount of software, and tips for ending a project Structured to support both undergraduate and graduate courses in engineering project management, Engineering Project Management is an essential guide for managing a successful project from the idea phase to the completion of the project.\nCall no: 620.00688 S571",
+                              "Vị trí": "Kệ số 63",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skn010397_4474.pdf"
+                    },
+                    {
+                              "Tên sách": "Sửa chữa hệ thống Điện - Điện tử trên ô tô (Phần nâng cao)",
+                              "Loại sách": "Cơ khí chế tạo máy",
+                              "ID": 64,
+                              "Keyword": [
+                                        "Từ khóa: Ô tô - Bảo trì và sửa chữa, Ô tô - Hệ thống điện, Ngô Quang Thanh Thanh"
+                              ],
+                              "Mô tả": "Sửa chữa hệ thống Điện - Điện tử trên ô tô (Phần nâng cao) /Nguyễn Phong Lưu, Ngô Quang Thanh Thanh. - TP. Hồ Chí Minh: Thanh Niên, 2022. - 415tr.; 24cm.\nISBN 9786043713992\nCall no. : 629.28722 N573-L975",
+                              "Vị trí": "Kệ số 64",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí chế tạo máy/skd002103_8675.pdf"
+                    },
+                    {
+                              "Tên sách": "LƯỢC SỬ MỸ THUẬT VIỆT NAM",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 65,
+                              "Keyword": [
+                                        "Từ khóa: LƯỢC SỬ MỸ THUẬT VIỆT NAM"
+                              ],
+                              "Mô tả": "Thời kỳ cổ đại và phong kiến / Trịnh Quang Vũ. -- Hà Nội: Văn hóa thông tin, 2002",
+                              "Vị trí": "Kệ số 65",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/skv014673_4132.pdf"
+                    },
+                    {
+                              "Tên sách": "Từ đồng nghĩa và từ phản nghĩa thông thường nhất trong tiếng Anh = Most common synonyms and antonyms in english : About 12.000 entries",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 66,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Từ đồng nghĩa và từ phản nghĩa thông thường nhất trong tiếng Anh = Most common synonyms and antonyms in english : About 12.000 entries/ Đinh Văn Duy, Việt Linh. -- TP.HCM.: Nxb.TP.HCM., 1993. - 165tr.; 19cm.\nCall no. : 423 Đ584 - D988",
+                              "Vị trí": "Kệ số 66",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/skv016562_624.pdf"
+                    },
+                    {
+                              "Tên sách": "Giải quyết các vấn đề ngữ pháp thường gặp trong tiếng Anh = Grammar troublespots",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 67,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Giải quyết các vấn đề ngữ pháp thường gặp trong tiếng Anh = Grammar troublespots/ Ann Raimes; Lê Huy Lâm, Trương Bích ngọc (dịch). -- TP.HCM.: Nxb.TP.HCM, 1998. - 203tr.; 21cm.\nCall no. : 425 R153",
+                              "Vị trí": "Kệ số 67",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/skv016500_411.pdf"
+                    },
+                    {
+                              "Tên sách": "Mô hình đánh giá kết quả học tập theo chuẩn đầu ra cho sinh viên khối ngành kinh tế",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 68,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Mô hình đánh giá kết quả học tập theo chuẩn đầu ra cho sinh viên khối ngành kinh tế: Luận án tiến sĩ ngành Giáo dục học/ Lưu Khánh Linh; Phan Long, Võ Văn Lộc (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 9140101 378.1 L975-L755",
+                              "Vị trí": "Kệ số 68",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000047_1246.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu ảnh hưởng của nhiệt độ khuôn đến độ điền đầy của vật liệu Composite trong quy trình phun ép",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 69,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Nghiên cứu ảnh hưởng của nhiệt độ khuôn đến độ điền đầy của vật liệu Composite trong quy trình phun ép: Luận án tiến sĩ ngành Kỹ thuật cơ khí/ Phan Thế Nhân; Đỗ Thành Trung, Phạm Sơn Minh (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 9520103 668.4 P535-N576",
+                              "Vị trí": "Kệ số 69",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000046_0477.pdf"
+                    },
+                    {
+                              "Tên sách": "Tổ chức hoạt động trải nghiệm trong dạy học môn khoa học ở trường tiểu học theo định hướng phát triển năng lực học sinh",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 70,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Tổ chức hoạt động trải nghiệm trong dạy học môn khoa học ở trường tiểu học theo định hướng phát triển năng lực học sinh: Luận án tiến sĩ ngành Giáo dục học/ Đoàn Thị Ngân; Bùi Văn Hồng, Vũ Trọng Rỹ (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 8140101 372.19 Đ631-N576",
+                              "Vị trí": "Kệ số 70",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000045_9242.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế, mô hình hóa và điều khiển hệ thống giảm chấn cho máy giặt cửa trước sử dụng vật liệu thông minh",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 71,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Thiết kế, mô hình hóa và điều khiển hệ thống giảm chấn cho máy giặt cửa trước sử dụng vật liệu thông minh: Luận án tiến sĩ ngành Cơ kỹ thuật/ Bùi Quốc Duy; Nguyễn Quốc Hưng, Mai Đức Đãi (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 9520101 683.88 B932-D988",
+                              "Vị trí": "Kệ số 71",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000044_8422.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu hiệu năng mạng truyền thông vô tuyến đa chặng trong điều kiện công suất phát hạn chế",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 72,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Nghiên cứu hiệu năng mạng truyền thông vô tuyến đa chặng trong điều kiện công suất phát hạn chế: Luận án tiến sĩ ngành Kỹ thuật điện tử/ Phạm Minh Nam; Trần Trung Duy, Phan Văn Ca (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 9520203 621.384 P534-N174",
+                              "Vị trí": "Kệ số 72",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000043_7532.pdf"
+                    },
+                    {
+                              "Tên sách": "Dạy học môn vẽ kỹ thuật cơ khí theo tiếp cận học tập tự định hướng cho sinh viên ngành công nghệ kỹ thuật",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 73,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Dạy học môn vẽ kỹ thuật cơ khí theo tiếp cận học tập tự định hướng cho sinh viên ngành công nghệ kỹ thuật: Luận án tiến sĩ ngành Giáo dục học/ Trương Minh Trí; Võ Thị Xuân, Bùi Văn Hồng (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 9140101 378.17 T871-T819",
+                              "Vị trí": "Kệ số 73",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000042_6741.pdf"
+                    },
+                    {
+                              "Tên sách": "Nghiên cứu đặc tính truyền nhiệt của quá trình ngưng tụ trong bộ trao đổi nhiệt kênh micro",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 74,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Nghiên cứu đặc tính truyền nhiệt của quá trình ngưng tụ trong bộ trao đổi nhiệt kênh micro: Luận án tiến sĩ ngành Kỹ thuật cơ khí/ Đoàn Minh Hùng; Đặng Thành Trung, Jyh - Tong Teng (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2021\nCall no. : 9520103 621.4022 D631-H936",
+                              "Vị trí": "Kệ số 74",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000041_6138.pdf"
+                    },
+                    {
+                              "Tên sách": "Phát triển hệ thống phản hồi lực dùng lưu chất từ biến",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 75,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Phát triển hệ thống phản hồi lực dùng lưu chất từ biến: Luận án tiến sĩ ngành Cơ kỹ thuật/ Diệp Bảo Trí; Nguyễn Quốc Hưng, Mai Đức Đãi (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2022\nCall no. : 9520101 620.11 D562-T819",
+                              "Vị trí": "Kệ số 75",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000040_538.pdf"
+                    },
+                    {
+                              "Tên sách": "Dạy học theo tình huống môn giáo dục quốc phòng và an ninh tại các trung tâm giáo dục quốc phòng và an ninh khu vực phía Nam",
+                              "Loại sách": "Giáo trình, TL học tập",
+                              "ID": 76,
+                              "Keyword": [
+                                        "Từ khóa: Dạỵ học trong kỷ nguyên số, Phương pháp dạy học, Dạy học số, Kỹ thuật số, Lê Trung Nghĩa"
+                              ],
+                              "Mô tả": "Dạy học theo tình huống môn giáo dục quốc phòng và an ninh tại các trung tâm giáo dục quốc phòng và an ninh khu vực phía Nam: Luận án tiến sĩ ngành Giáo dục học/ Cao Ngọc Báu; Nguyễn Văn Tuấn, Đặng Văn Thành (Giảng viên hướng dẫn) . -- Tp. Hồ Chí Minh: Trường Đại học Sư phạm Kỹ thuật Tp. Hồ Chí Minh, 2021\nCall no. : 9140101 378.17 C235-B337",
+                              "Vị trí": "Kệ số 76",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Giáo trình, TL học tập/ska000039_4066.pdf"
+                    },
+                    {
+                              "Tên sách": "CẤU TẠO CỦA PHỨC CHẤT",
+                              "Loại sách": "Tài liệu theo CTĐT",
+                              "ID": 77,
+                              "Keyword": [
+                                        "Từ khóa: phức chất"
+                              ],
+                              "Mô tả": "Cấu tạo của phức chất/Lục Thị Thu Hoài",
+                              "Vị trí": "Kệ số 77",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Tài liệu theo CTĐT/446334134_cau_tao_phuc_chat_2914.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75B (02/2023)",
+                              "Loại sách": "Tài liệu theo CTĐT",
+                              "ID": 78,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí Khoa học Giáo dục Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75B (02/2023)",
+                              "Vị trí": "Kệ số 78",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Tài liệu theo CTĐT/tap_chi_khgdkt_so_75b_tv_ebook_2498.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75A (02/2023)",
+                              "Loại sách": "Tài liệu theo CTĐT",
+                              "ID": 79,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75A (02/2023)",
+                              "Vị trí": "Kệ số 79",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Tài liệu theo CTĐT/tap_chi_khgdkt_so_75a_ta_ebook_555.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 74 (01/2023)",
+                              "Loại sách": "Tài liệu theo CTĐT",
+                              "ID": 80,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.74 (01/2023)",
+                              "Vị trí": "Kệ số 80",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Tài liệu theo CTĐT/tap_chi_khgdkt_so_74_ta_ebook_2558.pdf"
+                    },
+                    {
+                              "Tên sách": "Xử lý sự cố và sửa chữa đầu đọc CD và VCR",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 81,
+                              "Keyword": [
+                                        "Từ khóa: Đầu đọc CD -- Sửa chữa, Đầu đọc VCR -- Sửa chữa."
+                              ],
+                              "Mô tả": "Xử lý sự cố và sửa chữa đầu đọc CD và VCR/ Trung Minh. -- H.: Giao thông Vận tải, 2005. - 414tr. ; 21 cm.\nCall no. : 621.388337 T871-M664",
+                              "Vị trí": "Kệ số 81",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skv028859_7104.pdf"
+                    },
+                    {
+                              "Tên sách": "Hỏi đáp về điện điện tử dân dụng",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 82,
+                              "Keyword": [
+                                        "Từ khóa: Điện tử dân dụng, Kỹ thuật điện, Kỹ thuật điện tử."
+                              ],
+                              "Mô tả": "Hỏi đáp về điện điện tử dân dụng/ Bùi Văn Yên. -- Hải Phòng: Nxb Hải Phòng, 2002. - 271tr.; 19cm\nCall no. : 621.381 B932-Y45",
+                              "Vị trí": "Kệ số 82",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skv022816_6684.pdf"
+                    },
+                    {
+                              "Tên sách": "Xử lý ảnh với Arduino và Raspberry",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 83,
+                              "Keyword": [
+                                        "Từ khóa: Thị giác máy tính, Xử lý ảnh."
+                              ],
+                              "Mô tả": "Xử lý ảnh với Arduino và Raspberry/ Nguyễn Trần Minh Nguyệt, Phạm Quang Huy. -- TP. HCM: Thanh Niên, 2020.\nCall no. : 621.399 N573-N576",
+                              "Vị trí": "Kệ số 83",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skd002466_2204.pdf"
+                    },
+                    {
+                              "Tên sách": "Numerical computation of thermocapillary convection and applications: monographs in thermocapillary convection applications",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 84,
+                              "Keyword": [
+                                        "Từ khóa: Application physics, Thermocapillary convection"
+                              ],
+                              "Mô tả": "Numerical computation of thermocapillary convection and applications: monographs in thermocapillary convection applications/ Nguyen Huy Bich (chief author), Le Thanh Long, Nguyen Thi Hoai Thu, Nguyen Tran Phu. -- HCMC: Science and Technics publishing house, 2023. - 271 p.: ill, 24 cm.\nCall no. : 621 N573-B583",
+                              "Vị trí": "Kệ số 84",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skd002463_5401.pdf"
+                    },
+                    {
+                              "Tên sách": "Conversion of coal-fired power plants to cogeneration and combined-cycle: thermal and economic effectiveness",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 85,
+                              "Keyword": [
+                                        "Từ khóa: . Coal-fired power plants. 2. Electric power production."
+                              ],
+                              "Mô tả": "Conversion of Coal-Fired Power Plant to Cogeneration and Combined-Cycle presents the methodology, calculation procedures and tools used to support enterprise planning for adapting power stations to cogeneration and combined-cycle forms. The authors analyze the optimum selection of the structure of heat exchangers in a 370 MW power block, the structure of heat recovery steam generators and gas turbines. Conversion of Coal-Fired Power Plant to Cogeneration and Combined-Cycle also addresses the problems of converting existing power plants to dual-fuel gas-steam combined-cycle technologies coupled with parallel systems. Conversion of Coal-Fired Power Plant to Cogeneration and Combined-Cycle is an informative monograph written for researchers, postgraduate students and policy makers in power engineering.\nCall no. : 621.3133 B291",
+                              "Vị trí": "Kệ số 85",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skn010479_2381.pdf"
+                    },
+                    {
+                              "Tên sách": "Giáo trình điện công trình",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 86,
+                              "Keyword": [
+                                        "Từ khóa: Điện công trình, Kỹ thuật điện."
+                              ],
+                              "Mô tả": "Giáo trình điện công trình/ Trần Thị Mỹ Hạnh. -- Tái bản. -- H.: Xây Dựng, 2021.-325tr.; 27cm.\nDùng cho môn học Kỹ thuật điện công trình.\nCall no. : 621.319 T772-H239",
+                              "Vị trí": "Kệ số 86",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skv122625_0807.pdf"
+                    },
+                    {
+                              "Tên sách": "Hướng dẫn thiết kế lắp đặt điện theo tiêu chuẩn quốc tế IEC",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 87,
+                              "Keyword": [
+                                        "Từ khóa: Kỹ thuật điện -- Lắp đặt, Kỹ thuật điện -- Thiết kế, Tiêu chuẩn."
+                              ],
+                              "Mô tả": "Hướng dẫn thiết kế lắp đặt điện theo tiêu chuẩn quốc tế IEC/ Schneider Electric; Phan Thị Thanh Bình, ....(Dịch). -- Tái bản lần thứ 3 có chỉnh sửa và cập nhật. -- H.: Khoa học và Kỹ thuật, 2020. - 457tr.; 27cm\nCall no. : 621.31 E38",
+                              "Vị trí": "Kệ số 87",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skd002419_3951.pdf"
+                    },
+                    {
+                              "Tên sách": "Application of signal processing tools and artificial neural network in diagnosis of power system faults",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 88,
+                              "Keyword": [
+                                        "Từ khóa: Artificial neural network, Power system faults"
+                              ],
+                              "Mô tả": "Application of signal processing tools and artificial neural network in diagnosis of power system faults/ Nabamita Banerjee Roy, Kesab Bhattacharya. -- Boca Raton: CRC Press, 2022\nxx, 123 p.: ill, 24cm.\n\n\nCall no. : 621.31 R888",
+                              "Vị trí": "Kệ số 88",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skn010374_7883.pdf"
+                    },
+                    {
+                              "Tên sách": "Flexibility in electric power distribution networks",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 89,
+                              "Keyword": [
+                                        "Từ khóa: Electric Power, Renewable energy"
+                              ],
+                              "Mô tả": "Flexibility in electric power distribution networks/ Edited by Hassan Haes Alhelou, Ehsan Heydarian-Forushani, Pierluigi Siano. -- Boca Raton: CRC Press, 2021\nxxi, 411 p.: ill, 24cm.\n\n\n\nCall no. : 333.79 F619",
+                              "Vị trí": "Kệ số 89",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skn010371_2706.pdf"
+                    },
+                    {
+                              "Tên sách": "Digital design: with an introdution to the verilog HDL, VHDL, and systemverilog",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 90,
+                              "Keyword": [
+                                        "Từ khóa: Digital integrated circuits, Electronic digital computers -- Circuits, Logic circuits, Logic design. I. Ciletti, Michael D."
+                              ],
+                              "Mô tả": "\"A modern update to a classic, authoritative text, Digital Design, 6th Edition teaches the fundamental concepts of digital design in a clear, accessible manner. The text presents the basic tools for the design of digital circuits and provides procedures suitable for a variety of digital applications. Like the previous editions, this edition of Digital Design supports a multimodal approach to learning, with a focus on digital design, regardless of language. Recognizing that three public-domain languages-Verilog, VHDL, and SystemVerilog-all play a role in design flows for today's digital devices, the 6th Edition offers parallel tracks of presentation of multiple languages, but allows concentration on a single, chosen language.\"--Provided by publisher.\nCall no: 621.395 M285",
+                              "Vị trí": "Kệ số 90",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skn010382_6435.pdf"
+                    },
+                    {
+                              "Tên sách": "Power and distribution transformers: pratical design guide",
+                              "Loại sách": "Điện - Điện tử",
+                              "ID": 91,
+                              "Keyword": [
+                                        "Từ khóa: Electric transformers."
+                              ],
+                              "Mô tả": "This book is based on the author's50+ years experience in the power and distribution transformer industry. The first few chapters of the bookprovide astep-by-step procedures of transformer design. Engineers without prior knowledge or exposure to design can follow the procedures and calculation methods to acquire reasonable proficiency necessary to designing a transformer. Although thetransformer is a mature product, engineers working in the industry need to understandits fundamentals oand design to enable them to offer products to meet the challenging demandsof the power system and the customer. This book can function as a useful guide for practicing engineers to undertake new designs, cost optimization, design automation etc., without the need for external help or consultancy. The book extensively covers the design processes with necessary data and calculationsfrom a wide variety of transformers, including dry-type cast resin transformers, amorphous core transformers, earthing transformers, rectifier transformers, auto transformers, transformers for explosive atmospheres, andsolid-state transformers. The other subjects covered include, carbon footprint salculation of transformers, condition monitoring of transformers and design optimization techniques. In addition to being useful for the transformer industry, this book can serve as a reference for power utility engineers, consultants, research scholars, and teaching faculty at universities.\nCall no: 621.314 N155",
+                              "Vị trí": "Kệ số 91",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Điện - Điện tử/skn010378_5702.pdf"
+                    },
+                    {
+                              "Tên sách": "Hướng dẫn tính toán và thiết kế các hệ thống lạnh công nghiệp",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 92,
+                              "Keyword": [
+                                        "Từ khóa: Công nghệ nhiệt độ thấp, Hệ thống lạnh, Kỹ thuật lạnh"
+                              ],
+                              "Mô tả": "Hướng dẫn tính toán và thiết kế các hệ thống lạnh công nghiệp/ Đinh Văn Thuận, Võ Chí Chính. -- Hà Nội: Khoa học và Kỹ thuật, 2023. - 466tr.: minh họa; 24cm.\nCall no. : 621.5 Đ584-T532",
+                              "Vị trí": "Kệ số 92",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skv125609_8616.pdf"
+                    },
+                    {
+                              "Tên sách": "PLC - Lý thuyết và ứng dụng",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 93,
+                              "Keyword": [
+                                        "Từ khóa: Điều khiển tự động, PLC."
+                              ],
+                              "Mô tả": "PLC - Lý thuyết và ứng dụng/ Nguyễn Hoàng Phương, Trần Quốc Cường, Nguyễn Hoàng Vũ,... -- H.: Xây dựng, 2022. - 190tr.; 27cm.\nCall no. : 629.8 P723",
+                              "Vị trí": "Kệ số 93",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skv124113_9516.pdf"
+                    },
+                    {
+                              "Tên sách": "Advances in climbing and walking robots : Proceedings of the 10th International Conference (CLAWAR 2007), Singapore, 16-18 July 2007",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 94,
+                              "Keyword": [
+                                        "Từ khóa: Mobile robots, Robots, Industrial"
+                              ],
+                              "Mô tả": "Robotics is an exciting field in engineering and natural sciences. Robotics has already made a significant contribution to many industries with the widespread use of industrial robots for tasks such as assembly, welding, painting, and handling materials. In parallel, we have witnessed the emergence of special robots which can undertake assistive jobs, such as search and rescue, de-mining, surveillance, exploration, and security functions. Indeed, the interest in mobile machines, such as climbing and walking robots, has broadened the scope of investigation in robotics. This volume covers broad\nCall no. : 629.8932 A244",
+                              "Vị trí": "Kệ số 94",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skn010753_4829.pdf"
+                    },
+                    {
+                              "Tên sách": "MÔ HÌNH ĐÀO TẠO VẬN HÀNH, CHẨN ĐOÁN ĐỘNG CƠ TOYOTADIESEL 4 XYLANH ĐIỀU KHIỂN",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 95,
+                              "Keyword": [
+                                        "Từ khóa: tài liệu hướng dẫn và vận hành động cơ VE-EDC"
+                              ],
+                              "Mô tả": "MÔ HÌNH ĐÀO TẠO VẬN HÀNH, CHẨN ĐOÁN ĐỘNG CƠ TOYOTA\nDIESEL 4 XYLANH ĐIỀU KHIỂN PHUN NHIÊN LIỆU BẰNG ĐIỆN TỬ\nEDC VỚI BỘ TẠO PAN ĐIỆN TỬ\nTPE-023130\n\nĐể đảm bảo cho sự an toàn hàng đầu và đạt hiệu quả tốt nhất cho việc đào tạo, giảng dạy,\nchúng tôi khuyên quý khách hàng nên:\n Việc vận hành, sử dụng không đúng cách có thể gây tai nạn cho người hoặc\nlàm hư hỏng thiết bị. Vì vậy chỉ những người đã được đào tạo đầy đủ mới được\nphép sử dụng, vận hành thiết bị.\n Chú ý tới các thông điệp an toàn được nêu trong cuốn sách cũng như trên mô\nhình. Thực hiện theo đúng khuyến cáo và các quy trình yêu cầu trong cuốn\nsách này.\n Cuốn sách hướng dẫn sử dụng này được coi như một phần không thể thiếu của\nmô hình. Vì vậy, quý khách nên luôn giữ cuốn sách",
+                              "Vị trí": "Kệ số 95",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/hdsd_toyota_3cok_9109.pdf"
+                    },
+                    {
+                              "Tên sách": "MÔ HÌNH ĐÀO TẠO VẬN HÀNH, CHẨN ĐOÁN ĐỘNG CƠ TOYOTA2KD ĐIỀU KHIỂN PHUN NHIÊN",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 96,
+                              "Keyword": [
+                                        "Từ khóa: tài liệu hướng vận hành, chẩn đoán động cơ"
+                              ],
+                              "Mô tả": "MÔ HÌNH ĐÀO TẠO VẬN HÀNH, CHẨN ĐOÁN ĐỘNG CƠ TOYOTA\n2KD ĐIỀU KHIỂN PHUN NHIÊN LIỆU BẰNG ĐIỆN TỬ\nCOMMONRAIL – CDI\n\nTPE-023141\n\nĐể đảm bảo cho sự an toàn hàng đầu và đạt hiệu quả tốt nhất cho việc đào tạo, giảng dạy,\nchúng tôi khuyên quý khách hàng nên:\n Việc vận hành, sử dụng không đúng cách có thể gây tai nạn cho người hoặc\nlàm hư hỏng thiết bị. Vì vậy chỉ những người đã được đào tạo đầy đủ mới được\nphép sử dụng, vận hành thiết bị.\n Chú ý tới các thông điệp an toàn được nêu trong cuốn sách cũng như trên mô\nhình. Thực hiện theo đúng khuyến cáo và các quy trình yêu cầu trong cuốn\nsách này.\n Cuốn sách hướng dẫn sử dụng này được coi như một phần không thể thiếu của\nmô hình. Vì vậy, quý khách nên luôn giữ cuốn sách này bên cạnh mô hình.\nTrân",
+                              "Vị trí": "Kệ số 96",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/hdsd_toyota_2kd_501.pdf"
+                    },
+                    {
+                              "Tên sách": "Sữa chữa gầm ô tô: Dùng cho các trường đào tạo chuyên nghiệp và dạy nghề",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 97,
+                              "Keyword": [
+                                        "Từ khóa: Kỹ thuật sửa chữa ô tô, Khung gầm"
+                              ],
+                              "Mô tả": "Sữa chữa gầm ô tô: Dùng cho các trường đào tạo chuyên nghiệp và dạy nghề/ Nguyễn Văn Hồi, Nguyễn Doanh Phương, Phạm Văn Khái. -- H.: Lao động - Xã hội, 2007. - 175tr.; 27cm.\nCall no. : 629.287 N573-H719",
+                              "Vị trí": "Kệ số 97",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skv071218_2339.pdf"
+                    },
+                    {
+                              "Tên sách": "Cấu tạo và sửa chữa ô tô căn bản: Dùng cho người học lái xe ô tô",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 98,
+                              "Keyword": [
+                                        "Từ khóa: Động cơ ô tô, Cấu tạo, Sửa chữa, Ô tô, Kỹ thuật sửa chữa, bảo trì."
+                              ],
+                              "Mô tả": "Cấu tạo và sửa chữa ô tô căn bản: Dùng cho người học lái xe ô tô/ Trần Quốc Trình. -- H.: Khoa học Kỹ thuật, 2006. - 62tr.; 27cm.\nCall no. : 629.287 T772-T833",
+                              "Vị trí": "Kệ số 98",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skv052146_335.pdf"
+                    },
+                    {
+                              "Tên sách": "Kỹ thuật sửa chữa ô tô và động cơ nổ hiện đại - Tập 1: Động cơ xăng",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 99,
+                              "Keyword": [
+                                        "Từ khóa: Động cơ xăng, Động cơ, Ô tô, Kỹ thuật sửa chữa, Bảo trì."
+                              ],
+                              "Mô tả": "Kỹ thuật sửa chữa ô tô và động cơ nổ hiện đại - Tập 1 : Động cơ xăng ( Cẩm nang của học sinh và sinh viên ngành sửa chũa ô tô. Giáo trình cần thiết của các lớp ngằn hạn sửa chữa ô tô và động cơ nổ. Tài liệu không thể thiếu của giáo viên giảng dạy ngành động lực) / Nguyễn Oanh. -- In lần 8 có sửa chữa và bổ sung. -- Tp.HCM : Giao thông vận tải, 2004. - 251tr.; 24cm.\nCall no. : 629.287 N573-O11",
+                              "Vị trí": "Kệ số 99",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skv029635_4577.pdf"
+                    },
+                    {
+                              "Tên sách": "Advances in power boilers",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 100,
+                              "Keyword": [
+                                        "Từ khóa: Boiling water reactors"
+                              ],
+                              "Mô tả": "Advances in Power Boilers is the second volume in the JSME Series on Thermal and Nuclear Power Generation. The volume provides the fundamentals of thermal power generation by firstly analysing different fuel options for thermal power generation and then also by tracing the development process of power boilers in about 300 years. The design principles and methodologies as well as the construction, operation and control of power boilers are explained in detail together with practical data making this a valuable guide for post-graduate students, researchers, engineers and regulators developing knowledge and skill of thermal power generation systems. Combining their wealth of experience and knowledge, the author team presents recent advanced technologies to the reader to enable them to further research and development in various systems, notably combined cycles, USC and A-USC, as well as PFBC and IGCC. The most recent best practices for material development for advanced power system as well as future scope of this important field of technology are clearly presented, and environment, maintenance, regulations and standards are considered throughout. The inclusion of photographs and drawings make this a unique reference for all those working and researching in the thermal engineering fields. The book is directed to professional engineers, researchers and post-graduate students of thermal engineering in industrial and academic field, as well as plant operators and regulators.\nCall no. : 621.4834 A244",
+                              "Vị trí": "Kệ số 100",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skn010478_2877.pdf"
+                    },
+                    {
+                              "Tên sách": "Quy chuẩn kỹ thuật Quốc gia về các công trình xây dựng sử dụng năng lượng hiệu quả",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 101,
+                              "Keyword": [
+                                        "Từ khóa: Công trình xây dựng, Năng lượng, Qui chuẩn nhà nước, Tiêu chuẩn kỹ thuật, Việt Nam."
+                              ],
+                              "Mô tả": "QCVN 09:2017/BXD Quy chuẩn kỹ thuật Quốc gia về các công trình xây dựng sử dụng năng lượng hiệu quả = National Technical Regulation on Energy Efficiency Buildings. -- H.: Xây dựng, 2018. - 34tr.; 31cm. Call no. : 697.0218597 Q165",
+                              "Vị trí": "Kệ số 101",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skv123251_3171.pdf"
+                    },
+                    {
+                              "Tên sách": "Hệ thống điều khiển điện tử trên động cơ diesel",
+                              "Loại sách": "Cơ khí động lực",
+                              "ID": 102,
+                              "Keyword": [
+                                        "Từ khóa: Động cơ Diesel, Điện tử, Huỳnh Quốc Việt, Đinh Tấn Ngọc."
+                              ],
+                              "Mô tả": "Hệ thống điều khiển điện tử trên động cơ diesel /Quang Hải, Huỳnh Quốc Việt, Đinh Tấn Ngọc. - Tp.HCM : Thanh Niên, 2022. - 170tr.; 24cm.\nISBN 9786043813265\nCall no. : 621.436 C496-H149",
+                              "Vị trí": "Kệ số 102",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Cơ khí động lực/skd002206_1902.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế công trình ga đường sắt đô thị",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 103,
+                              "Keyword": [
+                                        "Từ khóa: Đô thị, Đường sắt, Ga tàu, Thiết kế"
+                              ],
+                              "Mô tả": "Thiết kế công trình ga đường sắt đô thị/ Phạm Văn Ký (ch.b.), Nguyễn Hồng Phong, Trần Quốc Đạt, Chu Quang Chiến. -- Tái bản. -- H.: Xây dựng, 2018. - 168tr.: minh họa; 24cm.\nCall no. : 625.18 P534-K99",
+                              "Vị trí": "Kệ số 103",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125016_3276.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế và thi công cống trên đường ôtô",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 104,
+                              "Keyword": [
+                                        "Từ khóa: Đường ô tô, Cống, Thi công"
+                              ],
+                              "Mô tả": "Thiết kế và thi công cống trên đường ôtô/ Hồ Văn Quân (ch.b.), Phan Cao Thọ....và những người khác. -- H.: Xây dựng, 2019. - 262tr.: minh họa; 27cm.\nPhụ lục: tr. 223-257. - Thư mục: tr. 258\nCall no. : 625.7342 H678-Q141",
+                              "Vị trí": "Kệ số 104",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125092_4903.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế tuyến đường sắt đô thị",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 105,
+                              "Keyword": [
+                                        "Từ khóa: Đô thị, Đường sắt, Thiết kế"
+                              ],
+                              "Mô tả": "Thiết kế tuyến đường sắt đô thị/ Phạm Văn Ký (ch.b.), Lê Hải Hà, Nguyễn Hữu Thiện... -- H.: Xây dựng, 2017. - 260 tr.: hình vẽ; 27 cm.\nCall no. : 625.11 P534-K99",
+                              "Vị trí": "Kệ số 105",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125072_4223.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế mố trụ móng cầu theo 22TCN 272-05",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 106,
+                              "Keyword": [
+                                        "Từ khóa: Cầu, Móng cọc, Mố cầu, Thiết kế"
+                              ],
+                              "Mô tả": "Thiết kế mố trụ móng cầu theo 22TCN 272-05/ Phạm Văn Thoan (ch.b), Nguyễn Quý Thành, Nguyễn Mạnh Hà. -- H. : Xây dựng, 2016. - 542 tr.: minh họa; 27 cm.\nCall no. : 624.284 P534-T449",
+                              "Vị trí": "Kệ số 106",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125052_1657.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế đường sắt - Tập 2",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 107,
+                              "Keyword": [
+                                        "Từ khóa: Đường sắt, Thiết kế"
+                              ],
+                              "Mô tả": "Thiết kế đường sắt - Tập 2/ Phạm Văn Ký (ch.b.), Lê Hải Hà, Đỗ Việt Hải. -- H.: Xây dựng, 2016. - 285 tr.: hình vẽ; 24 cm.\nPhụ lục: tr. 274-278. - Thư mục: tr. 279\nCall no. : 625.11 P534-K99",
+                              "Vị trí": "Kệ số 107",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125040_0569.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế đường ray không khe nối trên đường sắt đô thị",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 108,
+                              "Keyword": [
+                                        "Từ khóa: Đường ray, Đường sắt, Giao thông đô thị, Thiết kế"
+                              ],
+                              "Mô tả": "Thiết kế đường ray không khe nối trên đường sắt đô thị/ Nguyễn Hữu Thiện. -- H.: Xây dựng, 2017. - 170tr.: minh hoạ; 24 cm.\nCall no. : 625.6 N573-T434",
+                              "Vị trí": "Kệ số 108",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125036_9318.pdf"
+                    },
+                    {
+                              "Tên sách": "Thiết kế công trình bến cảng",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 109,
+                              "Keyword": [
+                                        "Từ khóa: Bến cảng -- Thiết kế, Công trình bến cảng."
+                              ],
+                              "Mô tả": "Thiết kế công trình bến cảng/ Vũ Minh Tuấn. -- Tái bản. -- H.: Xây dựng, 2014. - 270tr.: minh họa; 27cm.\nCall no. : 627.31 V986-T883",
+                              "Vị trí": "Kệ số 109",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv125016_7857.pdf"
+                    },
+                    {
+                              "Tên sách": "Phân tích ứng xử động lực học của cầu dây văng và thiết bị giảm chấn",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 110,
+                              "Keyword": [
+                                        "Từ khóa: Động lực học, Cầu dây văng, Thiết bị giảm chấn."
+                              ],
+                              "Mô tả": "Phân tích ứng xử động lực học của cầu dây văng và thiết bị giảm chấn/ Trần Thu Hằng, Nguyễn Viết Trung. -- H.: Xây dựng, 2015. - 180tr.: minh họa; 27cm.\nPhụ lục: tr. 157-174. - Thư mục: tr. 175-177\nCall no. : 624.238 T772-H239",
+                              "Vị trí": "Kệ số 110",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv124992_5014.pdf"
+                    },
+                    {
+                              "Tên sách": "Ôn tập thủy văn - thủy lực công trình giao thông",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 111,
+                              "Keyword": [
+                                        "Từ khóa: Công trình giao thông, Kỹ thuật thủy lực, Thủy văn công trình"
+                              ],
+                              "Mô tả": "Ôn tập thủy văn - thủy lực công trình giao thông/ Phạm Văn Thoan (ch.b). -- H. : Xây dựng, 2019. - 396 tr.: minh họa; 27 cm.\nCall no. : 627 P534-T449",
+                              "Vị trí": "Kệ số 111",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv124988_2983.pdf"
+                    },
+                    {
+                              "Tên sách": "Hướng dẫn thiết kế cầu dầm thép chữ I liên hợp bản bê tông cốt thép liên tục hai nhịp theo tiêu chuẩn thiết kế cầu đường bộ TCVN 11823 - 2017",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 112,
+                              "Keyword": [
+                                        "Từ khóa: Cầu, Dầm thép, Thiết kế"
+                              ],
+                              "Mô tả": "Hướng dẫn thiết kế cầu dầm thép chữ I liên hợp bản bê tông cốt thép liên tục hai nhịp theo tiêu chuẩn thiết kế cầu đường bộ TCVN 11823 - 2017/ Nguyễn Quốc Bảo, Nguyễn Hướng Dương. -- H.: Xây Dựng, 2019. - 136tr.: minh họa; 24cm.\nCall no. : 624.21 N573-B221",
+                              "Vị trí": "Kệ số 112",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv124976_1864.pdf"
+                    },
+                    {
+                              "Tên sách": "Cơ sở thiết kế và ví dụ tính toán kết cấu nhịp cầu dầm đơn giản bê tông cốt thép ứng suất trước bán lắp ghép theo tiêu chuẩn TCVN 11823 : 2017",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 113,
+                              "Keyword": [
+                                        "Từ khóa: Cầu bê tông cốt thép, Dầm cầu, Dự ứng lực, Thiết kế"
+                              ],
+                              "Mô tả": "Cơ sở thiết kế và ví dụ tính toán kết cấu nhịp cầu dầm đơn giản bê tông cốt thép ứng suất trước bán lắp ghép theo tiêu chuẩn TCVN 11823 : 2017/ Lê Bá Danh, Nguyễn Minh Hùng. -- H.: Xây Dựng, 2022. - 128tr.: minh họa; 27cm.\nCall no. : 624.252 L433-D182",
+                              "Vị trí": "Kệ số 113",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv124964_9208.pdf"
+                    },
+                    {
+                              "Tên sách": "Bài tập Cơ học kết cấu - Tập 1: Kết cấu tĩnh định",
+                              "Loại sách": "Xây dựng - Kiến trúc",
+                              "ID": 114,
+                              "Keyword": [
+                                        "Từ khóa: Cơ học kết cấu, Hệ tĩnh định"
+                              ],
+                              "Mô tả": "Bài tập Cơ học kết cấu - Tập 1: Kết cấu tĩnh định/ Đinh Nghĩa Dũng. -- H.: Xây dựng, 2021. - 208 tr.: minh họa; 27 cm.\nThư mục: tr. 205\nCall no. : 624.17076 Đ584-D916",
+                              "Vị trí": "Kệ số 114",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Xây dựng - Kiến trúc/skv124932_9597.pdf"
+                    },
+                    {
+                              "Tên sách": "CẤU TẠO CỦA PHỨC CHẤT",
+                              "Loại sách": "CN Thực phẩm - Môi trường",
+                              "ID": 115,
+                              "Keyword": [
+                                        "Từ khóa: phức chất"
+                              ],
+                              "Mô tả": "Cấu tạo của phức chất/Lục Thị Thu Hoài",
+                              "Vị trí": "Kệ số 115",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN Thực phẩm - Môi trường/446334134_cau_tao_phuc_chat_2914.pdf"
+                    },
+                    {
+                              "Tên sách": "Bài tập kỹ thuật phản ứng",
+                              "Loại sách": "CN Thực phẩm - Môi trường",
+                              "ID": 116,
+                              "Keyword": [
+                                        "Từ khóa: Công nghệ hóa học -- Kỹ thuật phản ứng."
+                              ],
+                              "Mô tả": "Bài tập kỹ thuật phản ứng/ Vũ Bá Minh. -- Tái bản lần thứ năm. -- Tp.HCM: Đại học Quốc gia Tp.Hồ Chí Minh, 2019. - 52tr.; 24cm\nCall no. : 660.04 V986-M664",
+                              "Vị trí": "Kệ số 116",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN Thực phẩm - Môi trường/skd002492_9076.pdf"
+                    },
+                    {
+                              "Tên sách": "Sổ tay hướng dẫn quy hoạch mạng lưới cấp thoát nước đô thị",
+                              "Loại sách": "CN Thực phẩm - Môi trường",
+                              "ID": 117,
+                              "Keyword": [
+                                        "Từ khóa: Đô thị, Hệ thống cấp nước, Hệ thống thoát nước, Quy hoạch, Sổ tay."
+                              ],
+                              "Mô tả": "Sổ tay hướng dẫn quy hoạch mạng lưới cấp thoát nước đô thị/ Phan Tiến Tâm, Nguyễn Thị Thanh Hương. -- H.: Xây dựng, 2019. - 122tr.; 27cm.\nCall no. : 628.14 P535-T153",
+                              "Vị trí": "Kệ số 117",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN Thực phẩm - Môi trường/skv124065_5667.pdf"
+                    },
+                    {
+                              "Tên sách": "Môi trường trong xây dựng",
+                              "Loại sách": "CN Thực phẩm - Môi trường",
+                              "ID": 118,
+                              "Keyword": [
+                                        "Từ khóa: Ô nhiễm, Kỹ thuật xây dựng, Khía cạnh môi trường."
+                              ],
+                              "Mô tả": "Môi trường trong xây dựng/ Lê Anh Dũng (ch.b), Đỗ Đình Đức. -- Tái bản. -- H.: Xây dựng, 2019. - 152tr.; 27cm.\nCall no. : 363.7 L433-D916",
+                              "Vị trí": "Kệ số 118",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN Thực phẩm - Môi trường/skv124057_4643.pdf"
+                    },
+                    {
+                              "Tên sách": "Kỹ thuật xử lý nước thải",
+                              "Loại sách": "CN Thực phẩm - Môi trường",
+                              "ID": 119,
+                              "Keyword": [
+                                        "Từ khóa: Kỹ thuật xử lý, Xử lý nước thải."
+                              ],
+                              "Mô tả": "Kỹ thuật xử lý nước thải/ Phạm Thị Tố Oanh. -- Tái bản. -- H.: Xây dựng, 2021. - 149tr.; 27cm.\nCall no. : 628.162 P534-O11",
+                              "Vị trí": "Kệ số 119",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN Thực phẩm - Môi trường/skv124053_358.pdf"
+                    },
+                    {
+                              "Tên sách": "Kỷ yếu chương trình tập huấn công nghệ Blockchain và những ứng dụng thực tiễn",
+                              "Loại sách": "Công nghệ thông tin",
+                              "ID": 120,
+                              "Keyword": [
+                                        "Từ khóa: Kỷ yếu ;chương trình tập huấn; công nghệ; Blockchain; ứng dụng thưc tiễn"
+                              ],
+                              "Mô tả": "☘ Để hiểu blockchain là gì và tại sao công nghệ này được phát triển, cần phải hiểu Internet hiện tại đã phát triển như thế nào. Internet như chúng ta biết hiện tại đã trải qua một sự tiến bộ đáng kể qua các giai đoạn phát triển từ Web 1.0 đến Web 3.0. Giai đoạn Web 1.0, từ những năm 1990 đến đầu 2000, tập trung vào việc cung cấp thông tin qua các trang web tĩnh và hệ thống liên lạc qua email. Trang web tập trung vào việc đọc thông tin và không có tính năng tương tác. Các danh mục web và các “khu vườn kín” (walled gardens - một thuật ngữ công nghệ) giới hạn việc truy cập thông tin. Thời điểm đó, bảo mật, định danh và hệ thống thanh toán riêng không được tập trung phát triển.",
+                              "Vị trí": "Kệ số 120",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Công nghệ thông tin/ky_yeu_tai_lieu_tham_khao_cong_nghe_blockchain_va_nhung_ung_dung_thuc_te_9064.pdf"
+                    },
+                    {
+                              "Tên sách": "Tổng quan về Blockchain",
+                              "Loại sách": "Công nghệ thông tin",
+                              "ID": 121,
+                              "Keyword": [
+                                        "Từ khóa: Blockchain; Web 1.0; Web 3.0"
+                              ],
+                              "Mô tả": "☘ Để hiểu blockchain là gì và tại sao công nghệ này được phát triển, cần phải hiểu Internet hiện tại đã phát triển như thế nào. Internet như chúng ta biết hiện tại đã trải qua một sự tiến bộ đáng kể qua các giai đoạn phát triển từ Web 1.0 đến Web 3.0. Giai đoạn Web 1.0, từ những năm 1990 đến đầu 2000, tập trung vào việc cung cấp thông tin qua các trang web tĩnh và hệ thống liên lạc qua email. Trang web tập trung vào việc đọc thông tin và không có tính năng tương tác. Các danh mục web và các “khu vườn kín” (walled gardens - một thuật ngữ công nghệ) giới hạn việc truy cập thông tin. Thời điểm đó, bảo mật, định danh và hệ thống thanh toán riêng không được tập trung phát triển.",
+                              "Vị trí": "Kệ số 121",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Công nghệ thông tin/ba_i_vie_t_cong_nghe_blockchain_va_nhung_ung_dung_thuc_te_4392.pdf"
+                    },
+                    {
+                              "Tên sách": "Tính toán cầu đúc hẫng trên phần mềm Midas",
+                              "Loại sách": "Công nghệ thông tin",
+                              "ID": 122,
+                              "Keyword": [
+                                        "Từ khóa: Phần mềm ứng dụng"
+                              ],
+                              "Mô tả": "Tính toán cầu đúc hẫng trên phần mềm Midas/ Nguyễn Viết Trung (ch.b), Nguyễn Hữu Hưng, Nguyễn Đức Vương. -- Tái bản. -- H.: Xây dựng, 2018. - 132tr.; 27cm.\nCall no. : 005.3 N573-T871",
+                              "Vị trí": "Kệ số 122",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Công nghệ thông tin/skv124117_0835.pdf"
+                    },
+                    {
+                              "Tên sách": "Annual review of scalable computing. -- vol2.",
+                              "Loại sách": "Công nghệ thông tin",
+                              "ID": 123,
+                              "Keyword": [
+                                        "Từ khóa: Computer engineering -- Research, High performance computing, Parallel processing (Electronic computers), Parallel processing (Electronic computers) -- Research, Supercomputers -- Research"
+                              ],
+                              "Mô tả": "Annual review of scalable computing. -- vol2. -- Singapore University: World Scientific, 2000\nxiv, 227p.; 25 cm\nISBN 9810244134\n\n1. Computer engineering -- Research. 2. High performance computing. 3. Parallel processing (Electronic computers). 4. Parallel processing (Electronic computers) -- Research. 5. Supercomputers -- Research. I. Yuen Chung Kwong.\n\nDewey Class no. : 004.3 -- dc 23\nCall no. : 004.3 A615",
+                              "Vị trí": "Kệ số 123",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Công nghệ thông tin/skn010524_0325.pdf"
+                    },
+                    {
+                              "Tên sách": "Phân tích kinh tế - kỹ thuật các công nghệ thi công xây dựng: Tài liệu chuyên khảo",
+                              "Loại sách": "Kinh tế - Quản lý",
+                              "ID": 124,
+                              "Keyword": [
+                                        "Từ khóa: Dự án đầu tư, Kinh tế - kỹ thuật, Xây dựng."
+                              ],
+                              "Mô tả": "Phân tích kinh tế - kỹ thuật các công nghệ thi công xây dựng: Tài liệu chuyên khảo/ Lê Anh Dũng, Bùi Mạnh Hùng. -- H.: Xây dựng, 2018. - 200tr.: minh họa; 24 cm.\nCall no. : 338.4569 L433-D916",
+                              "Vị trí": "Kệ số 124",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Kinh tế - Quản lý/skv124824_642.pdf"
+                    },
+                    {
+                              "Tên sách": "Phân tích kinh tế - kỹ thuật các dự án đầu tư xây dựng: Sách chuyên khảo",
+                              "Loại sách": "Kinh tế - Quản lý",
+                              "ID": 125,
+                              "Keyword": [
+                                        "Từ khóa: Dự án đầu tư, Kỹ thuật, Kinh tế, Xây dựng."
+                              ],
+                              "Mô tả": "Phân tích kinh tế - kỹ thuật các dự án đầu tư xây dựng: Sách chuyên khảo/ Bùi Mạnh Hùng, Phạm Thị Thu Hiền, Nguyễn Thị Thu Nhàn. -- H.: Xây dựng, 2020. - 416tr.; 27cm.\nCall no. : 338.4 B932-H936",
+                              "Vị trí": "Kệ số 125",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Kinh tế - Quản lý/skv124648_6265.pdf"
+                    },
+                    {
+                              "Tên sách": "Kinh tế số: tài liệu tham khảo",
+                              "Loại sách": "Kinh tế - Quản lý",
+                              "ID": 126,
+                              "Keyword": [
+                                        "Từ khóa: Kinh tế số."
+                              ],
+                              "Mô tả": "Kinh tế số: tài liệu tham khảo/ Trần Thị Ái Cẩm, Đỗ Thuỳ Trinh. -- H.: Xây dựng, 2023. - 138tr.: bảng; 24cm.\nCall no. : 330 T772-C172",
+                              "Vị trí": "Kệ số 126",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Kinh tế - Quản lý/skv124615_9962.pdf"
+                    },
+                    {
+                              "Tên sách": "Kinh tế phát triển",
+                              "Loại sách": "Kinh tế - Quản lý",
+                              "ID": 127,
+                              "Keyword": [
+                                        "Từ khóa: Kinh tế học, Kinh tế phát triển."
+                              ],
+                              "Mô tả": "Kinh tế phát triển/ Phan Minh Tuấn . -- H.: Xây dựng, 2022. - 372tr.: hình vẽ; 27cm.\nCall no. : 338.9 P535-T883",
+                              "Vị trí": "Kệ số 127",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Kinh tế - Quản lý/skv124612_8422.pdf"
+                    },
+                    {
+                              "Tên sách": "Kinh tế đô thị",
+                              "Loại sách": "Kinh tế - Quản lý",
+                              "ID": 128,
+                              "Keyword": [
+                                        "Từ khóa: Đô thị, Kinh tế."
+                              ],
+                              "Mô tả": "Kinh tế đô thị/ Bùi Mạnh Hùng (ch.b), Nguyễn Tuyết Dung, Nguyễn Thuỳ Linh . -- H.: Xây dựng, 2020. - 504tr.: bảng, biểu đồ; 30cm.\nCall no. : 330.91732 B932-H936",
+                              "Vị trí": "Kệ số 128",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Kinh tế - Quản lý/skv124609_6459.pdf"
+                    },
+                    {
+                              "Tên sách": "Khám phá Adobe Indesign - Thiết kế dàn trang cơ bản: = Adobe InDesign CS6 - Revealed",
+                              "Loại sách": "CN In - Truyền thông",
+                              "ID": 129,
+                              "Keyword": [
+                                        "Từ khóa: In ấn, Phần mềm Adobe InDesign"
+                              ],
+                              "Mô tả": "Khám phá Adobe Indesign - Thiết kế dàn trang cơ bản: = Adobe InDesign CS6 - Revealed/ Chris Botello; Trường Đại học FPT (dịch). -- Tái bản lần 6. -- H.: Đại học Bách khoa Hà Nội, 2022. - 276tr.: minh họa.; 23cm.\nDùng cho môn học Thực tập dàn trang. Bao gồm chỉ mục.\nSummary: Giới thiệu về phần mềm dàn trang Adobe InDesign. Hướng dẫn các tính năng của Adobe InDesign CS6 để làm việc với bốn yếu tố cơ bản của layout: văn bản, màu sắc, minh hoạ, hình ảnh.\nCall no. : 686.22544536 B748",
+                              "Vị trí": "Kệ số 129",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN In - Truyền thông/skv123319_2909.pdf"
+                    },
+                    {
+                              "Tên sách": "Khám phá Adobe Indesign - Thiết kế dàn trang cơ bản: = Adobe InDesign CS6 - Revealed",
+                              "Loại sách": "CN In - Truyền thông",
+                              "ID": 130,
+                              "Keyword": [
+                                        "Từ khóa: In ấn, Phần mềm Adobe InDesign"
+                              ],
+                              "Mô tả": "Khám phá Adobe Indesign - Thiết kế dàn trang cơ bản: = Adobe InDesign CS6 - Revealed/ Chris Botello; Trường Đại học FPT (dịch). -- Tái bản lần 2. -- H.: Đại học Bách khoa Hà Nội, 2019. -276tr.: minh họa.; 23cm.\nDùng cho môn học Thực tập dàn trang. Bao gồm chỉ mục.\nSummary: Giới thiệu về phần mềm dàn trang Adobe InDesign. Hướng dẫn các tính năng của Adobe InDesign CS6 để làm việc với bốn yếu tố cơ bản của layout: văn bản, màu sắc, minh hoạ, hình ảnh.\nCall no. : 686.22544536 B748",
+                              "Vị trí": "Kệ số 130",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN In - Truyền thông/skv123318_6182.pdf"
+                    },
+                    {
+                              "Tên sách": "Khám phá Adobe InDesign - Thiết kế dàn trang nâng cao: = Adobe InDesign CS6 - Revealed",
+                              "Loại sách": "CN In - Truyền thông",
+                              "ID": 131,
+                              "Keyword": [
+                                        "Từ khóa: In ấn, Phần mềm Adobe InDesign, Phần mềm Autodesk 3ds Max."
+                              ],
+                              "Mô tả": "Khám phá Adobe InDesign - Thiết kế dàn trang nâng cao: = Adobe InDesign CS6 - Revealed/ Chris Botello; Trường Đại học FPT (dịch). -- Tái bản lần 6. -- H.: Đại học Bách khoa Hà Nội, 2022.",
+                              "Vị trí": "Kệ số 131",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN In - Truyền thông/skv123305_3837.pdf"
+                    },
+                    {
+                              "Tên sách": "Khám phá Adobe InDesign - Thiết kế dàn trang nâng cao: = Adobe InDesign CS6 - Revealed",
+                              "Loại sách": "CN In - Truyền thông",
+                              "ID": 132,
+                              "Keyword": [
+                                        "Từ khóa: In ấn, Phần mềm Adobe InDesign, Phần mềm Autodesk 3ds Max."
+                              ],
+                              "Mô tả": "Khám phá Adobe InDesign - Thiết kế dàn trang nâng cao: = Adobe InDesign CS6 - Revealed/ Chris Botello; Trường Đại học FPT (dịch). -- Tái bản lần 2. -- H.: Đại học Bách khoa Hà Nội, 2019.",
+                              "Vị trí": "Kệ số 132",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN In - Truyền thông/skv123304_2791.pdf"
+                    },
+                    {
+                              "Tên sách": "Nhập môn tư duy thiết kế: Bố cục và Typography: = Basics of design : Layout and Typography for beginners",
+                              "Loại sách": "CN In - Truyền thông",
+                              "ID": 133,
+                              "Keyword": [
+                                        "Từ khóa: In ấn, Thiết kế đồ hoạ, Trình bày."
+                              ],
+                              "Mô tả": "Nhập môn tư duy thiết kế: Bố cục và Typography: = Basics of design : Layout and Typography for beginners/ Robin Landa; Trường Đại học FPT (nhóm dịch). -- Second edition. -- H.: Đại học Bách khoa Hà Nội, 2022.\nSummary: Giới thiệu các vấn đề cơ bản về thiết kế, bố cục dàn trang và Typography; những vấn đề cần lưu ý trước khi thiết kế, sự nhấn mạnh, sự tương phản, sự cân bằng, sự căn gióng, sự lặp lại, dòng chảy, hình ảnh, màu sắc, một số quy tắc sử dụng chữ đơn giản; giới thiệu các dự án và tài nguyên tham khảo.\nCall no. : 686.2252 G738",
+                              "Vị trí": "Kệ số 133",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN In - Truyền thông/skv123298_9912.pdf"
+                    },
+                    {
+                              "Tên sách": "Dành cho những cô gái đang yêu = How to marry the man of your choice",
+                              "Loại sách": "CN May - thời trang",
+                              "ID": 134,
                               "Keyword": [
                                         "Từ khóa: Bí quyết thành công, Kĩ năng sống, Tình yêu."
                               ],
                               "Mô tả": "Dành cho những cô gái đang yêu = How to marry the man of your choice/ Margaret Kent; Việt Hà, An Bình dịch. -- Tp. Hồ Chí Minh: Trẻ, 2012. - 375tr.; 21cm\nCall no. : 646.77 K37",
-                              "Vị trí": "Kệ số 1",
+                              "Vị trí": "Kệ số 134",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skd002797_6771.pdf"
                     },
                     {
                               "Tên sách": "Shahnaz Husain's Beauty book",
-                              "Loại sách": null,
-                              "ID": 2,
+                              "Loại sách": "CN May - thời trang",
+                              "ID": 135,
                               "Keyword": [
                                         "Từ khóa: Beauty & Grooming, Beauty, Personal, Health & Fitness. I. Hazuria, Kitty, photographer. II. Taneja, Neelam, illustrator."
                               ],
                               "Mô tả": "Complete book on beauty care for women\nCall no. : 646.7 H968",
-                              "Vị trí": "Kệ số 2",
+                              "Vị trí": "Kệ số 135",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn010464_9505.pdf"
                     },
                     {
                               "Tên sách": "Advanced in Yarn Spinning Technology: The Textile Institute",
-                              "Loại sách": null,
-                              "ID": 3,
+                              "Loại sách": "CN May - thời trang",
+                              "ID": 136,
                               "Keyword": [
                                         "Từ khóa: Yarn Spinning Technology"
                               ],
                               "Mô tả": "Advanced in Yarn Spinning Technology: The Textile Institute/ C.A. Lawrence. -- India: Woodhead, 2015.\n446p.; 24cm.\n\nCall no. : 677 L419",
-                              "Vị trí": "Kệ số 3",
+                              "Vị trí": "Kệ số 136",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn010357_3948.pdf"
                     },
                     {
                               "Tên sách": "Wear children's",
-                              "Loại sách": null,
-                              "ID": 4,
+                              "Loại sách": "CN May - thời trang",
+                              "ID": 137,
                               "Keyword": [
                                         "Từ khóa: 1. Cắt may . 2. Fashion and art. 3. Thời trang và Nghệ thuật."
                               ],
                               "Mô tả": "Wear children's. -- : , 2003.\n82p.; 28cm.\nDewey Class no. : 687.042 -- dc 21\nCall no. : 687.042 G211",
-                              "Vị trí": "Kệ số 4",
+                              "Vị trí": "Kệ số 137",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn002841_7265.pdf"
                     },
                     {
                               "Tên sách": "Gap press. -- New York: Milan, 2002",
-                              "Loại sách": null,
-                              "ID": 5,
+                              "Loại sách": "CN May - thời trang",
+                              "ID": 138,
                               "Keyword": [
                                         "Từ khóa: 1. Fashion and arts. 2. Thời trang và Nghệ thuật."
                               ],
                               "Mô tả": "Gap press. -- New York: Milan, 2002.\n191p.; 28cm.\nDewey Class no. : 687.042 -- dc 21\nCall no. : 687.042 G211",
-                              "Vị trí": "Kệ số 5",
+                              "Vị trí": "Kệ số 138",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn002843_9483.pdf"
                     },
                     {
-                              "Tên sách": "Wear children's",
-                              "Loại sách": null,
-                              "ID": 6,
-                              "Keyword": [
-                                        "Từ khóa: Cắt may, Fashion and art, Thời trang và Nghệ thuật"
-                              ],
-                              "Mô tả": "Wear children's. -- : , 2003\n82p.; 28cm.\n1. Cắt may . 2. Fashion and art. 3. Thời trang và Nghệ thuật.\n\nDewey Class no. : 687.042 -- dc 21\nCall no. : 687.042 G211",
-                              "Vị trí": "Kệ số 6",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn002841_1075.pdf"
-                    },
-                    {
-                              "Tên sách": "Gap press",
-                              "Loại sách": null,
-                              "ID": 7,
-                              "Keyword": [
-                                        "Từ khóa: Fashion and arts, Thời trang và Nghệ thuật"
-                              ],
-                              "Mô tả": "Gap press. -- New York: Milan, 2002\n191p.; 28cm.\n1. Fashion and arts. 2. Thời trang và Nghệ thuật.\n\nDewey Class no. : 687.042 -- dc 21\nCall no. : 687.042 G211",
-                              "Vị trí": "Kệ số 7",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn002843_0664.pdf"
-                    },
-                    {
-                              "Tên sách": "Cosmetics : Advertisement revered book",
-                              "Loại sách": null,
-                              "ID": 8,
-                              "Keyword": [
-                                        "Từ khóa: Cosmetics, Advertisement revered book"
-                              ],
-                              "Mô tả": "Cosmetics : Advertisement revered book. -- : ,\n98p. ; 29cm\nISBN 9783368110860\n\n1. . I. . II. Title: Cosmetics : . III. Title: Advertisement revered book.\n\nDewey Class no. : 646.72 -- dc 23\nCall no. : 646.72 C834",
-                              "Vị trí": "Kệ số 8",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn007683_4532.pdf"
-                    },
-                    {
-                              "Tên sách": "Flat patern cutting and modelling for fashion",
-                              "Loại sách": null,
-                              "ID": 9,
-                              "Keyword": [
-                                        "Từ khóa: Dressmaking -- Pattern design, Thiết kế thời trang. I. ."
-                              ],
-                              "Mô tả": "Providing skills needed to translate design ideas and working sketches into garment patterns, this book presents a variety of methods. It is arranged in self-contained lessons with text and diagrams associated with the emphasis on a 3-dimensional, practical approach.\nCall no. : 687.12 S787",
-                              "Vị trí": "Kệ số 9",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/CN May - thời trang/skn004485_2333.pdf"
-                    },
-                    {
                               "Tên sách": "Nữ nghệ sĩ tạo hình Việt Nam hiện đại = Contemporary Vietnamese woman visual artists",
-                              "Loại sách": null,
-                              "ID": 11,
+                              "Loại sách": "Nghệ thuật - Ẩm thực",
+                              "ID": 139,
                               "Keyword": [
                                         "Từ khóa: Nghệ thuật tạo hình, Nghệ thuật tạo hình, Việt Nam."
                               ],
                               "Mô tả": "Nữ nghệ sĩ tạo hình Việt Nam hiện đại = Contemporary Vietnamese woman visual artists/ Hội mỹ thuật Việt Nam. -- H.: Mỹ thuật, 2022. - 291tr.; 30cm.\nCall no. : 730.8209597 N962",
-                              "Vị trí": "Kệ số 11",
+                              "Vị trí": "Kệ số 139",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skd002736_6484.pdf"
                     },
                     {
                               "Tên sách": "101 điều cốt yếu trong nghệ thuật Bonsai",
-                              "Loại sách": null,
-                              "ID": 12,
+                              "Loại sách": "Nghệ thuật - Ẩm thực",
+                              "ID": 140,
                               "Keyword": [
                                         "Từ khóa: Hòn non bộ, Nghệ thuật Bonsai"
                               ],
                               "Mô tả": "101 điều cốt yếu trong nghệ thuật Bonsai / Phạm Cao Hoàn. -- TP.HCM: Phụ Nữ, 1998. - 69tr.; 19cm.\nCall no. : 715 P534-H678",
-                              "Vị trí": "Kệ số 12",
+                              "Vị trí": "Kệ số 140",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv017812_4505.pdf"
                     },
                     {
                               "Tên sách": "Phương pháp nghiên cứu khoa học giáo dục mỹ thuật",
-                              "Loại sách": null,
-                              "ID": 13,
+                              "Loại sách": "Nghệ thuật - Ẩm thực",
+                              "ID": 141,
                               "Keyword": [
                                         "Từ khóa: Giáo dục mỹ thuật, phương pháp nghiên cứu khoa học."
                               ],
                               "Mô tả": "Phương pháp nghiên cứu khoa học giáo dục mỹ thuật/ Nguyễn Thu Tuấn. -- H. : Đại học sư phạm, 2015. - 171tr. ; 24cm.\nCall no. : 707 N573-T883",
-                              "Vị trí": "Kệ số 13",
+                              "Vị trí": "Kệ số 141",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv117999_4988.pdf"
                     },
                     {
                               "Tên sách": "Giáo trình Mỹ thuật và phương pháp dạy học mỹ thuật",
-                              "Loại sách": null,
-                              "ID": 14,
+                              "Loại sách": "Nghệ thuật - Ẩm thực",
+                              "ID": 142,
                               "Keyword": [
                                         "Từ khóa: Mỹ thuật -- Phương pháp dạy học"
                               ],
                               "Mô tả": "Giáo trình Mỹ thuật và phương pháp dạy học mỹ thuật / Nguyễn Quốc Toản. -- Tái bản lần thứ 6. -- H. Đại học Sư phạm, 2014. - 200tr. ; 24cm.\nCall no. : 707 N573-T627",
-                              "Vị trí": "Kệ số 14",
+                              "Vị trí": "Kệ số 142",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv117945_4368.pdf"
                     },
                     {
                               "Tên sách": "Lịch sử mỹ thuật thế giới: Giáo trình Cao đẳng Sư phạm",
-                              "Loại sách": null,
-                              "ID": 15,
+                              "Loại sách": "Nghệ thuật - Ẩm thực",
+                              "ID": 143,
                               "Keyword": [
                                         "Từ khóa: Mỹ thuật -- Lịch sử"
                               ],
                               "Mô tả": "Lịch sử mỹ thuật thế giới: Giáo trình Cao đẳng Sư phạm/ Phạm Thị Chính biên soạn. -- Hà Nội : Đại học Sư phạm Hà Nội, 2007. - 214tr.; 27cm.\nCall no. : 709 P534-C532",
-                              "Vị trí": "Kệ số 15",
+                              "Vị trí": "Kệ số 143",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv063023_8899.pdf"
                     },
                     {
-                              "Tên sách": "Mỹ thuật Hy Lạp La Mã",
-                              "Loại sách": null,
-                              "ID": 16,
-                              "Keyword": [
-                                        "Từ khóa: Mỹ thuật -- Lịch sử."
-                              ],
-                              "Mô tả": "Mỹ thuật Hy Lạp La Mã/ Huỳnh Ngọc Trảng, Phạm Thiếu Hương. -- Hà Nội: Mỹ thuật, 1996. - 511tr.; 20.5cm\nCall no. : 709 H988-T772",
-                              "Vị trí": "Kệ số 16",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv021227_6079.pdf"
-                    },
-                    {
-                              "Tên sách": "The beauty of physics : Wu li zhi mei",
-                              "Loại sách": null,
-                              "ID": 17,
-                              "Keyword": [
-                                        "Từ khóa: Nature photography, Photograph collections, Photography, Artistic, Physicists, Wu, Weimin"
-                              ],
-                              "Mô tả": "The beauty of physics : Wu li zhi mei/ Weimin Wu. -- Singapore: World Scientific, 2007\nxi, 984p.; 25cm\nxii, 145 p. : ill. (chiefly col.) ; 26 cm\nISBN 9789812705600\nISBN 9812705600\n\n1. Nature photography. 2. Photograph collections. 3. Photography, Artistic. 4. Physicists. 5. Wu, Weimin. I. .\n\nDewey Class no. : 779.092 -- dc 23\nCall no. : 779.092 W959",
-                              "Vị trí": "Kệ số 17",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skn010811_3403.pdf"
-                    },
-                    {
-                              "Tên sách": "Cơ bản về Autodesk 3ds Max 2014: = Autodesk® 3Ds Max® 2014 Essentials: Thiết kế tạo hình cơ bản và nâng cao",
-                              "Loại sách": null,
-                              "ID": 18,
-                              "Keyword": [
-                                        "Từ khóa: Đồ hoạ máy tính, Phần mềm Autodesk 3ds Max, Hoạt hình máy tính."
-                              ],
-                              "Mô tả": "Cơ bản về Autodesk 3ds Max 2014: = Autodesk® 3Ds Max® 2014 Essentials: Thiết kế tạo hình cơ bản và nâng cao/ Randi L. Derakhshani, Dariush Derakhsani; Trường Đại học FPT (dịch). -- Tái bản lần 2. -- H.: Đại học Bách khoa Hà Nội, 2019.",
-                              "Vị trí": "Kệ số 18",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv123307_404.pdf"
-                    },
-                    {
-                              "Tên sách": "Nhiếp ảnh kỹ thuật số",
-                              "Loại sách": null,
-                              "ID": 19,
-                              "Keyword": [
-                                        "Từ khóa: Kĩ thuật số, Nhiếp ảnh, Xử lí hình ảnh."
-                              ],
-                              "Mô tả": "Nhiếp ảnh kỹ thuật số/ Bruce Warren; Trường Đại học FPT (nhóm dịch). -- Tái bản lần 4. -- H.: Đại học Bách khoa Hà Nội, 2022.\nTên sách tiếng Anh: Digital photography.\nSummary: Giới thiệu về công tác chuẩn bị, những kiến thức về tạo ảnh kĩ thuật số, máy ảnh và ống kính, in và xem ảnh kỹ thuật số, xử lý sự cố, ánh sáng và chủ thể, tút tát và chỉnh sửa, lịch sử nhiếp ảnh và các kĩ thuật đặc biệt.\nCall no. : 771.44 W286",
-                              "Vị trí": "Kệ số 19",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skv123297_332.pdf"
-                    },
-                    {
-                              "Tên sách": "On food and cooking: the science and lore of the kitchen",
-                              "Loại sách": null,
-                              "ID": 20,
-                              "Keyword": [
-                                        "Từ khóa: Cooking, Food."
-                              ],
-                              "Mô tả": "Harold McGee's On Food and Cooking is a kitchen classic. Hailed by Time magazine as \"a minor masterpiece\" when it first appeared in 1984, On Food and Cooking is the bible to which food lovers and professional chefs worldwide turn for an understanding of where our foods come from, what exactly they're made of, and how cooking transforms them into something new and delicious. Now, for its twentieth anniversary, Harold McGee has prepared a new, fully revised and updated edition of On Food and Cooking. He has rewritten the text almost completely, expanded it by two-thirds, and commissioned more than 100 new illustrations. As compulsively readable and engaging as ever, the new On Food and Cooking provides countless eye-opening insights into food, its preparation, and its enjoyment. On Food and Cooking pioneered the translation of technical food science into cook-friendly kitchen science and helped give birth to the inventive culinary movement known as \"molecular gastronomy.\" Though other books have now been written about kitchen science, On Food and Cooking remains unmatched in the accuracy, clarity, and thoroughness of its explanations, and the intriguing way in which it blends science with the historical evolution of foods and cooking techniques. Among the major themes addressed throughout this new edition are: Traditional and modern methods of food production and their influences on food quality, the great diversity of methods by which people in different places and times have prepared the same ingredients, tips for selecting the best ingredients and preparing them successfully, the particular substances that give foods their flavors and that give us pleasure, and our evolving knowledge of the health benefits and risks of foods. On Food and Cooking is an invaluable and monumental compendium of basic information about ingredients, cooking methods, and the pleasures of eating. It will delight and fascinate anyone who has ever cooked, savored, or wondered about food.\nCall no. : 641.5 M145",
-                              "Vị trí": "Kệ số 20",
-                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Nghệ thuật - Ẩm thực/skn010475_3278.pdf"
-                    },
-                    {
                               "Tên sách": "Gỗ Việt Số 163 - Cất cánh trong Xuân mới (Tháng 1+22024)",
-                              "Loại sách": null,
-                              "ID": 21,
+                              "Loại sách": "Nông - Lâm - Ngư Nghiệp",
+                              "ID": 144,
                               "Keyword": [
                                         "Từ khóa: Gỗ; Nội thất"
                               ],
                               "Mô tả": "Gỗ Việt Số 163 - Cất cánh trong Xuân mới (Tháng 1+22024)",
-                              "Vị trí": "Kệ số 21",
+                              "Vị trí": "Kệ số 144",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nông - Lâm - Ngư Nghiệp/go_viet_so_163_cat_canh_trong_xuan_moi_thang_1_22024__9441.pdf"
                     },
                     {
                               "Tên sách": "Gỗ Việt Số 162 - Tháng 12 năm 2023",
-                              "Loại sách": null,
-                              "ID": 22,
+                              "Loại sách": "Nông - Lâm - Ngư Nghiệp",
+                              "ID": 145,
                               "Keyword": [
                                         "Từ khóa: Gỗ; Nội thất"
                               ],
                               "Mô tả": "Gỗ Việt Số 162 - Tháng 12 năm 2023",
-                              "Vị trí": "Kệ số 22",
+                              "Vị trí": "Kệ số 145",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nông - Lâm - Ngư Nghiệp/go_viet_so_162_thang_12_nam_2023_3414.pdf"
                     },
                     {
                               "Tên sách": "Gỗ Việt Số 161 - Tháng 11 năm 2023",
-                              "Loại sách": null,
-                              "ID": 23,
+                              "Loại sách": "Nông - Lâm - Ngư Nghiệp",
+                              "ID": 146,
                               "Keyword": [
                                         "Từ khóa: Gỗ; Nội thất"
                               ],
                               "Mô tả": "Gỗ Việt Số 161 - Tháng 11 năm 2023",
-                              "Vị trí": "Kệ số 23",
+                              "Vị trí": "Kệ số 146",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nông - Lâm - Ngư Nghiệp/go_viet_so_161_thang_11_nam_2023_4578.pdf"
                     },
                     {
                               "Tên sách": "Gỗ Việt Số 160 - Tháng 10 năm 2023",
-                              "Loại sách": null,
-                              "ID": 24,
+                              "Loại sách": "Nông - Lâm - Ngư Nghiệp",
+                              "ID": 147,
                               "Keyword": [
                                         "Từ khóa: Gỗ; Nội thất"
                               ],
                               "Mô tả": "Gỗ Việt Số 160 - Tháng 10 năm 2023",
-                              "Vị trí": "Kệ số 24",
+                              "Vị trí": "Kệ số 147",
                               "Nội dung đầu sách": "/Knowledge/Books/PDF/Nông - Lâm - Ngư Nghiệp/go_viet_so_160_thang_10_nam_2023_2516.pdf"
+                    },
+                    {
+                              "Tên sách": "Gỗ Việt Số 159 - Tháng 09 năm 2023",
+                              "Loại sách": "Nông - Lâm - Ngư Nghiệp",
+                              "ID": 148,
+                              "Keyword": [
+                                        "Từ khóa: Gỗ; Nội thất"
+                              ],
+                              "Mô tả": "Gỗ Việt Số 159 - Tháng 09 năm 2023",
+                              "Vị trí": "Kệ số 148",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Nông - Lâm - Ngư Nghiệp/go_viet_so_159_thang_09_nam_2023_1929.pdf"
+                    },
+                    {
+                              "Tên sách": "Trị liệu tâm lý",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 149,
+                              "Keyword": [
+                                        "Từ khóa: Điều trị, Tâm bệnh học, Tâm lý."
+                              ],
+                              "Mô tả": "Trị liệu tâm lý: Cơ sở lý luận và thực hành điều trị tâm bệnh/ Nguyễn Công Khanh. -- Tái bản lần thứ nhất. -- H.: Đại học Quốc gia Hà Nội, 2023. - 311tr.: bảng; 21cm.\nCall no. : 616.89 N573-K45.",
+                              "Vị trí": "Kệ số 149",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skv125644_4172.pdf"
+                    },
+                    {
+                              "Tên sách": "Giáo trình thực hành tâm lý lâm sàng: = Practicum in clinical psychology",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 150,
+                              "Keyword": [
+                                        "Từ khóa: Tâm lý học, Tâm lý học lâm sàng."
+                              ],
+                              "Mô tả": "Giáo trình thực hành tâm lý lâm sàng: = Practicum in clinical psychology/ Nguyễn Thị Thanh Tú (ch.b). -- H.: Thế giới, 2022. - 283tr.: hình vẽ, bảng; 21cm.\nCall no. : 616.89 N573-T883.",
+                              "Vị trí": "Kệ số 150",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skv125643_3183.pdf"
+                    },
+                    {
+                              "Tên sách": "Tâm bệnh học",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 151,
+                              "Keyword": [
+                                        "Từ khóa: Điều trị, Tâm bệnh học."
+                              ],
+                              "Mô tả": "Tâm bệnh học: Sách chuyên khảo/ Đặng Hoàng Minh (ch.b), Hồ Thu Hà, Bahr Weiss. -- Nối bản lần 1. -- H.: Đại học Quốc gia Hà Nội, 2022. - 579tr.: minh họa; 24cm.\nCall no. : 616.89 Đ182-M664.",
+                              "Vị trí": "Kệ số 151",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skv125636_6573.pdf"
+                    },
+                    {
+                              "Tên sách": "Tâm bệnh học",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 152,
+                              "Keyword": [
+                                        "Từ khóa: Tâm thần học."
+                              ],
+                              "Mô tả": "Tâm bệnh học/ Phạm Toàn. -- Tp. Hồ Chí Minh: Trẻ, 2023. - 543tr.; 20cm.\nCall no. : 616.89 P534-T627.",
+                              "Vị trí": "Kệ số 152",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skv125635_5719.pdf"
+                    },
+                    {
+                              "Tên sách": "Đi bộ và sức khỏe",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 153,
+                              "Keyword": [
+                                        "Từ khóa: Đi bộ, Chăm sóc sức khoẻ."
+                              ],
+                              "Mô tả": "Đi bộ và sức khỏe/ Nguyễn Ngọc Kim Anh. -- H.: Thể thao và du lịch, 2022. - 191tr.; 21cm\nCall no. : 613.7176 N573-A596",
+                              "Vị trí": "Kệ số 153",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skd002706_9402.pdf"
+                    },
+                    {
+                              "Tên sách": "Alternative treatment for cancer",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 154,
+                              "Keyword": [
+                                        "Từ khóa: Cancer -- Alternative treatment, Medicine, Chinese"
+                              ],
+                              "Mô tả": "Cancer treatment has enjoyed half a century of healthy development, relying mainly on surgery, cytotoxic therapy and radiation. Achievements and successes are well reflected in the longer survival period and better quality of life. Nonetheless, cancer still spreads locally, recurs, metastasizes and remains one of the top killers. Instead of concentrating on cancer removal, it has become obvious that supportive measures are also important. These include the means to improve quality of life during treatment and to contain tumor growth. To this end, herbal medicine appears to offer holistic suppo\nCall no. : 616.99406 A466",
+                              "Vị trí": "Kệ số 154",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skn010808_295.pdf"
+                    },
+                    {
+                              "Tên sách": "The physiologic nature of sleep",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 155,
+                              "Keyword": [
+                                        "Từ khóa: Sleep -- Physiological aspects"
+                              ],
+                              "Mô tả": "This book provides a broad introduction to the fascinating subject of sleep, a behavioral state in which human beings spend a third of their life span, and a topic which interests not only the specialist but also the layperson. Everybody knows that well-being also depends on undisturbed, normal sleep. The Physiologic Nature of Sleep is self-contained in presentation. It may be used as an advanced textbook by graduate students and even ambitious undergraduates in biology, medicine and psychology. It is also suitable for the expert hypnologist who wishes to have an overview of some of the classi\nCall no. : 612.821 P578",
+                              "Vị trí": "Kệ số 155",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skn010801_2322.pdf"
+                    },
+                    {
+                              "Tên sách": "Stochastic models of tumor latency and their biostatistical applications",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 156,
+                              "Keyword": [
+                                        "Từ khóa: Biological models, Cancer -- Diagnosis, Cocarcinogenesis, Medical screening, Stochastic processes"
+                              ],
+                              "Mô tả": "This research monograph discusses newly developed mathematical models and methods that provide biologically meaningful inferences from data on cancer latency produced by follow-up and discrete surveillance studies. Methods for designing optimal strategies of cancer surveillance are systematically presented for the first time in this book. It offers new approaches to the stochastic description of tumor latency, employs biologically-based models for making statistical inference from data on tumor recurrence and also discusses methods of statistical analysis of data resulting from discrete surveillance strategies. It also offers insight into the role of prognostic factors based on the interpretation of their effects in terms of parameters endowed with biological meaning, as well as methods for designing optimal schedules of cancer screening and surveillance. Last but not least, it discusses survival models allowing for cure rates and the choice of optimal treatment based on covariate information, and presents numerous examples of real data analysis\nCall no. : 614.59994 Y15",
+                              "Vị trí": "Kệ số 156",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skn010744_3565.pdf"
+                    },
+                    {
+                              "Tên sách": "Basic neuroanatomy",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 157,
+                              "Keyword": [
+                                        "Từ khóa: Nervous system, Neuroanatomy"
+                              ],
+                              "Mô tả": "This book is intended for students of medicine, dentistry and allied health professions. The continual, unremitting explosion of information in the biomedical fields in recent years has rendered the curriculum ever more compact and onerous in the various disciplines of studies required of the students. Neuroanatomy, which deals with complex interrelated neural structures, presents a special challenge to the students, giving rise to an often overwhelming experience in the process of mastering the vast, seemingly disparate body of facts. The currently available texts are often too massive and detailed for the compressed time frame allotted for the study. In this book, we have organized the subject matter into a basic core of information on the human nervous system, as concisely and succinctly as possible without undue abridgment. For brevity, the information is presented mostly in an outline format, and where the subject matter is complex, we employ a more lengthy write up (e.g. the motor system and the limbic system). It is hoped that the overriding goal of writing a short, concise text for the harried Neuroanatomy students will have been achieved\nCall no. : 611.8 D111",
+                              "Vị trí": "Kệ số 157",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skn010641_7765.pdf"
+                    },
+                    {
+                              "Tên sách": "Haemostasis in Surgery",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 158,
+                              "Keyword": [
+                                        "Từ khóa: Hemostasis, Surgical, Hemostatics, Surgery, Operative"
+                              ],
+                              "Mô tả": "This unique volume presents the cutting edge of haemostasis in surgery and includes the advances in the science pertaining to related important medical and surgical problems. It is the only book that includes all the surgical subspecialties focusing specifically on the problems of haemostasis in each field. State-of-the-art laboratory and clinical reviews are included and modern devices used in the different specialties are also covered. The contributors are well-known authorities in their special fields and haematological area. Each is covered comprehensively with special emphasis on unanswer\nCall no. : 617.919 H155",
+                              "Vị trí": "Kệ số 158",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skn010626_539.pdf"
+                    },
+                    {
+                              "Tên sách": "Neuroscience for neurologists",
+                              "Loại sách": "Y học - Sức khỏe",
+                              "ID": 159,
+                              "Keyword": [
+                                        "Từ khóa: Nervous system -- Diseases -- Genetic aspects, Neurobiology, Neurogenetics, Neurology, Neurosciences"
+                              ],
+                              "Mô tả": "The last decade has seen major advances in our understanding of the basic scientific principles that underpin clinical neurology. Many of these advances have already had a major impact on routine clinical practice, and this is likely to continue in the future. Although this makes it an exciting time to practice neurology, it also presents new challenges. How can established general neurologists keep up-to-date with clinically relevant scientific advances, and how can the specialist remain competent outside his own field? What should trainee neurologists learn to prepare themselves for the future career? Written by experts in the field, this timely book presents the scientific principles behind neurology. It aims to take the reader from the human genome, through gene expression, to molecular and cellular pathology, and subsequently to contemporary clinical investigations and clinical trials. Each contribution includes a discussion about the future of the field and highlights areas of potential growth and their relevance to routine clinical practice over the next decade. The succinctly written chapters will be easily accessible to both neurologists and trainees who have no expertise in the area. Many of the chapters are co-written by a clinician and a basic scientist, and each has been subject to peer review - both by experts in the field and a \"jobbing\" general neurologist. This has ensured that the contributions reflect contemporary scientific thinking which is presented in a way that is easy to digest. The book includes generous use of diagrams to help explain difficult concepts, a glossary explaining the terminology, and provides information on links to web-based resources for further information\nCall no. : 612.8 C539",
+                              "Vị trí": "Kệ số 159",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Y học - Sức khỏe/skn010624_4806.pdf"
+                    },
+                    {
+                              "Tên sách": "Thực hành tâm lý học đường lớp 1",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 160,
+                              "Keyword": [
+                                        "Từ khóa: Học sinh, Lớp 1, Tâm lý, Thực hành."
+                              ],
+                              "Mô tả": "Thực hành tâm lý học đường lớp 1/ Huỳnh Văn Chẩn (ch.b), Đỗ Thị Vân Anh, Nguyễn Hoàng Mai. -- Tái bản lần thứ nhất. -- TP. Hồ chí Minh: Giáo dục Việt Nam, 2019. - 60tr.: tranh vẽ; 27cm.\nĐTTS ghi: Bộ Giáo dục và Đào tạo.\nCall no. : 372.019 H987-C454",
+                              "Vị trí": "Kệ số 160",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125654_1659.pdf"
+                    },
+                    {
+                              "Tên sách": "Giáo trình can thiệp sớm cho trẻ khuyết tật",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 161,
+                              "Keyword": [
+                                        "Từ khóa: Can thiệp sớm, Giáo dục, Trẻ khuyết tật."
+                              ],
+                              "Mô tả": "Giáo trình can thiệp sớm cho trẻ khuyết tật/ Trần Thị Thiệp (ch.b), Hoàng Thị Nho, Trần Thị Minh Thành. -- H.: Đại học Sư phạm, 2023. - 207tr.; 24cm.\nCall no. : 371.9 T772-T434",
+                              "Vị trí": "Kệ số 161",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125639_9902.pdf"
+                    },
+                    {
+                              "Tên sách": "Tâm lý học giao tiếp",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 162,
+                              "Keyword": [
+                                        "Từ khóa: Giao tiếp, Tâm lý học."
+                              ],
+                              "Mô tả": "Tâm lý học giao tiếp/ Huỳnh Văn Sơn (ch.b), Nguyễn Thị Tứ, Bùi Hồng Quân, Nguyễn Hoàng Khắc Hiếu. -- Tái bản lần thứ 1. -- Tp. Hồ Chí Minh.: Đại học Sư phạm Tp. Hồ Chí Minh, 2018. - 279tr.: minh họa; 24cm.\nĐTTS Trường Đại học Sư phạm Thành phố Hồ Chí Minh.\nCall no. : 153.6 H987-S698",
+                              "Vị trí": "Kệ số 162",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125628_7472.pdf"
+                    },
+                    {
+                              "Tên sách": "Thực hành tâm lý học đường lớp 5",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 163,
+                              "Keyword": [
+                                        "Từ khóa: Học sinh, Lớp 5, Tâm lý, Thực hành"
+                              ],
+                              "Mô tả": "Thực hành tâm lý học đường lớp 5/ Huỳnh Văn Chẩn (ch.b), Đỗ Thị Vân Anh, Nguyễn Hoàng Mai. -- Tái bản lần thứ hai. -- TP. Hồ chí Minh: Giáo dục Việt Nam, 2020. - 64tr.: tranh vẽ; 27cm.\nCall no. : 372.019 H987-C454.",
+                              "Vị trí": "Kệ số 163",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125657_0565.pdf"
+                    },
+                    {
+                              "Tên sách": "Thực hành tâm lý học đường lớp 4",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 164,
+                              "Keyword": [
+                                        "Từ khóa: Học sinh, Lớp 4, Tâm lý, Thực hành."
+                              ],
+                              "Mô tả": "Thực hành tâm lý học đường lớp 4/ Huỳnh Văn Chẩn (ch.b), Đỗ Thị Vân Anh, Nguyễn Hoàng Mai. -- Tái bản lần thứ hai. -- TP. Hồ chí Minh: Giáo dục Việt Nam, 2020. - 64tr.: bảng, tranh vẽ; 27cm.\nCall no. : 372.019 H987-C454.",
+                              "Vị trí": "Kệ số 164",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125656_9803.pdf"
+                    },
+                    {
+                              "Tên sách": "Thực hành tâm lý học đường lớp 3",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 165,
+                              "Keyword": [
+                                        "Từ khóa: Học sinh, Lớp 3, Tâm lý, Thực hành"
+                              ],
+                              "Mô tả": "Thực hành tâm lý học đường lớp 3/ Huỳnh Văn Chẩn (ch.b), Đỗ Thị Vân Anh, Nguyễn Hoàng Mai. -- Tái bản lần thứ nhất. -- TP. Hồ chí Minh: Giáo dục Việt Nam, 2019. - 60tr.: bảng, tranh vẽ; 27cm.\nCall no. : 372.019 H987-C454.",
+                              "Vị trí": "Kệ số 165",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125655_8855.pdf"
+                    },
+                    {
+                              "Tên sách": "Các thực nghiệm trong tâm lí học xã hội: sách chuyên khảo dành cho cao học và sinh viên tâm lý học",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 166,
+                              "Keyword": [
+                                        "Từ khóa: Tâm lý học xã hội, Thực nghiệm."
+                              ],
+                              "Mô tả": "Các thực nghiệm trong tâm lí học xã hội: sách chuyên khảo dành cho cao học và sinh viên tâm lý học/ Trần Thị Minh Đức. -- Tái bản lần thứ 2 có sửa chữa bổ sung. -- H.: Đại học Quốc gia Hà Nội, 2023. - 702tr.: ảnh, bảng; 24cm.\nCall no. : 302 T772-Đ822.",
+                              "Vị trí": "Kệ số 166",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125653_567.pdf"
+                    },
+                    {
+                              "Tên sách": "Nhập môn đánh giá tâm lý: Giáo trình",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 167,
+                              "Keyword": [
+                                        "Từ khóa: Tâm lý học"
+                              ],
+                              "Mô tả": "Nhập môn đánh giá tâm lý: Giáo trình/ Huỳnh Mai Trang, Kiều Thị Thanh Trà. -- TP. Hồ Chí Minh: Đại học Sư phạm TP. Hồ Chí Minh, 2022. - 119tr.: bảng; 24cm.\nĐTTS ghi: Trường đại học Sư phạm Thành phố Hồ Chí Minh.\nCall no. : 150.7 H987-T772.",
+                              "Vị trí": "Kệ số 167",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125652_456.pdf"
+                    },
+                    {
+                              "Tên sách": "Trắc nghiệm tâm lý",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 168,
+                              "Keyword": [
+                                        "Từ khóa: Tâm lý, Trắc nghiệm"
+                              ],
+                              "Mô tả": "Trắc nghiệm tâm lý/ Đoàn Văn Điều. -- TP.Hồ Chí Minh: Trường Đại học Sư phạm TP. Hồ Chí Minh, 2019. - 155tr.; 24cm.\nĐTTS ghi: Trường đại học Sư phạm Thành phố Hồ Chí Minh.\nCall no. : 150 Đ631-Đ567.",
+                              "Vị trí": "Kệ số 168",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125651_3322.pdf"
+                    },
+                    {
+                              "Tên sách": "Tâm lý học trí tuệ: sách chuyên khảo",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 169,
+                              "Keyword": [
+                                        "Từ khóa: Tâm lý học trí tuệ"
+                              ],
+                              "Mô tả": "Tâm lý học trí tuệ: sách chuyên khảo/ Đoàn Văn Điều. -- Tái bản lần thứ 1, có sửa chữa bổ sung. -- TP.Hồ Chí Minh: Trường Đại học Sư phạm TP. Hồ Chí Minh, 2019. - 219tr.; 24cm.\nĐTTS ghi: Trường đại học Sư phạm Thành phố Hồ Chí Minh.\nCall no. : 153.9 Đ631-Đ567.",
+                              "Vị trí": "Kệ số 169",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125650_1792.pdf"
+                    },
+                    {
+                              "Tên sách": "Tâm lý học hướng nghiệp",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 170,
+                              "Keyword": [
+                                        "Từ khóa: Hướng nghiệp, Tâm lý học."
+                              ],
+                              "Mô tả": "Tâm lý học hướng nghiệp/ Huỳnh Văn Sơn. -- TP.Hồ Chí Minh: Trường Đại học Sư phạm TP. Hồ Chí Minh, 2017. - 277tr.; 24cm.\nĐTTS ghi: Trường đại học Sư phạm Thành phố Hồ Chí Minh.\nCall no. : 158.6 H987-S698.",
+                              "Vị trí": "Kệ số 170",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125649_0614.pdf"
+                    },
+                    {
+                              "Tên sách": "Giáo trình tâm lý học lâm sàng",
+                              "Loại sách": "Khoa học xã hội",
+                              "ID": 171,
+                              "Keyword": [
+                                        "Từ khóa: Tâm lý học lâm sàng."
+                              ],
+                              "Mô tả": "Giáo trình tâm lý học lâm sàng/ Nguyễn Thị Minh Hằng (ch.b), Trần Thành Nam, Nguyễn Bá Đạt, Nguyễn Ngọc Diệp. -- Tái bản lần 2. -- H.: Đại học Quốc gia Hà Nội, 2021. - 523tr.: minh họa; 24cm.\nCall no. : 150.7 N573-H239.",
+                              "Vị trí": "Kệ số 171",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học xã hội/skv125648_9365.pdf"
+                    },
+                    {
+                              "Tên sách": "Việt Nam a long history",
+                              "Loại sách": "Lịch sử - Địa lý - Du lịch",
+                              "ID": 172,
+                              "Keyword": [
+                                        "Từ khóa: Lịch sử, Việt Nam."
+                              ],
+                              "Mô tả": "Việt Nam a long history/ Nguyễn Khắc Viện. -- 9th ed. -- H.: Thế Giới, 2013. - 406tr.; 24cm.\nCall no. : 959.7 N573-V662",
+                              "Vị trí": "Kệ số 172",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Lịch sử - Địa lý - Du lịch/skd002617_8761.pdf"
+                    },
+                    {
+                              "Tên sách": "Gắn kết du lịch và thể thao",
+                              "Loại sách": "Lịch sử - Địa lý - Du lịch",
+                              "ID": 173,
+                              "Keyword": [
+                                        "Từ khóa: Du lịch, Việt Nam, Thể thao, Việt Nam."
+                              ],
+                              "Mô tả": "Gắn kết du lịch và thể thao/ Lâm Quang Thành. -- H.: Thể thao và Du lịch, 2022. - 198tr.; 21cm.\nCall no. : 338.4791597 L213-T367",
+                              "Vị trí": "Kệ số 173",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Lịch sử - Địa lý - Du lịch/skd002573_5984.pdf"
+                    },
+                    {
+                              "Tên sách": "Phát triển du lịch nội địa ở Việt Nam",
+                              "Loại sách": "Lịch sử - Địa lý - Du lịch",
+                              "ID": 174,
+                              "Keyword": [
+                                        "Từ khóa: Kinh tế du lịch, Việt Nam, Nội địa"
+                              ],
+                              "Mô tả": "Phát triển du lịch nội địa ở Việt Nam/ Nhiều tác giả. -- H.: Thể thao và Du lịch, 2022. - 160tr.; 21cm.\nCall no. : 338.4791597 P536",
+                              "Vị trí": "Kệ số 174",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Lịch sử - Địa lý - Du lịch/skd002566_5138.pdf"
+                    },
+                    {
+                              "Tên sách": "Lịch sử chính quyền thành phố Hồ Chí Minh (1945-2015) - Tập 1 : Chính quyền Cách mạng Sài Gòn - Chợ Lớn - Gia Định trong công cuộc kháng chiến chống xâm lược (1945/1975)",
+                              "Loại sách": "Lịch sử - Địa lý - Du lịch",
+                              "ID": 175,
+                              "Keyword": [
+                                        "Từ khóa: Lịch sử chính quyền, Thành phố Hồ Chí Minh."
+                              ],
+                              "Mô tả": "Lịch sử chính quyền thành phố Hồ Chí Minh (1945-2015) - Tập 1 : Chính quyền Cách mạng Sài Gòn - Chợ Lớn - Gia Định trong công cuộc kháng chiến chống xâm lược (1945/1975)/ Ủy ban Nhân dân Thành phố Hồ Chí Minh. -- H.: Chính trị Quốc gia Sự thật, 2021. - 335tr.; 27cm.\nCall no. : 321.00959779 L698",
+                              "Vị trí": "Kệ số 175",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Lịch sử - Địa lý - Du lịch/skd002471_1603.pdf"
+                    },
+                    {
+                              "Tên sách": "Lịch sử chính quyền thành phố Hồ Chí Minh (1945-2015) - Tập 2 : Chính quyền Nhân dân Thành phố Hồ Chí Minh trong công cuộc xây dựng và bảo vệ tổ quốc",
+                              "Loại sách": "Lịch sử - Địa lý - Du lịch",
+                              "ID": 176,
+                              "Keyword": [
+                                        "Từ khóa: Lịch sử chính quyền, Lịch sử chính quyền -- Thành phố Hồ Chí Minh."
+                              ],
+                              "Mô tả": "Lịch sử chính quyền thành phố Hồ Chí Minh (1945-2015) - Tập 2 : Chính quyền Nhân dân Thành phố Hồ Chí Minh trong công cuộc xây dựng và bảo vệ tổ quốc/ Ủy ban Nhân dân Thành phố Hồ Chí Minh. -- H.: Chính trị Quốc gia Sự thật, 2021. - 387tr.; 27cm\nCall no. : 321.00959779 L698",
+                              "Vị trí": "Kệ số 176",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Lịch sử - Địa lý - Du lịch/skd002477_3228.pdf"
+                    },
+                    {
+                              "Tên sách": "Kỹ thuật cháy",
+                              "Loại sách": "Khoa học tự nhiên",
+                              "ID": 177,
+                              "Keyword": [
+                                        "Từ khóa: Cháy, Kỹ thuật."
+                              ],
+                              "Mô tả": "Kỹ thuật cháy/ Hoàng Ngọc Đồng (ch.b); Phạm Duy Vũ. -- Tái bản. -- H.: Xây dựng, 2022. - 237tr.; 24cm.\nCall no. : 541.360 H678-Đ682",
+                              "Vị trí": "Kệ số 177",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học tự nhiên/skv123453_2303.pdf"
+                    },
+                    {
+                              "Tên sách": "Soft multihadron dynamics",
+                              "Loại sách": "Khoa học tự nhiên",
+                              "ID": 178,
+                              "Keyword": [
+                                        "Từ khóa: Dynamics, Hadrons -- Multiplicity, Particles (Nuclear physics), Quantum chromodynamics"
+                              ],
+                              "Mô tả": "This book gives a comprehensive account of the development and present status of the field of soft (i.e. non-perturbative) phenomena encountered in the production of (multi- ) hadronic final states by the collision of various types of particles at high energies. Phenomenological models used to describe the data are in general inspired by Quantum Chromo Dynamics (QCD) and the book repeatedly crosses the border if at all existent between soft (non-perturbative) and hard (perturbative) QCD\nCall no. : 539.7216 K62",
+                              "Vị trí": "Kệ số 178",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học tự nhiên/skn010859_8547.pdf"
+                    },
+                    {
+                              "Tên sách": "Symplectic matrices : First order systems and special relativity",
+                              "Loại sách": "Khoa học tự nhiên",
+                              "ID": 179,
+                              "Keyword": [
+                                        "Từ khóa: Mathematical physics, Matrices, Special relativity (Physics)"
+                              ],
+                              "Mô tả": "The recent developments in canonical transforms, matrix theory, block Kronecker multiplications, and other areas are applied to extend and simplify results in the theory of first order systems and special relativity.\nCall no. : 530.1529434 K21",
+                              "Vị trí": "Kệ số 179",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học tự nhiên/skn010853_7677.pdf"
+                    },
+                    {
+                              "Tên sách": "The descent map from automorphic representations of GL(n) to classical groups",
+                              "Loại sách": "Khoa học tự nhiên",
+                              "ID": 180,
+                              "Keyword": [
+                                        "Từ khóa: Algebra., Automorphic forms, L-functions, Number theory, Representations of groups"
+                              ],
+                              "Mô tả": "This book introduces the method of automorphic descent, providing an explicit inverse map to the (weak) Langlands functorial lift from generic, cuspidal representations on classical groups to general linear groups. The essence of this method is the study of certain Fourier coefficients of Gelfand-Graev type, or of Fourier-Jacobi type when applied to certain residual Eisenstein series. This book contains a complete account of this automorphic descent, with complete, detailed proofs. The book will be of interest to graduate students and mathematicians, who specialize in automorphic forms and in\nCall no. : 512.73 G493",
+                              "Vị trí": "Kệ số 180",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Khoa học tự nhiên/skn010849_7129.pdf"
+                    },
+                    {
+                              "Tên sách": "CẤU TẠO CỦA PHỨC CHẤT",
+                              "Loại sách": "Văn học",
+                              "ID": 181,
+                              "Keyword": [
+                                        "Từ khóa: phức chất"
+                              ],
+                              "Mô tả": "Cấu tạo của phức chất/Lục Thị Thu Hoài",
+                              "Vị trí": "Kệ số 181",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Văn học/446334134_cau_tao_phuc_chat_2914.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75B (02/2023)",
+                              "Loại sách": "Văn học",
+                              "ID": 182,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí Khoa học Giáo dục Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75B (02/2023)",
+                              "Vị trí": "Kệ số 182",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Văn học/tap_chi_khgdkt_so_75b_tv_ebook_2498.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75A (02/2023)",
+                              "Loại sách": "Văn học",
+                              "ID": 183,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75A (02/2023)",
+                              "Vị trí": "Kệ số 183",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Văn học/tap_chi_khgdkt_so_75a_ta_ebook_555.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 74 (01/2023)",
+                              "Loại sách": "Văn học",
+                              "ID": 184,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.74 (01/2023)",
+                              "Vị trí": "Kệ số 184",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Văn học/tap_chi_khgdkt_so_74_ta_ebook_2558.pdf"
+                    },
+                    {
+                              "Tên sách": "CẤU TẠO CỦA PHỨC CHẤT",
+                              "Loại sách": "Ngôn ngữ",
+                              "ID": 185,
+                              "Keyword": [
+                                        "Từ khóa: phức chất"
+                              ],
+                              "Mô tả": "Cấu tạo của phức chất/Lục Thị Thu Hoài",
+                              "Vị trí": "Kệ số 185",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Ngôn ngữ/446334134_cau_tao_phuc_chat_2914.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75B (02/2023)",
+                              "Loại sách": "Ngôn ngữ",
+                              "ID": 186,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí Khoa học Giáo dục Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75B (02/2023)",
+                              "Vị trí": "Kệ số 186",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Ngôn ngữ/tap_chi_khgdkt_so_75b_tv_ebook_2498.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 75A (02/2023)",
+                              "Loại sách": "Ngôn ngữ",
+                              "ID": 187,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.75A (02/2023)",
+                              "Vị trí": "Kệ số 187",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Ngôn ngữ/tap_chi_khgdkt_so_75a_ta_ebook_555.pdf"
+                    },
+                    {
+                              "Tên sách": "Tạp chí Khoa học Giáo dục Kỹ thuật - Số 74 (01/2023)",
+                              "Loại sách": "Ngôn ngữ",
+                              "ID": 188,
+                              "Keyword": [
+                                        "Từ khóa: Tạp chí; Khoa học; Giáo dục; Kỹ thuật; Journal Of Technical Education Science"
+                              ],
+                              "Mô tả": "Journal Of Technical Education Science - No.74 (01/2023)",
+                              "Vị trí": "Kệ số 188",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Ngôn ngữ/tap_chi_khgdkt_so_74_ta_ebook_2558.pdf"
+                    },
+                    {
+                              "Tên sách": "Làn đường dành riêng cho xe tải trên các tuyến đường nhiều làn xe",
+                              "Loại sách": "Thể loại khác",
+                              "ID": 189,
+                              "Keyword": [
+                                        "Từ khóa: Đường ô tô, Ô tô tải."
+                              ],
+                              "Mô tả": "Làn đường dành riêng cho xe tải trên các tuyến đường nhiều làn xe/ Ngô Việt Đức (chủ biên), Nguyễn Văn Bích, Nguyễn Đức Nghiêm, Vũ Minh Tâm, Đinh Xuân Hoàn. -- H.: Xây dựng, 2022. - 144tr.: minh họa; 27cm.\nCall no. : 388.1 N569-Đ822",
+                              "Vị trí": "Kệ số 189",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Thể loại khác/skv124808_5393.pdf"
+                    },
+                    {
+                              "Tên sách": "Hướng dẫn thực hành thí nghiệm công trình cầu",
+                              "Loại sách": "Thể loại khác",
+                              "ID": 190,
+                              "Keyword": [
+                                        "Từ khóa: Công trình xây dựng, Cầu, Thí nghiệm."
+                              ],
+                              "Mô tả": "Hướng dẫn thực hành thí nghiệm công trình cầu/ Nguyễn Lan. -- H.: Xây dựng, 2019. - 104tr.: minh họa; 27cm.\nCall no. : 624.2 N573-L243",
+                              "Vị trí": "Kệ số 190",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Thể loại khác/skv124778_0798.pdf"
+                    },
+                    {
+                              "Tên sách": "Hướng dẫn đồ án kỹ thuật thi công - Tập 1",
+                              "Loại sách": "Thể loại khác",
+                              "ID": 191,
+                              "Keyword": [
+                                        "Từ khóa: Đồ án, Công trình bê tông, Kỹ thuật thi công."
+                              ],
+                              "Mô tả": "Hướng dẫn đồ án kỹ thuật thi công - Tập 1/ Nguyễn Hoài Nam, Võ Văn Dần, Trương Kỳ Khôi . -- H.: Xây dựng, 2021. - 198tr.: minh họa; 27cm.\nCall no. : 692 N573-N174",
+                              "Vị trí": "Kệ số 191",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Thể loại khác/skv124775_948.pdf"
+                    },
+                    {
+                              "Tên sách": "Hạ tầng kỹ thuật đô thị",
+                              "Loại sách": "Thể loại khác",
+                              "ID": 192,
+                              "Keyword": [
+                                        "Từ khóa: Đô thị, Hạ tầng kỹ thuật, Quy hoạch."
+                              ],
+                              "Mô tả": "Hạ tầng kỹ thuật đô thị / Trần Minh Phụng (chủ biên), Nguyễn Duy Liêm, Lê Minh Quang. -- Tái bản. -- H.: Xây dựng, 2020. - 261tr.: minh họa; 24cm.\nCall no. : 711 T772-P568",
+                              "Vị trí": "Kệ số 192",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Thể loại khác/skv124763_7086.pdf"
+                    },
+                    {
+                              "Tên sách": "Công nghệ mới trong xây dựng nền đường",
+                              "Loại sách": "Thể loại khác",
+                              "ID": 193,
+                              "Keyword": [
+                                        "Từ khóa: Công nghệ, Nền đường, Xây dựng."
+                              ],
+                              "Mô tả": "Công nghệ mới trong xây dựng nền đường/ Trần Tuấn Hiệp, Trần Vũ Tuấn Phan. -- H : Xây dựng, 2022. - 192tr.: minh họa; 27cm.\nCall no. : 625.733 T772-H633",
+                              "Vị trí": "Kệ số 193",
+                              "Nội dung đầu sách": "/Knowledge/Books/PDF/Thể loại khác/skv124736_4604.pdf"
                     }
           ]
 }
