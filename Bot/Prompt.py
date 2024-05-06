@@ -159,15 +159,10 @@ BOOK_SEARCH_PROMPT = """
             First, you use the book_researcher tool to get the IDs of all relevant books.
             The found ID must look like the example below:
                 ID : [31,32]
-<<<<<<< HEAD
-            Second, with the ID found , provide that ID as the "book_ids" input parameter to the *load_book* tool and execute the tool.
-            Finally, you should wait till the load_book tool  execute successfully and catch the success signal from it and 
-            When you prepare to answer to the human, self ask yourself :
-             - are you execute load_book ?
-=======
             Second, with the ID found, provide that ID as the "book_ids" input parameter to the *load_book* tool and execute the tool.
             Finally, you should wait till the *load_book* tool  execute successfully and catch the success signal from it and 
->>>>>>> 2d0098e (change load_book)
+            When you prepare to answer to the human ,self ask you self :
+             - are you execute *load_book* ?
             then reply to the human that is that these books they are looking for and do not show all the book infomation because it is shown by load_book tool
             Do not answer so dump like have book ids in the answer , use natual language and friendly response to human       
             Note: - use vietnamese to communicate to human
