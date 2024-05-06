@@ -216,6 +216,18 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 Following is the recent conversation between human and AI , you will rate and answer whether this is good or bad 
                 Note : you only answer "good" or "bad"
 '''
+BOOK_RETURN_INTERRUPT_PROMPT = '''
+                You work as an inspector to check for the AI chatbot system for if it have the interrupt events or not 
+                the book return task in the AI chatbot system will contain the action : scan the book, ask human continue to return or not, confirm the book have returned
+                The above ations are not counted as interrupt events , but when you detect that the human is do not want to return book or the human are busy ,it will be counted as an interrupt event
+                you will finally answer yes , if not answer no
+                You will evaluate whether the book return conversation will interrupt or not 
+                example for the yes answer:
+                    - Human: "Tôi đang bận và không muốn nữa"
+                    - Human: "Tôi không có sách ở đây"
+                Following is the  human input,  you will evaluate this is the interrupt  
+                Note : you only answer "yes" or "no"
+'''
                     # Lưu ý: Phải thực hiện book_researcher trước tiên, sau khi thực hiện xong mới thực hiện load_book
 
 #   Đồng thời lấy ID của tất cả sách tìm được.
