@@ -122,8 +122,9 @@ next_button = wait.until(EC.presence_of_element_located((By.XPATH,"//*[@id='pass
 next_button.click()
 
 sleep(10)
-count = 0
-for i in range (20, 30):
+count = 34
+topics = [2, 6, 7, 10, 11, 13, 14, 15, 23, 24, 26, 30]
+for i in range (7, 30):
     wait = WebDriverWait(driver, 20)
     
     #Nhan cac topic lon
@@ -140,60 +141,63 @@ for i in range (20, 30):
     path = os.path.join("Books/PDF", topic_name) 
    
     os.mkdir(path) 
-
-    number_articles = 10
+    if i in topics:
+        number_articles = 20
+    else:
+        number_articles = 5
     index_of_articles = 1
     sleep(1)
     while(index_of_articles <= number_articles):
-        wait = WebDriverWait(driver, 20)
-        title_button = wait.until(EC.presence_of_element_located((By.XPATH,f"/html/body/div[1]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/ul/li[{index_of_articles}]/div[1]/p/a")))
-        title_button.click()
-        sleep(1)
+        try:
+            wait = WebDriverWait(driver, 20)
+            title_button = wait.until(EC.presence_of_element_located((By.XPATH,f"/html/body/div[1]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/ul/li[{index_of_articles}]/div[1]/p/a")))
+            title_button.click()
+            sleep(1)
+            
+            #pdf link
+            pdf_link = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[3]/div/div[3]/embed")
+            find_title_articles = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/h1")
+            find_keyword = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/p[1]")
+            find_introduction = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
+            find_description = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
         
-        #pdf link
-        pdf_link = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[3]/div/div[3]/embed")
-        find_title_articles = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/h1")
-        find_keyword = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/p[1]")
-        find_introduction = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
-        find_description = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
-        # try:
-        link = pdf_link[0].get_attribute('src')
-        title_articles = find_title_articles[0].text
-        keyword = [i.text for i in find_keyword]
-        introduction = find_introduction[0].text
-        description = find_description[0].text
-        print("PDF LINK: ", link)
-        print("title_articles: ", title_articles)
-        print("description: ", description)
-        print("keyword: ", keyword)
-        
-        
-        file_path = download_pdf_file(link, topic_name)
-        count += 1
-        if count == 10:
-            break
-        
-        new_data = {}
-        new_data["Tên sách"] = title_articles
-        new_data["Loại sách"] = None
-        new_data["ID"] = count
-        new_data["Keyword"] = keyword
-        new_data["Mô tả"] = description
-        new_data["Vị trí"] = "Kệ số " + str(count)
-        new_data["Nội dung đầu sách"] = file_path
-        # new_data = {"Topic": topic_name,
-        #             "Tiêu đề": title_articles,
-        #             "Tác giả": "none",
-        #             "NXB": "None",
-        #             "Từ khóa": keyword,
-        #             "Giới thiệu": introduction,
-        #             "Lời nói đầu": "None",
-        #             "Mục lục": "None"
-        #             }
-        print(new_data)
-        write_json(new_data) 
-        # except:
-        #     print("Error")
+            link = pdf_link[0].get_attribute('src')
+            title_articles = find_title_articles[0].text
+            keyword = [i.text for i in find_keyword]
+            introduction = find_introduction[0].text
+            description = find_description[0].text
+            print("PDF LINK: ", link)
+            print("title_articles: ", title_articles)
+            print("description: ", description)
+            print("keyword: ", keyword)
+            
+            
+            file_path = download_pdf_file(link, topic_name)
+            count += 1
+            if count == 10:
+                break
+            
+            new_data = {}
+            new_data["Tên sách"] = title_articles
+            new_data["Loại sách"] = topic_name
+            new_data["ID"] = count
+            new_data["Keyword"] = keyword
+            new_data["Mô tả"] = description
+            new_data["Vị trí"] = "Kệ số " + str(count)
+            new_data["Nội dung đầu sách"] = file_path
+            # new_data = {"Topic": topic_name,
+            #             "Tiêu đề": title_articles,
+            #             "Tác giả": "none",
+            #             "NXB": "None",
+            #             "Từ khóa": keyword,
+            #             "Giới thiệu": introduction,
+            #             "Lời nói đầu": "None",
+            #             "Mục lục": "None"
+            #             }
+            # print(new_data)
+            write_json(new_data) 
+        except:
+            print("Error")
         
         index_of_articles += 1  
         driver.back()
