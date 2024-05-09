@@ -17,8 +17,11 @@ import requests
 import base64
 import setting
 import threading
+import queue
 load_tool_execute = False
 lock = threading.Lock()
+result_queue = queue.Queue()
+event = threading.Event()
 def turn_on_camera():
     response = requests.get(setting.IP_ADDRESS+'/camera_status')
     if response.status_code == 200:
@@ -147,7 +150,7 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
     cap.set(cv2.CAP_PROP_FPS, 25)
     if not cap.isOpened():
         return "ERROR"
-    while True:
+    while not event.is_set():
         # Capture frame-by-frame
         ret, image = cap.read()
         # cv2.imshow('image', image)
@@ -171,6 +174,8 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
         
         if (time.time() - t) > 20:
             requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
+            requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
+            result_queue.put(('barcode', "OVERTIME"))
             return "OVERTIME"
         try:
             # Convert the image to grayscale
@@ -187,9 +192,12 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
                 # cv2.destroyAllWindows()
                 # cv2.destroyWindow('image')
                 requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
+                result_queue.put(('barcode', data))
+                requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
                 return data
         except:
             continue
+    return "INTERRUPT"
 
 
 def send_borrowstudent_to_form(student_id):
@@ -322,6 +330,9 @@ def send_mess(str, topic="tool_action"):
     requests.post(url=setting.IP_ADDRESS+"/"+topic, json={"message":str})
 def user_input_request(state):
     res = requests.post(url=setting.IP_ADDRESS+"/user_input_state", json={"input_st":state})
+    if state:
+        event.set()
+        result_queue.put(('user_input', res.text))
     return res.text
 
 def show_return_form(book_ids):
@@ -343,14 +354,31 @@ def send_returnbook_to_form(barcode, borrow_date, studentinfo):
     data['student_ID'] = studentinfo['student_ID']
     requests.post(url=setting.IP_ADDRESS+"/student-book_info", json=data)
     print('SENT.......................')
+# user post the input while camera is running
+def user_input_request_thread(state):
+    res = user_input_request(state)
+    if (res!="***INTERRUPT***"):
+        check_interrupt = Helper_Utilities.book_return_interrupt_chain.invoke({'messages': [res]})['messages'] 
+        print(check_interrupt)
+thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
+thread2 = threading.Thread(target=scan_barcode, args=('value',))
 def do_return_book(name_book:str):
     result = {'Sách': [], 'Sinh viên': []}
     send_mess("start", "return_form")
     send_mess("Xin hãy đưa sách vào khe bên dưới.")
     barcode_list = []
     while True:
-        barcode = scan_barcode('') # Quét mã vạch sách
-        if barcode == "OVERTIME":
+        # Book_ID = scan_barcode('') # Quét mã vạch sách
+        event.clear()
+        thread1.start()
+        thread2.start()
+
+        # Waiting for both threads to finish
+        thread1.join()
+        thread2.join()
+        # Book_ID = scan_barcode('')
+        Book_ID = "20134013"
+        if Book_ID == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # print("user input ",user_input)
@@ -420,7 +448,9 @@ def do_return_book(name_book:str):
     send_mess("stop", "return_form")
     return "Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
 def return_book(name_book: str):
+
     res = do_return_book(name_book)
+    print ("do book return :",res)
     return res
     
     

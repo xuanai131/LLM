@@ -41,6 +41,7 @@ response_tool = ""
 camera_st = False
 voice_st = False
 user_input_st = False
+user_input_interrupt_signal = False
 user_input_message = ""
 def run_graph(inputs):
     for s in graph.stream(inputs):
@@ -182,6 +183,7 @@ def get_user_input_state():
             if (state == True):
                 while(user_input_message == ""):
                     continue
+                print("checking the message is: ",user_input_message)
                 result = user_input_message
                 user_input_message = ""
                 return result
@@ -191,7 +193,15 @@ def get_user_input_state():
             return "Invalid JSON data."
     else:
         return str(user_input_st)
-    
+@app.route("/user_input_state_interrupt",methods = ["POST","GET"])
+def get_user_input_state_interrupt():
+    global user_input_message
+    if request.method == 'POST':
+        print(" change request to the barcode scan")
+        user_input_message = "***INTERRUPT***" 
+    else:
+        return user_input_message
+    return "success"
 @app.route("/return_form",methods = ["POST","GET"])
 def return_form():
     if request.method == 'POST':
