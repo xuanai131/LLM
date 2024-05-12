@@ -40,9 +40,9 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', 
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3', 
                      embedding=embedding, 
-                     parent_path=AbsoluteBotPath+"/vector_database/book_parents", 
+                     parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
                      retriever_config=BookInfoRetriever)
 
 SelfKnowledgeRetriever = RETRIEVER_CONFIG()
@@ -376,8 +376,8 @@ def do_return_book(name_book:str):
         # Waiting for both threads to finish
         thread1.join()
         thread2.join()
-        # barcode = scan_barcode('')
-        barcode = "20134013"
+        barcode = scan_barcode('')
+        # barcode = "20134013"
         if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
