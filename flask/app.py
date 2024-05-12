@@ -177,7 +177,8 @@ def get_user_input_state():
     global user_input_st
     global user_input_message
     if request.method == 'POST':
-        data = request.get_json()  
+        data = request.get_json()
+        user_input_message = ""  
         print("/user input state posted ",data)
         if data and "input_st" in data:
             state = data["input_st"]

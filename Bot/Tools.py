@@ -20,7 +20,7 @@ import threading
 import queue
 load_tool_execute = False
 lock = threading.Lock()
-result_queue = queue.Queue()
+result_store = {"barcode_return": "","user_input_return" : "" }
 event = threading.Event()
 def turn_on_camera():
     response = requests.get(setting.IP_ADDRESS+'/camera_status')
@@ -40,9 +40,9 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', 
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3', 
                      embedding=embedding, 
-                     parent_path=AbsoluteBotPath+"/vector_database/book_parents", 
+                     parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
                      retriever_config=BookInfoRetriever)
 
 SelfKnowledgeRetriever = RETRIEVER_CONFIG()
@@ -139,7 +139,8 @@ book_search_tool=[
 
 
 ##### BORROW BOOK TOOL
-def scan_barcode(ten_sach: str):  # define scan function to scan barcode
+def scan_barcode(ten_sach: str):
+    global result_store  # define scan function to scan barcode
     requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': True})
     t = time.time()
     # image_path = '384543478_1440448783351821_8320517275639987477_n.jpg'  # Replace 'images' with the path to your directory
@@ -149,6 +150,7 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 320)
     cap.set(cv2.CAP_PROP_FPS, 25)
     if not cap.isOpened():
+        result_store['barcode_return'] = "ERROR"
         return "ERROR"
     while not event.is_set():
         # Capture frame-by-frame
@@ -175,7 +177,7 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
         if (time.time() - t) > 20:
             requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
             requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
-            result_queue.put(('barcode', "OVERTIME"))
+            result_store['barcode_return'] = "OVERTIME"
             return "OVERTIME"
         try:
             # Convert the image to grayscale
@@ -192,11 +194,12 @@ def scan_barcode(ten_sach: str):  # define scan function to scan barcode
                 # cv2.destroyAllWindows()
                 # cv2.destroyWindow('image')
                 requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
-                result_queue.put(('barcode', data))
+                result_store['barcode_return'] = data
                 requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
                 return data
         except:
             continue
+    result_store['barcode_return'] = "INTERRUPT"
     return "INTERRUPT"
 
 
@@ -327,12 +330,13 @@ confirm_borrow_conpletely_tool = [
 
 def send_mess(str, topic="tool_action"):
     print(str)
+    user_input_request(False)
     requests.post(url=setting.IP_ADDRESS+"/"+topic, json={"message":str})
 def user_input_request(state):
+    global result_store
     res = requests.post(url=setting.IP_ADDRESS+"/user_input_state", json={"input_st":state})
     if state:
-        event.set()
-        result_queue.put(('user_input', res.text))
+        result_store["user_input_return"] = res.text
     return res.text
 
 def show_return_form(book_ids):
@@ -359,10 +363,12 @@ def user_input_request_thread(state):
     res = user_input_request(state)
     if (res!="***INTERRUPT***"):
         check_interrupt = Helper_Utilities.book_return_interrupt_chain.invoke({'messages': [res]})['messages'] 
-        print(check_interrupt)
-thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
-thread2 = threading.Thread(target=scan_barcode, args=('value',))
+        print("interrupt detect :",check_interrupt)
+        if(check_interrupt == "yes"):
+            event.set()
+
 def do_return_book(name_book:str):
+    global result_store
     result = {'Sách': [], 'Sinh viên': []}
     send_mess("start", "return_form")
     send_mess("Xin hãy đưa sách vào khe bên dưới.")
@@ -370,15 +376,18 @@ def do_return_book(name_book:str):
     while True:
         # Book_ID = scan_barcode('') # Quét mã vạch sách
         event.clear()
+        result_store.clear()
+        thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
+        thread2 = threading.Thread(target=scan_barcode, args=('value',))
         thread1.start()
         thread2.start()
 
         # Waiting for both threads to finish
         thread1.join()
         thread2.join()
-        # barcode = scan_barcode('')
-        barcode = "20134013"
-        if barcode == "OVERTIME":
+        # Book_ID = scan_barcode('')
+        Book_ID = "WdudlYaHl"
+        if Book_ID == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # print("user input ",user_input)
@@ -388,17 +397,21 @@ def do_return_book(name_book:str):
             else:
                 user_input_request(False)
                 break
-        elif barcode == "ERROR":
+        elif result_store["barcode_return"] == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
+        elif result_store["barcode_return"] == "INTERRUPT":
+            send_mess("stop", "return_form")
+            return "Quá trình trả sách đã bị dừng"
         else:
-            bill_info = SearchBillByBarcode(barcode)
-            # bill_info = ["1","2","3","4",None]
+            # bill_info = SearchBillByBarcode(barcode)
+            bill_info = {"student_ID":"20134013","return_date":None,'borrow_date':"08-01-2018"}
             if bill_info is None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này chưa được mượn ở thư viện.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
                 user_input = user_input_request(True)
                 if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
+                    user_input_request(False)
                     continue
                 else:
                     user_input_request(False)
@@ -414,7 +427,7 @@ def do_return_book(name_book:str):
                     break
                 
             Student_ID = bill_info['student_ID']
-            # Student_ID = "20134013"
+            barcode = "WdudlYaHl"
             barcode_list.append(barcode)
             book_ID = SearchBookIDByBarcode(barcode)
             temp_book_info = SearchBookByID(book_ID)

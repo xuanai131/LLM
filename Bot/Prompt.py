@@ -61,9 +61,7 @@ RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được s�
                 - Bước 1: Trả lời cho người dùng là " Đưa sách vào bên dưới "
                 - Bước 2: Thực hiện tool Scan_barcode để quét mã vạch của cuốn sách.
                 - Bước 3: Sau khi thực hiện tool Scan_barcode:
-                        - Nếu kết quả trả về là OVERTIME thì phản hồi tới người dùng là chưa quét được mã vạch và 
-                        hỏi họ có muốn quét lại không. Nếu người dùng muốn quét lại thì hãy quay lại thực hiện tool Scan_barcode, 
-                        còn nếu người dùng không muốn quét lại thì phản hồi tới người dùng là quá trình trả sách kết thúc và kết thúc.
+                        - Nếu kết quả trả về  "quá trình trả sách đã bị dừng" thì phản hồi tới người dùng và kết thúc.
                         - Nếu kết quả trả về là mã vạch của cuốn sách thì phải đưa ra thông tin mã vạch quét được 
                         và hỏi người dùng có muốn trả thêm cuốn nào nữa không:
                             + Nếu người dùng trả lời là có thì thực hiện lại Bước 2.
@@ -228,16 +226,15 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 Note : you only answer "good" or "bad"
 '''
 BOOK_RETURN_INTERRUPT_PROMPT = '''
-                You work as an inspector to check for the AI chatbot system for if it have the interrupt events or not 
-                the book return task in the AI chatbot system will contain the action : scan the book, ask human continue to return or not, confirm the book have returned
-                The above ations are not counted as interrupt events , but when you detect that the human is do not want to return book or the human are busy ,it will be counted as an interrupt event
-                you will finally answer yes , if not answer no
-                You will evaluate whether the book return conversation will interrupt or not 
-                example for the yes answer:
-                    - Human: "Tôi đang bận và không muốn nữa"
-                    - Human: "Tôi không có sách ở đây"
-                Following is the  human input,  you will evaluate this is the interrupt  
+                when you detect in human input that the human is do not want to return book or the human are busy , you will finally answer yes 
+                Example for the yes answer:
+                    - Human: 'Tôi đang bận và không muốn nữa'
+                    - Human: 'Tôi không có sách ở đây'
+                    - Human: 'Đừng quét nữa'
+                    - Human: 'Thôi tôi không muốn trả sách nữa'
+                if not in the above cases, answer no
                 Note : you only answer "yes" or "no"
+                follwing the human input below , your answer is : 
 '''
                     # Lưu ý: Phải thực hiện book_researcher trước tiên, sau khi thực hiện xong mới thực hiện load_book
 
