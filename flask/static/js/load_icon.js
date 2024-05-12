@@ -111,13 +111,56 @@ function updateVoiceStatus(status) {
 // load chat-icon for chatbot
 const chatContainer = document.getElementById('chat-icon-container');
     // Initial animation setup
-    let chatAnimation = bodymovin.loadAnimation({
-        container: chatContainer,   
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '../static/resources/chat_icon.json' 
+let chatAnimation = bodymovin.loadAnimation({
+    container: chatContainer,   
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../static/resources/chat_icon.json' 
+});
+
+// Create refresh button to restart a session
+const refreshContainer = document.getElementById('refresh-icon-container');
+    // Initial animation setup
+let refreshAnimation = bodymovin.loadAnimation({
+    container: refreshContainer,   
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../static/resources/refresh.json' ,
+    rendererSettings: {
+        scaleMode: 'noScale', // Optional, sets the scale mode
+        scaleWidth: 0.5, // Scale factor for width
+        scaleHeight: 0.5 // Scale factor for height
+    }
+});
+
+//Add clcik event for refresh button
+
+function handleRefreshClick() {
+    fetch('/saved_history', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+            // Add any other headers if needed
+        },
+        body: JSON.stringify("data")
+    })
+    .then(() => {
+        console.log('Message posted successfully');
+        // No need to handle response
+    })
+    .catch(error => {
+        console.error('Error posting message:', error);
+        // Handle errors
     });
+    location.reload();
+}
+
+// Add event listener with the defined function
+refreshContainer.addEventListener('click', handleRefreshClick);
+
+
 
 // Load bar icon and handle event
 const barContainer = document.getElementById('bar-icon-container');

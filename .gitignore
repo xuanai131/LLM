@@ -4,8 +4,12 @@ flask/__pycache__
 Bot/API_keys.py
 flask/audio.wav
 Bot/graph.png
+<<<<<<< HEAD
 Bot/Knowledge/Books/PDF
 flask/recorded_audio.mp3
 Bot/Knowledge/Books/PDF.zip
 Bot/vector_database
 Bot/DATABASE.db
+=======
+Bot/vector_database
+>>>>>>> vu

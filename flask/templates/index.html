@@ -64,7 +64,8 @@
                         <div class="swiper-pagination"></div>
                     </div>
                         <div class="input-box">
-                        <input type="submit" value="Send Message" />
+                        <!-- <button onclick="buttonClicked()">Xác Nhận</button> -->
+                        <input type="submit" value="Xác Nhận" />
                     </div>
                 </form>
             </div>
@@ -88,10 +89,11 @@
         </div>
         <div class="tools">
             <div class="small-tools tools-item">
+                <div class="refresh-icon small-tools-item" id="refresh-icon-container"></div>
                 <div class="voice-icon small-tools-item" id="voice-icon-container"></div>
                 <div class="chat-icon small-tools-item" id="chat-icon-container"></div>
             </div>
-            <div class="bar-icon tools-item" id="bar-icon-container"></div>
+            <div class="bar-icon" id="bar-icon-container"></div>
         </div>
         <!-- Micro Icon -->
 
@@ -111,10 +113,10 @@
                         <h1>Thông tin sách</h1> 
                         <!-- <input type="text" placeholder="Username">
                         <input type="email" placeholder="Email"> -->
-                        <textarea placeholder="Tên sách: ..." rows="1"></textarea>
-                        <textarea placeholder="Tác giả:..." rows="1"></textarea>
-                        <textarea placeholder="ID:..." rows="1"></textarea>
-                        <textarea placeholder="Vị trí:..." rows="1"></textarea>
+                        <textarea rows="1">Tên sách: ...</textarea>
+                        <textarea rows="1">Tác giả:...</textarea>
+                        <textarea rows="1">ID:...</textarea>
+                        <textarea rows="1">Vị trí:...</textarea>
 
                         <h2>Đây có phải sách bạn muốn tìm không ?</h2>
                         <!-- <button type="submit" id="confirm_info" href="/">Submit</button> -->
@@ -139,7 +141,7 @@
                     <div class="card-header msg_head">
                         <div class="d-flex bd-highlight">
                             <div class="img_cont">
-                                <div class="lottie-container_face" id="lottie-container_face"></div>
+                                <div class="lottie-container_face_avatar" id="lottie-container_face_avatar"></div>
                                 <span class="online_icon"></span>
                             </div>
                             <div class="user_info">
@@ -174,7 +176,12 @@
             console.log(data.data);
             if (tool_current_time!=data.time){
             // handleEvent(null,"voice", data.data);
+            if ($("#messageFormeight").children().last().find('span').length <= 0) {
+                $("#messageFormeight").children().last().remove();
+            }
+
             add_bot_message(data.data, data.time);
+
         }
         // tool_message = data.data;
         });
@@ -202,6 +209,7 @@
                 list_book_find.style.visibility= "visible";
                 $("#bookContainer").show();
                 reveal_book(data.image);
+                $("#robotContainer").hide();
                 // console.log (data.visible)
             }
             else {
@@ -250,25 +258,25 @@
                 infoItem.appendChild(image);
 
                 // Create details div
-                var detailsDiv = document.createElement('div');
-                detailsDiv.classList.add('details');
+                // var detailsDiv = document.createElement('div');
+                // detailsDiv.classList.add('details');
 
-                // Create title element
-                var title = document.createElement('p');
-                title.textContent = newBookData.borrow_date || 'Untitled';
+                // // Create title element
+                // var title = document.createElement('p');
+                // title.textContent = newBookData.borrow_date || 'Untitled';
 
-                // Create author element
-                var author = document.createElement('p');
-                author.textContent = 'Tên sinh viên: ' + (newBookData.student_name || 'Unknown');
+                // // Create author element
+                // var author = document.createElement('p');
+                // author.textContent = 'Tên sinh viên: ' + (newBookData.student_name || 'Unknown');
 
-                // Create genre element
-                var genre = document.createElement('p');
-                genre.textContent = 'MSSV: ' + (newBookData.student_ID || 'Unknown');
+                // // Create genre element
+                // var genre = document.createElement('p');
+                // genre.textContent = 'MSSV: ' + (newBookData.student_ID || 'Unknown');
 
-                // Append elements to details div
-                detailsDiv.appendChild(title);
-                detailsDiv.appendChild(author);
-                detailsDiv.appendChild(genre);
+                // // Append elements to details div
+                // detailsDiv.appendChild(title);
+                // detailsDiv.appendChild(author);
+                // detailsDiv.appendChild(genre);
 
                 // Append elements to book item
                 var form1 = create_student_info(newBookData.student_name, newBookData.student_ID, newBookData.borrow_date);
@@ -323,7 +331,7 @@
                 detailsDiv.appendChild(major);
 
                 // Append elements to book item
-                var form2 = create_student_info();
+                var form2 = create_student_info_for_borrow(newBookData.name, newBookData.ID, newBookData.year, newBookData.faculty,newBookData.major);
                 infoItem.appendChild(form2);
 
                 // Append new book item to messagesDiv
