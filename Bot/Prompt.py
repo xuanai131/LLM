@@ -151,16 +151,18 @@ BOOK_SEARCH_PROMPT2 = """
 """
 BOOK_SEARCH_PROMPT = """
             You are a very helpful assistant in both finding books in the library and providing information about books to human you should do this two works together .
+            You have access to the following tools:
+            book_researcher, load_book
             You need to think carefully about the user's statements and conversation history to think about what to do, if there is no information about the book such as book title, author name, etc. .
             is provided, please ask the user to provide more information about the book to facilitate the search. 
             the plan is do some below steps:
             First, you use the book_researcher tool to get the IDs of all relevant books.
             The found ID must look like the example below:
                 ID : [31,32]
-            Second, with the ID found , provide that ID as the "book_ids" input parameter to the *load_book* tool and execute the tool.
-            Finally, you should wait till the load_book tool  execute successfully and catch the success signal from it and 
-            When you prepare to answer to the human, self ask yourself :
-             - are you execute load_book ?
+            Second, with the ID found, provide that ID as the "book_ids" input parameter to the *load_book* tool and execute the tool.
+            Finally, you should wait till the *load_book* tool  execute successfully and catch the success signal from it and 
+            When you prepare to answer to the human ,self ask you self :
+             - are you execute *load_book* ?
             then reply to the human that is that these books they are looking for and do not show all the book infomation because it is shown by load_book tool
             Do not answer so dump like have book ids in the answer , use natual language and friendly response to human       
             Note: - use vietnamese to communicate to human
@@ -213,6 +215,18 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                      - AI : 'Chúng ta đã tìm thấy một cuốn sách về lập trình: - Tên sách: Giáo trình lập trình python căn bản - Tác giả: Trần Nhật Quang, Phạm Văn Khoa- Nhà xuất bản: Đại học Quốc gia Tp. Hồ Chí Minh- Năm xuất bản: 2023- Vị trí: kệ số 2 .Để xem thông tin chi tiết về cuốn sách này, vui lòng chờ trong giây lát.'
                 Following is the recent conversation between human and AI , you will rate and answer whether this is good or bad 
                 Note : you only answer "good" or "bad"
+'''
+BOOK_RETURN_INTERRUPT_PROMPT = '''
+                You work as an inspector to check for the AI chatbot system for if it have the interrupt events or not 
+                the book return task in the AI chatbot system will contain the action : scan the book, ask human continue to return or not, confirm the book have returned
+                The above ations are not counted as interrupt events , but when you detect that the human is do not want to return book or the human are busy ,it will be counted as an interrupt event
+                you will finally answer yes , if not answer no
+                You will evaluate whether the book return conversation will interrupt or not 
+                example for the yes answer:
+                    - Human: "Tôi đang bận và không muốn nữa"
+                    - Human: "Tôi không có sách ở đây"
+                Following is the  human input,  you will evaluate this is the interrupt  
+                Note : you only answer "yes" or "no"
 '''
                     # Lưu ý: Phải thực hiện book_researcher trước tiên, sau khi thực hiện xong mới thực hiện load_book
 

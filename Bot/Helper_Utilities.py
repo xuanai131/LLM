@@ -84,20 +84,46 @@ def create_agent(llm: ChatOpenAI, tools: list, system_prompt: str):
         ]
     )
     agent = create_openai_tools_agent(llm, tools, prompt)
-    executor = AgentExecutor(agent=agent, tools=tools)
+    executor = AgentExecutor(agent=agent, tools=tools,return_intermediate_steps=True)
     return executor
 
 
 ##### AGENT NODE
 def agent_node(state, agent, name):
+    # state.get("messages").pop()
     print('......STATE......: ', state)
-    result = agent.invoke(state)
-    return {"messages": [HumanMessage(content=result["output"], name=name)]}
+    if (name == "Book_researcher"): 
+        output = ""
+        query = ""
+        check = False
+        while not check :
+            print("state in each loop: ")
+            result = agent.stream(state)
+            for chunk in result:
+                print("each step in agent stream: ",chunk)
+                if chunk.get("actions") is not None:
+                    if chunk.get("actions")[0].tool == "load_book":
+                        check = True
+                    if chunk.get("actions")[0].tool == 'book_researcher':
+                        query = chunk.get("actions")[0].tool_input
+                output = chunk.get("output")
+            if check:
+                print("last step with output: ",output)
+            else:
+                print(Fore.RED +"bad response: load_tool is not running")
+                print(Style.RESET_ALL)
+                state["messages"].pop()
+                state["messages"].append(HumanMessage(content="tìm cho tôi những cuốn "+str(query)))
+        return {"messages": [HumanMessage(content=output, name=name)]}
+    else:
+        result = agent.invoke(state)
+        return {"messages": [HumanMessage(content=result["output"], name=name)]}
 
 
 ##### CHAIN NODE
 def chain_node(state, chain, name, conversation):
     print('///////////', state)
+    
     if name=="Book_researcher_inspector":
         result = chain.invoke(state)
         return result
@@ -216,7 +242,7 @@ classify_function_def = {
                 "title": "inspector",
                 "ouput": 'text',
                 "anyOf": [
-                    {"enum": ['good', 'bad']},
+                    {"enum": ['yes', 'no']},
                 ],
             }
         },
@@ -231,11 +257,40 @@ book_research_inspector_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_research_inspector_chain = (
-    book_research_inspector_prompt
+    book_research_inspector_prompt 
     | llm.bind_functions(functions=[classify_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
-
+interrupt_function_def = {
+    "name": "route",
+    "description": "Check the user request interrupt event to be yes or no",
+    "parameters": {
+        "title": "routeSchema",
+        "type": "object",
+        "properties": {
+            "messages": {
+                "title": "messages",
+                "output": 'text',
+                "anyOf": [
+                    {"enum": ['yes', 'no']},
+                ],
+            }
+        },
+        "required": ["messages"],
+    },
+}
+book_return_interrupt_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", (BOOK_RETURN_INTERRUPT_PROMPT)),
+        # MessagesPlaceholder(variable_name="history"),
+        MessagesPlaceholder(variable_name="messages"),
+    ]
+)
+book_return_interrupt_chain = (
+    book_research_inspector_prompt 
+    | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
+    | JsonOutputFunctionsParser()
+)
 ##### CONSTRUCT GRAPH
 
 # 1. The agent state is the input to each node in the graph
@@ -260,16 +315,16 @@ def write_state(state):
     # Write new content to the file
         file.write(state)
 def redirect_fun(data):
-    global redirect_state 
-    # print(data)
-    data["next"] = read_state()
-    print("from redirect node ",data)
+    res = {}
+    state = read_state()
+    res["next"] = state
+    print("from redirect node ",res)
 
     # last_index = len(data["messages"])
     # if (last_index>0) :
     #     data["messages"].pop(last_index-1)
     # del data["messages"]
-    return data 
+    return res
 def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
