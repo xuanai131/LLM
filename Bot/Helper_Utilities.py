@@ -263,7 +263,7 @@ book_research_inspector_chain = (
 )
 interrupt_function_def = {
     "name": "route",
-    "description": "Check the user request interrupt event to be yes or no",
+    "description": "the answer would be yes or no",
     "parameters": {
         "title": "routeSchema",
         "type": "object",
@@ -287,7 +287,7 @@ book_return_interrupt_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_return_interrupt_chain = (
-    book_research_inspector_prompt 
+    book_return_interrupt_prompt 
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
