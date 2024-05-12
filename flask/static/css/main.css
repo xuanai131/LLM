@@ -42,7 +42,7 @@ body {
     flex-direction: column;
     position: fixed;
     height: 100px;
-    width: 200px;
+    width: 300px;
     left: 50%;
     transform: translateX(-50%);
     bottom: 20px;
@@ -51,7 +51,7 @@ body {
 .small-tools {
     display: flex;
     flex-direction: row;
-    width:  0px;
+    width: 0px;
 }
 
 /* .small-tools {
@@ -63,9 +63,11 @@ body {
 
 .tools-item {
     margin: 0px;
+    /* margin-left: 50px; */
 }
 
 .voice-icon,
+.refresh-icon,
 .chat-icon {
     display: block;
     height: 100px;
@@ -75,6 +77,8 @@ body {
 
 .bar-icon {
     display: inline-block;
+    width: 200px;
+    margin-left: 50px;
 }
 
 .fadein {
@@ -103,7 +107,7 @@ body {
     width: 60%;
     /* margin-top: 10px; */
     opacity:1;
-    top: 10px;
+    top: 20%;
     left: 1%;
     visibility: hidden;
     /* transition: transform 1.5s ease; */
@@ -119,12 +123,15 @@ body {
 }
 
 #bookTable {
-    background-color: #38aad0;
+    background-color: rgba(172, 225, 243, 0.5);
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0px;
-    transition: transform 1.5s ease;
+    transition: transform 0.5s ease-in;
+    border: solid;
+    border-color: rgb(255, 255, 255);
+    border-radius: 15px;
     visibility: hidden;
 }
 
@@ -140,7 +147,7 @@ body {
     width: 30%;
     height: 85%;
     border: solid;
-    border-color: red;
+    border-color: rgb(0, 0, 0);
     border-radius: 15px;
 }
 #imageOfSelectedBook img {
@@ -229,7 +236,7 @@ body {
 	width: 200px;
 	height: 11px;
     bottom: -18px;
-    left: 0px;
+    left: 50px;
     border-radius: 10px;
 	background-color: rgba(0, 0, 0, 0);
     /* visibility: hidden; */   
@@ -241,7 +248,7 @@ body {
 }
 
 .smaller-animation {
-    transform: translate(-30%, 28%) scale(0.65);
+    transform: translate(-20%, 0%);
 }
 
 @keyframes animation {
@@ -274,7 +281,7 @@ body {
 
 @keyframes smallTools_animation {
     100% {
-        width:  200px;
+        width:  100%;
     }
 }
 
