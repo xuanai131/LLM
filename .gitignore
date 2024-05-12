@@ -7,4 +7,8 @@ Bot/graph.png
 Bot/vector_database
 Bot/Knowledge/Books/PDF
 flask/recorded_audio.mp3
+<<<<<<< HEAD
 Bot/Knowledge/Books/PDF.zip
+=======
+Bot/DATABASE.db
+>>>>>>> 1a6d57c
