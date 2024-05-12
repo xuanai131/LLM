@@ -63,6 +63,29 @@ def SearchCoverImageByID(ID):
     cursor.close()
     conn.close()
     return result
+
+def SearchAllBookName():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT name_of_book FROM Books
+    ''')
+    result = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+    return result
+def SearchAllBarcode():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT barcode FROM Book_items
+    ''')
+    result = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+    return result
     
 def SearchBillByBarcode(barcode):
     conn = sqlite3.connect(setting.database_name)
