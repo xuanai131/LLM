@@ -34,6 +34,8 @@ import uuid
 import re
 import unicodedata
 from Global_variable import *
+from table_handle import *
+from Database_handle import *
 
 
 
@@ -117,12 +119,15 @@ def generate_unique_id(existing_ids): # Generate unique ID
         new_id = ''.join(random.choices(string.ascii_letters + string.digits, k=9))
         if new_id not in existing_ids:
             return new_id
-
-
+    
+    
+    
 class DATABASE:
     def __init__(self, db_path, embedding, parent_path=None, retriever_config:RETRIEVER_CONFIG=None):
         self.db_path = db_path
         self.parent_path = parent_path
+        self.document_list = set()
+        self.existing_ids = set()
         self.retriever_config = retriever_config
         self.db = Chroma(collection_name="split_parents", persist_directory=db_path, embedding_function=embedding)
         if retriever_config.parent_splitter is None:
@@ -142,7 +147,8 @@ class DATABASE:
             
         self.store = self.initial_store()
         self.retriever = self.initial_retriever()
-        self.existing_ids = set()
+        self.load_doccument_list()
+        self.load_existing_bracode()
         
     def fix_invalid_characters(self, text):
         # Replace invalid characters with hyphen '-'
@@ -206,6 +212,33 @@ class DATABASE:
         texts = text_splitter.split_documents(documents)
         self.retriever.add_documents(texts, ids=None)
         
+    def add_info_to_database(self, ID, name_of_book, kind_of_book, shelve, cover_image):
+        # Books table
+        InsertToBookTable(ID,name_of_book,None,kind_of_book,None,None,shelve,cover_image)
+        # Book items table
+        ran = random.randint(1, 6)
+        for i in range(ran):
+            barcode = generate_unique_id(self.existing_ids)
+            self.existing_ids.add(barcode)
+            filename = AbsoluteBotPath+f'/Knowledge/Barcode/{name_of_book}-{barcode}.png'
+            generate_barcode(barcode, filename)
+            InsertToBookItemTable(barcode,ID)
+    def load_doccument_list(self, ):
+        temp_doc_list = SearchAllBookName()
+        temp_doc_list = [name[0] for name in temp_doc_list]
+        self.document_list.update(temp_doc_list)
+    def load_existing_bracode(self, ):
+        temp_exist_ids = SearchAllBarcode()
+        temp_exist_ids = [name[0] for name in temp_exist_ids]
+        self.existing_ids.update(temp_exist_ids)
+    def add_to_vectordatabse(self, doc_ids, idx, documents, child_docs, child_doc_file_path):
+        print('___Add to child')
+        self.retriever.vectorstore.add_documents(child_docs) # Add to child
+        print('___Add to parents')
+        self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))]) # Add to parents
+        print('___Add info to database')
+        base64_img = pdf_page_to_base64(child_doc_file_path) # Add info to database
+        self.add_info_to_database(idx+1, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
     def insert_book(self, json_file: str, jq_schema, ids=None):
         documents = json.loads(Path(json_file).read_text())[jq_schema]
         if ids is None:
@@ -217,9 +250,12 @@ class DATABASE:
                     "If `ids` is provided, should be same length as `documents`."
                 )
             doc_ids = ids
-        docs = []
+        
         for idx in range(len(documents)):
             child_doc_file_path = AbsoluteBotPath + documents[idx]['Nội dung đầu sách']
+            # Check if file already add to vector database
+            if child_doc_file_path.split('/')[-1] in self.document_list:
+                continue
             try:
                 try:
                     pdf_loader = UnstructuredPDFLoader(child_doc_file_path)
@@ -235,10 +271,13 @@ class DATABASE:
                 print(".....  Adding ", documents[idx]['Nội dung đầu sách'], '  .....')
                 documents[idx]['Nội dung đầu sách'] = text
                 # Add to parents
-                self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
+                # self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
                 print(documents[idx])
+                # # Add info to database
+                # base64_img = pdf_page_to_base64(child_doc_file_path)
+                # self.add_info_to_database(idx+1, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
                 # child_doc[0].page_content = text
-                
+                child_docs = []
                 _id = doc_ids[idx]
                 sub_docs = self.child_splitter.split_documents([Document(str(documents[idx]))])
                 if self.retriever.child_metadata_fields is not None:
@@ -248,10 +287,12 @@ class DATABASE:
                         }
                 for _doc in sub_docs:
                     _doc.metadata[self.retriever.id_key] = _id
-                docs.extend(sub_docs)
+                child_docs.extend(sub_docs)
+                # self.retriever.vectorstore.add_documents(docs)
+                self.add_to_vectordatabse(doc_ids, idx, documents, child_docs, child_doc_file_path)
             except:
                 pass
-        self.retriever.vectorstore.add_documents(docs)
+        
 
     def similarity_search(self, query, k=4):
         return self.db.similarity_search_with_score(query, k)
