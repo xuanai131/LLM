@@ -368,6 +368,7 @@ def do_return_book(name_book:str):
     send_mess("Xin hãy đưa sách vào khe bên dưới.")
     barcode_list = []
     while True:
+<<<<<<< HEAD
         # Book_ID = scan_barcode('') # Quét mã vạch sách
         event.clear()
         thread1.start()
@@ -379,6 +380,10 @@ def do_return_book(name_book:str):
         # Book_ID = scan_barcode('')
         Book_ID = "20134013"
         if Book_ID == "OVERTIME":
+=======
+        barcode = scan_barcode('') # Quét mã vạch sách
+        if barcode == "OVERTIME":
+>>>>>>> bf2ca7ea1b553f8751c155e0ee2aa86bc95cdde1
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # print("user input ",user_input)
