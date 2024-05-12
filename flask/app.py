@@ -18,11 +18,20 @@ import multiprocessing
 import urllib.request
 import subaudio
 import re
+<<<<<<< HEAD
 camera = cv2.VideoCapture(0)
 from colorama import Fore, Back, Style
 sys.path.append("../Bot")
 from Database_handle import *
 from Global_variable import *
+=======
+import json
+camera = cv2.VideoCapture(0)
+from colorama import Fore, Back, Style
+sys.path.append("../Bot")
+from Global_variable import *
+import book_search
+>>>>>>> vu
 import Helper_Utilities
 from langchain_core.messages import HumanMessage, AIMessage
 import voice_record
@@ -33,6 +42,10 @@ OpenAIHistoryConversation = []
 graph = Helper_Utilities.CreateGraph(OpenAIHistoryConversation)
 DoRecord = voice_record.Voice_Record()
 # sys.path.append("database")
+<<<<<<< HEAD
+=======
+import book_search
+>>>>>>> vu
 import setting
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -41,8 +54,15 @@ response_tool = ""
 camera_st = False
 voice_st = False
 user_input_st = False
+<<<<<<< HEAD
 user_input_interrupt_signal = False
 user_input_message = ""
+=======
+user_input_message = ""
+
+SavedHistoryConversation = []  # Conversation to save when create new session
+
+>>>>>>> vu
 def run_graph(inputs):
     for s in graph.stream(inputs):
         if "__end__" not in s:
@@ -63,7 +83,11 @@ def handle_event_response(attitude,answer):
     global OpenAIHistoryConversation,redirect_state
     print("check history: ",OpenAIHistoryConversation)
     if (attitude == "bad"):
+<<<<<<< HEAD
         print(Fore.RED +"in the bad response")
+=======
+        print(Fore.RED +"in the bad request")
+>>>>>>> vu
         print(Style.RESET_ALL)
         redirect_state = "Book_researcher"
         Helper_Utilities.write_state(redirect_state)
@@ -88,7 +112,11 @@ def hello_world():
 def LoadBookCovers(book_ids):
     images = []
     for book_id in book_ids:
+<<<<<<< HEAD
         images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
+=======
+        images.append("data:image/jpeg;base64," + str(book_search.search_book_image_by_id(book_id)[0]))
+>>>>>>> vu
     return images
 def use_open_ai_audio(data):
     client = OpenAI()
@@ -183,7 +211,10 @@ def get_user_input_state():
             if (state == True):
                 while(user_input_message == ""):
                     continue
+<<<<<<< HEAD
                 print("checking the message is: ",user_input_message)
+=======
+>>>>>>> vu
                 result = user_input_message
                 user_input_message = ""
                 return result
@@ -193,6 +224,7 @@ def get_user_input_state():
             return "Invalid JSON data."
     else:
         return str(user_input_st)
+<<<<<<< HEAD
 @app.route("/user_input_state_interrupt",methods = ["POST","GET"])
 def get_user_input_state_interrupt():
     global user_input_message
@@ -202,6 +234,9 @@ def get_user_input_state_interrupt():
     else:
         return user_input_message
     return "success"
+=======
+    
+>>>>>>> vu
 @app.route("/return_form",methods = ["POST","GET"])
 def return_form():
     if request.method == 'POST':
@@ -244,6 +279,25 @@ def chat_from_tool():
     else:
         return  str(response_tool)
 
+<<<<<<< HEAD
+=======
+# Save history when create new session
+@app.route("/saved_history", methods=["GET","POST"])
+def saved_history():
+    filename = "history.json"
+    with open(filename,'r+', encoding='utf-8') as file:
+          # First we load existing data into a dict.
+        file_data = json.load(file)
+        # Join new_data with file_data inside emp_details
+        file_data["HISTORY"].append(SavedHistoryConversation)
+        # Sets file's current position at offset.
+        file.seek(0)
+        # convert back to json.
+        json.dump(file_data, file, indent = 10, ensure_ascii=False) 
+    
+    SavedHistoryConversation.clear()
+    OpenAIHistoryConversation.clear()
+>>>>>>> vu
 
 @app.route("/get", methods=["GET","POST"])
 def chat():
@@ -253,7 +307,13 @@ def chat():
     if request.method == 'POST':
         msg = request.form.get("msg")
         if msg:
+<<<<<<< HEAD
             response = get_Chat_response(msg)
+=======
+            SavedHistoryConversation.append("User : "+ msg )
+            response = get_Chat_response(msg)
+            SavedHistoryConversation.append("Lib : "+ response )
+>>>>>>> vu
             return response
         else:
             return "No message received."
@@ -370,6 +430,14 @@ def video_feed():
 @app.route('/download_audio', methods=['POST'])
 def download_audio_from_url():
     data = request.get_json().get('url')
+<<<<<<< HEAD
+=======
+    # print("the url in front end side :",data)
+    # data = "https://chunk.lab.zalo.ai/a745e9c971a198ffc1b0/a745e9c971a198ffc1b0/"
+    # download_audio_in_web(data,'audio.wav')
+    # data = request.get_json().get('data')
+    # text_to_speech(data,'audio.wav')
+>>>>>>> vu
     audio_thread = threading.Thread(target=text_to_speech, args=(data,'audio.wav'))
     audio_thread.start()
     audio_thread.join()

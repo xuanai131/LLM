@@ -31,11 +31,24 @@ function handleEvent(event,action,message,tool_running){
             },
             type: "POST",
             url: "/get",
+            beforeSend: function() {
+                // Add your function or code here to execute while waiting for the response
+                console.log("Waiting for response...");
+                setTimeout(function() {
+                    // Add botHtml to #messageFormeight after the delay
+                    add_loading_text();
+                }, 1000);
+                
+                // You can add loading animations or other UI updates here
+            }
         }).done(function(data) {
             console.log("Request succeeded!");
             // console.log("image: ", images);
             // console.log("Response data:", data);
-
+            if ($("#messageFormeight").children().last().find('span').length === 0) {
+                $("#messageFormeight").children().last().remove();
+            }
+            
             add_bot_message(data,str_time);
             // Create a container for the animation
         });}
@@ -55,7 +68,7 @@ function scrollToBottom() {
     messageFormeight.scrollTop = messageFormeight.scrollHeight;
 }
 var animation_icon = lottie.loadAnimation({
-    container: document.getElementById('lottie-container_face'),
+    container: document.getElementById('lottie-container_face_avatar'),
     renderer: 'svg',
     loop: true,
     autoplay: true,
@@ -132,6 +145,46 @@ function add_bot_message(data,str_time){
     .catch(error => {
         console.error('Error:', error);
     });
+    // Append the message HTML to the message form
+    
+    $("#messageFormeight").append(botHtml);
+    // 
+    
+    scrollToBottom();
+    // request_download(url = '',data);
+}
+
+// Function to loading ... when waiting respond from chatbot
+function add_loading_text(){
+    var animationContainer = $('<div class="img_cont_msg"><div class="lottie-container_face"></div></div>');
+
+            // Load animation for the current container
+    var animation = lottie.loadAnimation({
+        container: animationContainer.find('.lottie-container_face')[0],
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../static/resources/robot_2.json' 
+    });
+    animationContainer.css({
+        width: '40px',
+        height: '40px'
+    });
+    // Construct the message HTML with the animation container
+    var botHtml = $('<div class="d-flex justify-content-start mb-4"><div class="msg_cotainer"></div></div>');
+    var animation1 = lottie.loadAnimation({
+        container: botHtml.find('.msg_cotainer')[0],
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../static/resources/loading_1.json' 
+    });
+    // animationContainer.css({
+    //     width: '40px',
+    //     height: '40px'
+    // });
+    botHtml.prepend(animationContainer);
+    
     // Append the message HTML to the message form
     
     $("#messageFormeight").append(botHtml);
