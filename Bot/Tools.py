@@ -40,9 +40,9 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', 
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3', 
                      embedding=embedding, 
-                     parent_path=AbsoluteBotPath+"/vector_database/book_parents", 
+                     parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
                      retriever_config=BookInfoRetriever)
 
 SelfKnowledgeRetriever = RETRIEVER_CONFIG()
