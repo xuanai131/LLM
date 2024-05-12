@@ -376,9 +376,9 @@ def do_return_book(name_book:str):
         # Waiting for both threads to finish
         thread1.join()
         thread2.join()
-        # Book_ID = scan_barcode('')
-        Book_ID = "20134013"
-        if Book_ID == "OVERTIME":
+        # barcode = scan_barcode('')
+        barcode = "20134013"
+        if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # print("user input ",user_input)
