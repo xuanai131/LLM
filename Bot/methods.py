@@ -238,7 +238,7 @@ class DATABASE:
         self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))]) # Add to parents
         print('___Add info to database')
         base64_img = pdf_page_to_base64(child_doc_file_path) # Add info to database
-        self.add_info_to_database(idx+1, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
+        self.add_info_to_database(idx, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
     def insert_book(self, json_file: str, jq_schema, ids=None):
         documents = json.loads(Path(json_file).read_text())[jq_schema]
         if ids is None:
