@@ -35,6 +35,7 @@ import re
 import unicodedata
 from Global_variable import *
 from table_handle import *
+from Database_handle import *
 
 
 
@@ -126,6 +127,7 @@ class DATABASE:
         self.db_path = db_path
         self.parent_path = parent_path
         self.document_list = set()
+        self.existing_ids = set()
         self.retriever_config = retriever_config
         self.db = Chroma(collection_name="split_parents", persist_directory=db_path, embedding_function=embedding)
         if retriever_config.parent_splitter is None:
@@ -146,7 +148,7 @@ class DATABASE:
         self.store = self.initial_store()
         self.retriever = self.initial_retriever()
         self.load_doccument_list()
-        self.existing_ids = set()
+        self.load_existing_bracode()
         
     def fix_invalid_characters(self, text):
         # Replace invalid characters with hyphen '-'
@@ -210,7 +212,6 @@ class DATABASE:
         texts = text_splitter.split_documents(documents)
         self.retriever.add_documents(texts, ids=None)
         
-        
     def add_info_to_database(self, ID, name_of_book, kind_of_book, shelve, cover_image):
         # Books table
         InsertToBookTable(ID,name_of_book,None,kind_of_book,None,None,shelve,cover_image)
@@ -223,11 +224,13 @@ class DATABASE:
             generate_barcode(barcode, filename)
             InsertToBookItemTable(barcode,ID)
     def load_doccument_list(self, ):
-        with open(AbsoluteBotPath+'/vector_database/document_list.txt','r') as f:
-            docs = f.read()
-        f.close()
-        docs = docs.split('\n')
-        self.document_list.update(docs)
+        temp_doc_list = SearchAllBookName()
+        temp_doc_list = [name[0] for name in temp_doc_list]
+        self.document_list.update(temp_doc_list)
+    def load_existing_bracode(self, ):
+        temp_exist_ids = SearchAllBarcode()
+        temp_exist_ids = [name[0] for name in temp_exist_ids]
+        self.existing_ids.update(temp_exist_ids)
     def add_to_vectordatabse(self, doc_ids, idx, documents, child_docs, child_doc_file_path):
         print('___Add to child')
         self.retriever.vectorstore.add_documents(child_docs) # Add to child
