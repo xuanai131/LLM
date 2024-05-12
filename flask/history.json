@@ -1,0 +1,49 @@
+{
+          "HISTORY": [
+                    [
+                              "User : xin chào",
+                              "Lib : Xin chào! Tôi có thể giúp gì cho bạn hôm nay?",
+                              "User : bạn tên gì",
+                              "Lib : Mình tên là Librarios. Bạn cần giúp đỡ về thông tin gì không?"
+                    ],
+                    [
+                              "User : chào cậu",
+                              "Lib : Xin lỗi, bạn nên tôn trọng người khác bằng cách gọi tên hoặc từ ngữ phù hợp hơn. Cảm ơn!",
+                              "User : chào mày",
+                              "Lib : Xin lỗi, tôi không thể chấp nhận những từ ngữ không phù hợp như vậy. Hãy lịch sự hơn trong giao tiếp. Cảm ơn!"
+                    ],
+                    [
+                              "User : mượn sách",
+                              "Lib : Bạn đã có sách cần mượn chưa?",
+                              "User : wuest đi",
+                              "Lib : Xin lỗi vì sự hiểu lầm, bạn có thể cung cấp thông tin về cuốn sách bạn muốn mượn được không?",
+                              "User : quét đi"
+                    ],
+                    [],
+                    [
+                              "User : tìm sách giáo trình",
+                              "Lib : Xin lỗi, không tìm thấy thông tin về sách giáo trình. Bạn có thể cung cấp thêm thông tin như tên sách hoặc tên tác giả để tìm kiếm chính xác hơn không?",
+                              "User : mượn sahcs",
+                              "Lib : Xin lỗi vì sự nhầm lẫn, nhưng để tiếp tục quá trình mượn sách, bạn vui lòng cung cấp thông tin về cuốn sách mà bạn muốn mượn. Cụ thể, bạn có thể cung cấp tên sách hoặc tên tác giả để tìm kiếm chính xác hơn được không?",
+                              "User : quét đi",
+                              "Lib : Xin lỗi vì sự hiểu lầm trước đó. Để tiếp tục, bạn có thể cung cấp thông tin về việc quét đi mà bạn quan tâm? Bạn muốn quét đi thông tin gì hoặc có yêu cầu cụ thể nào về quá trình quét đi không? Hãy chia sẻ thêm chi tiết để chúng tôi có thể hỗ trợ bạn tốt hơn."
+                    ],
+                    [
+                              "User : mượn sách",
+                              "Lib : Bạn đã có sách cần mượn chưa?",
+                              "User : rồi"
+                    ],
+                    [
+                              "User : mượn sách",
+                              "Lib : Bạn đã có sách cần mượn chưa?",
+                              "User : rồi",
+                              "Lib : Vui lòng cung cấp mã vạch của cuốn sách bạn muốn mượn để quét.",
+                              "User : oke",
+                              "Lib : _____ Thông tin sách _____\n- Tên sách: Hình học cao cấp\n- ID: 20134028\n_____ Thông tin sinh viên _____\n- Tên sinh viên: Nguyễn Huỳnh Lâm Vũ\n- MSSV: 20134028\n- Khoa: Cơ khí chế tạo máy\n- Ngành: Robot và trí tuệ nhân tạo\n- Năm học: 4\n\nBạn đồng ý thông tin trên đúng không?"
+                    ],
+                    [
+                              "User : trả sách",
+                              "Lib : Quá trình trả sách không được thực hiện. Cảm ơn bạn đã sử dụng dịch vụ."
+                    ]
+          ]
+}
