@@ -149,6 +149,8 @@ class DATABASE:
             
         self.store = self.initial_store()
         self.retriever = self.initial_retriever()
+        self.load_doccument_list()
+        self.load_existing_bracode()
         
     def fix_invalid_characters(self, text):
         # Replace invalid characters with hyphen '-'

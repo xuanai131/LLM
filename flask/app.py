@@ -43,9 +43,12 @@ voice_st = False
 user_input_st = False
 user_input_interrupt_signal = False
 user_input_message = ""
+<<<<<<< HEAD
 
 SavedHistoryConversation = []  # Conversation to save when create new session
 
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
 def run_graph(inputs):
     for s in graph.stream(inputs):
         if "__end__" not in s:
@@ -392,11 +395,6 @@ def video_feed():
 @app.route('/download_audio', methods=['POST'])
 def download_audio_from_url():
     data = request.get_json().get('url')
-    # print("the url in front end side :",data)
-    # data = "https://chunk.lab.zalo.ai/a745e9c971a198ffc1b0/a745e9c971a198ffc1b0/"
-    # download_audio_in_web(data,'audio.wav')
-    # data = request.get_json().get('data')
-    # text_to_speech(data,'audio.wav')
     audio_thread = threading.Thread(target=text_to_speech, args=(data,'audio.wav'))
     audio_thread.start()
     audio_thread.join()
