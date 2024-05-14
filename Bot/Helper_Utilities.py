@@ -19,7 +19,7 @@ from Global_variable import *
 import Tools
 from colorama import Fore, Back, Style
 redirect_state = "supervisor"
-
+redirect_borrow_book = False
 
 
 
@@ -287,7 +287,7 @@ book_return_interrupt_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_return_interrupt_chain = (
-    book_return_interrupt_prompt 
+    book_research_inspector_prompt 
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
@@ -331,11 +331,6 @@ def redirect_fun(data):
     res["next"] = state
     print("from redirect node ",res)
     return res
-def check_borrow_book(s):
-    print( "-------------checking borrow book stage :",s)
-    if 'supervisor' in s and 'next'  and s['supervisor']['next'] == 'Borrow_book':
-        print(Fore.YELLOW +"borrow book agent is running")
-        print(Style.RESET_ALL)
 def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
