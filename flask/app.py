@@ -9,7 +9,7 @@ import numpy as np
 import time
 import threading
 from flask_socketio import SocketIO
-import requests 
+import requests
 import os 
 from openai import OpenAI
 import soundfile as sf
@@ -17,10 +17,12 @@ import sounddevice as sd
 import multiprocessing
 import urllib.request
 import subaudio
+import re
 camera = cv2.VideoCapture(0)
-
+from colorama import Fore, Back, Style
 sys.path.append("../Bot")
-import book_search
+from Database_handle import *
+from Global_variable import *
 import Helper_Utilities
 from langchain_core.messages import HumanMessage, AIMessage
 import voice_record
@@ -30,8 +32,7 @@ new_frame_event = threading.Event()
 OpenAIHistoryConversation = []
 graph = Helper_Utilities.CreateGraph(OpenAIHistoryConversation)
 DoRecord = voice_record.Voice_Record()
-sys.path.append("database")
-import book_search
+# sys.path.append("database")
 import setting
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -40,9 +41,44 @@ response_tool = ""
 camera_st = False
 voice_st = False
 user_input_st = False
+user_input_interrupt_signal = False
 user_input_message = ""
 
+SavedHistoryConversation = []  # Conversation to save when create new session
 
+def run_graph(inputs):
+    for s in graph.stream(inputs):
+        if "__end__" not in s:
+            print(s)
+            print('------------------------')
+        else:
+            print(s)
+            try:
+                answer = AIMessage(s.get('__end__')['messages'][-1].content)
+                print(answer)
+                attitude = s.get('__end__')['inspector']
+                print("the inspector check that the response is ",attitude)
+                res = handle_event_response(attitude,answer)
+                return res
+            except:
+                pass
+def handle_event_response(attitude,answer):
+    global OpenAIHistoryConversation,redirect_state
+    print("check history: ",OpenAIHistoryConversation)
+    if (attitude == "bad"):
+        print(Fore.RED +"in the bad response")
+        print(Style.RESET_ALL)
+        redirect_state = "Book_researcher"
+        Helper_Utilities.write_state(redirect_state)
+        inputs = {
+        "messages": OpenAIHistoryConversation
+    }
+        res  = run_graph(inputs)
+        return res
+    else:
+        redirect_state = "supervisor"
+        Helper_Utilities.write_state(redirect_state)
+        return answer
 def play_wav(file_path):
     data, fs = sf.read(file_path, dtype='float32')
     sd.play(data, fs)
@@ -55,7 +91,7 @@ def hello_world():
 def LoadBookCovers(book_ids):
     images = []
     for book_id in book_ids:
-        images.append("data:image/jpeg;base64," + str(book_search.search_book_image_by_id(book_id)[0]))
+        images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
     return images
 def use_open_ai_audio(data):
     client = OpenAI()
@@ -110,7 +146,7 @@ def get_image():
     if request.method == 'POST':
         msg = request.get_json()
         print("MSG", type(msg['id']))
-        image_of_book = msg['id'].replace("'", "").replace('"', '').split(',')
+        image_of_book = re.sub(r'[^0-9,]', '', msg['id']).split(',')
         print(image_of_book)
         print(type(image_of_book))
 
@@ -141,7 +177,8 @@ def get_user_input_state():
     global user_input_st
     global user_input_message
     if request.method == 'POST':
-        data = request.get_json()  
+        data = request.get_json()
+        user_input_message = ""  
         print("/user input state posted ",data)
         if data and "input_st" in data:
             state = data["input_st"]
@@ -150,6 +187,7 @@ def get_user_input_state():
             if (state == True):
                 while(user_input_message == ""):
                     continue
+                print("checking the message is: ",user_input_message)
                 result = user_input_message
                 user_input_message = ""
                 return result
@@ -159,7 +197,15 @@ def get_user_input_state():
             return "Invalid JSON data."
     else:
         return str(user_input_st)
-    
+@app.route("/user_input_state_interrupt",methods = ["POST","GET"])
+def get_user_input_state_interrupt():
+    global user_input_message
+    if request.method == 'POST':
+        print(" change request to the barcode scan")
+        user_input_message = "***INTERRUPT***" 
+    else:
+        return user_input_message
+    return "success"
 @app.route("/return_form",methods = ["POST","GET"])
 def return_form():
     if request.method == 'POST':
@@ -202,6 +248,22 @@ def chat_from_tool():
     else:
         return  str(response_tool)
 
+# Save history when create new session
+@app.route("/saved_history", methods=["GET","POST"])
+def saved_history():
+    filename = "history.json"
+    with open(filename,'r+', encoding='utf-8') as file:
+          # First we load existing data into a dict.
+        file_data = json.load(file)
+        # Join new_data with file_data inside emp_details
+        file_data["HISTORY"].append(SavedHistoryConversation)
+        # Sets file's current position at offset.
+        file.seek(0)
+        # convert back to json.
+        json.dump(file_data, file, indent = 10, ensure_ascii=False) 
+    
+    SavedHistoryConversation.clear()
+    OpenAIHistoryConversation.clear()
 
 @app.route("/get", methods=["GET","POST"])
 def chat():
@@ -211,7 +273,9 @@ def chat():
     if request.method == 'POST':
         msg = request.form.get("msg")
         if msg:
+            SavedHistoryConversation.append("User : "+ msg )
             response = get_Chat_response(msg)
+            SavedHistoryConversation.append("Lib : "+ response )
             return response
         else:
             return "No message received."
@@ -227,21 +291,11 @@ def get_Chat_response(text):
         "messages": OpenAIHistoryConversation
     }
     
-    for s in graph.stream(inputs):
-        if "__end__" not in s:
-            print(s)
-        else:
-            print("-------------------------------------")
-            print(s)
-            try:
-                answer = AIMessage(s.get('__end__')['messages'][-1].content)
-                print("-------------------------------------")
-                print(answer)
-            except:
-                pass
+    answer = run_graph(inputs)
     OpenAIHistoryConversation.append(answer)
     
     return answer.content
+
 
 def generate_frames(image_data):
     global count

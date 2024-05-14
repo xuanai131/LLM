@@ -1,0 +1,13 @@
+Bot/__pycache__
+flask/__pycache__
+.vscode
+Bot/API_keys.py
+flask/audio.wav
+Bot/graph.png
+Bot/Knowledge/Books/PDF
+flask/recorded_audio.mp3
+Bot/Knowledge/Books/PDF.zip
+Bot/Knowledge
+Bot/vector_database
+Bot/DATABASE.db
+flask/history.json
