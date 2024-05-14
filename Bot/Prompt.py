@@ -141,13 +141,6 @@ BOOK_SEARCH_PROMPT = """
             You need to think carefully about the user's statements and conversation history to think about what to do, if there is no information about the book such as book title, author name, etc. .
             is provided, please ask the user to provide more information about the book to facilitate the search. 
             the plan is do some below steps:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b14832f28457404fc66e4196e984245729c4837a
->>>>>>> ai
             First, you use the book_researcher tool to get the IDs of all relevant books.
             The found ID must look like the example below:
                 ID : [31,32]
@@ -155,26 +148,8 @@ BOOK_SEARCH_PROMPT = """
             Finally, you should wait till the *load_book* tool  execute successfully and catch the success signal from it and 
             When you prepare to answer to the human ,self ask you self :
              - are you execute *load_book* ?
-            then reply to the human that is that these books they are looking for and do not show all the book infomation because it is shown by load_book tool
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ai
-=======
-            First, you use the *book_researcher* tool to get the IDs of all relevant books.
-            The found ID must look like the example below:
-                ID : [31,32]
-            Second, with the ID found, provide that ID as the "book_ids" input parameter to the *load_book* tool and execute the tool.
-            Finally, you should wait till the *load_book* tool  execute successfully and catch the success signal from it .
-
+            then reply to the human that is that these books they are looking for and do not show all the book infomation because it is shown by load_book too
             Reply to user : "Đây là thông tin sách mà bạn cần tìm ."
-            
->>>>>>> vu
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b14832f28457404fc66e4196e984245729c4837a
->>>>>>> ai
             Do not answer so dump like have book ids in the answer , use natual language and friendly response to human       
             Note: - use vietnamese to communicate to human
 """
@@ -228,36 +203,15 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 Note : you only answer "good" or "bad"
 '''
 BOOK_RETURN_INTERRUPT_PROMPT = '''
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ai
-                when you detect in human input that the human is do not want to return book or the human are busy , you will finally answer yes 
+               when you detect in human input that the human is do not want to return book or the human are busy , you will finally answer yes 
                 Example for the yes answer:
                     - Human: 'Tôi đang bận và không muốn nữa'
                     - Human: 'Tôi không có sách ở đây'
                     - Human: 'Đừng quét nữa'
                     - Human: 'Thôi tôi không muốn trả sách nữa'
                 if not in the above cases, answer no
-<<<<<<< HEAD
                 Note : you only answer "yes" or "no"
-                follwing the human input below , your answer is : 
-=======
-                Note : you only answer "yes" or "no"
-                follwing the human input below , your answer is : 
-=======
-                You work as an inspector to check for the AI chatbot system for if it have the interrupt events or not 
-                the book return task in the AI chatbot system will contain the action : scan the book, ask human continue to return or not, confirm the book have returned
-                The above ations are not counted as interrupt events , but when you detect that the human is do not want to return book or the human are busy ,it will be counted as an interrupt event
-                you will finally answer yes , if not answer no
-                You will evaluate whether the book return conversation will interrupt or not 
-                example for the yes answer:
-                    - Human: "Tôi đang bận và không muốn nữa"
-                    - Human: "Tôi không có sách ở đây"
-                Following is the  human input,  you will evaluate this is the interrupt  
-                Note : you only answer "yes" or "no"
->>>>>>> b14832f28457404fc66e4196e984245729c4837a
->>>>>>> ai
+                following the human input below , your answer is : 
 '''
 BOOK_BORROW_INTERRUPT_PROMPT = '''
                 when you detect in human input that the human is do not want to borrow book or the human are busy , you will finally answer yes 
