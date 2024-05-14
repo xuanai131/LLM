@@ -20,7 +20,11 @@ import threading
 import queue
 load_tool_execute = False
 lock = threading.Lock()
+<<<<<<< HEAD
 result_store = {"barcode_return": "","user_input_return" : "" }
+=======
+result_queue = queue.Queue()
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
 event = threading.Event()
 def turn_on_camera():
     response = requests.get(setting.IP_ADDRESS+'/camera_status')
@@ -40,9 +44,15 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
+<<<<<<< HEAD
 BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3', 
                      embedding=embedding, 
                      parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
+=======
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos', 
+                     embedding=embedding, 
+                     parent_path=AbsoluteBotPath+"/vector_database/book_parents", 
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
                      retriever_config=BookInfoRetriever)
 
 SelfKnowledgeRetriever = RETRIEVER_CONFIG()
@@ -177,7 +187,11 @@ def scan_barcode(ten_sach: str):
         if (time.time() - t) > 20:
             requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
             requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
+<<<<<<< HEAD
             result_store['barcode_return'] = "OVERTIME"
+=======
+            result_queue.put(('barcode', "OVERTIME"))
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
             return "OVERTIME"
         try:
             # Convert the image to grayscale
@@ -194,12 +208,19 @@ def scan_barcode(ten_sach: str):
                 # cv2.destroyAllWindows()
                 # cv2.destroyWindow('image')
                 requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
+<<<<<<< HEAD
                 result_store['barcode_return'] = data
+=======
+                result_queue.put(('barcode', data))
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
                 requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
                 return data
         except:
             continue
+<<<<<<< HEAD
     result_store['barcode_return'] = "INTERRUPT"
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
     return "INTERRUPT"
 
 
@@ -336,7 +357,12 @@ def user_input_request(state):
     global result_store
     res = requests.post(url=setting.IP_ADDRESS+"/user_input_state", json={"input_st":state})
     if state:
+<<<<<<< HEAD
         result_store["user_input_return"] = res.text
+=======
+        event.set()
+        result_queue.put(('user_input', res.text))
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
     return res.text
 
 def show_return_form(book_ids):
@@ -363,22 +389,35 @@ def user_input_request_thread(state):
     res = user_input_request(state)
     if (res!="***INTERRUPT***"):
         check_interrupt = Helper_Utilities.book_return_interrupt_chain.invoke({'messages': [res]})['messages'] 
+<<<<<<< HEAD
         print("interrupt detect :",check_interrupt)
         if(check_interrupt == "yes"):
             event.set()
 
 def do_return_book(name_book:str):
     global result_store
+=======
+        print(check_interrupt)
+thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
+thread2 = threading.Thread(target=scan_barcode, args=('value',))
+def do_return_book(name_book:str):
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
     result = {'Sách': [], 'Sinh viên': []}
     send_mess("start", "return_form")
     send_mess("Xin hãy đưa sách vào khe bên dưới.")
     barcode_list = []
     while True:
+<<<<<<< HEAD
         # Book_ID = scan_barcode('') # Quét mã vạch sách
         event.clear()
         result_store.clear()
         thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
         thread2 = threading.Thread(target=scan_barcode, args=('value',))
+=======
+<<<<<<< HEAD
+        # Book_ID = scan_barcode('') # Quét mã vạch sách
+        event.clear()
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
         thread1.start()
         thread2.start()
 
@@ -386,10 +425,19 @@ def do_return_book(name_book:str):
         thread1.join()
         thread2.join()
         # Book_ID = scan_barcode('')
+<<<<<<< HEAD
         # Book_ID = "20134013"
         # if Book_ID == "OVERTIME":
         barcode = scan_barcode('') # Quét mã vạch sách
         if barcode == "OVERTIME":
+=======
+        Book_ID = "20134013"
+        if Book_ID == "OVERTIME":
+=======
+        barcode = scan_barcode('') # Quét mã vạch sách
+        if barcode == "OVERTIME":
+>>>>>>> bf2ca7ea1b553f8751c155e0ee2aa86bc95cdde1
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
             # print("user input ",user_input)
@@ -399,15 +447,24 @@ def do_return_book(name_book:str):
             else:
                 user_input_request(False)
                 break
+<<<<<<< HEAD
         elif result_store["barcode_return"] == "ERROR":
+=======
+        elif barcode == "ERROR":
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
         elif result_store["barcode_return"] == "INTERRUPT":
             send_mess("stop", "return_form")
             return "Quá trình trả sách đã bị dừng"
         else:
+<<<<<<< HEAD
             # bill_info = SearchBillByBarcode(barcode)
             bill_info = {"student_ID":"20134013","return_date":None,'borrow_date':"08-01-2018"}
+=======
+            bill_info = SearchBillByBarcode(barcode)
+            # bill_info = ["1","2","3","4",None]
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
             if bill_info is None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này chưa được mượn ở thư viện.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
@@ -429,7 +486,11 @@ def do_return_book(name_book:str):
                     break
                 
             Student_ID = bill_info['student_ID']
+<<<<<<< HEAD
             # barcode = "WdudlYaHl"
+=======
+            # Student_ID = "20134013"
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
             barcode_list.append(barcode)
             book_ID = SearchBookIDByBarcode(barcode)
             temp_book_info = SearchBookByID(book_ID)
