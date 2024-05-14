@@ -144,7 +144,7 @@ def get_image():
     global image_of_book
     if request.method == 'POST':
         msg = request.get_json()
-        print("MSG", type(msg['id']))
+        print("MSG : ", msg['id'])
         image_of_book = re.sub(r'[^0-9,]', '', msg['id']).split(',')
         # print(image_of_book)
         # print(type(image_of_book))
@@ -153,7 +153,7 @@ def get_image():
         # print(type(images[0]))
         # return render_template('index.html')
         socketio.emit('book_images', {'visible': True, 'image' : images})
-        return image_of_book
+        return "load success"
         # video_feed_url = url_for('image')
         # return render_template('index.html', video_feed_url = "response")
     else:

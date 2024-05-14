@@ -205,6 +205,7 @@
         const list_book_find = document.getElementById('bookFinded');
         
         socket.on('book_images', function(data) {
+            console.log("book_images socket catch");
             if (data.visible) {
                 swiper_visibility.style.visibility= "visible";
                 list_book_find.style.visibility= "visible";
@@ -212,7 +213,7 @@
 
                 reveal_book(data.image);
                 $("#robotContainer").hide();
-                console.log ("data.image : ",typeof(data.image[0]['cover_image']));
+                //console.log ("data.image : ",typeof(data.image[0]['cover_image']));
                 // var arr = [];
                 // for (i in data.image){
                 //     arr.push(data.image[i]['ID']);
