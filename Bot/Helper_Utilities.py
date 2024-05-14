@@ -17,6 +17,7 @@ import API_keys
 from Prompt import *
 from Global_variable import *
 import Tools
+from Tools import llm
 from colorama import Fore, Back, Style
 redirect_state = "supervisor"
 redirect_borrow_book = False
@@ -24,9 +25,7 @@ redirect_borrow_book = False
 
 
 
-##### CHATOPENAI MODEL
-llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
-# llm = ChatOpenAI(model="gpt-4-1106-preview")
+
 
 
 

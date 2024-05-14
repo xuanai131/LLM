@@ -3,6 +3,8 @@ from langchain_core.tools import tool
 from langchain_experimental.tools import PythonREPLTool
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+from langchain.chains import RetrievalQA
+from langchain_openai import ChatOpenAI
 from langchain.tools.retriever import create_retriever_tool
 from methods import *
 from Global_variable import *
@@ -28,6 +30,9 @@ def turn_on_camera():
         print("Camera turned on successfully")
     else:
         print("Failed to turn on camera")
+##### CHATOPENAI MODEL
+llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
+# llm = ChatOpenAI(model="gpt-4-1106-preview")
 
 ##### CREATE USER_INPUT FUNCTION
 def UserInput():
@@ -85,6 +90,22 @@ python_repl_tool = PythonREPLTool() # This executes code locally, which can be u
 #     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.3, "k": 4}
 # )
 
+
+chain = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever= BookInfo.retriever, return_source_documents=True, verbose=True, input_key="question")
+BANG_XOA_DAU_FULL = str.maketrans(
+    "ÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬĐÈÉẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴáàảãạăắằẳẵặâấầẩẫậđèéẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵ",
+    "A"*17 + "D" + "E"*11 + "I"*5 + "O"*17 + "U"*11 + "Y"*5 + "a"*17 + "d" + "e"*11 + "i"*5 + "o"*17 + "u"*11 + "y"*5,
+    chr(774) + chr(770) + chr(795) + chr(769) + chr(768) + chr(777) + chr(771) + chr(803) # 8 kí tự dấu dưới dạng unicode chuẩn D
+)
+
+def xoa_dau_full(txt: str) -> str:
+    return txt.translate(BANG_XOA_DAU_FULL)
+def search_book(query: str):
+    queries = [query, xoa_dau_full(query)]
+    print(queries)
+    result = chain.invoke(queries)
+    return result
+
 def load_book(book_ids: str):
     global load_tool_execute
     load_tool_execute = True
@@ -110,10 +131,10 @@ def load_book(book_ids: str):
 
    
 book_search_tool=[
-    create_retriever_tool(
-        BookInfo.retriever,
-        "book_researcher",
-        "tìm kiếm và trả lời các thông tin về sách trong database của thư viện cho người dùng",
+    Tool(
+        name="book_researcher",
+        func=search_book,
+        description="tìm kiếm và trả lời các thông tin về sách trong database của thư viện cho người dùng",
     ),
     Tool(
         name="load_book",
