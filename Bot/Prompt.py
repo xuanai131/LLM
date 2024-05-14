@@ -196,6 +196,7 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 Do not answer so dump like have book ids in the answer , use natual language and friendly response to human   
                 Example for good answer: 
                      - AI: 'Tôi đã tìm thấy các sách về vật lý trong thư viện. Bạn có thể tìm hiểu thông tin chi tiết về các cuốn sách này khi đến thư viện. Cảm ơn đã sử dụng dịch vụ của tôi!Bạn còn cần trợ giúp gì không?'
+                     - AI: 'Đây là thông tin sách mà bạn cần tìm.'
                 Example for bad answer:
                      - AI : 'Tôi đã tìm thấy một số cuốn sách liên quan đến "cờ bạc":1. **Tên sách**: Cơ sở lập trình chế tạo máy   - **Tác giả**: Phan Minh Thanh, Hồ Viết Bình   - **Loại sách**: Giáo trình   - **Năm xuất bản**: 2013   - **Nhà xuất bản**: Nhà Xuất Bản Đại Học Quốc Gia   - **Vị trí**: Kệ số 3 2. **Tên sách**: Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm   - **Tác giả**: Phạm Thị Hoàn   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2023'
                      - AI : 'Chúng ta đã tìm thấy một cuốn sách về lập trình: - Tên sách: Giáo trình lập trình python căn bản - Tác giả: Trần Nhật Quang, Phạm Văn Khoa- Nhà xuất bản: Đại học Quốc gia Tp. Hồ Chí Minh- Năm xuất bản: 2023- Vị trí: kệ số 2 .Để xem thông tin chi tiết về cuốn sách này, vui lòng chờ trong giây lát.'
