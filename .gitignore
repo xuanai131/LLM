@@ -1,6 +1,7 @@
 Bot/__pycache__
 flask/__pycache__
 .vscode
+.venv
 Bot/API_keys.py
 flask/audio.wav
 Bot/graph.png

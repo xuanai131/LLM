@@ -41,7 +41,7 @@ from Database_handle import *
 
 class CustomParentDocumentRetriever(ParentDocumentRetriever):
     def _get_relevant_documents(
-        self, query: str, *, run_manager: CallbackManagerForRetrieverRun
+        self, queries: list, *, run_manager: CallbackManagerForRetrieverRun
     ) -> List[Document]:
         # print('/////////////////////////////////////:', query)
         
@@ -53,19 +53,17 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
             List of relevant documents
         """
         result = []
-        # print('Query: ', query)
-        if self.search_type == 'mmr':
-            # print('max_marginal_relevance_search')
-            sub_docs = self.vectorstore.max_marginal_relevance_search(
-                query, **self.search_kwargs
-            )
-        else:
-            # print('similarity_search   ', self.search_kwargs)
-            sub_docs = self.vectorstore.similarity_search(query, **self.search_kwargs)
-            # print(len(sub_docs))
-        # for doc in sub_docs:
-            # print(doc.page_content)
-        # We do this to maintain the order of the ids that are returned
+        sub_docs = []
+        for query in queries:
+            if self.search_type == 'mmr':
+                sub_doc = self.vectorstore.max_marginal_relevance_search(
+                    query, **self.search_kwargs
+                )
+            else:
+                sub_doc = self.vectorstore.similarity_search(query, **self.search_kwargs)
+            if sub_doc not in sub_doc:
+                sub_docs.extend(sub_doc)
+        
         context = {}
         
         for d in sub_docs:
