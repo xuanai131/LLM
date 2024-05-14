@@ -113,7 +113,7 @@ def agent_node(state, agent, name):
                 print(Fore.RED +"bad response: load_tool is not running")
                 print(Style.RESET_ALL)
                 state["messages"].pop()
-                state["messages"].append(HumanMessage(content="tìm cho tôi những cuốn "+str(query)))
+                state["messages"].append(HumanMessage(content="tìm cho tôi những cuốn sách "+str(query)))
         return {"messages": [HumanMessage(content=output, name=name)]}
     else:
         result = agent.invoke(state)
@@ -240,9 +240,9 @@ classify_function_def = {
         "properties": {
             "inspector": {
                 "title": "inspector",
-                "ouput": 'text',
+                "output": 'text',
                 "anyOf": [
-                    {"enum": ['yes', 'no']},
+                    {"enum": ['good', 'bad']},
                 ],
             }
         },
@@ -291,6 +291,17 @@ book_return_interrupt_chain = (
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
+book_borrow_interrupt_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", (BOOK_BORROW_INTERRUPT_PROMPT)),
+        MessagesPlaceholder(variable_name="messages"),
+    ]
+)
+book_borrow_interrupt_chain = (
+    book_return_interrupt_prompt 
+    | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
+    | JsonOutputFunctionsParser()
+)
 ##### CONSTRUCT GRAPH
 
 # 1. The agent state is the input to each node in the graph
@@ -319,17 +330,17 @@ def redirect_fun(data):
     state = read_state()
     res["next"] = state
     print("from redirect node ",res)
-
-    # last_index = len(data["messages"])
-    # if (last_index>0) :
-    #     data["messages"].pop(last_index-1)
-    # del data["messages"]
     return res
+def check_borrow_book(s):
+    print( "-------------checking borrow book stage :",s)
+    if 'supervisor' in s and 'next'  and s['supervisor']['next'] == 'Borrow_book':
+        print(Fore.YELLOW +"borrow book agent is running")
+        print(Style.RESET_ALL)
 def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
 
-    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT1)
+    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT)
     book_research_node = functools.partial(agent_node, agent=book_research_agent, name="Book_researcher")
 
     # robot_research_agent = create_agent(llm, [robot_search_tool], "Bạn hữu ích cho việc trả lời các thông tin về chính bạn")

@@ -231,12 +231,22 @@ def borrow_book(name_book: str):
     barcode_list = []
     while True:
         send_mess("Xin hãy đưa thẻ sinh viên vào khe bên dưới.")
-        Student_ID = scan_barcode('')
-        if Student_ID == "OVERTIME":
+        event.clear()
+        result_store.clear()
+        thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
+        thread2 = threading.Thread(target=scan_barcode, args=('value',))
+        thread1.start()
+        thread2.start()
+
+        # Waiting for both threads to finish
+        thread1.join()
+        thread2.join()
+        # Student_ID = scan_barcode('')
+        Student_ID = "20134013"
+        
+        if result_store["barcode_return"] == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
-            # user_input = UserInput()
-            # print("user input ",user_input)
             
             if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
                 continue
@@ -244,9 +254,12 @@ def borrow_book(name_book: str):
                 user_input_request(False)
                 send_mess("stop", "return_form")
                 return "Quá trình mượn sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
-        elif Student_ID == "ERROR":
+        elif result_store["barcode_return"] == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
+        elif result_store["barcode_return"] == "INTERRUPT":
+            send_mess("stop", "return_form")
+            return "Quá trình mượn sách đã dừng, cảm ơn bạn đã sử dụng dịch vụ."
         else:
             break
     send_borrowstudent_to_form(Student_ID)
@@ -255,7 +268,18 @@ def borrow_book(name_book: str):
     time.sleep(1)
     while True:
         send_mess("Xin hãy đưa sách vào khe bên dưới.")
-        barcode = scan_barcode('')
+        event.clear()
+        result_store.clear()
+        thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
+        thread2 = threading.Thread(target=scan_barcode, args=('value',))
+        thread1.start()
+        thread2.start()
+
+        # Waiting for both threads to finish
+        thread1.join()
+        thread2.join()
+        barcode = "WdudlYaHl"
+        # barcode = result_store["barcode_return"]
         if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
@@ -271,6 +295,9 @@ def borrow_book(name_book: str):
         elif barcode == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
+        elif barcode == "INTERRUPT":
+            send_mess("stop", "return_form")
+            return "Quá trình mượn sách đã dừng, cảm ơn bạn đã sử dụng dịch vụ."
         else:
             state = SearchIsavailableState(barcode)
             if state==False:
@@ -294,13 +321,14 @@ def borrow_book(name_book: str):
                 break
     if len(result['Sách']) > 0:
         print('////////............/////', result['Sách'])
+        # print('////////............/////', result)
         # Xử lí mượn sách tại đây
         for bc in barcode_list:
             CreateBill(bc, Student_ID, datetime.now())
             UpdateIsavailableState(False, bc)
         user_input_request(False)
         send_mess("stop", "return_form")
-        return str(result)
+        return "đã xử lí quá trình mượn sách: " +str(result['Sách'])
     user_input_request(False)
     send_mess("stop", "return_form")
     return "Quá trình mượn sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
