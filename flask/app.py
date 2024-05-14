@@ -100,8 +100,9 @@ def hello_world():
 def LoadBookCovers(book_ids):
     images = []
     for book_id in book_ids:
-        images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
+        images.append(SearchBookByID(book_id))
     return images
+
 def use_open_ai_audio(data):
     client = OpenAI()
 
@@ -156,11 +157,11 @@ def get_image():
         msg = request.get_json()
         print("MSG", type(msg['id']))
         image_of_book = re.sub(r'[^0-9,]', '', msg['id']).split(',')
-        print(image_of_book)
-        print(type(image_of_book))
+        # print(image_of_book)
+        # print(type(image_of_book))
 
         images = LoadBookCovers(image_of_book)
-        print(type(images[0]))
+        # print(type(images[0]))
         # return render_template('index.html')
         socketio.emit('book_images', {'visible': True, 'image' : images})
         return image_of_book
@@ -169,6 +170,7 @@ def get_image():
     else:
         socketio.emit('book_images', {'visible': False, 'image' : images})
         return image_of_book
+    
 @app.route("/user_input_mess",methods = ["POST","GET"])
 def get_message_user_tool():
     global user_input_message
@@ -205,7 +207,7 @@ def get_user_input_state():
         else:
             return "Invalid JSON data."
     else:
-        return str(user_input_st)
+        return str(user_user_input_requestinput_st)
 @app.route("/user_input_state_interrupt",methods = ["POST","GET"])
 def get_user_input_state_interrupt():
     global user_input_message
@@ -219,7 +221,7 @@ def get_user_input_state_interrupt():
 def return_form():
     if request.method == 'POST':
         data = request.get_json()  
-        # print('//////////////////', data['message'])
+        print('//////////////////', data)
         if data['message'] == 'start':
             socketio.emit('return_form_visiblity', {'visible': True})
         else:
@@ -281,6 +283,7 @@ def chat():
     
     if request.method == 'POST':
         msg = request.form.get("msg")
+        print("////////////////// mess: ", msg)
         if msg:
             SavedHistoryConversation.append("User : "+ msg )
             response = get_Chat_response(msg)
