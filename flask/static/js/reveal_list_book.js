@@ -2,7 +2,7 @@ var image_of_choosen;
 function reveal_book(data){
     // while(true) {
     // console.log("Image form socket:", data);
-    console.log("Type of: ", typeof(data));
+    console.log("Type of: ", typeof(data))
     const arr = Object.values(data);
     console.log("====");
     console.log(typeof(arr));

@@ -8,11 +8,23 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ai
 import sys
 sys.path.append("../")
 from Global_variable import *
 =======
 >>>>>>> vu
+<<<<<<< HEAD
+=======
+=======
+import sys
+sys.path.append("../")
+from Global_variable import *
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
 # from captcha_solver import CaptchaSolver
 # from python3_anticaptcha import ImageToTextTask
 # from twocaptcha import TwoCaptcha
@@ -76,36 +88,72 @@ def download_pdf_file(url, topic_name):
     if response.status_code == 200:
         # Save in current working directory
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
         filepath = f'/Knowledge/Books/PDF/{topic_name}/{pdf_file_name}'.split('?')[0]
         fullfilepath = AbsoluteBotPath+filepath
         with open(fullfilepath, 'wb') as pdf_object:
             pdf_object.write(response.content)
             print(f'{pdf_file_name} was successfully saved!')
         return filepath
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ai
 =======
         filepath = os.path.join(os.getcwd(), "PDF", topic_name , pdf_file_name)
         with open(filepath, 'wb') as pdf_object:
             pdf_object.write(response.content)
             print(f'{pdf_file_name} was successfully saved!')
 >>>>>>> vu
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
     else:
         print(f'Uh oh! Could not download {pdf_file_name},')
         print(f'HTTP response status code: {response.status_code}')
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 def write_json(new_data, filename=AbsoluteBotPath+'/Knowledge/Books/Json/sample.json', js_schema="book_infos"):
 =======
 def write_json(new_data, filename='sample.json'):
 >>>>>>> vu
+=======
+<<<<<<< HEAD
+def write_json(new_data, filename=AbsoluteBotPath+'/Knowledge/Books/Json/sample.json', js_schema="book_infos"):
+=======
+def write_json(new_data, filename='sample.json'):
+>>>>>>> vu
+=======
+def write_json(new_data, filename=AbsoluteBotPath+'/Knowledge/Books/Json/sample.json', js_schema="book_infos"):
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
     with open(filename,'r+', encoding='utf-8') as file:
           # First we load existing data into a dict.
         file_data = json.load(file)
         # Join new_data with file_data inside emp_details
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ai
         file_data[js_schema].append(new_data)
 =======
         file_data["DATABASE"].append(new_data)
 >>>>>>> vu
+<<<<<<< HEAD
+=======
+=======
+        file_data[js_schema].append(new_data)
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
         # Sets file's current position at offset.
         file.seek(0)
         # convert back to json.
@@ -141,6 +189,7 @@ next_button.click()
 
 sleep(10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 count = 34
 topics = [2, 6, 7, 10, 11, 13, 14, 15, 23, 24, 26, 30]
 for i in range (7, 30):
@@ -148,6 +197,21 @@ for i in range (7, 30):
 
 for i in range (20, 30):
 >>>>>>> vu
+=======
+<<<<<<< HEAD
+count = 34
+topics = [2, 6, 7, 10, 11, 13, 14, 15, 23, 24, 26, 30]
+for i in range (7, 30):
+=======
+
+for i in range (20, 30):
+>>>>>>> vu
+=======
+count = 34
+topics = [2, 6, 7, 10, 11, 13, 14, 15, 23, 24, 26, 30]
+for i in range (7, 30):
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
     wait = WebDriverWait(driver, 20)
     
     #Nhan cac topic lon
@@ -162,6 +226,12 @@ for i in range (20, 30):
     
     # Path 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
     path = os.path.join("Books/PDF", topic_name) 
    
     os.mkdir(path) 
@@ -185,6 +255,10 @@ for i in range (20, 30):
             find_introduction = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
             find_description = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
         
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ai
 =======
     path = os.path.join("PDF", topic_name) 
    
@@ -206,11 +280,22 @@ for i in range (20, 30):
         find_introduction = driver.find_elements(By.XPATH,"/html/body/div[1]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]")
         try:
 >>>>>>> vu
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
             link = pdf_link[0].get_attribute('src')
             title_articles = find_title_articles[0].text
             keyword = [i.text for i in find_keyword]
             introduction = find_introduction[0].text
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
             description = find_description[0].text
             print("PDF LINK: ", link)
             print("title_articles: ", title_articles)
@@ -241,6 +326,10 @@ for i in range (20, 30):
             #             "Mục lục": "None"
             #             }
             # print(new_data)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ai
 =======
             print("PDF LINK: ", link)
             print("title_articles: ", title_articles)
@@ -258,6 +347,11 @@ for i in range (20, 30):
                         "Mục lục": "None"
                         }
 >>>>>>> vu
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
             write_json(new_data) 
         except:
             print("Error")
