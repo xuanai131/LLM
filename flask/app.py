@@ -43,9 +43,18 @@ voice_st = False
 user_input_st = False
 user_input_interrupt_signal = False
 user_input_message = ""
+<<<<<<< HEAD
 
 SavedHistoryConversation = []  # Conversation to save when create new session
 
+=======
+<<<<<<< HEAD
+
+SavedHistoryConversation = []  # Conversation to save when create new session
+
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
 def run_graph(inputs):
     for s in graph.stream(inputs):
         if "__end__" not in s:

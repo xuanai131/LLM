@@ -263,7 +263,15 @@ book_research_inspector_chain = (
 )
 interrupt_function_def = {
     "name": "route",
+<<<<<<< HEAD
     "description": "the answer would be yes or no",
+=======
+<<<<<<< HEAD
+    "description": "the answer would be yes or no",
+=======
+    "description": "Check the user request interrupt event to be yes or no",
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
     "parameters": {
         "title": "routeSchema",
         "type": "object",
@@ -287,7 +295,15 @@ book_return_interrupt_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_return_interrupt_chain = (
+<<<<<<< HEAD
     book_return_interrupt_prompt 
+=======
+<<<<<<< HEAD
+    book_return_interrupt_prompt 
+=======
+    book_research_inspector_prompt 
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
@@ -329,8 +345,16 @@ def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
 
+<<<<<<< HEAD
+    # book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT)
+    # book_research_node = functools.partial(agent_node, agent=book_research_agent, name="Book_researcher")
+    from langchain.chains import RetrievalQA
+    book_research_chain = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever= Tools.BookInfo.retriever, return_source_documents=True, verbose=True, input_key="messages")
+    book_research_node = functools.partial(chain_node, chain=book_research_chain, name="Book_researcher", conversation=conversation)
+=======
     book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT1)
     book_research_node = functools.partial(agent_node, agent=book_research_agent, name="Book_researcher")
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
 
     # robot_research_agent = create_agent(llm, [robot_search_tool], "Bạn hữu ích cho việc trả lời các thông tin về chính bạn")
     # robot_research_node = functools.partial(agent_node, agent=robot_research_agent, name="Robot_researcher")

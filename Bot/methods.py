@@ -43,7 +43,8 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
     def _get_relevant_documents(
         self, query: str, *, run_manager: CallbackManagerForRetrieverRun
     ) -> List[Document]:
-        # print('/////////////////////////////////////')
+        # print('/////////////////////////////////////:', query)
+        
         """Get documents relevant to a query.
         Args:
             query: String to find relevant documents for
@@ -51,6 +52,7 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
         Returns:
             List of relevant documents
         """
+        result = []
         # print('Query: ', query)
         if self.search_type == 'mmr':
             # print('max_marginal_relevance_search')
@@ -76,7 +78,6 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
         docs = self.docstore.mget(ids)
         # for doc in docs:
         #     print(doc.page_content)
-        result = []
         for i in range(len(docs)):
             if docs[i] is not None:
                 # print('////////': d)
@@ -129,6 +130,7 @@ class DATABASE:
         self.document_list = set()
         self.existing_ids = set()
         self.retriever_config = retriever_config
+        self.error_doc = []
         self.db = Chroma(collection_name="split_parents", persist_directory=db_path, embedding_function=embedding)
         if retriever_config.parent_splitter is None:
             self.parent_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap= 20, separators=[" {'"])
@@ -215,7 +217,7 @@ class DATABASE:
     def add_info_to_database(self, ID, name_of_book, kind_of_book, shelve, cover_image):
         # Books table
         InsertToBookTable(ID,name_of_book,None,kind_of_book,None,None,shelve,cover_image)
-        print('ID in database: ', ID)
+        print(' - ID in database: ', ID)
         # Book items table
         ran = random.randint(1, 6)
         for i in range(ran):
@@ -233,15 +235,21 @@ class DATABASE:
         temp_exist_ids = [name[0] for name in temp_exist_ids]
         self.existing_ids.update(temp_exist_ids)
     def add_to_vectordatabse(self, doc_ids, idx, documents, child_docs, child_doc_file_path):
-        print('ID in vector_database: ', documents[idx]['ID'])
-        print('___Add to child')
+        print(' - ID in vector_database: ', documents[idx]['ID'])
+        print('_____Add to child')
         self.retriever.vectorstore.add_documents(child_docs) # Add to child
-        print('___Add to parents')
+        print('_____Add to parents')
         self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))]) # Add to parents
-        print('___Add info to database')
+        print('_____Add info to database')
         base64_img = pdf_page_to_base64(child_doc_file_path) # Add info to database
         self.add_info_to_database(documents[idx]['ID'], documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
+        self.document_list.add(child_doc_file_path.split('/')[-1])
     def insert_book(self, json_file: str, jq_schema, ids=None):
+        if len(self.existing_ids) < 1:
+            self.load_existing_bracode()
+        if len(self.document_list) < 1:
+            self.load_doccument_list()
+            
         documents = json.loads(Path(json_file).read_text())[jq_schema]
         if ids is None:
             doc_ids = [str(uuid.uuid4()) for _ in documents]
@@ -270,7 +278,7 @@ class DATABASE:
                     text += doc.page_content
                 text = re.sub(r'\.{6,}', '-', text)  #Repalce multiple dot with '-'
                 text = self.fix_invalid_characters(text)
-                print(".....  Adding ", documents[idx]['Nội dung đầu sách'], '  .....')
+                print(".......... Adding ", documents[idx]['Nội dung đầu sách'], ' ..........')
                 documents[idx]['Nội dung đầu sách'] = text
                 # Add to parents
                 # self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
@@ -293,7 +301,7 @@ class DATABASE:
                 # self.retriever.vectorstore.add_documents(docs)
                 self.add_to_vectordatabse(doc_ids, idx, documents, child_docs, child_doc_file_path)
             except:
-                pass
+                self.error_doc.append(documents[idx]['Tên sách'])
         
 
     def similarity_search(self, query, k=4):
