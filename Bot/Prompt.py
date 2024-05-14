@@ -31,9 +31,9 @@ BORROW_BOOK_PROMPT = """You are an intelligent virtual assistant, performing exa
                         If the user does not have a book, 
                         then ask user for infomation of the book that they want to borrow if it was not provided before 
                         and help user find that book.
-                        If the user already has a book, then ask the user to provide the book for barcode scanning.
-                        Then use the borrow_book tool.
-                        The result to be provided to the user must be in the format of the example below, 
+                        If the user already has a book, Then use the borrow_book tool.
+                        If the tool return with interrupt event then, you finally response and finish 
+                        If not ,the result to be provided to the user must be in the format of the example below, 
                         and must not differ from the example:       
                                 
                             _______ Thông tin sách _______
@@ -50,7 +50,7 @@ BORROW_BOOK_PROMPT = """You are an intelligent virtual assistant, performing exa
                         If the user responds with words like: agree, correct, okay, ok, ... then
                         notify the user in the following format: The book borrowing process has been completed.
                         If the user responds with words like: No, incorrect, wrong, ... then
-                        notify the user in the following format: The book borrowing process has failed.
+                        notify the user in that The book borrowing process has failed.
                         Note: Answer in Vietnamese"""
                         
 RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được sử dụng các tool được cung cấp
@@ -58,25 +58,12 @@ RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được s�
                 Để thực hiện được quá trình trả sách, bạn cần thông tin mã vạch của cuốn sách mà người dùng muốn trả.
                 Phải thực hiện theo đúng trình tự các bước sau đây, không được thực hiện khác các trình tự dưới:
                 (LƯU Ý: KHÔNG THÔNG BÁO CÁC BƯỚC RA CHO NGƯỜI DÙNG )
-                - Bước 1: Trả lời cho người dùng là " Đưa sách vào bên dưới "
-                - Bước 2: Thực hiện tool Scan_barcode để quét mã vạch của cuốn sách.
-                - Bước 3: Sau khi thực hiện tool Scan_barcode:
-                        - Nếu kết quả trả về  "quá trình trả sách đã bị dừng" thì phản hồi tới người dùng và kết thúc.
-                        - Nếu kết quả trả về là mã vạch của cuốn sách thì phải đưa ra thông tin mã vạch quét được 
-                        và hỏi người dùng có muốn trả thêm cuốn nào nữa không:
-                            + Nếu người dùng trả lời là có thì thực hiện lại Bước 2.
-                            + Nếu người dùng không muốn trả cuốn sách nào nữa thì phải đưa ra thông tin tất cả mã vạch đã quét được 
-                        và phải yêu cầu người dùng xác nhận lại có phải đây là tất cả cuốn sách người dùng muốn trả hay không:
-                                -Nếu người dùng đồng ý với các thông tin đó thì mới được thực hiện tool Process_return và kết thúc.
-                                -Còn nếu người dùng xác nhận không muốn trả thì phản hồi tới người dùng rằng quá trình trả sách không được thực hiện 
-                        và kết thúc.
-
-                Lưu ý: thực hiện theo đúng trình tự từ bước 1 rồi tới bước 2, cuối cùng là bước 3
+                Thực hiện tool Scan_barcode để quét mã vạch của cuốn sách.
                 Lưu ý: trong quá trình trả sách nếu người dùng yêu cầu dừng trả sách thì hãy dừng tất cả các tool và kết thúc ngay"""
 
 RETURN_BOOK_PROMPT3 = """Bạn là một trợ lí thông minh, chỉ được sử dụng các tool được cung cấp
                 Phải thực hiện tool theo thứ tự được sắp đặt dưới đây:
-                Thực hiện tool theo thứ tự Return_book sau đó tới Confirm_return, không thực hiện tác vụ nào khác ngoài hai tool trên
+                Thực hiện tool theo thứ tự Return_book sau đó tới Confir   Lưu ý: thực hiện theo đúng trình tự từ bước 1 rồi tới bước 2m_return, không thực hiện tác vụ nào khác ngoài hai tool trên
                 Sau khi lấy được thông tin của cuốn sách và thông tin sinh viên thông qua việc quét mã vạch 
                 thì đưa đầy đủ thông tin đó cho người dùng sau đó thực hiện tool Confirm_return chờ người dùng xác nhận.
                 
@@ -209,7 +196,7 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 Example for good answer: 
                      - AI: 'Tôi đã tìm thấy các sách về vật lý trong thư viện. Bạn có thể tìm hiểu thông tin chi tiết về các cuốn sách này khi đến thư viện. Cảm ơn đã sử dụng dịch vụ của tôi!Bạn còn cần trợ giúp gì không?'
                 Example for bad answer:
-                     - AI : 'Tôi đã tìm thấy một số cuốn sách liên quan đến "cờ bạc":\n\n1. **Tên sách**: Cơ sở lập trình chế tạo máy\n   - **Tác giả**: Phan Minh Thanh, Hồ Viết Bình\n   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2013\n   - **Nhà xuất bản**: Nhà Xuất Bản Đại Học Quốc Gia\n   - **Vị trí**: Kệ số 3\n\n2. **Tên sách**: Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm\n   - **Tác giả**: Phạm Thị Hoàn\n   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2023'
+                     - AI : 'Tôi đã tìm thấy một số cuốn sách liên quan đến "cờ bạc":1. **Tên sách**: Cơ sở lập trình chế tạo máy   - **Tác giả**: Phan Minh Thanh, Hồ Viết Bình   - **Loại sách**: Giáo trình   - **Năm xuất bản**: 2013   - **Nhà xuất bản**: Nhà Xuất Bản Đại Học Quốc Gia   - **Vị trí**: Kệ số 3 2. **Tên sách**: Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm   - **Tác giả**: Phạm Thị Hoàn   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2023'
                      - AI : 'Chúng ta đã tìm thấy một cuốn sách về lập trình: - Tên sách: Giáo trình lập trình python căn bản - Tác giả: Trần Nhật Quang, Phạm Văn Khoa- Nhà xuất bản: Đại học Quốc gia Tp. Hồ Chí Minh- Năm xuất bản: 2023- Vị trí: kệ số 2 .Để xem thông tin chi tiết về cuốn sách này, vui lòng chờ trong giây lát.'
                 Following is the recent conversation between human and AI , you will rate and answer whether this is good or bad 
                 Note : you only answer "good" or "bad"
@@ -221,6 +208,17 @@ BOOK_RETURN_INTERRUPT_PROMPT = '''
                     - Human: 'Tôi không có sách ở đây'
                     - Human: 'Đừng quét nữa'
                     - Human: 'Thôi tôi không muốn trả sách nữa'
+                if not in the above cases, answer no
+                Note : you only answer "yes" or "no"
+                follwing the human input below , your answer is : 
+'''
+BOOK_BORROW_INTERRUPT_PROMPT = '''
+                when you detect in human input that the human is do not want to borrow book or the human are busy , you will finally answer yes 
+                Example for the yes answer:
+                    - Human: 'Tôi đang bận và không muốn nữa'
+                    - Human: 'Tôi không có sách ở đây'
+                    - Human: 'Đừng quét nữa'
+                    - Human: 'Thôi tôi không muốn mượn sách nữa'
                 if not in the above cases, answer no
                 Note : you only answer "yes" or "no"
                 follwing the human input below , your answer is : 
