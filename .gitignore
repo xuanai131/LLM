@@ -10,5 +10,4 @@ Bot/Knowledge/Books/PDF.zip
 Bot/Knowledge
 Bot/vector_database
 Bot/DATABASE.db
-
-
+flask/history.json

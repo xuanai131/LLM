@@ -215,6 +215,7 @@ class DATABASE:
     def add_info_to_database(self, ID, name_of_book, kind_of_book, shelve, cover_image):
         # Books table
         InsertToBookTable(ID,name_of_book,None,kind_of_book,None,None,shelve,cover_image)
+        print('ID in database: ', ID)
         # Book items table
         ran = random.randint(1, 6)
         for i in range(ran):
@@ -232,13 +233,14 @@ class DATABASE:
         temp_exist_ids = [name[0] for name in temp_exist_ids]
         self.existing_ids.update(temp_exist_ids)
     def add_to_vectordatabse(self, doc_ids, idx, documents, child_docs, child_doc_file_path):
+        print('ID in vector_database: ', documents[idx]['ID'])
         print('___Add to child')
         self.retriever.vectorstore.add_documents(child_docs) # Add to child
         print('___Add to parents')
         self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))]) # Add to parents
         print('___Add info to database')
         base64_img = pdf_page_to_base64(child_doc_file_path) # Add info to database
-        self.add_info_to_database(idx, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
+        self.add_info_to_database(documents[idx]['ID'], documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
     def insert_book(self, json_file: str, jq_schema, ids=None):
         documents = json.loads(Path(json_file).read_text())[jq_schema]
         if ids is None:
