@@ -68,8 +68,6 @@ classify_chain = (
 )
 
 
-
-
 ##### CREATE AGENT FUNCTION
 def create_agent(llm: ChatOpenAI, tools: list, system_prompt: str):
     # Each worker node will be given a name and some tools.
@@ -110,10 +108,14 @@ def agent_node(state, agent, name):
             if check:
                 print("last step with output: ",output)
             else:
-                print(Fore.RED +"bad response: load_tool is not running")
-                print(Style.RESET_ALL)
-                state["messages"].pop()
-                state["messages"].append(HumanMessage(content="tìm cho tôi những cuốn sách "+str(query)))
+                check_tool = book_researcher_checktool_chain.invoke({'messages': [output]})['messages'] 
+                if check_tool == "yes":
+                    print(Fore.RED +"bad response: load_tool is not running")
+                    print(Style.RESET_ALL)
+                    state["messages"].pop()
+                    state["messages"].append(HumanMessage(content="tìm cho tôi những cuốn sách "+str(query)))
+                else :
+                    check = True
         return {"messages": [HumanMessage(content=output, name=name)]}
     else:
         result = agent.invoke(state)
@@ -299,6 +301,17 @@ book_borrow_interrupt_prompt = ChatPromptTemplate.from_messages(
 )
 book_borrow_interrupt_chain = (
     book_return_interrupt_prompt 
+    | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
+    | JsonOutputFunctionsParser()
+)
+book_researcher_checktool_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", (BOOK_RESEARCHER_CHECKTOOL_PROMPT)),
+        MessagesPlaceholder(variable_name="messages"),
+    ]
+)
+book_researcher_checktool_chain = (
+    book_researcher_checktool_prompt 
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )

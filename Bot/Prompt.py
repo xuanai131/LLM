@@ -224,6 +224,17 @@ BOOK_BORROW_INTERRUPT_PROMPT = '''
                 Note : you only answer "yes" or "no"
                 follwing the human input below , your answer is : 
 '''
+BOOK_RESEARCHER_CHECKTOOL_PROMPT = '''
+            You are running as the checker to decide that if the function load_book need to run or not 
+            If you detect in the input that the system need more infomation to find the book and there is no book to load then your ouput answer is no
+            ,example:
+                -  'Xin vui lòng cung cấp thêm thông tin về cuốn sách bạn muốn tìm để tôi có thể giúp bạn'
+                -  'Xin lỗi, bạn có thể cung cấp thêm thông tin về cuốn sách bạn đang tìm kiếm được không? Ví dụ như tựa đề của cuốn sách hoặc tên tác giả để tôi có thể giúp bạn tìm kiếm chính xác hơn'
+            If not in the above cases, answer yes
+            Note : you only answer "yes" or "no"  
+            Follwing the human input below , define your answer
+            Input :            
+''' 
                     # Lưu ý: Phải thực hiện book_researcher trước tiên, sau khi thực hiện xong mới thực hiện load_book
 
 #   Đồng thời lấy ID của tất cả sách tìm được.
