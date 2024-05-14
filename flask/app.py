@@ -43,6 +43,18 @@ voice_st = False
 user_input_st = False
 user_input_interrupt_signal = False
 user_input_message = ""
+<<<<<<< HEAD
+
+SavedHistoryConversation = []  # Conversation to save when create new session
+
+=======
+<<<<<<< HEAD
+
+SavedHistoryConversation = []  # Conversation to save when create new session
+
+=======
+>>>>>>> b14832f28457404fc66e4196e984245729c4837a
+>>>>>>> ai
 def run_graph(inputs):
     for s in graph.stream(inputs):
         if "__end__" not in s:
@@ -88,8 +100,9 @@ def hello_world():
 def LoadBookCovers(book_ids):
     images = []
     for book_id in book_ids:
-        images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
+        images.append(SearchBookByID(book_id))
     return images
+
 def use_open_ai_audio(data):
     client = OpenAI()
 
@@ -144,11 +157,11 @@ def get_image():
         msg = request.get_json()
         print("MSG", type(msg['id']))
         image_of_book = re.sub(r'[^0-9,]', '', msg['id']).split(',')
-        print(image_of_book)
-        print(type(image_of_book))
+        # print(image_of_book)
+        # print(type(image_of_book))
 
         images = LoadBookCovers(image_of_book)
-        print(type(images[0]))
+        # print(type(images[0]))
         # return render_template('index.html')
         socketio.emit('book_images', {'visible': True, 'image' : images})
         return image_of_book
@@ -157,6 +170,7 @@ def get_image():
     else:
         socketio.emit('book_images', {'visible': False, 'image' : images})
         return image_of_book
+    
 @app.route("/user_input_mess",methods = ["POST","GET"])
 def get_message_user_tool():
     global user_input_message
@@ -193,7 +207,7 @@ def get_user_input_state():
         else:
             return "Invalid JSON data."
     else:
-        return str(user_input_st)
+        return str(user_user_input_requestinput_st)
 @app.route("/user_input_state_interrupt",methods = ["POST","GET"])
 def get_user_input_state_interrupt():
     global user_input_message
@@ -207,7 +221,7 @@ def get_user_input_state_interrupt():
 def return_form():
     if request.method == 'POST':
         data = request.get_json()  
-        # print('//////////////////', data['message'])
+        print('//////////////////', data)
         if data['message'] == 'start':
             socketio.emit('return_form_visiblity', {'visible': True})
         else:
@@ -245,6 +259,22 @@ def chat_from_tool():
     else:
         return  str(response_tool)
 
+# Save history when create new session
+@app.route("/saved_history", methods=["GET","POST"])
+def saved_history():
+    filename = "history.json"
+    with open(filename,'r+', encoding='utf-8') as file:
+          # First we load existing data into a dict.
+        file_data = json.load(file)
+        # Join new_data with file_data inside emp_details
+        file_data["HISTORY"].append(SavedHistoryConversation)
+        # Sets file's current position at offset.
+        file.seek(0)
+        # convert back to json.
+        json.dump(file_data, file, indent = 10, ensure_ascii=False) 
+    
+    SavedHistoryConversation.clear()
+    OpenAIHistoryConversation.clear()
 
 @app.route("/get", methods=["GET","POST"])
 def chat():
@@ -253,8 +283,11 @@ def chat():
     
     if request.method == 'POST':
         msg = request.form.get("msg")
+        print("////////////////// mess: ", msg)
         if msg:
+            SavedHistoryConversation.append("User : "+ msg )
             response = get_Chat_response(msg)
+            SavedHistoryConversation.append("Lib : "+ response )
             return response
         else:
             return "No message received."
@@ -371,6 +404,11 @@ def video_feed():
 @app.route('/download_audio', methods=['POST'])
 def download_audio_from_url():
     data = request.get_json().get('url')
+    # print("the url in front end side :",data)
+    # data = "https://chunk.lab.zalo.ai/a745e9c971a198ffc1b0/a745e9c971a198ffc1b0/"
+    # download_audio_in_web(data,'audio.wav')
+    # data = request.get_json().get('data')
+    # text_to_speech(data,'audio.wav')
     audio_thread = threading.Thread(target=text_to_speech, args=(data,'audio.wav'))
     audio_thread.start()
     audio_thread.join()
