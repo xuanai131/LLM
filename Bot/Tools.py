@@ -45,8 +45,8 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3', 
-                     embedding=embedding, 
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3',
+                     embedding=embedding,
                      parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
                      retriever_config=BookInfoRetriever)
 
@@ -103,7 +103,7 @@ def xoa_dau_full(txt: str) -> str:
 def search_book(query: str):
     queries = [query, xoa_dau_full(query)]
     print(queries)
-    result = chain.invoke(queries)
+    result = chain.invoke(queries)['result']
     return result
 
 def load_book(book_ids: str):
