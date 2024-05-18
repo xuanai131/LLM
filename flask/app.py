@@ -334,7 +334,7 @@ def voice_status_update():
     global voice_st
     if request.method == 'POST':
         data = request.get_json().get('voice_status')
-        print(str(data))
+        print('Voice_status: ', str(data))
         if (str(data) == "True"):
             voice_st = True
             DoRecord.record()
