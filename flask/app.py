@@ -18,6 +18,7 @@ import multiprocessing
 import urllib.request
 import subaudio
 import re
+import json
 camera = cv2.VideoCapture(0)
 from colorama import Fore, Back, Style
 sys.path.append("../Bot")
@@ -36,6 +37,7 @@ DoRecord = voice_record.Voice_Record()
 import setting
 app = Flask(__name__)
 socketio = SocketIO(app)
+from Voice_handle import VoiceHandle
 response = ""
 response_tool = ""
 camera_st = False
@@ -60,6 +62,22 @@ def run_graph(inputs):
                 return res
             except:
                 pass
+
+def get_Chat_response(text):
+    query = HumanMessage(text)
+    OpenAIHistoryConversation.append(query)
+    inputs = {
+        # "history" : [],
+        "messages": OpenAIHistoryConversation
+    }
+    
+    answer = run_graph(inputs)
+    OpenAIHistoryConversation.append(answer)
+    
+    return answer.content
+voicehandle = VoiceHandle(wake_words=['porcupine'],
+                          get_chat_response_func=get_Chat_response)
+voicehandle.run()
 def handle_event_response(attitude,answer):
     global OpenAIHistoryConversation,redirect_state
     print("check history: ",OpenAIHistoryConversation)
@@ -209,7 +227,7 @@ def get_user_input_state_interrupt():
 @app.route("/return_form",methods = ["POST","GET"])
 def return_form():
     if request.method == 'POST':
-        data = request.get_json()  
+        data = request.get_json()
         print('//////////////////', data)
         if data['message'] == 'start':
             socketio.emit('return_form_visiblity', {'visible': True})
@@ -237,7 +255,6 @@ def chat_from_tool():
             msg = data["message"]
             if msg:
                 t = time.localtime(time.time())
-                
                 response_tool = msg
                 socketio.emit('update_html', {'data': response_tool,"time": str(t.tm_hour)+ " "+ str(t.tm_min) + " "+str(t.tm_sec)})
                 return response 
@@ -269,7 +286,6 @@ def saved_history():
 def chat():
     global response
     # response = ""
-    
     if request.method == 'POST':
         msg = request.form.get("msg")
         print("////////////////// mess: ", msg)
@@ -282,21 +298,6 @@ def chat():
             return "No message received."
     else:
         return response
-
-
-def get_Chat_response(text):
-    query = HumanMessage(text)
-    OpenAIHistoryConversation.append(query)
-    inputs = {
-        # "history" : [],
-        "messages": OpenAIHistoryConversation
-    }
-    
-    answer = run_graph(inputs)
-    OpenAIHistoryConversation.append(answer)
-    
-    return answer.content
-
 
 def generate_frames(image_data):
     global count
