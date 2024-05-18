@@ -196,7 +196,7 @@ def get_user_input_state():
         else:
             return "Invalid JSON data."
     else:
-        return str(user_user_input_requestinput_st)
+        return str(user_input_st)
 @app.route("/user_input_state_interrupt",methods = ["POST","GET"])
 def get_user_input_state_interrupt():
     global user_input_message

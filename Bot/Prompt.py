@@ -149,7 +149,6 @@ BOOK_SEARCH_PROMPT = """
             When you prepare to answer to the human ,self ask you self :
              - are you execute *load_book* ?
             then reply to the human that is that these books they are looking for and do not show all the book infomation because it is shown by load_book too
-            Reply to user : "Đây là thông tin sách mà bạn cần tìm ."
             Do not answer so dump like have book ids in the answer , use natual language and friendly response to human       
             Note: - use vietnamese to communicate to human
 """
@@ -236,6 +235,33 @@ BOOK_RESEARCHER_CHECKTOOL_PROMPT = '''
             Follwing the human input below , define your answer
             Input :            
 ''' 
+MEMORY_DIRECT_PROMPT = '''
+                    You are an AI assistant reading the transcript of a conversation between an AI and a human.
+                    Extract all of the proper nouns from the last line of conversation. As a guideline, a proper noun is generally capitalized. You should definitely extract all names.
+                    The conversation history is provided just in case of a coreference. example :
+                     - AI : "Đã tìm ra cuốn sách bạn cần tìm, đó là cuốn Cẩm nang cơ khí"
+                     - Human: "Cho tôi mượn cuốn sách đó"
+                   "cuốn sách đó" is defined in a previous line as "cuốn Cẩm nang cơ khí" 
+                    
+                    Following is the conversation between human and AI, You must consider carefully the infomation, to give a paraphrase of the input to the user base on the memory, 
+                    Find information you think is useful that corresponds to human's input
+                    Example :
+                     - Human: "xin chào, tôi muốn mượn sách lập trình"
+                     - AI : "đã tìm ra những cuốn sách mà bạn cần tìm, vui lòng xem thông tin đã được tải , sách Lập trình python căn bản" 
+                     - Human: "cho tôi mượn cuốn đó đi"
+                    Output: "cho tôi mượn cuốn sách Lập trình python căn bản đi"
+
+                    Example:
+                      - Human: "tôi muôn trả sách"
+                      - AI: "Sách đã trả: 'Giáo trình cầu lông' . Quá trình trả sách đã hoàn tất, chúc bạn một ngày tốt lành"),
+                      - Human: 'tôi muốn biết cuốn đó nằm ở kệ nào?'
+                    Output: "tôi muốn biết cuốn sách Giáo trình cầu lông ở kệ nào?"
+
+                    NOTE: - you ONLY look at the infomation in the history conversation  
+                          - DO NOT answer the human input, just paraphrase it
+                    Now,  with the conversation below, define your output if you don't have any thing to suggest, answer that you do not know.  
+'''
+
                     # Lưu ý: Phải thực hiện book_researcher trước tiên, sau khi thực hiện xong mới thực hiện load_book
 
 #   Đồng thời lấy ID của tất cả sách tìm được.
