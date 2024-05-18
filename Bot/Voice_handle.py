@@ -1,4 +1,5 @@
 import os
+from typing import Callable
 import speech_recognition as sr
 import soundfile as sf
 import sounddevice as sd
@@ -19,7 +20,8 @@ from openai import OpenAI
 
 
 class VoiceHandle:
-    def __init__(self, wake_words: list, get_chat_response_func):
+    def __init__(self, wake_words: list, 
+                 get_chat_response_func: Callable[[str], str]):
         self.sleep_timer = None
         self.wake_words = wake_words
         self.porcupine_wake_words = ['porcupine', 'bumblebee', 'jarvis', 'alexa']
@@ -126,6 +128,7 @@ class VoiceHandle:
         print('Detected word: ', text_input)
         for wake_word in self.wake_words:
             if wake_word in text_input.lower().strip():
+                
                 print('___Assistant: Tôi có thể giúp gì cho bạn?')
                 self.speak('Tôi có thể giúp gì cho bạn')
                 # speak('Listening')
@@ -202,8 +205,8 @@ class VoiceHandle:
             self.recognizer.adjust_for_ambient_noise(s, duration=1)
         self.stop_listening =  self.recognizer.listen_in_background(self.source, self.callback)
         print('\nSay one of ', self.wake_words, 'to wake me up. \n')
-        while True:
-            time.sleep(0.5)
+        # while True:
+        #     time.sleep(0.5)
     def reset_all(self, ):
         self.reset_audio(self.wake_detect_file)
         self.reset_audio(self.prompt_file)

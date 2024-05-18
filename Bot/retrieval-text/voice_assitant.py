@@ -69,3 +69,5 @@ def get_Chat_response(text:str) -> str:
 
 voicehandle = VoiceHandle(wake_words=['porcupine'], get_chat_response_func=get_Chat_response)    
 voicehandle.run()
+while True:
+    time.sleep(0.5)
