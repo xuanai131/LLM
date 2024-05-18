@@ -11,3 +11,5 @@ Bot/Knowledge/Books/PDF.zip
 Bot/vector_database
 Bot/DATABASE.db
 flask/history.json
+Bot/retrieval-text/porcupine
+Bot/retrieval-text/sphinx_models
