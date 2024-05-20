@@ -101,7 +101,7 @@ BANG_XOA_DAU_FULL = str.maketrans(
 def xoa_dau_full(txt: str) -> str:
     return txt.translate(BANG_XOA_DAU_FULL)
 def search_book(query: str):
-    queries = [query, xoa_dau_full(query)]
+    queries = ["cuốn sách "+query, "cuon sach "+xoa_dau_full(query)]
     print(queries)
     result = chain.invoke(queries)['result']
     return result
