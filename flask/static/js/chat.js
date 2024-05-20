@@ -2,7 +2,7 @@
     
 $(document).ready(function() {
     $("#messageArea").on("submit",  function(event) {
-        handleEvent(event,"chat", "",check_tool_running);
+        handleEvent(event,"chat", "", check_tool_running);
     });
 });
 // const socket2 = io();
@@ -74,50 +74,7 @@ var animation_icon = lottie.loadAnimation({
     autoplay: true,
     path: '../static/resources/robot_2.json' 
 }); 
-async function synthesizeText(apiKey, text) {
-    const url = 'https://api.zalo.ai/v1/tts/synthesize';
-  
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'apikey': apiKey
-      },
-      body: new URLSearchParams({
-        input: text
-      })
-    };
-  
-    try {
-        const response = await fetch(url, requestOptions);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const responseData = await response.json();
-        if (responseData.error_code !== 0) {
-          throw new Error(`API error! code: ${responseData.error_code}, message: ${responseData.error_message}`);
-        }
-        const url_audio = responseData.data.url;
-        return url_audio;
-      } catch (error) {
-        console.error('Fetch error:', error);
-        throw error;
-      }
-    }
-async function fetchAudio(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-        throw new Error('Network response was not ok');
-        }
-        const audioData = await response.blob();
-        return audioData;
-    } catch (error) {
-        console.error('Error fetching audio:', error);
-        return null;
-    }
-    }
-const apiKey = "hFD050dILZYJPuIgLqk9UW1qiDY5SPg6";    
+ 
 function add_bot_message(data,str_time){
     var animationContainer = $('<div class="img_cont_msg"><div class="lottie-container_face"></div></div>');
 
@@ -136,22 +93,12 @@ function add_bot_message(data,str_time){
     // Construct the message HTML with the animation container
     var botHtml = $('<div class="d-flex justify-content-start mb-4"><div class="msg_cotainer">' + data + '<span class="msg_time">' + str_time + '</span></div></div>');
     botHtml.prepend(animationContainer);
-    synthesizeText(apiKey, data)
-    .then(url => {
-        console.log('Synthesized audio URL:', url);
-        request_download(url,data);
-
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
     // Append the message HTML to the message form
     
     $("#messageFormeight").append(botHtml);
     // 
     
     scrollToBottom();
-    // request_download(url = '',data);
 }
 
 // Function to loading ... when waiting respond from chatbot
@@ -191,23 +138,4 @@ function add_loading_text(){
     // 
     
     scrollToBottom();
-    // request_download(url = '',data);
-}
-function request_download(url,data){
-    fetch('/download_audio', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json', // Specify JSON content type
-        },
-        body: JSON.stringify({ "url": url,"data":data }), // Convert JS object to JSON string
-    })
-    .then(response => response.text())
-    .then(data => {console.log(data);
-    //     if (data == "success"){
-    //         const audioPlayer = document.getElementById('audioPlayer');
-    //         audioPlayer.src = '../static/resources/audio.mp3';
-    //         audioPlayer.play();
-    // }
-    }) // Log the response, you can handle it as needed
-    .catch(error => console.error('Error:', error));
 }
