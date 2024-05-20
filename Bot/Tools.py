@@ -299,8 +299,8 @@ def borrow_book(name_book: str):
             CreateBill(bc, Student_ID, datetime.now())
             UpdateIsavailableState(False, bc)
         user_input_request(False)
-        send_mess("stop", "return_form")
-        return str(result)
+        # send_mess("stop", "return_form")
+        return str(result['Sách'])
     user_input_request(False)
     send_mess("stop", "return_form")
     return "Quá trình mượn sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
@@ -386,7 +386,7 @@ def do_return_book(name_book:str):
         thread1.join()
         thread2.join()
         # Book_ID = scan_barcode('')
-        Book_ID = "WdudlYaHl"
+        Book_ID = result_store["barcode_return"]
         if Book_ID == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
@@ -427,16 +427,15 @@ def do_return_book(name_book:str):
                     break
                 
             Student_ID = bill_info['student_ID']
-            barcode = "WdudlYaHl"
-            barcode_list.append(barcode)
-            book_ID = SearchBookIDByBarcode(barcode)
-            temp_book_info = SearchBookByID(book_ID)
+            barcode_list.append(Book_ID)
+            book_IDs = SearchBookIDByBarcode(Book_ID)
+            temp_book_info = SearchBookByID(book_IDs)
             temp_book_info.pop('cover_image')
             result['Sách'].append(temp_book_info)
             student_info = SearchStudentInfo(Student_ID)
             result['Sinh viên'].append(student_info)
             # Send info return to the website
-            send_returnbook_to_form(barcode, bill_info['borrow_date'], student_info)
+            send_returnbook_to_form(Book_ID, bill_info['borrow_date'], student_info)
             send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
             user_input = user_input_request(True)
             if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
@@ -452,7 +451,7 @@ def do_return_book(name_book:str):
             for bc in barcode_list:
                 UpdateBillReturn(bc, datetime.now())
                 UpdateIsavailableState(True, bc)
-            send_mess("stop", "return_form")
+            # send_mess("stop", "return_form")RETURN_BOOK_PROMPT
             user_input_request(False)
             return "Quá trình trả sách Hoàn tất"
         else:

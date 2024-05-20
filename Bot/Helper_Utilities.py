@@ -329,7 +329,7 @@ def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
 
-    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT1)
+    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT)
     book_research_node = functools.partial(agent_node, agent=book_research_agent, name="Book_researcher")
 
     # robot_research_agent = create_agent(llm, [robot_search_tool], "Bạn hữu ích cho việc trả lời các thông tin về chính bạn")
