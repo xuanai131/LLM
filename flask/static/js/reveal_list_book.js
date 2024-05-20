@@ -3,15 +3,15 @@ function reveal_book(data){
     // while(true) {
     // console.log("Image form socket:", data);
     console.log("Type of: ", typeof(data));
-    const arr = Object.values(data);
+    const arr = [];
     console.log("====");
     console.log(typeof(arr));
     // console.log(arr[0]);
     // console.log("Get data: ",arr[0]);
-    // data.forEach(function(dt){
-    //     conosle.log("Get data: ", dt);
-    // }
-    // );
+    // images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
+    for (i in data){
+        arr.push("data:image/jpeg;base64," + data[i]['cover_image']);
+    }
 
     var swiperWrapper = $('<div class="swiper-wrapper"></div>');
 
@@ -79,24 +79,17 @@ function reveal_book(data){
             console.log("hahahahha");
             image_of_choosen = image.src;
             show_infomation();
+            get_data_of_selected_book(data, image_of_choosen);
             // const position = slide.getBoundingClientRect();
             // console.log(position);
         // break;
         });
     });
 
-    // Assuming you have a Swiper instance with the variable name 'mySwiper'
-    // const swiperElement = document.querySelector('.swiper-slide');
-    // swiperElement.forEach(slide => {
-    //     slide.addEventListener('click', function(event) {
-    //         // Your click event handling code here
-    //         console.log("hahahahha");
-    //     // break;
-    //     });
-    // });
     
 }         
     // }
+
 
 function show_infomation(){
     
@@ -106,19 +99,82 @@ function show_infomation(){
     $("#imageOfSelectedBook").append(img)
     const swiper_visibility = document.getElementById('bookTable');
     const moveImg = document.getElementById('imageOfSelectedBook');
-    // swiper_visibility.style.visibility= "visible";
+    swiper_visibility.style.visibility= "visible";
     swiper_visibility.classList.remove("animate_fadeout");
     swiper_visibility.classList.add("animate_fadein");
     moveImg.classList.add("move_book_animate");
-    
+    // const exit_info_of_book = document.getElementById('unconfirm_info');
+    // exit_info_of_book.addEventListener('click', function(event) {
+    //     swiper_visibility.classList.remove("animate_fadein");
+    //     swiper_visibility.classList.add("animate_fadeout");
+    //     $("#bookContainer").show();
+    // });
 
 }
+function get_data_of_selected_book(data, image_of_selected){
+    for (i in data){
+        if ("data:image/jpeg;base64," + data[i]['cover_image'] == image_of_selected){
+            var messagesDiv = document.getElementById('reveal_list_form_1');
+            var info_selected_book_form = create_data_of_selected_book(data[i]['name_of_book'], data[i]['author'], data[i]['ID'], data[i]['shelve']);
+            messagesDiv.appendChild(info_selected_book_form);
+        }
+    }
+    
+}
+
+
+
 function buttonClicked() {
     // alert("Button " + buttonNumber + " clicked!");
     const book_table = document.getElementById('bookTable');
     book_table.classList.remove("animate_fadein");
     book_table.classList.add("animate_fadeout");
     $("#bookContainer").show();
+}
+function confirm_process(){
+    console.log("send......");
+    const jsonData = {};
+    jsonData["message"] = "stop"
+    fetch('/return_form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+            // Add any other headers if needed
+        },
+        body: JSON.stringify(jsonData)
+    })
+    .then(() => {
+        console.log('Message posted successfully');
+        // No need to handle response
+    })
+    .catch(error => {
+        console.error('Error posting message:', error);
+        // Handle errors
+    });
+    var send_confirm= {};
+    send_confirm["msg"]="oke";
+    $.ajax({
+        url: "/get",
+        type: "POST",
+        data: {
+            msg: "oke",
+        },
+    }).done(function(data) {
+        const date = new Date();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const str_time = hour+":"+minute;
+        add_bot_message(data,str_time);
+    });
+
+    $.ajax({
+        url: "/user_input_mess",
+        type: "POST",
+        data: {
+            msg: "oke",
+        },
+    });
+
 }
 
 function reveal_book_1(){
