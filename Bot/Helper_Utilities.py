@@ -93,6 +93,7 @@ def agent_node(state, agent, name):
         output = ""
         query = ""
         check = False
+        limits = 3
         while not check :
             print("state in each loop: ")
             result = agent.stream(state)
@@ -109,10 +110,13 @@ def agent_node(state, agent, name):
             else:
                 check_tool = book_researcher_checktool_chain.invoke({'messages': [output]})['messages'] 
                 if check_tool == "yes":
+                    limits = limits - 1
                     print(Fore.RED +"bad response: load_tool is not running")
                     print(Style.RESET_ALL)
                     state["messages"].pop()
                     state["messages"].append(HumanMessage(content="tìm cho tôi những cuốn sách "+str(query)))
+                    if(limits ==0):
+                        break
                 else :
                     check = True
         return {"messages": [HumanMessage(content=output, name=name)]}
