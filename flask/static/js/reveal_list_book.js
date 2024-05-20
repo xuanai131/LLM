@@ -78,6 +78,7 @@ function reveal_book(data){
             
             console.log("hahahahha");
             image_of_choosen = image.src;
+            console.log(image_of_choosen);
             show_infomation();
             get_data_of_selected_book(data, image_of_choosen);
             // const position = slide.getBoundingClientRect();
@@ -121,9 +122,6 @@ function get_data_of_selected_book(data, image_of_selected){
     }
     
 }
-
-
-
 function buttonClicked() {
     // alert("Button " + buttonNumber + " clicked!");
     const book_table = document.getElementById('bookTable');
