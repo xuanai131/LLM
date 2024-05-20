@@ -349,7 +349,19 @@
                 pre_type = 'borrow';
             }
         });
-       
+    
+    </script>
+    <script>
+        socket.on('voice_status_background', function(data) {
+            // console.log('////////////////////////////////////////////////kkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+            handleVoiceBackground(data.listening_status);
+        });
+        socket.on('query_voice_background', function(data) {
+            // console.log('////////////////////////////////////////////////kkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+            handleEvent(null, 'voice', data.user_query, check_tool_running);
+            // console.log('////////////////////////////////////////////////data.user_query');
+            // console.log(data.user_query);
+        });
     </script>
 
     

@@ -41,7 +41,6 @@ from Voice_handle import VoiceHandle
 response = ""
 response_tool = ""
 camera_st = False
-voice_st = False
 user_input_st = False
 user_input_interrupt_signal = False
 user_input_message = ""
@@ -75,7 +74,7 @@ def get_Chat_response(text):
     OpenAIHistoryConversation.append(answer)
     
     return answer.content
-voicehandle = VoiceHandle(wake_words=['porcupine'],
+voicehandle = VoiceHandle(wake_words=['porcupine', 'jarvis'],
                           get_chat_response_func=get_Chat_response)
 voicehandle.run()
 def handle_event_response(attitude,answer):
@@ -288,11 +287,12 @@ def chat():
     # response = ""
     if request.method == 'POST':
         msg = request.form.get("msg")
-        print("////////////////// mess: ", msg)
+        print("////////////////// message: ", msg)
         if msg:
             SavedHistoryConversation.append("User : "+ msg )
             response = get_Chat_response(msg)
             SavedHistoryConversation.append("Lib : "+ response )
+            voicehandle.response_generated_by_app = response
             return response
         else:
             return "No message received."
@@ -329,27 +329,32 @@ def generate_frames(image_data):
 
     except Exception as e:
         print("Error decoding image:", e)
-@app.route('/voice_status', methods=['POST','GET'])
-def voice_status_update():
-    global voice_st
+@app.route('/listening_for_query', methods=['POST','GET'])
+def voice_status_background_update():
     if request.method == 'POST':
-        data = request.get_json().get('voice_status')
-        print('Voice_status: ', str(data))
-        if (str(data) == "True"):
-            voice_st = True
-            DoRecord.record()
-            res = DoRecord.speech_to_text()
-            print(res)
-            # socketio.emit(('message_in_voice', {'message': res}))
-            return res
+        data = request.get_json()
+        socketio.emit('voice_status_background', data)
+    return ''
+@app.route('/query_voice', methods=['POST','GET'])
+def voice_query_background_update():
+    if request.method == 'POST':
+        data = request.get_json()
+        socketio.emit('query_voice_background', data)
+    return ''
+@app.route('/update_status_from_voice_button', methods=['POST','GET'])
+def update_from_voice_button():
+    if request.method == 'POST':
+        # print('voicehandle.listening_for_query', voicehandle.listening_for_query)
+        if voicehandle.listening_for_query == False:
+            voicehandle.responding_to_user = False
+            voicehandle.listening_for_wake_word = False
+            voicehandle.listening_for_query = True
+            # print('voicehandle.responding_to_user: ', voicehandle.responding_to_user)
         else:
-            voice_st = False
-            # socketio.emit('container_visibility_change', {'visible': False})
-        return 'voice received'
-    else:
-        socketio.emit(('message_in_voice', {'message': 'voice off'}))
-        return str(voice_st)
-
+            voicehandle.reset_all()
+        # data = request.get_json()
+        # socketio.emit('query_voice_background', data)
+    return ''
 @app.route('/camera_status', methods=['POST','GET'])
 def camera_status_update():
     global camera_st
