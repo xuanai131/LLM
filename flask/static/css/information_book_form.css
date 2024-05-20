@@ -131,6 +131,22 @@ input, textarea {
                 0 0 10px #5ed762,
                 0 0 20px #5ed762;
 } 
+
+#exit_find_book_bt{
+    position: relative;
+    /* height: 5%;
+    width: 5%; */
+    background: rgb(255, 0, 0);
+    border-radius: 5px;
+    /* top: -10px; */
+}
+#bookFinded button:hover{
+    cursor : pointer;
+    background: #fa1a1a;
+    box-shadow: 0 0 5px #fa1a1a,
+                0 0 10px #fa1a1a,
+                0 0 20px #fa1a1a;
+}
 /* @media (min-width: 568px) {
 form {
     width: 80%;
