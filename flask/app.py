@@ -18,6 +18,7 @@ import multiprocessing
 import urllib.request
 import subaudio
 import re
+import json
 camera = cv2.VideoCapture(0)
 from colorama import Fore, Back, Style
 sys.path.append("../Bot")
@@ -36,16 +37,14 @@ DoRecord = voice_record.Voice_Record()
 import setting
 app = Flask(__name__)
 socketio = SocketIO(app)
+from Voice_handle import VoiceHandle
 response = ""
 response_tool = ""
 camera_st = False
-voice_st = False
 user_input_st = False
 user_input_interrupt_signal = False
 user_input_message = ""
-
 SavedHistoryConversation = []  # Conversation to save when create new session
-
 def run_graph(inputs):
     for s in graph.stream(inputs):
         if "__end__" not in s:
@@ -62,6 +61,22 @@ def run_graph(inputs):
                 return res
             except:
                 pass
+
+def get_Chat_response(text):
+    query = HumanMessage(text)
+    OpenAIHistoryConversation.append(query)
+    inputs = {
+        # "history" : [],
+        "messages": OpenAIHistoryConversation
+    }
+    
+    answer = run_graph(inputs)
+    OpenAIHistoryConversation.append(answer)
+    
+    return answer.content
+voicehandle = VoiceHandle(wake_words=['porcupine', 'jarvis'],
+                          get_chat_response_func=get_Chat_response)
+voicehandle.run()
 def handle_event_response(attitude,answer):
     global OpenAIHistoryConversation,redirect_state
     print("check history: ",OpenAIHistoryConversation)
@@ -146,7 +161,7 @@ def get_image():
     global image_of_book
     if request.method == 'POST':
         msg = request.get_json()
-        print("MSG", type(msg['id']))
+        print("MSG : ", msg['id'])
         image_of_book = re.sub(r'[^0-9,]', '', msg['id']).split(',')
         # print(image_of_book)
         # print(type(image_of_book))
@@ -155,7 +170,7 @@ def get_image():
         # print(type(images[0]))
         # return render_template('index.html')
         socketio.emit('book_images', {'visible': True, 'image' : images})
-        return image_of_book
+        return "load success"
         # video_feed_url = url_for('image')
         # return render_template('index.html', video_feed_url = "response")
     else:
@@ -211,7 +226,7 @@ def get_user_input_state_interrupt():
 @app.route("/return_form",methods = ["POST","GET"])
 def return_form():
     if request.method == 'POST':
-        data = request.get_json()  
+        data = request.get_json()
         print('//////////////////', data)
         if data['message'] == 'start':
             socketio.emit('return_form_visiblity', {'visible': True})
@@ -239,7 +254,6 @@ def chat_from_tool():
             msg = data["message"]
             if msg:
                 t = time.localtime(time.time())
-                
                 response_tool = msg
                 socketio.emit('update_html', {'data': response_tool,"time": str(t.tm_hour)+ " "+ str(t.tm_min) + " "+str(t.tm_sec)})
                 return response 
@@ -271,34 +285,19 @@ def saved_history():
 def chat():
     global response
     # response = ""
-    
     if request.method == 'POST':
         msg = request.form.get("msg")
-        print("////////////////// mess: ", msg)
+        print("////////////////// message: ", msg)
         if msg:
             SavedHistoryConversation.append("User : "+ msg )
             response = get_Chat_response(msg)
             SavedHistoryConversation.append("Lib : "+ response )
+            voicehandle.response_generated_by_app = response
             return response
         else:
             return "No message received."
     else:
         return response
-
-
-def get_Chat_response(text):
-    query = HumanMessage(text)
-    OpenAIHistoryConversation.append(query)
-    inputs = {
-        # "history" : [],
-        "messages": OpenAIHistoryConversation
-    }
-    
-    answer = run_graph(inputs)
-    OpenAIHistoryConversation.append(answer)
-    
-    return answer.content
-
 
 def generate_frames(image_data):
     global count
@@ -330,27 +329,32 @@ def generate_frames(image_data):
 
     except Exception as e:
         print("Error decoding image:", e)
-@app.route('/voice_status', methods=['POST','GET'])
-def voice_status_update():
-    global voice_st
+@app.route('/listening_for_query', methods=['POST','GET'])
+def voice_status_background_update():
     if request.method == 'POST':
-        data = request.get_json().get('voice_status')
-        print(str(data))
-        if (str(data) == "True"):
-            voice_st = True
-            DoRecord.record()
-            res = DoRecord.speech_to_text()
-            print(res)
-            # socketio.emit(('message_in_voice', {'message': res}))
-            return res
+        data = request.get_json()
+        socketio.emit('voice_status_background', data)
+    return ''
+@app.route('/query_voice', methods=['POST','GET'])
+def voice_query_background_update():
+    if request.method == 'POST':
+        data = request.get_json()
+        socketio.emit('query_voice_background', data)
+    return ''
+@app.route('/update_status_from_voice_button', methods=['POST','GET'])
+def update_from_voice_button():
+    if request.method == 'POST':
+        # print('voicehandle.listening_for_query', voicehandle.listening_for_query)
+        if voicehandle.listening_for_query == False:
+            voicehandle.responding_to_user = False
+            voicehandle.listening_for_wake_word = False
+            voicehandle.listening_for_query = True
+            # print('voicehandle.responding_to_user: ', voicehandle.responding_to_user)
         else:
-            voice_st = False
-            # socketio.emit('container_visibility_change', {'visible': False})
-        return 'voice received'
-    else:
-        socketio.emit(('message_in_voice', {'message': 'voice off'}))
-        return str(voice_st)
-
+            voicehandle.reset_all()
+        # data = request.get_json()
+        # socketio.emit('query_voice_background', data)
+    return ''
 @app.route('/camera_status', methods=['POST','GET'])
 def camera_status_update():
     global camera_st

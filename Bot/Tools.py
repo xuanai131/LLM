@@ -3,6 +3,8 @@ from langchain_core.tools import tool
 from langchain_experimental.tools import PythonREPLTool
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+from langchain.chains import RetrievalQA
+from langchain_openai import ChatOpenAI
 from langchain.tools.retriever import create_retriever_tool
 from methods import *
 from Global_variable import *
@@ -28,6 +30,9 @@ def turn_on_camera():
         print("Camera turned on successfully")
     else:
         print("Failed to turn on camera")
+##### CHATOPENAI MODEL
+llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
+# llm = ChatOpenAI(model="gpt-4-1106-preview")
 
 ##### CREATE USER_INPUT FUNCTION
 def UserInput():
@@ -40,8 +45,8 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3', 
-                     embedding=embedding, 
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3',
+                     embedding=embedding,
                      parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
                      retriever_config=BookInfoRetriever)
 
@@ -85,6 +90,22 @@ python_repl_tool = PythonREPLTool() # This executes code locally, which can be u
 #     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.3, "k": 4}
 # )
 
+
+chain = RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever= BookInfo.retriever, return_source_documents=True, verbose=True, input_key="question")
+BANG_XOA_DAU_FULL = str.maketrans(
+    "ÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬĐÈÉẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴáàảãạăắằẳẵặâấầẩẫậđèéẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵ",
+    "A"*17 + "D" + "E"*11 + "I"*5 + "O"*17 + "U"*11 + "Y"*5 + "a"*17 + "d" + "e"*11 + "i"*5 + "o"*17 + "u"*11 + "y"*5,
+    chr(774) + chr(770) + chr(795) + chr(769) + chr(768) + chr(777) + chr(771) + chr(803) # 8 kí tự dấu dưới dạng unicode chuẩn D
+)
+
+def xoa_dau_full(txt: str) -> str:
+    return txt.translate(BANG_XOA_DAU_FULL)
+def search_book(query: str):
+    queries = ["cuốn sách "+query, "cuon sach "+xoa_dau_full(query)]
+    print(queries)
+    result = chain.invoke(queries)['result']
+    return result
+
 def load_book(book_ids: str):
     global load_tool_execute
     load_tool_execute = True
@@ -110,10 +131,10 @@ def load_book(book_ids: str):
 
    
 book_search_tool=[
-    create_retriever_tool(
-        BookInfo.retriever,
-        "book_researcher",
-        "tìm kiếm và trả lời các thông tin về sách trong database của thư viện cho người dùng",
+    Tool(
+        name="book_researcher",
+        func=search_book,
+        description="tìm kiếm và trả lời các thông tin về sách trong database của thư viện cho người dùng",
     ),
     Tool(
         name="load_book",
@@ -231,12 +252,22 @@ def borrow_book(name_book: str):
     barcode_list = []
     while True:
         send_mess("Xin hãy đưa thẻ sinh viên vào khe bên dưới.")
-        Student_ID = scan_barcode('')
-        if Student_ID == "OVERTIME":
+        event.clear()
+        result_store.clear()
+        thread1 = threading.Thread(target=user_input_request_thread, args=(True,"borrow_book",))
+        thread2 = threading.Thread(target=scan_barcode, args=('value',))
+        thread1.start()
+        thread2.start()
+
+        # Waiting for both threads to finish
+        thread1.join()
+        thread2.join()
+        # Student_ID = scan_barcode('')
+        Student_ID = "20134013"
+        
+        if result_store["barcode_return"] == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
-            # user_input = UserInput()
-            # print("user input ",user_input)
             
             if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
                 continue
@@ -244,9 +275,12 @@ def borrow_book(name_book: str):
                 user_input_request(False)
                 send_mess("stop", "return_form")
                 return "Quá trình mượn sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
-        elif Student_ID == "ERROR":
+        elif result_store["barcode_return"] == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
+        elif result_store["barcode_return"] == "INTERRUPT":
+            send_mess("stop", "return_form")
+            return "Quá trình mượn sách đã dừng, cảm ơn bạn đã sử dụng dịch vụ."
         else:
             break
     send_borrowstudent_to_form(Student_ID)
@@ -255,7 +289,18 @@ def borrow_book(name_book: str):
     time.sleep(1)
     while True:
         send_mess("Xin hãy đưa sách vào khe bên dưới.")
-        barcode = scan_barcode('')
+        event.clear()
+        result_store.clear()
+        thread1 = threading.Thread(target=user_input_request_thread, args=(True,"borrow_book",))
+        thread2 = threading.Thread(target=scan_barcode, args=('value',))
+        thread1.start()
+        thread2.start()
+
+        # Waiting for both threads to finish
+        thread1.join()
+        thread2.join()
+        barcode = "WdudlYaHl"
+        # barcode = result_store["barcode_return"]
         if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
@@ -271,6 +316,9 @@ def borrow_book(name_book: str):
         elif barcode == "ERROR":
             send_mess("stop", "return_form")
             return "Camera không có sẵn"
+        elif barcode == "INTERRUPT":
+            send_mess("stop", "return_form")
+            return "Quá trình mượn sách đã dừng, cảm ơn bạn đã sử dụng dịch vụ."
         else:
             state = SearchIsavailableState(barcode)
             if state==False:
@@ -294,13 +342,14 @@ def borrow_book(name_book: str):
                 break
     if len(result['Sách']) > 0:
         print('////////............/////', result['Sách'])
+        # print('////////............/////', result)
         # Xử lí mượn sách tại đây
         for bc in barcode_list:
             CreateBill(bc, Student_ID, datetime.now())
             UpdateIsavailableState(False, bc)
         user_input_request(False)
-        # send_mess("stop", "return_form")
-        return str(result['Sách'])
+        send_mess("stop", "return_form")
+        return "đã xử lí quá trình mượn sách: " +str(result['Sách'])
     user_input_request(False)
     send_mess("stop", "return_form")
     return "Quá trình mượn sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
@@ -359,10 +408,13 @@ def send_returnbook_to_form(barcode, borrow_date, studentinfo):
     requests.post(url=setting.IP_ADDRESS+"/student-book_info", json=data)
     print('SENT.......................')
 # user post the input while camera is running
-def user_input_request_thread(state):
+def user_input_request_thread(state,agent_name):
     res = user_input_request(state)
     if (res!="***INTERRUPT***"):
-        check_interrupt = Helper_Utilities.book_return_interrupt_chain.invoke({'messages': [res]})['messages'] 
+        if(agent_name == "return_book"):
+            check_interrupt = Helper_Utilities.book_return_interrupt_chain.invoke({'messages': [res]})['messages'] 
+        elif (agent_name == "borrow_book"):
+            check_interrupt = Helper_Utilities.book_borrow_interrupt_chain.invoke({'messages': [res]})['messages']
         print("interrupt detect :",check_interrupt)
         if(check_interrupt == "yes"):
             event.set()
@@ -377,7 +429,7 @@ def do_return_book(name_book:str):
         # Book_ID = scan_barcode('') # Quét mã vạch sách
         event.clear()
         result_store.clear()
-        thread1 = threading.Thread(target=user_input_request_thread, args=(True,))
+        thread1 = threading.Thread(target=user_input_request_thread, args=(True,"return_book",))
         thread2 = threading.Thread(target=scan_barcode, args=('value',))
         thread1.start()
         thread2.start()
