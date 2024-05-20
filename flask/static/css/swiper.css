@@ -85,6 +85,10 @@
   animation: fadeout 1s;
   animation-fill-mode: forwards;
 }
+.animate_fadeout{
+  animation: fadeout 0.1s;
+  animation-fill-mode: forwards;
+}
 .info-box {
   position: absolute;
   top: 50%;
