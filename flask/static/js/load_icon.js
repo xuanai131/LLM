@@ -104,43 +104,30 @@ let voiceAnimation = bodymovin.loadAnimation({
         scale: 2 // Adjust this value to scale the animation
     }
 });
-var isStatic = true;
-// Click event listener to change animation path
-// Define the function to handle the click event
-function handleVoiceClick() {
-    if (!isStatic) {
+
+function handleVoiceBackground(status) {
+    if (!status) {
         const newPath = '../static/resources/mic_static_2.json'; // Specify the new path here
         changeAnimationPath(newPath);
-        isStatic = true;
-        updateVoiceStatus(false);
     } else {
         const newPath = '../static/resources/mic_2.json'; // Specify the new path here
         changeAnimationPath(newPath);
-        isStatic = false;
-        updateVoiceStatus(true);
     }
 }
 
-// Add event listener with the defined function
-voiceContainer.addEventListener('click', handleVoiceClick);
 
-// test_js();
-function updateVoiceStatus(status) {
-    fetch('/voice_status', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json', // Specify JSON content type
+
+// Add event listener with the defined function
+voiceContainer.addEventListener('click', updateStatusfromVoiceButton);
+
+function updateStatusfromVoiceButton() {
+    $.ajax({
+        data: {
+            msg: 'update voice button',
         },
-        body: JSON.stringify({ "voice_status": status }), // Convert JS object to JSON string
-    })
-    .then(response => response.text())
-    .then(data => {console.log(data);
-        if (status == true) {
-            global_message = data;
-            handleEvent(null,"voice", global_message,check_tool_running);
-            handleVoiceClick();
-        }}) // Log the response, you can handle it as needed
-    .catch(error => console.error('Error:', error));
+        type: "POST",
+        url: "/update_status_from_voice_button"
+    });
 }
 
 

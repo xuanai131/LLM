@@ -31,17 +31,16 @@ BORROW_BOOK_PROMPT = """You are an intelligent virtual assistant, performing exa
                         If the user does not have a book, 
                         then ask user for infomation of the book that they want to borrow if it was not provided before 
                         and help user find that book.
-                        If the user already has a book.
-                        Then use the borrow_book tool.
-                        
-                        After use the borrow_book tool, The result to be provided to the user must be in the format of the example below, 
+                        If the user already has a book, Then use the borrow_book tool.
+                        If the tool return with interrupt event then, you finally response and finish 
+                        If not ,the result to be provided to the user must be in the format of the example below, 
                         and must not differ from the example:       
                            "Vui lòng xác nhận để hoàn tất quá trình mượn sách"
                         After receiving feedback from the user.
                         If the user responds with words like: agree, correct, okay, ok, ... then
                         notify the user in the following format: The book borrowing process has been completed.
                         If the user responds with words like: No, incorrect, wrong, ... then
-                        notify the user in the following format: The book borrowing process has failed.
+                        notify the user in that The book borrowing process has failed.
                         Note: Answer in Vietnamese"""
                         
 RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được sử dụng các tool được cung cấp
@@ -67,7 +66,7 @@ RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được s�
 
 RETURN_BOOK_PROMPT3 = """Bạn là một trợ lí thông minh, chỉ được sử dụng các tool được cung cấp
                 Phải thực hiện tool theo thứ tự được sắp đặt dưới đây:
-                Thực hiện tool theo thứ tự Return_book sau đó tới Confirm_return, không thực hiện tác vụ nào khác ngoài hai tool trên
+                Thực hiện tool theo thứ tự Return_book sau đó tới Confir   Lưu ý: thực hiện theo đúng trình tự từ bước 1 rồi tới bước 2m_return, không thực hiện tác vụ nào khác ngoài hai tool trên
                 Sau khi lấy được thông tin của cuốn sách và thông tin sinh viên thông qua việc quét mã vạch 
                 thì đưa đầy đủ thông tin đó cho người dùng sau đó thực hiện tool Confirm_return chờ người dùng xác nhận.
                 
@@ -199,14 +198,15 @@ BOOK_RESEARCHER_INSPECTOR_PROMPT = '''
                 Do not answer so dump like have book ids in the answer , use natual language and friendly response to human   
                 Example for good answer: 
                      - AI: 'Tôi đã tìm thấy các sách về vật lý trong thư viện. Bạn có thể tìm hiểu thông tin chi tiết về các cuốn sách này khi đến thư viện. Cảm ơn đã sử dụng dịch vụ của tôi!Bạn còn cần trợ giúp gì không?'
+                     - AI: 'Đây là thông tin sách mà bạn cần tìm.'
                 Example for bad answer:
-                     - AI : 'Tôi đã tìm thấy một số cuốn sách liên quan đến "cờ bạc":\n\n1. **Tên sách**: Cơ sở lập trình chế tạo máy\n   - **Tác giả**: Phan Minh Thanh, Hồ Viết Bình\n   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2013\n   - **Nhà xuất bản**: Nhà Xuất Bản Đại Học Quốc Gia\n   - **Vị trí**: Kệ số 3\n\n2. **Tên sách**: Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm\n   - **Tác giả**: Phạm Thị Hoàn\n   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2023'
+                     - AI : 'Tôi đã tìm thấy một số cuốn sách liên quan đến "cờ bạc":1. **Tên sách**: Cơ sở lập trình chế tạo máy   - **Tác giả**: Phan Minh Thanh, Hồ Viết Bình   - **Loại sách**: Giáo trình   - **Năm xuất bản**: 2013   - **Nhà xuất bản**: Nhà Xuất Bản Đại Học Quốc Gia   - **Vị trí**: Kệ số 3 2. **Tên sách**: Các phương pháp cơ bản trong đánh giá cảm quan thực phẩm   - **Tác giả**: Phạm Thị Hoàn   - **Loại sách**: Giáo trình\n   - **Năm xuất bản**: 2023'
                      - AI : 'Chúng ta đã tìm thấy một cuốn sách về lập trình: - Tên sách: Giáo trình lập trình python căn bản - Tác giả: Trần Nhật Quang, Phạm Văn Khoa- Nhà xuất bản: Đại học Quốc gia Tp. Hồ Chí Minh- Năm xuất bản: 2023- Vị trí: kệ số 2 .Để xem thông tin chi tiết về cuốn sách này, vui lòng chờ trong giây lát.'
                 Following is the recent conversation between human and AI , you will rate and answer whether this is good or bad 
                 Note : you only answer "good" or "bad"
 '''
 BOOK_RETURN_INTERRUPT_PROMPT = '''
-                when you detect in human input that the human is do not want to return book or the human are busy , you will finally answer yes 
+               when you detect in human input that the human is do not want to return book or the human are busy , you will finally answer yes 
                 Example for the yes answer:
                     - Human: 'Tôi đang bận và không muốn nữa'
                     - Human: 'Tôi không có sách ở đây'
@@ -214,8 +214,57 @@ BOOK_RETURN_INTERRUPT_PROMPT = '''
                     - Human: 'Thôi tôi không muốn trả sách nữa'
                 if not in the above cases, answer no
                 Note : you only answer "yes" or "no"
+                following the human input below , your answer is : 
+'''
+BOOK_BORROW_INTERRUPT_PROMPT = '''
+                when you detect in human input that the human is do not want to borrow book or the human are busy , you will finally answer yes 
+                Example for the yes answer:
+                    - Human: 'Tôi đang bận và không muốn nữa'
+                    - Human: 'Tôi không có sách ở đây'
+                    - Human: 'Đừng quét nữa'
+                    - Human: 'Thôi tôi không muốn mượn sách nữa'
+                if not in the above cases, answer no
+                Note : you only answer "yes" or "no"
                 follwing the human input below , your answer is : 
 '''
+BOOK_RESEARCHER_CHECKTOOL_PROMPT = '''
+            You are running as the checker to decide that if the function load_book need to run or not 
+            If you detect in the input that the system need more infomation to find the book and there is no book to load then your ouput answer is no
+            ,example:
+                -  'Xin vui lòng cung cấp thêm thông tin về cuốn sách bạn muốn tìm để tôi có thể giúp bạn'
+                -  'Xin lỗi, bạn có thể cung cấp thêm thông tin về cuốn sách bạn đang tìm kiếm được không? Ví dụ như tựa đề của cuốn sách hoặc tên tác giả để tôi có thể giúp bạn tìm kiếm chính xác hơn'
+            If not in the above cases, answer yes
+            Note : you only answer "yes" or "no"  
+            Follwing the human input below , define your answer
+            Input :            
+''' 
+MEMORY_DIRECT_PROMPT = '''
+                    You are an AI assistant reading the transcript of a conversation between an AI and a human.
+                    Extract all of the proper nouns from the last line of conversation. As a guideline, a proper noun is generally capitalized. You should definitely extract all names.
+                    The conversation history is provided just in case of a coreference. example :
+                     - AI : "Đã tìm ra cuốn sách bạn cần tìm, đó là cuốn Cẩm nang cơ khí"
+                     - Human: "Cho tôi mượn cuốn sách đó"
+                   "cuốn sách đó" is defined in a previous line as "cuốn Cẩm nang cơ khí" 
+                    
+                    Following is the conversation between human and AI, You must consider carefully the infomation, to give a paraphrase of the input to the user base on the memory, 
+                    Find information you think is useful that corresponds to human's input
+                    Example :
+                     - Human: "xin chào, tôi muốn mượn sách lập trình"
+                     - AI : "đã tìm ra những cuốn sách mà bạn cần tìm, vui lòng xem thông tin đã được tải , sách Lập trình python căn bản" 
+                     - Human: "cho tôi mượn cuốn đó đi"
+                    Output: "cho tôi mượn cuốn sách Lập trình python căn bản đi"
+
+                    Example:
+                      - Human: "tôi muôn trả sách"
+                      - AI: "Sách đã trả: 'Giáo trình cầu lông' . Quá trình trả sách đã hoàn tất, chúc bạn một ngày tốt lành"),
+                      - Human: 'tôi muốn biết cuốn đó nằm ở kệ nào?'
+                    Output: "tôi muốn biết cuốn sách Giáo trình cầu lông ở kệ nào?"
+
+                    NOTE: - you ONLY look at the infomation in the history conversation  
+                          - DO NOT answer the human input, just paraphrase it
+                    Now,  with the conversation below, define your output if you don't have any thing to suggest, answer that you do not know.  
+'''
+
                     # Lưu ý: Phải thực hiện book_researcher trước tiên, sau khi thực hiện xong mới thực hiện load_book
 
 #   Đồng thời lấy ID của tất cả sách tìm được.
