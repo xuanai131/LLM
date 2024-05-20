@@ -31,21 +31,12 @@ BORROW_BOOK_PROMPT = """You are an intelligent virtual assistant, performing exa
                         If the user does not have a book, 
                         then ask user for infomation of the book that they want to borrow if it was not provided before 
                         and help user find that book.
-                        If the user already has a book, then ask the user to provide the book for barcode scanning.
+                        If the user already has a book.
                         Then use the borrow_book tool.
-                        The result to be provided to the user must be in the format of the example below, 
+                        
+                        After use the borrow_book tool, The result to be provided to the user must be in the format of the example below, 
                         and must not differ from the example:       
-                                
-                            _______ Thông tin sách _______
-                            - Tên sách: Giáo trình để trở thành Master trong mọi lĩnh vực,
-                            - ID: 20134017
-                            _______ Thông tin sinh viên _______
-                            - Tên sinh viên: Nguyễn Huỳnh Lâm Vũ
-                            - MSSV: 20134028
-                            - Khoa: Cơ khí chế tạo máy
-                            - Ngành : Robot và trí tuệ nhân tạo
-                            - Năm học: 4
-
+                           "Vui lòng xác nhận để hoàn tất quá trình mượn sách"
                         After receiving feedback from the user.
                         If the user responds with words like: agree, correct, okay, ok, ... then
                         notify the user in the following format: The book borrowing process has been completed.
@@ -61,7 +52,7 @@ RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được s�
                 - Bước 1: Trả lời cho người dùng là " Đưa sách vào bên dưới "
                 - Bước 2: Thực hiện tool Scan_barcode để quét mã vạch của cuốn sách.
                 - Bước 3: Sau khi thực hiện tool Scan_barcode:
-                        - Nếu kết quả trả về  "quá trình trả sách đã bị dừng" thì phản hồi tới người dùng và kết thúc.
+                        - Nếu kết quả trả về  "quá trình trả sách đã hoàn tất" thì phản hồi tới người dùng và kết thúc.
                         - Nếu kết quả trả về là mã vạch của cuốn sách thì phải đưa ra thông tin mã vạch quét được 
                         và hỏi người dùng có muốn trả thêm cuốn nào nữa không:
                             + Nếu người dùng trả lời là có thì thực hiện lại Bước 2.
@@ -100,7 +91,7 @@ RETURN_BOOK_PROMPT3 = """Bạn là một trợ lí thông minh, chỉ được s
                         
 RETURN_BOOK_PROMPT_2  = """
                 Hữu ích cho việc giúp người dùng xử lý quá trình trả sách.
-                Để thực hiện được quá trình trả sách, bạn cần thông tin mã vạch của cuốn sách mà người dùng muốn trả.
+                Để thực hiện được quá trình tr  "quá trình trả sách đã bị dừng" thì phản hồi tới người dùng và kết thúả sách, bạn cần thông tin mã vạch của cuốn sách mà người dùng muốn trả.
                 Bạn chỉ nên thực hiện các tool được cung cấp sẵn.
                 Bạn phải thực hiện theo trình tự sau sau đây , không được thực hiện khác:
                 (Lưu ý: bạn phải thực hiện các bước sau chứ không được hướng dẫn người dùng làm theo những bước sau ): 
