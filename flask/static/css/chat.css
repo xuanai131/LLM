@@ -106,6 +106,7 @@
 	border:0 !important;
 	color:white !important;
 	height: 60px !important;
+	/* font-size: 20px; */
 	overflow-y: auto;
 }
 	.type_msg:focus{
@@ -127,6 +128,13 @@
 	cursor: pointer;
 
 }
+.mic_btn{
+	border-radius: 0 0 0 0 ;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color: white !important;
+	cursor: pointer;
+}
 .search_btn{
 	border-radius: 0 15px 15px 0 !important;
 	background-color: rgba(0,0,0,0.3) !important;
@@ -143,9 +151,9 @@
 	padding: 5px 10px;
 	margin-bottom: 15px !important;
 }
-.active{
+/* .active{
 	background-color: rgba(0,0,0,0.3);
-}
+} */
 .user_img{
 	height: 70px;
 	width: 70px;
@@ -211,6 +219,7 @@
 	background-color: rgb(82, 172, 255);
 	padding: 10px;
 	position: relative;
+	font-size: 20px;
 }
 .msg_cotainer_send{
 	margin-top: auto;
@@ -220,6 +229,7 @@
 	background-color: #58cc71;
 	padding: 10px;
 	position: relative;
+	font-size: 20px;
 }
 .msg_time{
 	position: absolute;
@@ -297,7 +307,7 @@
 	margin-bottom: 0px ;
 	height: 50px !important;
 	font-family: 'Dancing Script', cursive;
-    font-size: 14px; /* Set the font size */
+    font-size: 20px; /* Set the font size */
     color: #333; /* Set the text color */
     text-align: left;
 	padding-left: 15px;
@@ -305,11 +315,22 @@
 #send{
 	width: 50px !important;
 	height: 50px !important;
+	margin-left:1px;
+}
+.microphone{
+	display: block;
+    height: 50px;
+    width: 50px;
+	/* border: 5px; */
+	margin-left:2px;
+	/* border-color: #ffffff; */
+    /* align-items: center; */
+	background: rgba(0,0,0,0.3)
 }
 .input-group .input-group-text {
 	/* background-color:  rgba(96, 94, 94, 0.2); */
-    border-top-left-radius: 15px; /* Ensure border radius doesn't affect input */
-    border-bottom-left-radius: 15px; /* Ensure border radius doesn't affect input */
+    border-top-left-radius: 0; /* Ensure border radius doesn't affect input */
+    border-bottom-left-radius: 0; /* Ensure border radius doesn't affect input */
 }
 ::-webkit-scrollbar {
 	width: 20px;
@@ -317,8 +338,8 @@
   
   /* Track */
 ::-webkit-scrollbar-track {
-box-shadow: inset 0 0 5px grey; 
-border-radius: 10px;
+	box-shadow: inset 0 0 5px grey; 
+	border-radius: 10px;
 }
 
 /* Handle */
@@ -339,6 +360,7 @@ background: #cbc9f0;
 	width:100%;
 	height:100%;
 }
+
 
 /* #audioPlayer{
 	display:none;

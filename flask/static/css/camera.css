@@ -2,9 +2,11 @@
     /* position: fixed; */
     /* width: 80%;
     height: 40%; */
-    width: 480px;
-    height: 320px;
-    margin: 10px;
+    position: absolute;
+    bottom: 5px;
+    width: 50%;
+    height: 35%;
+    /* margin: 10px; */
     border-color: green;
     border-radius: 10px;
     background-color: white;

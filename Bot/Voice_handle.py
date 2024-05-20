@@ -13,6 +13,8 @@ import threading
 import signal
 from pydub import AudioSegment
 import pvporcupine
+import urllib
+import json
 import sys
 sys.path.append("../")
 import API_keys
@@ -56,6 +58,9 @@ class VoiceHandle:
         if self._listening_for_query != value:
             self._listening_for_query = value
             print('self._listening_for_query: ', self._listening_for_query)
+            if self._listening_for_query == True:
+                self.play_wav('audio/notification.wav')
+                sd.wait()
             self.send_listening_for_query_status()
     @property
     def responding_to_user(self):
@@ -95,7 +100,6 @@ class VoiceHandle:
             self.sleep_timer.cancel()
             self.sleep_timer = None
     def enter_sleep_mode(self, ):
-        print('__enter_sleep_mode')
         if self.sleep_timer:
             self.sleep_timer.cancel()
         self.listening_for_query = False
@@ -141,7 +145,7 @@ class VoiceHandle:
             else:
                 wakeword = str(result)
         return wakeword
-    def stt(self, file_name):
+    def stt_openai(self, file_name):
         f = sf.SoundFile(file_name)
         if f.frames > 100:
             audio_file= open(file_name, "rb")
@@ -186,15 +190,49 @@ class VoiceHandle:
             with wave.open(file, 'wb') as output_wav:
                 output_wav.setparams(params)
                 output_wav.writeframes(empty_audio_data)
-    def speak(self, text):
-        self.responding_to_user = True
+    def download_zalo_audio(self, url, filename):
+        try_times = 3
+        while (try_times>0):
+            try :
+                with urllib.request.urlopen(url) as response:
+                    audio_data = response.read()
+                with open(filename, 'wb') as f:
+                    f.write(audio_data)
+                print("File downloaded successfully as", filename)
+                return 
+            except:
+                try_times = try_times -1
+                continue
+    def tts_zalo(self, text, filename):
+        url = "https://api.zalo.ai/v1/tts/synthesize"
+        headers = {
+            "apikey": API_keys.zalo_api
+        }
+        data = {
+            "input": text,
+            "speaker_id": 3
+        }
+        response = requests.post(url, headers=headers, data=data)
+        if response.status_code == 200:
+            print("Response received:")
+            print(response.content)
+        else:
+            print(f"Request failed with status code {response.status_code}")
+            print(response.text)
+        json_str = response.content.decode('utf-8')
+        url = json.loads(json_str)['data']['url']
+        self.download_zalo_audio(url,'test.wav')
+    def tts_openai(self, text, filename):
         response = self.client.audio.speech.create(
             model="tts-1",
             voice="alloy",
             input=text,
         )
-
-        response.write_to_file(self.speak_file)
+        response.write_to_file(filename)
+    def speak(self, text, ):
+        self.responding_to_user = True
+        # self.tts_openai(text, self.speak_file)
+        self.tts_zalo(text, self.speak_file)
         self.play_wav(self.speak_file)
         def callback_speak():
             sd.wait()
@@ -211,7 +249,7 @@ class VoiceHandle:
     def GPTResponse(self, audio):
         with open(self.prompt_file, 'wb') as f:
             f.write(audio.get_wav_data())
-        prompt_text = self.stt(self.prompt_file)
+        prompt_text = self.stt_openai(self.prompt_file)
         self.user_query = prompt_text
         if prompt_text != None:
             self.responding_to_user = True
@@ -254,5 +292,3 @@ class VoiceHandle:
         self.reset_audio(self.prompt_file)
         self.responding_to_user = False
         self.enter_sleep_mode()
-        self.listening_for_query = False
-        self.listening_for_wake_word = True

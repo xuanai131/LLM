@@ -1,0 +1,102 @@
+.categories-background {
+    position: absolute;
+    width: 1364px;
+    margin: 1px;
+    margin-top: 2px;
+    /* bottom: 0; */
+    height: 694px;
+    /* bottom: 0; */
+    background-color:  #2c2e2e;
+    visibility: hidden;
+    /* overflow: auto; */
+    /* z-index: 100; */
+}
+
+.categories-container {
+    position: absolute;
+    width: 1364px;
+    margin: 1px;
+    margin-top: 34px;
+    /* bottom: 0; */
+    height: 660px;
+    /* bottom: 0; */
+    /* background-color:  #2c2e2e; */
+    /* visibility: hidden; */
+    overflow: auto;
+    /* z-index: 100; */
+}
+.categories-container::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.categories-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+.categories-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the thumb */
+    border-radius: 6px; /* Rounded corners */
+}
+.categories-box{
+    position: absolute;
+    /* margin-top : 30px; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flex-box{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(#5dffc6, rgb(255, 255, 255), #5dffc6);
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    text-align: center;
+    
+    /* line-height: 200px; */
+    font-family: cursive;
+    border-radius: 20px;
+    margin: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+/* 
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;  */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+}
+.flex-box:hover{
+    /* color: rgb(255, 255, 255); */
+  /* border-radius: 20px; */
+    box-shadow: 0 0 5px #ffffff, 0 0 7px #000000, 0 0 10px #ffffff;
+    transform: translateY(-3%);
+}
+.exit_button{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    /* float: right; */
+    height: 30px;
+    width: 30px;
+    /* background: rgb(255, 255, 255); */
+    border-radius: 1px;
+    /* top: -10px; */
+}
+
+.exit_button img {
+    top: 0px;
+    left: 0px;
+    height: 30px; /* Set height to 70px */
+    width: auto; 
+}
+.exit_button img:hover{
+    box-shadow: 0 0 5px #f23e3e, 0 0 10px #f7bdbd;
+    /* top: -10px; */
+}
