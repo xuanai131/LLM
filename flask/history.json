@@ -66,20 +66,6 @@
                               "User : Tôi muốn tìm sách.",
                               "Lib : __Thông tin sách__\n1.\n    - Tên sách: Advanced in Yarn Spinning Technology: The Textile Institute\n    - ID: 3\n2. \n    - Tên sách: The beauty of physics : Wu li zhi mei\n    - ID: 17\n3.\n    - Tên sách: Cơ bản về Autodesk 3ds Max 2014: = Autodesk® 3Ds Max® 2014 Essentials: Thiết kế tạo hình cơ bản và nâng cao\n    - ID: 18"
                     ],
-<<<<<<< HEAD
-                    [],
-                    [],
-                    [],
-                    [
-                              "User : tôi muốn mướn sách",
-                              "Lib : Bạn đã có sách cụ thể mà bạn muốn mượn chưa? Nếu chưa, bạn có thể cung cấp thông tin về cuốn sách bạn muốn mượn để tôi có thể giúp bạn tìm kiếm.",
-                              "User : tôi muốn mượn cuốn Trường Đại học Sư phạm Kỹ thuật Thành phố Hồ Chí Minh đã trải qua chặng đường 60 năm hình thành, xây dựng và phát triển. Để có được thành quả như hôm nay, Nhà trường đã không ngừng phấn đấu, nâng cao chất lượng dạy và học để khẳng định vị thế trong hệ thống giáo dục đại học Việt Nam.\\nNhân dịp kỷ niệm đặc biệt này, Nhà trường xin gửi lời tri ân sâu sắc tới các đồng chí lãnh đạo Đảng và Nhà nước, lãnh đạo Bộ Giáo dục và Đào tạo, lãnh đạo các Bộ, Ban ngành, địa phương, các đối tác, các thế hệ nhà giáo, cán bộ viên chức và người học của nhà trường đã chung tay, góp sức, gắn bó, tin tưởng vào chất lượng giáo dục của Nhà trường. Nhà trường mong muốn sẽ tiếp tục đón nhận sự đồng hành của Quý vị trên bước đường tương lai",
-                              "Lib : __Thông tin sách__\n1.\n- Tên sách: Kỷ yếu 60 năm thành lập trường Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh\n- ID: 12\n\n2.\n- Tên sách: Xây dựng website hỗ trợ luyện tập và thi Olympic tin học\n- ID: 37\n\n3.\n- Tên sách: Ứng dụng Multimedia vào việc giảng dạy môn học \"Hệ thống truyền lực trên ô tô\"\n- ID: 23",
-                              "User : chào bạn mình là Ái",
-                              "Lib : Xin chào Ái! Bạn có thể cung cấp thông tin sách bạn muốn mượn từ danh sách trên để tôi có thể tiếp tục quá trình mượn sách cho bạn được không?",
-                              "User : bạn có nhờ tên mình khồn",
-                              "Lib : Xin lỗi vì sự nhầm lẫn. Vui lòng cho mình biết tên của bạn để tiếp tục quá trình mượn sách."
-=======
                     [
                               "User : mượn sách",
                               "Lib : Bạn đã có sách để mượn chưa?",
@@ -99,7 +85,6 @@
                               "User : trả sách",
                               "User : oke",
                               "Lib : Quá trình trả sách đã hoàn tất. Chúc bạn một ngày tốt lành!"
->>>>>>> b2d6b2645ea681dada1f7d715618ef8e953126c7
                     ]
           ]
 }
