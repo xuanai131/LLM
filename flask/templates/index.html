@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="static/css/main.css">
+    
     <link rel="stylesheet" href="static/css/swiper.css">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -28,143 +28,365 @@
     <link rel="stylesheet" href="static/css/chat.css"/>
     <link rel="stylesheet" href="static/css/form.css"/>
     <link rel="stylesheet" href="static/css/camera.css"/>
+    <link rel="stylesheet" href="static/css/categories.css"/>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/each_category.css">
+    <link rel="stylesheet" href="static/css/pdf_page.css">
+    <link rel="stylesheet" href="static/css/text_box.css">
+    
+    
+
     <script src="./static/js/test.js"></script>
     <script src="./static/js/reveal_list_book.js"></script>
     <script src="./static/js/create_form.js"></script>
+    <script src="./static/js/func_button.js"></script>
+    
     <script>var socket = io();
         pre_type = '';
     </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="static/css/dropdown.css"/>
 </head>
 
 <body>
-    <div class="LargeCotainer">
-        <!-- Camera container -->
-        <script> 
-            socket.on('container_visibility_change', function(data) {
-                if (!data.visible) {
-                    document.getElementById("camera-container_id").style.display = 'none';
-                    console.log ("invisibily");
-                }
-                else {
-                    document.getElementById("camera-container_id").style.display = "block";
-                    console.log ("visibily")
-                }
-            });
-        </script>
-        <!-- Form container -->
-        <div class="form-container" id = "form_container_id">
-            <div class="content">
-                <form action="#" id="form_action_id">
-                    <div class="topic">Xác Nhận Đi Ạ</div>
-                    <div class="swiper mineSwiper" id="return-book-container">
-                        <div class="swiper-wrapper" id="return-book-info">
-                          <!-- <div class="swiper-slide">Slide 8</div>
-                          <div class="swiper-slide">Slide 9</div> -->
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                        <div class="input-box">
-                        <!-- <button onclick="buttonClicked()">Xác Nhận</button> -->
-                        <!-- function in reveal list book -->
-                        <input type="submit" value="Xác Nhận" onclick="confirm_process()"/>  
-                    </div>
-                </form>
-            </div>
-            <div class="camera-container" id = "camera-container_id">
-                <img src="{{ url_for('video_feed') }}" id="camera-frame" class="camera-frame">
-            </div>
-        </div>
-        <script>
-            var mineswiper = new Swiper(".mineSwiper", {
-                slidesPerView: "auto",
-                // spaceBetween: 30,
-                pagination: {
-                    el: ".swiper-pagination",
-                    // clickable: true,
-                },
-            });
-          </script>
-        <!-- Robot Animation -->
-        <div id="robotContainer" >
-            <div class="robot" id="lottie-container"></div>            
-        </div>
-        <div class="tools">
-            <div class="small-tools tools-item">
-                <div class="refresh-icon small-tools-item" id="refresh-icon-container"></div>
-                <div class="voice-icon small-tools-item" id="voice-icon-container"></div>
-                <div class="chat-icon small-tools-item" id="chat-icon-container"></div>
-            </div>
-            <div class="bar-icon" id="bar-icon-container"></div>
-        </div>
-        <!-- Micro Icon -->
+    <!-- Tab bar -->
+    <div class="body-container">
+        <ul>
+            <li>
+                <a href="#">  Tính năng ▾ </a>
+                <ul class="dropdown" id="dropdown">
+                    <li><a href="#" id="borrow_book_bt">Mượn sách</a></li>
+                    <li><a href="#" id="return_book_bt">Trả sách</a></li>
+                    <li><a href="#" id="find_book_bt">Tra cứu </a></li>
+                    <!-- <li><a href="#">Japan</a></li> -->
+                </ul>
+            </li>
+            <li><a href="#" id="chat-icon-container">Chat</a></li>
+            <li><a href="#" id="refresh-icon-container">Refresh</a></li>
+            <!-- <li><a href="#">Contact Us</a></li> -->
 
-        <!-- Reveal Infomation when finding book -->
-        <div id="bookFinded" >
-            <div class="swiper mySwiper" id='bookContainer'>
+            <div class="logo">
+                <img src="../static/resources/Logo2.png" alt="Logo">
             </div>
-            <div class ='information-table' id='bookTable'>
-                <div id='imageOfSelectedBook'>
-
-                </div>
-                <div id="reveal_list_form_1"> 
-                    
-                </div>
-                <!-- <form action="#" id="info_book_form">
-                    <div class="form-left-decoration"></div>
-                    <div class="form-right-decoration"></div>
-                    <div class="circle"></div>
-                    <div class="form-inner">
-                        <h1>Thông tin sách</h1> 
-                        <textarea rows="1">Tên sách: ...</textarea>
-                        <textarea rows="1">Tác giả:...</textarea>
-                        <textarea rows="1">ID:...</textarea>
-                        <textarea rows="1">Vị trí:...</textarea>
-
-                        <h2>Đây có phải sách bạn muốn tìm không ?</h2>
-                        <div id="confirm_info_row">
-                            <button id="confirm_info" onclick="buttonClicked()">Yes</button>
-                            <button id="unconfirm_info" onclick="buttonClicked()">No</button>
-                        </div>
-                    </div>
-                </form> -->
+        </ul>
+        <!-- Category for find book -->
+        <div class="categories-background">
+            <div class="exit_button" id="exit_find_book_func_bt">
+                <img src="../static/resources/exit.png" alt="Logo">
             </div>
-        </div>
-        
-        
-        
-
-        <!-- Chat frame -->
-        <div class="chat-frame-container">
-            <!-- <div class="container-fluid h-100"> -->
-                <!-- <div class="row justify-content-center h-100"> -->
-            <div class="chat">
-                <div class="card">
-                    <div class="card-header msg_head">
-                        <div class="d-flex bd-highlight">
-                            <div class="img_cont">
-                                <div class="lottie-container_face_avatar" id="lottie-container_face_avatar"></div>
-                                <span class="online_icon"></span>
-                            </div>
-                            <div class="user_info">
-                                <span>Librarios</span>
-                                <!-- <p>M nhìn cái chóa gì!</p> -->
-                            </div>
-                        </div>
+            <div class = "categories-container">
+                <div class="categories-box">
+                    <div class="flex-box">
+                        Box1hs jakhdjs ahdjs ahkdjhs jadhjkash dj ashd
                     </div>
-                    <div id="messageFormeight" class="card-body msg_card_body">
+                    <div class="flex-box">
+                        Box2
                     </div>
-                    <div class="card-footer">
-                        <form id="messageArea" class="input-group">
-                            <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
-                            <div class="input-group-append">
-                                <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
-                            </div>
-                        </form>
+                    <div class="flex-box">
+                        Box3
+                    </div>
+                    <div class="flex-box">
+                        Box4
+                    </div>
+                    <div class="flex-box">
+                        Box5
+                    </div>
+                    <div class="flex-box">
+                        Box6
+                    </div>
+                    <div class="flex-box">
+                        Box7
+                    </div>
+                    <div class="flex-box">
+                        Box8
+                    </div>
+                    <div class="flex-box">
+                        Box9
+                    </div>
+                    <div class="flex-box">
+                        Box10
+                    </div>
+                    <div class="flex-box">
+                        Box11
+                    </div>
+                    <div class="flex-box">
+                        Box12
+                    </div>
+                    <div class="flex-box">
+                        Box13
+                    </div>
+                    <div class="flex-box">
+                        Box14
+                    </div>
+                    <div class="flex-box">
+                        Box15
+                    </div>
+                    <div class="flex-box">
+                        Box16
+                    </div>
+                    <div class="flex-box">
+                        Box17
+                    </div>
+                    <div class="flex-box">
+                        Box18
+                    </div>
+                    <div class="flex-box">
+                        Box19
+                    </div>
+                    <div class="flex-box">
+                        Box20
+                    </div>
+                    <div class="flex-box">
+                        Box21
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Show all books of each category -->
+        <div class="each-category">
+            <!--cards -->
+            <div class="exit_button" id="exit_category_page_bt">
+                <img src="../static/resources/exit.png" alt="Logo">
+            </div>
+            <div class="bookcard-container">
+                <div class="bookcard-box">
+                    <div class="bookcard">
+                        <div class="bookcard-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                        </div>
+                        <div class="bookcard-des">
+                            <p>Trường Đại học Sư phạm Kỹ thuật Thành phố Hồ Chí Minh</p>
+                        </div>
+                        <div class="bookcard-bt">
+                            <button id="show_pdf_page">Read More...</button>
+                        </div>
+                    </div>
+                    <div class="bookcard">
+                        <div class="bookcard-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                        </div>
+                        <div class="bookcard-des">
+                            <p>You can Add Desccription Here1...</p>
+                            <!-- <button>Read More...</button> -->
+                        </div>
+                        <div class="bookcard-bt">
+                            <button>Read More...</button>
+                        </div>
+                    </div>
+                    <div class="bookcard">
+                        <div class="bookcard-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                        </div>
+                        <div class="bookcard-des">
+                            <p>You can Add Desccription Here1...</p>
+                            <!-- <button>Read More...</button> -->
+                        </div>
+                        <div class="bookcard-bt">
+                            <button>Read More...</button>
+                        </div>
+                    </div>
+                    <div class="bookcard">
+                        <div class="bookcard-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                        </div>
+                        <div class="bookcard-des">
+                            <p>You can Add Desccription Here1...</p>
+                            <!-- <button>Read More...</button> -->
+                        </div>
+                        <div class="bookcard-bt">
+                            <button>Read More...</button>
+                        </div>
+                    </div>
+                    <div class="bookcard">
+                        <div class="bookcard-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                        </div>
+                        <div class="bookcard-des">
+                            <p>You can Add Desccription Here1...</p>
+                            <!-- <button>Read More...</button> -->
+                        </div>
+                        <div class="bookcard-bt">
+                            <button>Read More...</button>
+                        </div>
+                    </div>
+                    <div class="bookcard">
+                        <div class="bookcard-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
+                        </div>
+                        <div class="bookcard-des">
+                            <p>You can Add Desccription Here1...</p>
+                            <!-- <button>Read More...</button> -->
+                        </div>
+                        <div class="bookcard-bt">
+                            <button>Read More...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show detail of each book -->
+        <div class="pdf_page">
+            <div class="pdf_infomation">
+                <div class="exit_button" id="exit_pdf_page_bt">
+                    <img src="../static/resources/exit.png" alt="Logo">
+                </div>
+                <div class="pdf_image">
+                </div>
+                <div class="pdf_detail">
+                    <div class="wrapper-text-box">
+                        <div class="input-data">
+                           <input type="text" value="Type your message..." required>
+                           <!-- <div class="underline"></div> -->
+                           <label class="text-box-label">Name</label>
+                        </div>
+                     </div>
+                    <!-- <p>Trường Đại học Sư phạm Kỹ thuật Thành phố Hồ Chí Minh</p>
+                    <p>Tác giả: Nguyễn Huỳnh Lâm Vũ</p>
+                    <p>Tiêu đề: Nguyễn Huỳnh Lâm Vũ</p> -->
+                </div>
+            </div>
+            <div class ="pdf_link">
+                
+                <embed src="../static/resources/test1.pdf" type="application/pdf">
+            </div>
+        </div>
+
+
+        <div class="LargeCotainer">
+            
+            <!-- Camera container -->
+            <script> 
+                socket.on('container_visibility_change', function(data) {
+                    if (!data.visible) {
+                        document.getElementById("camera-container_id").style.display = 'none';
+                        console.log ("invisibily");
+                    }
+                    else {
+                        document.getElementById("camera-container_id").style.display = "block";
+                        console.log ("visibily")
+                    }
+                });
+            </script>
+            <!-- Form container -->
+            <div class="form-container" id = "form_container_id">
+                <div class="content">
+                    <form action="#" id="form_action_id">
+                        <!-- <div class="topic">Xác Nhận Đi Ạ</div> -->
+                        <div class="swiper mineSwiper" id="return-book-container">
+                            <div class="swiper-wrapper" id="return-book-info">
+                            <!-- <div class="swiper-slide">Slide 8</div>
+                            <div class="swiper-slide">Slide 9</div> -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                            <div class="input-box">
+                            <!-- <button onclick="buttonClicked()">Xác Nhận</button> -->
+                            <!-- function in reveal list book -->
+                            <input type="submit" value="Xác Nhận" onclick="confirm_process()"/>  
+                        </div>
+                    </form>
+                </div>
+                <div class="camera-container" id = "camera-container_id">
+                    <img src="{{ url_for('video_feed') }}" id="camera-frame" class="camera-frame">
+                </div>
+            </div>
+            <script>
+                var mineswiper = new Swiper(".mineSwiper", {
+                    slidesPerView: "auto",
+                    // spaceBetween: 30,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        // clickable: true,
+                    },
+                });
+            </script>
+            <!-- Robot Animation -->
+            <div id="robotContainer" >
+                <div class="robot" id="lottie-container"></div>            
+            </div>
+            <!-- <div class="tools">
+                <div class="small-tools tools-item">
+                    <div class="refresh-icon small-tools-item" id="refresh-icon-container"></div>
+                    <div class="voice-icon small-tools-item" id="voice-icon-container"></div>
+                    <div class="chat-icon small-tools-item" id="chat-icon-container"></div>
+                </div>
+                <div class="bar-icon" id="bar-icon-container"></div>
+            </div> -->
+            <!-- Micro Icon -->
+
+            <!-- Reveal Infomation when finding book -->
+            <div id="bookFinded" >
+                <button id="exit_find_book_bt">X</button>
+                <div class="swiper mySwiper" id='bookContainer'>
+                </div>
+                <div class ='information-table' id='bookTable'>
+                    <div id='imageOfSelectedBook'>
+
+                    </div>
+                    <div id="reveal_list_form_1"> 
+                        
+                    </div>
+                    <!-- <form action="#" id="info_book_form">
+                        <div class="form-left-decoration"></div>
+                        <div class="form-right-decoration"></div>
+                        <div class="circle"></div>
+                        <div class="form-inner">
+                            <h1>Thông tin sách</h1> 
+                            <textarea rows="1">Tên sách: ...</textarea>
+                            <textarea rows="1">Tác giả:...</textarea>
+                            <textarea rows="1">ID:...</textarea>
+                            <textarea rows="1">Vị trí:...</textarea>
+
+                            <h2>Đây có phải sách bạn muốn tìm không ?</h2>
+                            <div id="confirm_info_row">
+                                <button id="confirm_info" onclick="buttonClicked()">Yes</button>
+                                <button id="unconfirm_info" onclick="buttonClicked()">No</button>
+                            </div>
+                        </div>
+                    </form> -->
+                </div>
+            </div>
+            
+
+            <!-- Chat frame -->
+            <div class="chat-frame-container">
+                <!-- <div class="container-fluid h-100"> -->
+                    <!-- <div class="row justify-content-center h-100"> -->
+                <div class="chat">
+                    <div class="card">
+                        <div class="card-header msg_head">
+                            <div class="d-flex bd-highlight">
+                                <div class="img_cont">
+                                    <div class="lottie-container_face_avatar" id="lottie-container_face_avatar"></div>
+                                    <span class="online_icon"></span>
+                                </div>
+                                <div class="user_info">
+                                    <span>Librarios</span>
+                                    <!-- <p>M nhìn cái chóa gì!</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div id="messageFormeight" class="card-body msg_card_body">
+                        </div>
+                        <div class="card-footer">
+                            <form id="messageArea" class="input-group">
+                                <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                                <div class="input-group-append">
+                                    <!-- <div class="small-tools tools-item">
+                                        <div class="voice-icon small-tools-item" id="voice-icon-container"></div> id="microphone"
+                                    </div> -->
+                                    <div class="microphone" id="voice-icon-container"></div>
+                                    <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    <!-- </div> -->
                 <!-- </div> -->
-            <!-- </div> -->
+            </div>
         </div>
     </div>
     <script>
@@ -196,6 +418,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../static/js/chat.js"></script>
     <script src="../static/js/load_icon.js"></script>
+    <script src="../static/js/category.js"></script>
    
     <script>
         // Reveal list of book when user want to search book ( in reveal_list_book.js)
@@ -203,6 +426,15 @@
         // const swiper_visibility = document.querySelector(".swiper");
         const swiper_visibility = document.getElementById('bookContainer');
         const list_book_find = document.getElementById('bookFinded');
+        const table_book_and_info = document.getElementById('bookTable');
+        const exit_find_book = document.getElementById('exit_find_book_bt');
+        exit_find_book.addEventListener('click', function(event) {
+            swiper_visibility.style.visibility= "hidden";
+            list_book_find.style.visibility= "hidden";
+            table_book_and_info.style.visibility= "hidden";
+            $("#bookContainer").empty();
+            $("#robotContainer").show();
+        });
         
         socket.on('book_images', function(data) {
             console.log("book_images socket catch");
@@ -349,7 +581,15 @@
                 pre_type = 'borrow';
             }
         });
-       
+    
+    </script>
+    <script>
+        socket.on('voice_status_background', function(data) {
+            handleVoiceBackground(data.listening_status);
+        });
+        socket.on('query_voice_background', function(data) {
+            handleEvent(null, 'voice', data.user_query, check_tool_running);
+        });
     </script>
 
     

@@ -41,7 +41,6 @@ from Voice_handle import VoiceHandle
 response = ""
 response_tool = ""
 camera_st = False
-voice_st = False
 user_input_st = False
 user_input_interrupt_signal = False
 user_input_message = ""
@@ -75,9 +74,10 @@ def get_Chat_response(text):
     OpenAIHistoryConversation.append(answer)
     
     return answer.content
-voicehandle = VoiceHandle(wake_words=['porcupine'],
+voicehandle = VoiceHandle(wake_words=['porcupine', 'jarvis'],
                           get_chat_response_func=get_Chat_response)
 voicehandle.run()
+
 def handle_event_response(attitude,answer):
     global OpenAIHistoryConversation,redirect_state
     print("check history: ",OpenAIHistoryConversation)
@@ -95,10 +95,6 @@ def handle_event_response(attitude,answer):
         redirect_state = "supervisor"
         Helper_Utilities.write_state(redirect_state)
         return answer
-def play_wav(file_path):
-    data, fs = sf.read(file_path, dtype='float32')
-    sd.play(data, fs)
-    sd.wait()
 
 @app.route("/")
 def hello_world():
@@ -110,32 +106,6 @@ def LoadBookCovers(book_ids):
         images.append(SearchBookByID(book_id))
     return images
 
-def use_open_ai_audio(data):
-    client = OpenAI()
-
-    response = client.audio.speech.create(
-    model="tts-1",
-    voice="nova",
-    input=data,
-)
-    response.write_to_file('audio.wav')
-    play_wav('audio.wav')
-    # response.stream_to_file
-def download_audio_in_web(url, filename):
-    try:
-        response = requests.get(url, stream=True)
-        print("Status code:", response.status_code)
-        if response.status_code == 200:
-            with open(filename, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=1024):
-                    if chunk:
-                        f.write(chunk)
-            print("Audio file downloaded successfully as:", filename)
-            play_wav(filename)
-        else:
-            print("Failed to download audio file")
-    except Exception as e:
-        print("An error occurred:", e)
 def text_to_speech(url,filename):
     try_times = 3
     while (try_times>0):
@@ -288,11 +258,12 @@ def chat():
     # response = ""
     if request.method == 'POST':
         msg = request.form.get("msg")
-        print("////////////////// mess: ", msg)
+        print("////////////////// message: ", msg)
         if msg:
             SavedHistoryConversation.append("User : "+ msg )
             response = get_Chat_response(msg)
             SavedHistoryConversation.append("Lib : "+ response )
+            voicehandle.response_generated_by_app = response
             return response
         else:
             return "No message received."
@@ -329,27 +300,32 @@ def generate_frames(image_data):
 
     except Exception as e:
         print("Error decoding image:", e)
-@app.route('/voice_status', methods=['POST','GET'])
-def voice_status_update():
-    global voice_st
+@app.route('/listening_for_query', methods=['POST','GET'])
+def voice_status_background_update():
     if request.method == 'POST':
-        data = request.get_json().get('voice_status')
-        print(str(data))
-        if (str(data) == "True"):
-            voice_st = True
-            DoRecord.record()
-            res = DoRecord.speech_to_text()
-            print(res)
-            # socketio.emit(('message_in_voice', {'message': res}))
-            return res
+        data = request.get_json()
+        socketio.emit('voice_status_background', data)
+    return ''
+@app.route('/query_voice', methods=['POST','GET'])
+def voice_query_background_update():
+    if request.method == 'POST':
+        data = request.get_json()
+        socketio.emit('query_voice_background', data)
+    return ''
+@app.route('/update_status_from_voice_button', methods=['POST','GET'])
+def update_from_voice_button():
+    if request.method == 'POST':
+        # print('voicehandle.listening_for_query', voicehandle.listening_for_query)
+        if voicehandle.listening_for_query == False:
+            voicehandle.responding_to_user = False
+            voicehandle.listening_for_wake_word = False
+            voicehandle.listening_for_query = True
+            # print('voicehandle.responding_to_user: ', voicehandle.responding_to_user)
         else:
-            voice_st = False
-            # socketio.emit('container_visibility_change', {'visible': False})
-        return 'voice received'
-    else:
-        socketio.emit(('message_in_voice', {'message': 'voice off'}))
-        return str(voice_st)
-
+            voicehandle.reset_all()
+        # data = request.get_json()
+        # socketio.emit('query_voice_background', data)
+    return ''
 @app.route('/camera_status', methods=['POST','GET'])
 def camera_status_update():
     global camera_st
@@ -391,18 +367,6 @@ def generate():
 @app.route('/video_feed')
 def video_feed():
     return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
-@app.route('/download_audio', methods=['POST'])
-def download_audio_from_url():
-    data = request.get_json().get('url')
-    # print("the url in front end side :",data)
-    # data = "https://chunk.lab.zalo.ai/a745e9c971a198ffc1b0/a745e9c971a198ffc1b0/"
-    # download_audio_in_web(data,'audio.wav')
-    # data = request.get_json().get('data')
-    # text_to_speech(data,'audio.wav')
-    audio_thread = threading.Thread(target=text_to_speech, args=(data,'audio.wav'))
-    audio_thread.start()
-    audio_thread.join()
-    return "success"
 if __name__ == '__main__':
     host = setting.IP if len(setting.IP) > 1 else 'localhost'
     port = int(sys.argv[2]) if len(sys.argv) > 2 else 5001
