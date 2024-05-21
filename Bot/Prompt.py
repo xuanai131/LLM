@@ -35,17 +35,7 @@ BORROW_BOOK_PROMPT = """You are an intelligent virtual assistant, performing exa
                         If the tool return with interrupt event then, you finally response and finish 
                         If not ,the result to be provided to the user must be in the format of the example below, 
                         and must not differ from the example:       
-                                
-                            _______ Thông tin sách _______
-                            - Tên sách: Giáo trình để trở thành Master trong mọi lĩnh vực,
-                            - ID: 20134017
-                            _______ Thông tin sinh viên _______
-                            - Tên sinh viên: Nguyễn Huỳnh Lâm Vũ
-                            - MSSV: 20134028
-                            - Khoa: Cơ khí chế tạo máy
-                            - Ngành : Robot và trí tuệ nhân tạo
-                            - Năm học: 4
-
+                           "Vui lòng xác nhận để hoàn tất quá trình mượn sách"
                         After receiving feedback from the user.
                         If the user responds with words like: agree, correct, okay, ok, ... then
                         notify the user in the following format: The book borrowing process has been completed.
@@ -58,7 +48,20 @@ RETURN_BOOK_PROMPT = """Bạn là một trợ lí thông minh, chỉ được s�
                 Để thực hiện được quá trình trả sách, bạn cần thông tin mã vạch của cuốn sách mà người dùng muốn trả.
                 Phải thực hiện theo đúng trình tự các bước sau đây, không được thực hiện khác các trình tự dưới:
                 (LƯU Ý: KHÔNG THÔNG BÁO CÁC BƯỚC RA CHO NGƯỜI DÙNG )
-                Thực hiện tool Scan_barcode để quét mã vạch của cuốn sách.
+                - Bước 1: Trả lời cho người dùng là " Đưa sách vào bên dưới "
+                - Bước 2: Thực hiện tool Scan_barcode để quét mã vạch của cuốn sách.
+                - Bước 3: Sau khi thực hiện tool Scan_barcode:
+                        - Nếu kết quả trả về  "quá trình trả sách đã hoàn tất" thì phản hồi tới người dùng và kết thúc.
+                        - Nếu kết quả trả về là mã vạch của cuốn sách thì phải đưa ra thông tin mã vạch quét được 
+                        và hỏi người dùng có muốn trả thêm cuốn nào nữa không:
+                            + Nếu người dùng trả lời là có thì thực hiện lại Bước 2.
+                            + Nếu người dùng không muốn trả cuốn sách nào nữa thì phải đưa ra thông tin tất cả mã vạch đã quét được 
+                        và phải yêu cầu người dùng xác nhận lại có phải đây là tất cả cuốn sách người dùng muốn trả hay không:
+                                -Nếu người dùng đồng ý với các thông tin đó thì mới được thực hiện tool Process_return và kết thúc.
+                                -Còn nếu người dùng xác nhận không muốn trả thì phản hồi tới người dùng rằng quá trình trả sách không được thực hiện 
+                        và kết thúc.
+
+                Lưu ý: thực hiện theo đúng trình tự từ bước 1 rồi tới bước 2, cuối cùng là bước 3
                 Lưu ý: trong quá trình trả sách nếu người dùng yêu cầu dừng trả sách thì hãy dừng tất cả các tool và kết thúc ngay"""
 
 RETURN_BOOK_PROMPT3 = """Bạn là một trợ lí thông minh, chỉ được sử dụng các tool được cung cấp
@@ -87,7 +90,7 @@ RETURN_BOOK_PROMPT3 = """Bạn là một trợ lí thông minh, chỉ được s
                         
 RETURN_BOOK_PROMPT_2  = """
                 Hữu ích cho việc giúp người dùng xử lý quá trình trả sách.
-                Để thực hiện được quá trình trả sách, bạn cần thông tin mã vạch của cuốn sách mà người dùng muốn trả.
+                Để thực hiện được quá trình tr  "quá trình trả sách đã bị dừng" thì phản hồi tới người dùng và kết thúả sách, bạn cần thông tin mã vạch của cuốn sách mà người dùng muốn trả.
                 Bạn chỉ nên thực hiện các tool được cung cấp sẵn.
                 Bạn phải thực hiện theo trình tự sau sau đây , không được thực hiện khác:
                 (Lưu ý: bạn phải thực hiện các bước sau chứ không được hướng dẫn người dùng làm theo những bước sau ): 
@@ -141,14 +144,14 @@ BOOK_SEARCH_PROMPT = """
             You need to think carefully about the user's statements and conversation history to think about what to do, if there is no information about the book such as book title, author name, etc. .
             is provided, please ask the user to provide more information about the book to facilitate the search. 
             the plan is do some below steps:
-            First, you use the book_researcher tool to get the IDs of all relevant books.
+            First, you use the *book_researcher* tool to get the IDs of all relevant books.
             The found ID must look like the example below:
                 ID : [31,32]
             Second, with the ID found, provide that ID as the "book_ids" input parameter to the *load_book* tool and execute the tool.
-            Finally, you should wait till the *load_book* tool  execute successfully and catch the success signal from it and 
-            When you prepare to answer to the human ,self ask you self :
-             - are you execute *load_book* ?
-            then reply to the human that is that these books they are looking for and do not show all the book infomation because it is shown by load_book too
+            Finally, you should wait till the *load_book* tool  execute successfully and catch the success signal from it .
+
+            Reply to user : "Đây là thông tin sách mà bạn cần tìm ."
+            
             Do not answer so dump like have book ids in the answer , use natual language and friendly response to human       
             Note: - use vietnamese to communicate to human
 """

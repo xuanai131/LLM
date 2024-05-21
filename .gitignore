@@ -13,3 +13,7 @@ Bot/DATABASE.db
 flask/history.json
 Bot/retrieval-text/porcupine
 Bot/retrieval-text/sphinx_models
+Bot/retrieval-text/audio/wake_detect_16000_removenoises.wav
+Bot/retrieval-text/audio/wake_detect_16000.wav
+Bot/retrieval-text/audio/speak.mp3
+Bot/retrieval-text/audio/prompt.wav
