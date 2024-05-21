@@ -103,11 +103,7 @@ def xoa_dau_full(txt: str) -> str:
 def search_book(query: str):
     queries = ["cuốn sách "+query, "cuon sach "+xoa_dau_full(query)]
     print(queries)
-<<<<<<< HEAD
-    result = chain.invoke(queries)["result"]
-=======
     result = chain.invoke(queries)['result']
->>>>>>> 33e33b6e6c8319fb1f7c19a0ee3559a680aa02b2
     return result
 
 def load_book(book_ids: str):
