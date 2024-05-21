@@ -80,7 +80,7 @@ function create_student_info_for_borrow(name, mssv, nienkhoa, khoa , nganh){
     formInner.classList.add('form-inner');
 
     // Create form title
-    var title = document.createElement('h1');
+    var title = document.createElement('h2');
     title.textContent = 'Thông tin sinh viên';
 
     // Create text areas for inputs

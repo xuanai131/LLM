@@ -91,6 +91,7 @@ function reveal_book(data){
 }         
     // }
 
+
 function show_infomation(){
     
     // $("#bookTable").show();
@@ -99,11 +100,16 @@ function show_infomation(){
     $("#imageOfSelectedBook").append(img)
     const swiper_visibility = document.getElementById('bookTable');
     const moveImg = document.getElementById('imageOfSelectedBook');
-    // swiper_visibility.style.visibility= "visible";
+    swiper_visibility.style.visibility= "visible";
     swiper_visibility.classList.remove("animate_fadeout");
     swiper_visibility.classList.add("animate_fadein");
     moveImg.classList.add("move_book_animate");
-    
+    // const exit_info_of_book = document.getElementById('unconfirm_info');
+    // exit_info_of_book.addEventListener('click', function(event) {
+    //     swiper_visibility.classList.remove("animate_fadein");
+    //     swiper_visibility.classList.add("animate_fadeout");
+    //     $("#bookContainer").show();
+    // });
 
 }
 function get_data_of_selected_book(data, image_of_selected){
