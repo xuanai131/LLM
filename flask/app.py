@@ -16,7 +16,6 @@ import soundfile as sf
 import sounddevice as sd
 import multiprocessing
 import urllib.request
-import subaudio
 import re
 import json
 camera = cv2.VideoCapture(0)

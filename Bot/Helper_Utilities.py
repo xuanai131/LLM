@@ -292,7 +292,7 @@ book_return_interrupt_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_return_interrupt_chain = (
-    book_research_inspector_prompt 
+    book_return_interrupt_prompt 
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
@@ -303,7 +303,7 @@ book_borrow_interrupt_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 book_borrow_interrupt_chain = (
-    book_return_interrupt_prompt 
+    book_borrow_interrupt_prompt
     | llm.bind_functions(functions=[interrupt_function_def], function_call="route")
     | JsonOutputFunctionsParser()
 )
