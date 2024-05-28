@@ -13,7 +13,7 @@ from langchain.agents import Tool
 from pyzbar.pyzbar import decode
 from Database_handle import *
 import time
-from datetime import datetime
+from datetime import datetime,timedelta
 import Helper_Utilities
 import requests
 import base64
@@ -418,7 +418,25 @@ def user_input_request_thread(state,agent_name):
         print("interrupt detect :",check_interrupt)
         if(check_interrupt == "yes"):
             event.set()
-
+def check_late_return(borrow_date):
+    borrow_date = datetime.strptime(borrow_date, '%Y-%m-%d %H:%M:%S.%f')
+    print("borrow_date: ",borrow_date)
+    current_time = datetime.now()
+    print("current time: ",current_time)
+    borrowing_period = timedelta(days=30)
+    
+    # Calculate the due date
+    due_date = borrow_date + borrowing_period
+    print("due date:", due_date)
+    
+    # Check if the current time is past the due date
+    if current_time > due_date:
+        days_late = (current_time - due_date).days
+        mess = "Đã quá hạn trả sách "+str(days_late)+" ngày ,việc trả cuốn sách quá hạn nằm ngoài chức năng của tôi, vui lòng đi tới quầy hướng dẫn để hoàn tất việc trả sách"
+        send_mess(mess)
+        return True  # Late return
+    else:
+        return False  # Not late
 def do_return_book(name_book:str):
     global result_store
     result = {'Sách': [], 'Sinh viên': []}
@@ -439,6 +457,7 @@ def do_return_book(name_book:str):
         thread2.join()
         # Book_ID = scan_barcode('')
         Book_ID = result_store["barcode_return"]
+        # Book_ID ="yUTgwMcDS"
         if Book_ID == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
@@ -456,8 +475,8 @@ def do_return_book(name_book:str):
             send_mess("stop", "return_form")
             return "Quá trình trả sách đã bị dừng"
         else:
-            # bill_info = SearchBillByBarcode(barcode)
-            bill_info = {"student_ID":"20134013","return_date":None,'borrow_date':"08-01-2018"}
+            bill_info = SearchBillByBarcode(barcode)
+            # bill_info = {"student_ID":"20134013","return_date":None,'borrow_date':"2022-12-27 10:09:20.430322"}
             if bill_info is None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này chưa được mượn ở thư viện.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
@@ -474,20 +493,22 @@ def do_return_book(name_book:str):
                 user_input = user_input_request(True)
                 if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':
                     continue
-                else:
+                else:   
                     user_input_request(False)
                     break
-                
-            Student_ID = bill_info['student_ID']
-            barcode_list.append(Book_ID)
-            book_IDs = SearchBookIDByBarcode(Book_ID)
-            temp_book_info = SearchBookByID(book_IDs)
-            temp_book_info.pop('cover_image')
-            result['Sách'].append(temp_book_info)
-            student_info = SearchStudentInfo(Student_ID)
-            result['Sinh viên'].append(student_info)
-            # Send info return to the website
-            send_returnbook_to_form(Book_ID, bill_info['borrow_date'], student_info)
+            late_return = check_late_return(bill_info['borrow_date'])
+            if not late_return:
+                Student_ID = bill_info['student_ID']
+                barcode_list.append(Book_ID)
+                book_IDs = SearchBookIDByBarcode(Book_ID)
+                temp_book_info = SearchBookByID(book_IDs)
+                temp_book_info.pop('cover_image')
+                result['Sách'].append(temp_book_info)
+                student_info = SearchStudentInfo(Student_ID)
+                result['Sinh viên'].append(student_info)
+                # Send info return to the website
+                send_returnbook_to_form(Book_ID, bill_info['borrow_date'], student_info)
+            
             send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
             user_input = user_input_request(True)
             if Helper_Utilities.classify_chain.invoke({'messages': [user_input]})['messages'] == 'affirm':

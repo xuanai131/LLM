@@ -159,7 +159,7 @@ class VoiceHandle:
             except:
                 return None
             print(transcription)
-            if no_speech_prob > 0.4:
+            if no_speech_prob > 0.7:
                 return None
             if transcription.language != 'english' and transcription.language != 'vietnamese':
                 return None
@@ -231,8 +231,8 @@ class VoiceHandle:
         response.write_to_file(filename)
     def speak(self, text, ):
         self.responding_to_user = True
-        # self.tts_openai(text, self.speak_file)
-        self.tts_zalo(text, self.speak_file)
+        self.tts_openai(text, self.speak_file)
+        # self.tts_zalo(text, self.speak_file)
         self.play_wav(self.speak_file)
         def callback_speak():
             sd.wait()

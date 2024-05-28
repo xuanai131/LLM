@@ -16,6 +16,7 @@ from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 import API_keys
 from Prompt import *
 from Global_variable import *
+import methods
 import Tools
 from Tools import llm
 from colorama import Fore, Back, Style
@@ -81,7 +82,7 @@ def create_agent(llm: ChatOpenAI, tools: list, system_prompt: str):
         ]
     )
     agent = create_openai_tools_agent(llm, tools, prompt)
-    executor = AgentExecutor(agent=agent, tools=tools,return_intermediate_steps=True)
+    executor = methods.customAgent(agent=agent, tools=tools,return_intermediate_steps=True)
     return executor
 
 
@@ -119,6 +120,19 @@ def agent_node(state, agent, name):
                         break
                 else :
                     check = True
+        return {"messages": [HumanMessage(content=output, name=name)]}
+    elif (name == "Return_book"):
+        output = "none"
+        print("state in each loop: ")
+        result = agent.stream(state)
+        for chunk in result:
+            print("each step in agent stream: ",chunk)
+            agent.set_interrupt(True)
+            if "steps" in chunk and chunk["steps"]:
+                if chunk["steps"][0].observation is not None:
+                    output = chunk["steps"][0].observation
+        print("last step with output: ",output)
+        agent.set_interrupt(False)
         return {"messages": [HumanMessage(content=output, name=name)]}
     else:
         result = agent.invoke(state)
