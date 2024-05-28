@@ -1,5 +1,41 @@
 {
           "HISTORY": [
-                   
+                    [],
+                    [],
+                    [
+                              "User : Trả sách",
+                              "Lib : Quá trình trả sách đã bị dừng. Hãy thử lại khi sẵn sàng."
+                    ],
+                    [],
+                    [
+                              "User : Trả sách",
+                              "Lib : Quá trình trả sách đã bị dừng",
+                              "User : trả sách",
+                              "Lib : Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
+                    ],
+                    [
+                              "User : Mượn sách",
+                              "Lib : Bạn đã có cuốn sách nào để mượn chưa?"
+                    ],
+                    [
+                              "User : Mượn sách",
+                              "Lib : Bạn đã có sách cần mượn chưa?",
+                              "User : có rồi",
+                              "Lib : Quá trình mượn sách không được thực hiện. Cảm ơn bạn đã sử dụng dịch vụ.",
+                              "User : tôi muốn mượn sách",
+                              "Lib : Xin vui lòng cung cấp thông tin về cuốn sách bạn muốn mượn.",
+                              "User : tôi có rồi",
+                              "Lib : Vui lòng xác nhận để hoàn tất quá trình mượn sách.",
+                              "User : không cần",
+                              "Lib : Quá trình mượn sách đã bị hủy. Nếu cần hỗ trợ, vui lòng thông báo cho chúng tôi. Cảm ơn!",
+                              "User : tôi muốn mượn sách",
+                              "Lib : Vui lòng xác nhận để hoàn tất quá trình mượn sách.",
+                              "User : không cần xấc nhận",
+                              "Lib : Quá trình mượn sách đã bị hủy. Nếu cần hỗ trợ, vui lòng thông báo cho chúng tôi. Cảm ơn!",
+                              "User : tôi muốn trả sách",
+                              "Lib : Quá trình trả sách đã bị dừng",
+                              "User : tiếp tục đi",
+                              "Lib : Quá trình trả sách đã bị dừng"
+                    ]
           ]
 }
