@@ -60,7 +60,7 @@ class VoiceHandle:
             self._listening_for_query = value
             print('self._listening_for_query: ', self._listening_for_query)
             if self._listening_for_query == True:
-                self.play_wav('audio/notification.wav')
+                self.play_wav('static/resources/notification.wav')
                 sd.wait()
             self.send_listening_for_query_status()
     @property
