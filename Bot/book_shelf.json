@@ -1,0 +1,1536 @@
+{
+    "library": {
+      "Dãy sách": [
+        {
+          "Dãy sách": 1,
+          "kệ sách": [
+            {   "kệ sách": 101, 
+                "books": 
+                    [
+                        {
+                          "call_no": "004.22",
+                          "tên sách": "TH KIẾN TRÚC VÀ TỔ CHỨC MÁY TÍNH, GT CẤU TRÚC MÁY TÍNH"
+                        },
+                        {
+                          "call_no": "004.65",
+                          "tên sách": "MẠNG TRUYỀN THÔNG CÔNG NGHỆP, GT MẠNG MÁY TÍNH CẦN BẢN, NÂNG CAO"
+                        },
+                        {
+                          "call_no": "004.67",
+                          "tên sách": "MÁY TÍNH VÀ MẠNG MÁY TÍNH"
+                        },
+                        {
+                          "call_no": "005.1-005.117",
+                          "tên sách": "LẬP TRÌNH LABVIEW, LẬP TRÌNH ANDROID - LẬP TRÌNH HƯỞNG ĐỐI TƯỢNG VỚI C++"
+                        },
+                        {
+                          "call_no": "005.13-005.133",
+                          "tên sách": "LẬP TRÌNH WEB VÕI ASP.NET - GT MICROSOFT VISUAL BASIC, LẬP TRÌNH CƠ SỞ DỮ LIỆU 60"
+                        }
+                ] 
+            },
+            {   "kệ sách": 104, 
+                "books": 
+                    [
+                        {
+                          "call_no": "305-306",
+                          "tên sách": "ĐỜI SỐNG TINH THẦN CỦA NGƯỜI KOHO, CƠ SỞ VĂN HÓA VN"
+                        },
+                        {
+                          "call_no": "305-306",
+                          "tên sách": "GT XÃ HỘI HỌC GIÁO DỤC, QUẢN TRỊ GIA ĐÌNH"
+                        },
+                        {
+                          "call_no": "320.071",
+                          "tên sách": "ĐỘI MỚI NỘI DUNG, P/PHÁP G/DẠY CÁC MÔN KHOA HỌC LLCT"
+                        },
+                        {
+                          "call_no": "320.071",
+                          "tên sách": "ĐCSVN 90 NĂM SỬ VÀNG"
+                        },
+                        {
+                          "call_no": "324.2",
+                          "tên sách": "LỊCH SỬ ĐẢNG CỘNG SẢN VIỆT NAM"
+                        },
+                        {
+                          "call_no": "324.2",
+                          "tên sách": "GT ĐƯỜNG LỐI CÁCH MẠNG CỦA ĐCSVN"
+                        },
+                        {
+                          "call_no": "330.01-330.015195",
+                          "tên sách": "GT LỊCH SỬ CÁC HỌC THUYẾT KINH TẾ, KINH TẾ LƯỢNG"
+                        },
+                        {
+                          "call_no": "330.07-330.076",
+                          "tên sách": "GT KINH TẾ HỌC ĐẠI CƯƠNG"
+                        },
+                        {
+                          "call_no": "330.07-330.076",
+                          "tên sách": "BÀI TẬP KINH TẾ HỌC ĐẠI CƯƠNG"
+                        },
+                        {
+                          "call_no": "330.1",
+                          "tên sách": "GT PHƯƠNG PHÁP LUẬN NGHIÊN CỨU KHOA HỌC KINH TẾ"
+                        }
+                ] 
+            },
+            {   "kệ sách": 105, 
+                "books": [
+                    {
+                        "call_no": "332.042-332.07",
+                        "tên sách": "GT TÀI CHÍNH QUỐC TẾ, NHẬP MÔN TÀI CHÍNH - TIỀN TỆ"
+                    },
+                    {
+                        "call_no": "332.09597",
+                        "tên sách": "AN NINH TÀI CHÍNH VIỆT NAM"
+                    },
+                    {
+                        "call_no": "332.12-332.45",
+                        "tên sách": "NGHIỆP VỤ NGÂN HÀNG THƯƠNG MẠI, GT THANH TOÁN QUỐC TẾ"
+                    },
+                    {
+                        "call_no": "332.642",
+                        "tên sách": "GT THỊ TRƯỜNG CHỨNG KHOÁN, P/TÍCH VÀ ĐẦU TƯ CHỨNG KHOÁN"
+                    },
+                    {
+                        "call_no": "332.673",
+                        "tên sách": "KỸ THUẬT ĐẦU TƯ TRỰC TIẾP NƯỚC NGOÀI"
+                    },
+                    {
+                        "call_no": "333.7-333.72",
+                        "tên sách": "GT ĐÁNH GIÁ TÁC ĐỘNG MÔI TRƯỜNG"
+                    },
+                    {
+                        "call_no": "333.79-333.793",
+                        "tên sách": "GT KIỂM TOÁN VÀ TIẾT KIỆM NĂNG LƯỢNG, KINH TẾ NĂNG LƯỢNG"
+                    },
+                    {
+                        "call_no": "335.4",
+                        "tên sách": "GT NHỮNG NGUYÊN LÝ CƠ BẢN CỦA CHỦ NGHĨA MÁC LÊNIN"
+                    }
+                ]
+            },
+            {   "kệ sách": 106, 
+                "books": [
+                    {
+                      "call_no": "335.4",
+                      "tên sách": "Những nguyên lý cơ bản của chủ nghĩa Mác Lênin"
+                    },
+                    {
+                      "call_no": "335.411",
+                      "tên sách": "Triết học Mác - Lênin"
+                    },
+                    {
+                      "call_no": "335.412",
+                      "tên sách": "Kinh tế chính trị Mác - Lênin"
+                    },
+                    {
+                      "call_no": "335.423",
+                      "tên sách": "Chủ nghĩa xã hội khoa học"
+                    },
+                    {
+                      "call_no": "335.4346",
+                      "tên sách": "Tư tưởng Hồ Chí Minh, Di chúc của Chủ tịch Hồ Chí Minh"
+                    },
+                    {
+                      "call_no": "337-338.4",
+                      "tên sách": "Kinh tế quốc tế, kinh tế xây dựng"
+                    },
+                    {
+                      "call_no": "338.507-338.9",
+                      "tên sách": "Kinh tế học vi mô, kinh tế phát triển"
+                    },
+                    {
+                      "call_no": "339-339.07",
+                      "tên sách": "Kinh tế học vĩ mô"
+                    }
+                  ]
+            },
+            {   "kệ sách": 107, 
+                "books": [
+                    {
+                      "call_no": "340.1",
+                      "tên sách": "PHÁP LUẬT ĐẠI CƯƠNG - NHỮNG VẤN ĐỀ CƠ BẢN CỦA PHÁP LUẬT ĐẠI CƯƠNG - GIÁO TRÌNH ĐẠI HỌC"
+                    },
+                    {
+                      "call_no": "342",
+                      "tên sách": "HIẾN PHÁP VIỆT NAM QUA CÁC THỜI KÌ"
+                    },
+                    {
+                      "call_no": "344.07",
+                      "tên sách": "80 CÂU HỎI QUÁN LÝ NHÀ NƯỚC VỀ GIÁO DỤC VÀ ĐÀO TẠO"
+                    },
+                    {
+                      "call_no": "346.59197",
+                      "tên sách": "TÀI LIỆU HỌC TẠP MÔN HỌC LUẬT KINH DOANH"
+                    },
+                    {
+                      "call_no": "355",
+                      "tên sách": "GIÁO DỤC QUỐC PHÒNG VÀ AN NINH HỌC PHẦN 1,2,3,4"
+                    },
+                    {
+                      "call_no": "363.1-363.7392",
+                      "tên sách": " AN TOÀN LAO ĐỘNG VÀ MÔI TRƯỜNG CÔNG NGHIỆP"
+                    }
+                  ]
+            },
+            {   "kệ sách": 108, 
+                "books": [
+                    { "call_no": "363.1-363.7392", "tên sách": "AN TOÀN L/ĐỘNG VÀ MÔI TRƯỜNG C/NGHIỆP, Ô NHIỄM K/KHÍ" },
+                    { "call_no": "370.092", "tên sách": "NHỮNG NHÀ GIÁO DỤC NÓI TIẾNG CÁC THỜI ĐẠI" },
+                    { "call_no": "370.113-370.7", "tên sách": "CƠ SỞ KHOA HỌC CỦA G/DỤC N/NGHIỆP, LỊCH SỬ G/DỤC N/NGHIỆP, GIÁO DỤC HỌC, GT P/PHÁP NGHIÊN CỨU KHOA HỌC GIÁO DỤC" },
+                    { "call_no": "371.19-371.3", "tên sách": "GT GIAO TIẾP SƯ PHẠM, P/PHÁP DẠY HỌC C/NGÀNH KỸ THUẬT - GT CÔNG NGHỆ DẠY HỌC, LÝ LUẬN VÀ P/PHÁP DẠY HỌC - DẠY HỌC ĐỊNH HƯỚNG HÀNH ĐỘNG, GT P/PHÁP GIẢNG DẠY" },
+                    { "call_no": "378.124-378.17", "tên sách": "KỸ NĂNG HỌC ĐẠI HỌC, DẠY HỌC PHÁT TRIỂN NĂNG LỰC CHO SV - PHÁT TRIỂN NĂNG LỰC SƯ PHẠM CHO GIÁO VIÊN GIÁO DỤC - GT QUẢN LÝ H/CHÍNH NHÀ NƯỚC" },
+                    { "call_no": "382-388.122", "tên sách": "HD THỰC HÀNH KỸ THUẬT NGHIỆP VỤ NGOẠI THƯƠNG - KHAI THÁC HIỆU QUẢ ĐƯỜNG Ô TÔ CAO TÓC" },
+                    { "call_no": "391.009597", "tên sách": "GT TRANG PHỤC CÁC DÂN TỘC" },
+                    { "call_no": "410-425", "tên sách": "GT DẪN LUẬN NGÔN NGỮ HỌC - THE STRUCTURE OF NOUN PHRASE AND VERB PHRASE IN ENGLISH" },
+                    { "call_no": "428", "tên sách": "CUTTING EDGE" }
+                  ]
+            },
+            {   "kệ sách": 109, 
+                "books": [
+                    { "call_no": "428", "tên sách": "ENGLISH FOR ENVIRONMENTAL TECHNOLOGY" },
+                    { "call_no": "428", "tên sách": "- ENGLISH FOR THERMAL ENGINEERING" },
+                    { "call_no": "428", "tên sách": "- ENGLISH FOR MATERIALS TECHNOLOGY" },
+                    { "call_no": "428", "tên sách": "428  - ANH VĂN CHUYÊN NGÀNH CƠ KHÍ" },
+                    { "call_no": "428", "tên sách": "- LIFE" },
+                    { "call_no": "428", "tên sách": "- T/ANH XÂY DỰNG & KIẾN TRÚC" },
+                    { "call_no": "428", "tên sách": "CONNECT WORKBOOK 1, INTERNATIONAL EXPRESS" },
+                    { "call_no": "428.24", "tên sách": "TOP NOTCH 1, 2; TOP NOTCH WORKBOOK 1, 2" },
+                    { "call_no": "428.24", "tên sách": "VERY EASY TOEIC: SECOND EDITION" },
+                    { "call_no": "428.24076", "tên sách": "- STARTER TOEIC: THIRD EDITION" },
+                    { "call_no": "428.34", "tên sách": "ENGLISH FOR ACCOUNTING" },
+                    { "call_no": "495.9228", "tên sách": "- TIẾNG VIỆT THỰC HÀNH" }
+                  ]
+            } 
+          ]
+        },
+        {
+            "Dãy sách": 2,
+            "kệ sách": [
+              {   "kệ sách": 201, 
+                  "books": [
+                    {
+                      "call_no": "511.07",
+                      "tên sách": "Giáo trình Toán cao cấp A3"
+                    },
+                    {
+                      "call_no": "511.07",
+                      "tên sách": "Giáo trình Toán cao cấp A1"
+                    },
+                    {
+                      "call_no": "511.07",
+                      "tên sách": "Toán học cao cấp - Tập 1"
+                    }
+                  ]
+        },
+        {   "kệ sách": 202, 
+                  "books": [
+                    {
+                      "call_no": "511.07",
+                      "tên sách": "Toán học cao cấp - Tập 2"
+                    },
+                    {
+                      "call_no": "511.07",
+                      "tên sách": "Toán học cao cấp - Tập 3"
+                    },
+                    {
+                      "call_no": "511.076",
+                      "tên sách": "Bài tập toán cao cấp - Tập 1"
+                    },
+                    {
+                      "call_no": "511.076",
+                      "tên sách": "Bài tập toán cao cấp - Tập 2"
+                    }
+                  ]
+        },
+        {   "kệ sách": 203, 
+                  "books": [
+                    {
+                      "call_no": "511.076",
+                      "tên sách": "BÀI TẬP TOÁN CAO CẤP - TẬP 3"
+                    },
+                    {
+                      "call_no": "511.1",
+                      "tên sách": "TOÁN RỜI RẠC"
+                    },
+                    {
+                      "call_no": "511.5",
+                      "tên sách": "GIÁO TRÌNH TOÁN RỜI RẠC VÀ LÝ THUYẾT ĐÓ THỊ"
+                    },
+                    {
+                      "call_no": "515.07",
+                      "tên sách": "TOÁN CAO CẤP GIẢI TÍCH HÀM NHIỀU BIẾN P/TRÌNH VI PHÂN"
+                    },
+                    {
+                      "call_no": "515.07",
+                      "tên sách": "GIẢI TÍCH TẬP II"
+                    },
+                    {
+                      "call_no": "515.07",
+                      "tên sách": "GIẢI TÍCH TẬP III"
+                    },
+                    {
+                      "call_no": "515.3076",
+                      "tên sách": "GIÁO TRÌNH TOÁN CAO CẤP 4"
+                    }
+                  ]
+        },
+        {   "kệ sách": 204, 
+                  "books": [
+                    { "call_no": "515.3076-515.9", "tên sách": "GT TOÁN CAO CẤP 4, HÀM BIẾN PHỨC & PHÉP BIỂN ĐỎI LAPLACE" },
+                    { "call_no": "516.2307", "tên sách": "HÌNH HỌC HỌA HÌNH TẬP 1" },
+                    { "call_no": "518.0285", "tên sách": "PHƯƠNG PHÁP TÍNH ỨNG DỤNG VỚI MATLAB" },
+                    { "call_no": "518.6", "tên sách": "PHƯƠNG PHÁP TÍNH\nP/PHÁP TÍNH ỨNG DỤNG TRONG TÍNH TOÁN KỸ THUẬT\n-" },
+                    { "call_no": "519-519.3", "tên sách": "QUY HOẠCH TOÁN HỌC, QUY HOẠCH THỰC NGHIỆM\n-" },
+                    { "call_no": "519.3076", "tên sách": "GT QUY HOẠCH TUYỂN TỈNH TỎI ƯU HÓA" },
+                    { "call_no": "519.207-519.5", "tên sách": "XÁC XUẤT THỐNG KÊ" }
+                  ]
+        },
+        {   "kệ sách": 205, 
+                  "books":[
+                    {
+                      "call_no": "519.5",
+                      "tên sách": "Xác suất thống kê"
+                    },
+                    {
+                      "call_no": "519.6",
+                      "tên sách": "Tối ưu hóa tuyển tỉnh"
+                    },
+                    {
+                      "call_no": "519.7",
+                      "tên sách": "Giải 1 bài toán trên máy tính như thế nào?"
+                    },
+                    {
+                      "call_no": "526.9",
+                      "tên sách": "Trắc địa đại cương"
+                    },
+                    {
+                      "call_no": "530",
+                      "tên sách": "Vật lý đại cương - Tập 2: Điện dao động sóng"
+                    },
+                    {
+                      "call_no": "530",
+                      "tên sách": "Vật lý đại cương - Tập 1: Cơ - Nhiệt"
+                    }
+                  ]
+        },
+        {   "kệ sách": 206, 
+                  "books": [
+                    { "call_no": "530", "tên sách": "VẬT LÝ ĐẠI CƯƠNG - TẬP 1: CƠ - NHIỆT" },
+                    { "call_no": "530.076", "tên sách": "BÀI TẬP VẬT LÝ ĐẠI CƯƠNG - TẬP 1: CƠ - NHIỆT" },
+                    { "call_no": "530.07", "tên sách": "VẬT LÝ ĐẠI CƯƠNG CÁC NGUYÊN LÝ VÀ ỨNG DỤNG - TẬP 1, 2,3" },
+                    { "call_no": "530.078", "tên sách": "GT THÍ NGHIỆM VẬT LÝ ĐẠI CƯƠNG" },
+                    { "call_no": "530.141", "tên sách": "GT TRƯỜNG ĐIỆN TỪ" },
+                    { "call_no": "530.15-530.1518", "tên sách": "MÔ PHỎNG SỐ HỌC BẰNG COMSOL MULTIPHYSICS" },
+                    { "call_no": "530.15-530.1518", "tên sách": "COMSOL - NÊN TÁNG VÀ ỨNG DỤNG TRONG MÔ PHÔNG SỐ" }
+                  ]
+        },
+        {   "kệ sách": 207, 
+                  "books": [
+                    {
+                      "call_no": "530.076",
+                      "tên sách": "BÀI TẬP VẬT LÝ ĐẠI CƯƠNG - TẬP 1, TẬP 12, TẬP 3"
+                    },
+                    {
+                      "call_no": "531",
+                      "tên sách": "GT CƠ HỌC LÝ THUYẾT"
+                    },
+                    {
+                      "call_no": "531.07",
+                      "tên sách": "CƠ HỌC - TẬP 1, TẬP 2"
+                    },
+                    {
+                      "call_no": "530.076",
+                      "tên sách": "BÀI TẬP VẬT LÝ ĐẠI CƯƠNG - TẬP 1, TẬP 12, TẬP 3"
+                    },
+                    {
+                      "call_no": "531.071",
+                      "tên sách": "BÀI GIẢNG CHI TIẾT VẬT LÝ 1: CƠ - NHIỆT\n- BÀI TẬP CƠ HỌC GIẢI TÍCH"
+                    },
+                    {
+                      "call_no": "531.076",
+                      "tên sách": "BÀI TẬP VẬT LÝ 1: CƠ - NHIỆT, BÀI TẬP VẬT LÝ 2: ĐIỆN - TỪ"
+                    }
+                  ]
+        },
+        {   "kệ sách": 208, 
+                  "books": [
+                    {
+                      "call_no": "531.076",
+                      "tên sách": "BÀI TẬP VẬT LÝ 3: DAO ĐỘNG - SÓNG - QUANG HỌC"
+                    },
+                    {
+                      "call_no": "535.1072",
+                      "tên sách": "VẬT LÝ ĐẠI CƯƠNG - TẬP 3, PHẦN 1: QUANG HỌC VẬT LÝ NGUYỄN TỬ VÀ HẠT NHÂN"
+                    },
+                    {
+                      "call_no": "537",
+                      "tên sách": "GT VẬT LIỆU ĐIỆN VÀ TỪ"
+                    },
+                    {
+                      "call_no": "538.3",
+                      "tên sách": "BÀI GIẢNG TRƯỞNG ĐIỆN TỪ"
+                    },
+                    {
+                      "call_no": "541",
+                      "tên sách": "CƠ SỞ LÝ THUYẾT HÓA HỌC - PHÂN 1, PHÂN 2"
+                    },
+                    {
+                      "call_no": "541",
+                      "tên sách": "HÓA LÝ IN"
+                    },
+                    {
+                      "call_no": "541.07",
+                      "tên sách": "HÓA HỌC ĐẠI CƯƠNG"
+                    }
+                  ]
+        },
+        {   "kệ sách": 209, 
+                  "books": [
+                    { "call_no": "541.07", "tên sách": "Hóa học đại cương" },
+                    { "call_no": "541.076", "tên sách": "Bài tập hóa học đại cương - Tập 1" },
+                    { "call_no": "541.076", "tên sách": "Bài tập hóa học đại cương - Tập 2" },
+                    { "call_no": "541.076", "tên sách": "Bài tập hóa học đại cương" }
+                  ]
+        },
+        {   "kệ sách": 210, 
+                  "books": [
+                    {
+                      "call_no": "541.361",
+                      "tên sách": "LÝ THUYẾT VÀ THIẾT BỊ CHÁY"
+                    },
+                    {
+                      "call_no": "543-543.5",
+                      "tên sách": "HÓA HỌC PHÂN TÍCH, KHỎI PHÓ - LÝ THUYẾT – BÀI TẬP – B/GIẢNG"
+                    },
+                    {
+                      "call_no": "545",
+                      "tên sách": "PHÂN TÍCH ĐỊNH LƯỢNG"
+                    },
+                    {
+                      "call_no": "546-546.22",
+                      "tên sách": "HÓA VÔ CƠ, GT HÓA HỌC NƯỚC VÀ NƯỚC THẢI"
+                    },
+                    {
+                      "call_no": "547-547.007",
+                      "tên sách": "CƠ SỞ LÝ THUYẾT HÓA HỮU CƠ - PHẦN 1, 2, 3"
+                    },
+                    {
+                      "call_no": "570.7-571.2",
+                      "tên sách": "B/GIẢNG SINH HỌC, VI S/VẬT HỌC & AN TOÀN V/SINH T/PHẨM"
+                    },
+                    {
+                      "call_no": "572-579.07",
+                      "tên sách": "HÓA SINH HỌC, VI SINH VẬT HỌC"
+                    },
+                    {
+                      "call_no": "604-604.24",
+                      "tên sách": "BÀI TẬP VẼ KỸ THUẬT XÂY DỰNG - TẬP 1"
+                    }
+                  ]
+        },
+        {   "kệ sách": 211, 
+                  "books": [
+                    { "call_no": "604.24", "tên sách": "GT HÌNH HỌA VẼ KỸ THUẬT, GT VẼ KỸ THUẬT (ĐẠO TẠO HỆ CĐ)" },
+                    { "call_no": "604.24076", "tên sách": "BÀI TẬP VẼ KỸ THUẬT CƠ KHÍ - TẬP 1, TẬP 2" },
+                    { "call_no": "610.28-610.73", "tên sách": "GT XỬ LÝ ẢNH Y SINH, GT DƯỠNG NHI" },
+                    { "call_no": "613.2", "tên sách": "ESSENTIAL OF HUMAN NUTRITION: THIRD EDITION\nDINH DƯỠNG LÝ THUYẾT" },
+                    { "call_no": "615.9", "tên sách": "ĐỘC TỐ HỌC VÀ AN TOÀN THỰC PHẨM" }
+                  ]
+        }
+        ]
+    },
+    {
+        "Dãy sách": 3,
+        "kệ sách": [
+            {   "kệ sách": 301, 
+            "books": [
+                {
+                  "call_no": "620.00285",
+                  "tên sách": "ANSYS-P/TÍCH C/CÂU ĐỘNG, ÚD ANSYS VÀO B/TOÁN KỸ THUẬT"
+                },
+                {
+                  "call_no": "620.0042",
+                  "tên sách": "THIẾT KẾ KỸ THUẬT CƠ BẢN VỚI INVETOR PROFESSIONAL"
+                },
+                {
+                  "call_no": "620.0042",
+                  "tên sách": "GT THIẾT KẺ NGƯỢC, GT THỰC TẬP THIẾT KẺ NGƯỢC"
+                },
+                {
+                  "call_no": "620.0042",
+                  "tên sách": "GT THIẾT KẾ KỸ THUẬT CƠ BẢN"
+                },
+                {
+                  "call_no": "620.00420285",
+                  "tên sách": "GT CATIA - PHÂN TÍCH ỨNG SUẤT VÀ BIẾN DẠNG"
+                },
+                {
+                  "call_no": "620.00420285",
+                  "tên sách": "GT ANSYS - PHÂN TÍCH ỨNG SUẤT VÀ BIẾN DẠNG"
+                },
+                {
+                  "call_no": "620.00420285",
+                  "tên sách": "GT CƠ ỨNG DỤNG"
+                },
+                {
+                  "call_no": "620.1",
+                  "tên sách": "CƠ ỨNG DỤNG: LÝ THUYẾT - VÍ DỤ - BÀI TẬP"
+                },
+                {
+                  "call_no": "620.1",
+                  "tên sách": "CƠ HỌC KỸ THUẬT, BÀI TẬP CƠ HỌC KỸ THUẬT"
+                },
+                {
+                  "call_no": "620.104",
+                  "tên sách": "ĐỘNG LỰC HỌC CÔNG TRÌNH"
+                }
+              ]
+  },
+  {   "kệ sách": 302, 
+                  "books": [
+                    {
+                      "call_no": "620.11",
+                      "tên sách": "HƯỚNG DẪN THÍ NGHIỆM VẬT LIỆU XÂY DỰNG"
+                    },
+                    {
+                      "call_no": "620.11",
+                      "tên sách": "VẬT LIỆU XÂY DỰNG, BÀI TẬP VẬT LIỆU XÂY DỰNG"
+                    },
+                    {
+                      "call_no": "620.112",
+                      "tên sách": "THÍ NGHIỆM VẬT LIỆU HỌC VÀ XỬ LÝ"
+                    },
+                    {
+                      "call_no": "620.112",
+                      "tên sách": "SỨC BỀN VẬT LIỆU, VẬT LIỆU ĐẠI CƯƠNG, T/NGHIỆM VẬT LIỆU HỌC"
+                    },
+                    {
+                      "call_no": "620.112",
+                      "tên sách": "GT CƠ HỌC VẬT LIỆU, B/TẬP SỨC BỀN VẬT LIỆU NÂNG CAO"
+                    },
+                    {
+                      "call_no": "620.112",
+                      "tên sách": "ĐỒNG NHẤT HÓA V/LIỆU VÀ KẾT CẤU TÂM KO ĐỒNG NHẤT"
+                    },
+                    {
+                      "call_no": "620.19-620.307",
+                      "tên sách": "VẬT LIỆU PHI KIM LOẠI, DAO ĐỘNG TRONG KỸ THUẬT"
+                    },
+                    {
+                      "call_no": "621",
+                      "tên sách": "SỐ TAY HỆ THỐNG CƠ ĐIỆN TỪ"
+                    },
+                    {
+                      "call_no": "621.165",
+                      "tên sách": "GT TUABIN HƠI NƯỚC VÀ TUABIN KHỈ"
+                    },
+                    {
+                      "call_no": "621.2",
+                      "tên sách": "THỦY KHÍ KỸ THUẬT VÀ MÁY BƠM"
+                    }
+                  ]
+        },
+        {   "kệ sách": 303, 
+                  "books": [
+                    {
+                      "call_no": "621.2",
+                      "tên sách": "THỦY KHÍ KỸ THUẬT VÀ MÁY BƠM"
+                    },
+                    {
+                      "call_no": "621.26",
+                      "tên sách": "LÝ THUYẾT VÀ THỰC HÀNH: BƠM – QUẠT MÁY NÉN"
+                    },
+                    {
+                      "call_no": "621.3",
+                      "tên sách": "GT VỀ ĐIỆN, VẬT LIỆU KỸ THUẬT ĐIỆN, GT AN TOÀN ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.307",
+                      "tên sách": "GT PHƯƠNG PHÁP GIẢNG DẠY CHUYÊN NGÀNH ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.307",
+                      "tên sách": "GT ĐIỆN GIA DỤNG, GT KỸ THUẬT ĐIỆN, BT KỸ THUẬT ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.307",
+                      "tên sách": "GT THỰC HÀNH ĐIỆN CƠ BẢN, GT THỰC TẬP ĐIỆN CƠ BẢN"
+                    },
+                    {
+                      "call_no": "621.31",
+                      "tên sách": "HƯỚNG DẪN THIẾT KẾ LẮP ĐẶT ĐIỆN TIÊU CHUẨN QUỐC TẾ IEC"
+                    },
+                    {
+                      "call_no": "621.31",
+                      "tên sách": "GT MẠCH ĐIỆN - TẬP 2"
+                    },
+                    {
+                      "call_no": "621.31",
+                      "tên sách": "BẢO VỆ RƠ LE & TỰ ĐỘNG HÓA CN LƯỚI ĐIỆN THÔNG MINH"
+                    }
+                  ]
+        },
+        {   "kệ sách": 304, 
+                  "books":[
+                    {
+                      "call_no": "621.31",
+                      "tên sách": "Mạch điện, GT mạch điện - Tập 1, GT kỹ thuật điện"
+                    },
+                    {
+                      "call_no": "621.31",
+                      "tên sách": "GT CAD trong kỹ thuật điện"
+                    },
+                    {
+                      "call_no": "621.31",
+                      "tên sách": "Điều khiển thiết bị điện công nghiệp"
+                    },
+                    {
+                      "call_no": "621.31042",
+                      "tên sách": "GT trang bị điện - Điện tử trong máy công nghiệp"
+                    },
+                    {
+                      "call_no": "621.31042",
+                      "tên sách": "GT khí cụ điện"
+                    },
+                    {
+                      "call_no": "621.31042",
+                      "tên sách": "Bài giảng vật liệu điện - điện tử"
+                    },
+                    {
+                      "call_no": "621.31042",
+                      "tên sách": "GT máy điện - Khí cụ điện"
+                    }
+                  ]
+        },
+        {   "kệ sách": 305, 
+                  "books": [
+                    {
+                      "call_no": "621.31042-621.31076",
+                      "tên sách": "TÍNH TOÁN LỰA CHỌN THIẾT BỊ ĐIỆN CHO C/TRÌNH XÂY DỰNG"
+                    },
+                    {
+                      "call_no": "621.31042-621.31076",
+                      "tên sách": "GT THỰC TẬP HỆ THỐNG ĐIỆN GIÓ VÀ MẶT TRỜI"
+                    },
+                    {
+                      "call_no": "621.31042-621.31076",
+                      "tên sách": "TRANG BỊ ĐIỆN - ĐIỆN TỬ CÔNG NGHIỆP, KỸ THUẬT ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.313",
+                      "tên sách": "GT THỰC HÀNH MÁY ĐIỆN, GT THIẾT BỊ ĐIỀU KHIỂN ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.313",
+                      "tên sách": "GT MÁY ĐIỆN 1, GT MÁY ĐIỆN 2, GT MÁY ĐIỆN ĐẶC BIỆT"
+                    },
+                    {
+                      "call_no": "621.313",
+                      "tên sách": "LÝ THUYẾT VÀ BÀI TẬP TỈNH TOÁN SỬA CHỮA MÁY ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.317",
+                      "tên sách": "GT ỨNG DỤNG PSIM TRONG ĐIỆN TỬ CÔNG SUẤT"
+                    },
+                    {
+                      "call_no": "621.317",
+                      "tên sách": "TÀI LIỆU HƯỚNG DẪN THỰC HÀNH ĐIỆN TỬ CÔNG SUẤT"
+                    },
+                    {
+                      "call_no": "621.317",
+                      "tên sách": "GT THÀNH ĐIỆN TỬ C/SUẤT MẠCH NGHỊCH LƯU, MẠCH CHỈNH LƯU"
+                    },
+                    {
+                      "call_no": "621.317",
+                      "tên sách": "ĐIỆN TỬ CÔNG SUẤT"
+                    }
+                  ]
+        },
+        {   "kệ sách": 306, 
+                  "books": [
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "ỨNG DỤNG PHẦN MỀM ETAP TRONG C/NGHỆ LƯỚI ĐIỆN THÔNG MINH"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "TRUYỀN ĐỘNG ĐIỆN, CHUYÊN ĐỂ TRUYỀN ĐỘNG ĐIỆN, GT"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "THỰC TẬP TRUYỀN ĐỘNG ĐIỆN"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "BÀI GIẢNG ĐIỆN CÔNG TRÌNH"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "HỆ THỐNG ĐIỆN TRUYỀN TẢI VÀ PHÂN PHỐI"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "CUNG CẤP ĐIỆN, BẢO VỆ RƠ LE VÀ TỰ ĐỘNG HÓA"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "GT GIẢI TÍCH MẠNG ĐIỆN TRÊN MÁY TÍNH"
+                    }
+                  ]
+        },
+        {   "kệ sách": 307, 
+                  "books":[
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "Truyền động điện tự động"
+                    },
+                    {
+                      "call_no": "621.319",
+                      "tên sách": "Các giải thuật tái cấu hình lưới điện phân phối"
+                    },
+                    {
+                      "call_no":"621.319",
+                      "tên sách": "GT Thực tập cung cấp điện"
+                    },
+                    {
+                      "call_no": "621.37",
+                      "tên sách": "GT Đo lường không điện"
+                    },
+                    {
+                      "call_no": "621.37",
+                      "tên sách": "GT Điện tử thực hành"
+                    },
+                    {
+                      "call_no": "621.381",
+                      "tên sách": "GT Điện tử cơ bản"
+                    },
+                    {
+                      "call_no": "621.381",
+                      "tên sách": "Kỹ thuật điện tử"
+                    }
+                  ]
+        },
+        {   "kệ sách": 308, 
+                  "books": [
+                    {
+                      "call_no": "621.381",
+                      "tên sách": "ĐIỆN TỬ CƠ BẢN, TRẮC NGHIỆM ĐIỆN TỬ CƠ BẢN"
+                    },
+                    {
+                      "call_no": "621.381",
+                      "tên sách": "THỰC HÀNH ĐIỆN TỬ CƠ BẢN"
+                    },
+                    {
+                      "call_no": "621.381",
+                      "tên sách": "CÂU HỎI TRẮC NGHIỆM THỰC HÀNH ĐIỆN TỬ, BÀI TẬP MẪU ĐIỆN TỬ"
+                    },
+                    {
+                      "call_no": "621.3815",
+                      "tên sách": "GT THIẾT KẾ MẠCH TÍCH HỢP CMOS"
+                    },
+                    {
+                      "call_no": "621.3815",
+                      "tên sách": "GT THỰC HÀNH KỸ THUẬT SỐ, MẠCH SỐ"
+                    },
+                    {
+                      "call_no": "621.3815",
+                      "tên sách": "GT THỰC HÀNH THIẾT KẾ VI MẠCH SỐ VỚI VHDL"
+                    },
+                    {
+                      "call_no": "621.3815",
+                      "tên sách": "GT ĐIỆN TỬ SCR - TRIAC VÀ ỨNG DỤNG"
+                    },
+                    {
+                      "call_no": "621.38152-621.3815365",
+                      "tên sách": "LINH KIỆN BÁN DẪN, KỸ THUẬT XUNG"
+                    },
+                    {
+                      "call_no": "621.382",
+                      "tên sách": "GT KỸ THUẬT TRUYỀN SỐ LIỆU"
+                    }
+                  ]
+        },
+        {   "kệ sách": 309, 
+                  "books": [
+                    {
+                      "call_no": "621.382",
+                      "tên sách": "Kỹ thuật truyền số liệu - Truyền số liệu và mạng thông tin số"
+                    },
+                    {
+                      "call_no": "621.3821",
+                      "tên sách": "Hệ thống viễn thông - Xử lý tín hiệu tương tự"
+                    },
+                    {
+                      "call_no": "621.3822",
+                      "tên sách": "Bài giảng lý thuyết tín hiệu - Tập 1, Tập 2 - Biến đổi Fourier trong xử lý tín hiệu số"
+                    },
+                    {
+                      "call_no": "621.3824",
+                      "tên sách": "Truyền sóng và anten, anten và truyền sóng"
+                    },
+                    {
+                      "call_no": "621.38456-621.384192",
+                      "tên sách": "Kỹ thuật tin di động, kỹ thuật truyền thông bằng sóng vô tuyến"
+                    },
+                    {
+                      "call_no": "621.391-621.392",
+                      "tên sách": "Kỹ thuật số, thực hành cơ sở và ứng dụng IOTS - Cơ sở & ứng dụng Internet of Things (Tích hợp hệ thống nhúng)"
+                    },
+                    {
+                      "call_no": "621.395-621.4",
+                      "tên sách": "Kỹ thuật PLD và ASIC, kỹ thuật nhiệt"
+                    }
+                  ]
+        },
+        {   "kệ sách": 310, 
+                  "books": [
+                    {
+                      "call_no": "621.4-621.4007",
+                      "tên sách": "KỸ THUẬT NHIỆT, CƠ SỞ & BT CƠ SỞ KỸ THUẬT NHIỆT"
+                    },
+                    {
+                      "call_no": "621.402",
+                      "tên sách": "GT LÒ HƠI, GT ĐO LƯỜNG NHIỆT, GT TỰ ĐỘNG HÓA Q/TRÌNH NHIỆT"
+                    },
+                    {
+                      "call_no": "621.4021-621.4028",
+                      "tên sách": "GT NHIỆT ĐỘNG LỰC HỌC KỸ THUẬT\nTỰ ĐỘNG Đ/KHIẾN CÁC Q/TRÌNH VÀ THIẾT BỊ NHIỆT LẠNH S/XUẤT\nGT THỬ NGHIỆM ĐỘNG CƠ, NGUYÊN LÝ KẾT CẤU Đ/CƠ ĐỐT TRONG"
+                    },
+                    {
+                      "call_no": "621.43",
+                      "tên sách": "Ử DỤNG MÁY TÍNH TRONG MÔ PHỎNG ĐỘNG CƠ ĐỐT TRONG\nGT THỰC TẬP ĐỘNG CƠ 1, ĐỘNG CƠ ĐỐT TRONG 1, 2"
+                    },
+                    {
+                      "call_no": "621.434-621.436",
+                      "tên sách": "GT THỰC TẬP ĐỘNG CƠ XĂNG II, ĐỘNG CƠ DIESEL\nHDTH SỬA CHỮA VÀ BẢO TRÌ ĐỘNG CƠ DẦU"
+                    },
+                    {
+                      "call_no": "621.47",
+                      "tên sách": "NĂNG LƯỢNG MẶT TRỜI – THIẾT KẾ VÀ LẮP ĐẶT"
+                    },
+                    {
+                      "call_no": "621.56",
+                      "tên sách": "C/NGHỆ LẠNH, GT KỸ THUẬT LẠNH, MÁY NÉN &T/BỊ H/THỐNG LẠNH"
+                    }
+                  ]
+        },
+        {   "kệ sách": 312, 
+                  "books": [
+                    {
+                      "call_no": "621.815-621.815028",
+                      "tên sách": "SỞ TAY THIẾT KẾ CƠ KHÍ - TẬP 2, TẬP 3"
+                    },
+                    {
+                      "call_no": "621.816",
+                      "tên sách": "GT BẢO TRÌ BẢO DƯỠNG MÁY CÔNG NGHIỆP"
+                    },
+                    {
+                      "call_no": "621.82",
+                      "tên sách": "CHI TIẾT MÁY - TẬP 1, 2, THIẾT KẾ ĐỒ ÁN CHI TIẾT MÁY"
+                    },
+                    {
+                      "call_no": "621.82",
+                      "tên sách": "THIẾT KẾ CHI TIẾT MÁY, BÀI TẬP CHI TIẾT MÁY"
+                    },
+                    {
+                      "call_no": "621.85",
+                      "tên sách": "TÍNH TOÁN THIẾT KẾ HỆ DẪN ĐỘNG CƠ KHÍ TẬP 1,2"
+                    },
+                    {
+                      "call_no": "621.86-621.87",
+                      "tên sách": "TÍNH TOÁN T/KẾ HỆ MÁY NĂNG CHUYẾN, KỸ THUẬT NĂNG CHUYÊN"
+                    },
+                    {
+                      "call_no": "621.89-621.9023",
+                      "tên sách": "MA SÁT HỌC (TRYBOLOGIC), MÁY VÀ HỆ THỐNG ĐIỀU KHIẾN SỐ"
+                    },
+                    {
+                      "call_no": "621.9023",
+                      "tên sách": "NÊN MÓNG, MÓNG NHÀ CAO TĂNG KINH NGHIỆM NƯỚC NGOÀI"
+                    },
+                    {
+                      "call_no": "624.15-624.150",
+                      "tên sách": "SỰ CÓ NÊN MÓNG CÔNG TRÌNH, ĐỊA CHẤT CÔNG TRÌNH"
+                    }
+                  ]
+        },
+        {   "kệ sách": 311, 
+                  "books": [
+                    {
+                      "call_no": "621.56",
+                      "tên sách": "Kỹ thuật Tập điện lạnh 3, GT Tập máy điều hòa K/Khí dân dụng"
+                    },
+                    {
+                      "call_no": "621.57",
+                      "tên sách": "Máy và thiết bị lạnh"
+                    },
+                    {
+                      "call_no": "621.8",
+                      "tên sách": "GT Cơ sở công nghệ chế tạo máy, Dung sai – Kỹ thuật đo"
+                    },
+                    {
+                      "call_no": "621.81-621.81076",
+                      "tên sách": "Hướng dẫn thiết kế đồ án công nghệ chế tạo máy"
+                    },
+                    {
+                      "call_no": "621.81-621.81076",
+                      "tên sách": "Độ tin cậy trong thiết kế chế tạo máy và hệ cơ khí"
+                    },
+                    {
+                      "call_no": "621.81-621.81076",
+                      "tên sách": "Số tay công nghệ chế tạo máy - Tập 1, Tập 2, Tập 3"
+                    },
+                    {
+                      "call_no": "621.81-621.81076",
+                      "tên sách": "T/Kế đồ án công nghệ chế tạo máy, Bài tập nguyên lý máy"
+                    },
+                    {
+                      "call_no": "621.815",
+                      "tên sách": "GT Ứng dụng trí tuệ nhân tạo trong T/Kế chi tiết cơ khí"
+                    },
+                    {
+                      "call_no": "621.815",
+                      "tên sách": "Số tay thiết kế cơ khí - Tập 1"
+                    }
+                  ]
+        },
+        {   "kệ sách": 313, 
+                  "books":[
+                    {
+                      "call_no": "624.151",
+                      "tên sách": "NỀN MÓNG VÀ TÀNG HÀM NHÀ CAO TẢNG"
+                    },
+                    {
+                      "call_no": "624.151076-624.154",
+                      "tên sách": "B/TẬP ĐỊA KỸ THUẬT; CƠ HỌC ĐẤT; MÓNG CỌC"
+                    },
+                    {
+                      "call_no": "624.17076-624.171",
+                      "tên sách": "U/DỤNG P/PHÁP PHÂN TỬ H/HẠN TRONG T/TOÁN KỸ THUẬT"
+                    },
+                    {
+                      "call_no": "624.1762",
+                      "tên sách": "ĐỘNG ĐẤT VÀ THIẾT KẺ CÔNG TRÌNH CHỊU ĐỘNG ĐẤT"
+                    },
+                    {
+                      "call_no": "624.1821",
+                      "tên sách": "KẾT CẤU THÉP, THIẾT KẺ KẾT CẤU THÉP (THEO TIÊU CHUẨN ANH)"
+                    },
+                    {
+                      "call_no": "624.18341",
+                      "tên sách": "KẾT CẤU BÊ TÔNG CỐT THÉP, SỬA CHỮA VÀ GIA CÓ KẾT CẤU BÊ TÔNG CỐT THÉP"
+                    }
+                  ]
+        },
+        {   "kệ sách": 314, 
+        "books": [
+            {
+              "call_no": "624.18341",
+              "tên sách": "GT ĐỒ ÁN MÔN HỌC KẾT CẤU BÊ TÔNG CỐT THÉP"
+            },
+            {
+              "call_no": "624.18341",
+              "tên sách": "K/CẤU BÊ TÔNG CỐT THÉP - TẬP 2, 3; TT K/CÂU BÊTÔNG C/THỂ"
+            },
+            {
+              "call_no": "627.34",
+              "tên sách": "BÀI TẬP MÁY NÂNG CHUYỂN"
+            },
+            {
+              "call_no": "628-628.144",
+              "tên sách": "HÓA HỌC MÔI TRƯỜNG, GT HÓA KỸ THUẬT MÔI TRƯỜNG C/NGHỆ SINH HỌC MÔI TRƯỜNG - TẬP 1,2; CẤP THOÁT NƯỚC C/NGHỆ MÔI TRƯỜNG - TẬP 1: XỬ LÝ NƯỚC, T/TẬP XỬ LÝ NƯỚC CẤP"
+            },
+            {
+              "call_no": "628.162",
+              "tên sách": "TLCK CÔNG NGHỆ HẤP THỤ TRONG XỬ LÝ NƯỚC VÀ NƯỚC THẢI - GT C/NGHỆ XỬ LÝ NƯỚC THẢI, SỐ TAY XỬ LÝ NƯỚC - TẬP 1, TẬP 2"
+            },
+            {
+              "call_no": "628.4",
+              "tên sách": "GT QUẢN LÝ CHẤT THẢI GÂY HẠI, Q/LÝ CHẤT THẢI RẮN - TẬP 1"
+            },
+            {
+              "call_no": "628.43-628.50154",
+              "tên sách": "GT C/NGHỆ XỬ LÝ NƯỚC THẢI, GT HÓA PHÂN TÍCH MÔI TRƯỜNG"
+            },
+            {
+              "call_no": "628.53-628.536",
+              "tên sách": "K/ SOÁT Ô NHIỄM K/KHỈ, T/TẬP XỬ LÝ KHÍ THẢI, T/TẬP VI SINH KỸ THUẬT MÔI TRƯỜNG"
+            }
+          ]
+        } 
+      ]
+    },
+    {
+  "Dãy sách": 4,
+  "kệ sách": [
+      {   "kệ sách": 401, 
+      "books": [
+        {
+          "call_no": "629.04028",
+          "tên sách": "CÔNG NGHỆ CHẾ TẠO Ô TÔ, GT LÝ THUYẾT Ô TÔ, GT Ô TÔ 2"
+        },
+        {
+          "call_no": "629.2-629.231",
+          "tên sách": "Ô TÔ ĐIỆN VÀ Ô TÔ TỰ LÁI - NHẬP MÔN NGÀNH CÔNG NGHỆ Ô TÔ, GT THIẾT KẾ Ô TÔ - GT ĐIỆN ĐỘNG CƠ VÀ ĐIỀU KHIỂN ĐỘNG CƠ"
+        },
+        {
+          "call_no": "629.25-629.254",
+          "tên sách": "TRANG BỊ ĐIỆN & Đ/TỬ Ô TÔ HIỆN ĐẠI, DAO ĐỘNG & TIẾNG ỒN ÔTÔ - GT HỆ THỐNG PHUN XĂNG ĐÁNH LỬA ĐI TRÊN MÔ TÔ, XE MÁY - H/THỐNG MÁY TÍNH Đ/KHIẾN Ô TÔ, H/THÔNG ĐIỀU HÒA K/KHÍ Ô TÔ"
+        },
+        {
+          "call_no": "629.272-629.287",
+          "tên sách": "GT CÔNG NGHỆ BẢO DƯỠNG VÀ SỬA CHỮA Ô TÔ - GT CHẨN ĐOÁN TRÊN Ô TÔ - HT ĐIỆN THÂN XE Đ/KHIẾN T/ĐỘNG, K/THUẬT S/CHỮA MÔTÔ X/MÁY"
+        },
+        {
+          "call_no": "629.28722",
+          "tên sách": "SỬA CHỮA HỆ THỐNG ĐIỆN - ĐIỆN TỬ TRÊN Ô TÔ (PHẦN NÂNG CAO)"
+        }
+      ]
+      },
+      {   "kệ sách": 402, 
+      "books": [
+        {
+          "call_no": "629.287",
+          "tên sách": "Kỹ thuật sửa chữa thân vỏ và sơn ô tô"
+        },
+        {
+          "call_no": "629.3812",
+          "tên sách": "Các bộ cảm biến trong kỹ thuật đo lường và điều khiển"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "Tự động hóa quản trình xuất, tự học PLC, tập trung điều khiển lập trình"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "Vẽ, mô hình, lập trình vi xử lý và vi điều khiển Proteus"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "GT PLC S7-300, bài tập thực hành PLC S7-300"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "GT điều khiển lập trình, bài giảng điều khiển lập trình 1, 2"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "Lý thuyết điều khiển hiện đại, điều khiển tự động"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "Tự động hóa với Smatic S7-300, điều khiển hệ phi tuyến"
+        },
+        {
+          "call_no": "629.8",
+          "tên sách": "GT vi xử lý, GT thực hành điều khiển lập trình S7"
+        },
+        {
+          "call_no": "629.804-629.8042",
+          "tên sách": "GT thí nghiệm công nghệ thủy lực và khí nén"
+        },
+        {
+          "call_no": "629.804-629.8042",
+          "tên sách": "Hệ thống điều khiển bảng thủy lực"
+        }
+      ]
+      },
+      {   "kệ sách": 403, 
+      "books": [
+        {
+          "call_no": "629.8045-629.8076",
+          "tên sách": "HỆ THỐNG KHÍ NÉN TRONG CÔNG NGHIỆP"
+        },
+        {
+          "call_no": "629.8312",
+          "tên sách": "HỆ THỐNG ĐIỀU KHIỂN THÔNG MINH, GT TỰ ĐỘNG ĐIỀU KHIỂN C/NGHỆ CNC, SỐ TAY LẬP TRÌNH CNC, LẬP TRÌNH PLC MITSUBISHI"
+        },
+        {
+          "call_no": "629.89",
+          "tên sách": "BỘ ĐIỀU KHIỂN LẬP TRÌNH VẬN HÀNH VÀ ỨNG DỤNG TÀI LIỆU THAM KHẢO LẬP TRÌNH PLC ALEN BRANDLEY"
+        },
+        {
+          "call_no": "629.892",
+          "tên sách": "ROBOT CÔNG NGHIỆP, GT KỸ THUẬT ROBOT, THỰC TẬP ROBOT CN"
+        },
+        {
+          "call_no": "629.895",
+          "tên sách": "HỆ THỐNG ĐIỀU KHIỂN SỐ TRONG CÔNG NGHIỆP GT THỰC HÀNH VI ĐIỀU KHIỂN PIC"
+        }
+      ]
+      },
+      {   "kệ sách": 404, 
+      "books": [
+        {
+          "call_no": "629.895 ",
+          "tên sách": "GT THÀNH VI Đ/KHIỂN PIC, VI Đ/KHIỂN PIC, HỌ VI ĐIỀU KHIỂN 8051"
+        },
+        {
+          "call_no": "636.5",
+          "tên sách": "PHÁT TRIỂN BÊN VỮNG CHĂN NUÔI"
+        },
+        {
+          "call_no": "637.1",
+          "tên sách": " CÔNG NGHỆ SX CÁC SẢN PHẨM TỪ SỮA VÀ THỨC UỐNG – TẬP 1"
+        },
+        {
+          "call_no": "641.59-641.59597",
+          "tên sách": "GT NẤU ĂN ĐÔNG – TÂY PHƯƠNG, GT NẤU ĂN VIỆT NAM"
+        },
+        {
+          "call_no": "641.86-641.874",
+          "tên sách": "BÁNH TRUYỀN THỐNG VN, KỸ THUẬT CHẾ BIẾN BÁNH ÂU -Á"
+        },
+        {
+          "call_no": "641.86-641.874",
+          "tên sách": "GT PHA CHẾ COOKTAIL"
+        },
+        {
+          "call_no": "646",
+          "tên sách": "GT THIẾT KẾ TRANG PHỤC 1, 2, 3, 4, 5"
+        },
+        {
+          "call_no": "646",
+          "tên sách": "GT K/THUẬT MAY, TẠO MẪU; T/KẾ ÂU PHỤC NỮ, ÂU PHỤC NAM"
+        },
+        {
+          "call_no": "646",
+          "tên sách": "GT HỆ THỐNG CỠ SỐ TRANG PHỤC, GT C/NGHỆ MAY TRANG PHỤC"
+        },
+        {
+          "call_no": "646",
+          "tên sách": "T/KẾ QUÂN ÁO BẢO HỘ L/ĐỘNG, T/KẾ NÓN VÀ TÚI XÁCH, MỸ DỤNG"
+        },
+        {
+          "call_no": "651.7",
+          "tên sách": "GT K/THUẬT SOẠN THẢO VĂN BẢN Q/LÝ KINH TẾ & Q/TRỊ K/ DOANH"
+        },
+        {
+          "call_no": "657",
+          "tên sách": "GT KẾ TOÁN TÀI CHÍNH - QUYỂN 1,2"
+        }
+      ]
+      },
+      {   "kệ sách": 405, 
+      "books":  [
+        {
+          "call_no": "657",
+          "tên sách": "GT KẺ TOÀN TÀI CHÍNH - QUYỂN 3, 5"
+        },
+        {
+          "call_no": "657",
+          "tên sách": "HỆ THỐNG THÔNG TIN KẾ TOÁN - TẬP 1, HỆ THỐNG T/TIN KẺ TOÁN"
+        },
+        {
+          "call_no": "657",
+          "tên sách": "H/DÂN TH LẬP SỐ SÁCH KẾ TOÁN BÁO CÁO TÀI CHÍNH VÀ BÁO CÁO THUẾ GTGT TRÊN EXCEL"
+        },
+        {
+          "call_no": "657",
+          "tên sách": "KẾ TOÁN NGÂN HÀNG, GT KẺ TOÁN TÀI CHÍNH A2"
+        },
+        {
+          "call_no": "657",
+          "tên sách": "KẾ TOÁN TÀI CHÍNH FINANCIAL ACCOUNTING - TẬP 10"
+        },
+        {
+          "call_no": "657",
+          "tên sách": "NGUYÊN LÝ KẾ TOÁN"
+        },
+        {
+          "call_no": "657.076",
+          "tên sách": "- NGÂN HÀNG ĐỀ THI, CÂU HỎI TRẮC NGHIỆM BÀI TẬP VÀ BÀI GIẢI KẾ TOÁN TÀI CHÍNH"
+        },
+        {
+          "call_no": "657.076",
+          "tên sách": " - BÀI TẬP VÀ BÀI GIẢI NGUYÊN LÝ KẾ TOÁN, BÀI TẬP N/LÝ KẾ TOÁN"
+        },
+        {
+          "call_no": "657.3",
+          "tên sách": "GT KẾ TOÁN TÀI CHÍNH"
+        },
+        {
+          "call_no": "657.4",
+          "tên sách": "KẺ TOÁN QUÂN TRỊ, KẾ TOÁN TÀI CHÍNH"
+        },
+        {
+          "call_no": "657.42",
+          "tên sách": "KẾ TOÁN CHI PHÍ"
+        },
+        {
+          "call_no": "657.45",
+          "tên sách": "KIỂM TOÁN"
+        }
+      ]
+      },
+      {   "kệ sách": 406, 
+      "books":
+      [
+        {
+          "call_no": "658",
+          "tên sách": "QUẢN TRỊ HỌC, PHÂN TÍCH HOẠT ĐỘNG KINH DOANH"
+        },
+        {
+          "call_no": "658",
+          "tên sách": "MANAGEMENT AND ORGANISATIONAL BEHAVIOUS SEVENΤΗ EDITION"
+        },
+        {
+          "call_no": "658",
+          "tên sách": "GT QUẢN TRỊ HỌC CĂN BẢN"
+        },
+        {
+          "call_no": "658.1",
+          "tên sách": "GT QUẢN TRỊ TÀI CHÍNH CÔNG TY"
+        },
+        {
+          "call_no": "658.15",
+          "tên sách": "TÀI CHÍNH DOANH NGHIỆP, TÀI CHÍNH DOANH NGHIỆP HIỆN ĐẠI"
+        },
+        {
+          "call_no": "658.155-658.202",
+          "tên sách": "QUẢN TRỊ RỦI RO TÀI CHÍNH, GT QUẢN LÝ BẢO TRÌ CÔNG NGHIỆP"
+        },
+        {
+          "call_no": "658.3",
+          "tên sách": "GT QUẢN TRỊ NGUỒN NHÂN LỰC, GT Q/TRỊ NHÂN LỰC, Q/TRỊ NHÂN SỰ"
+        },
+        {
+          "call_no": "658.4012",
+          "tên sách": "QUẢN TRỊ CHIẾN LƯỢC TRONG TOÀN CẦU HÓA KINH TẾ"
+        },
+        {
+          "call_no": "658.4012",
+          "tên sách": "CHIẾN LƯỢC VÀ SÁCH LƯỢC KINH DOANH"
+        }
+      ]
+      },
+      {   "kệ sách": 407, 
+      "books": [
+        {
+          "call_no": "658.4013",
+          "tên sách": "QUẢN LÝ C/LƯỢNG TRONG C/NGHIỆP THỰC PHẨM, QUẢN LÝ C/LƯỢNG"
+        },
+        {
+          "call_no": "658.404",
+          "tên sách": "QUẢN TRỊ DỰ ÁN ĐẦU TƯ"
+        },
+        {
+          "call_no": "658.5-658.575",
+          "tên sách": "GT QUẢN TRỊ SẢN XUẤT VÀ CHẤT LƯỢNG"
+        },
+        {
+          "call_no": "658.5-658.575",
+          "tên sách": "Q/TRỊ SẢN XUẤT & TÁC NGHIỆP, T/KÉ & P/TRIỂN SẢN PHẨM Đ/ HƯỚNG CDIO"
+        },
+        {
+          "call_no": "658.8",
+          "tên sách": "BTEC HIGHER NATIONAL IN BUSSINESS, NHỮNG NGUYÊN LÝ TIẾP THỊ"
+        },
+        {
+          "call_no": "658.8",
+          "tên sách": "MARKETING CÔNG NGHIỆP, QUẢN TRỊ MARKETING Đ/HƯỚNG GIÁ TRỊ"
+        },
+        {
+          "call_no": "658.83",
+          "tên sách": "MARKETING CĂN BẢN, GT NGHIÊN CỨU THỊ TRƯỜNG"
+        },
+        {
+          "call_no": "659.144",
+          "tên sách": "TRUYỀN THÔNG TRỰC TUYỂN VÀ SỰ P/TRIỂN CỦA DOANH NGHIỆP"
+        },
+        {
+          "call_no": "660.28",
+          "tên sách": "CÁC Q/TRÌNH, THIẾT BỊ TRONG CNHH VÀ TP: CÔNG NGHỆ LẠNH – T. 1"
+        },
+        {
+          "call_no": "660.28",
+          "tên sách": "CÁC QUÁ TRÌNH, THIẾT BỊ TRONG CNHH VÀ TP: TẬP 1, 2, 4"
+        },
+        {
+          "call_no": "660.28",
+          "tên sách": "MÔ HÌNH HÓA & TÔI ƯU HÓA TRONG CNHH VÀ TP"
+        },
+        {
+          "call_no": "660.28",
+          "tên sách": "GT Q/TRÌNH & THIẾT BỊ CNHH VÀ TP - TẬP 1: CÁC Q/TRÌNH & T/BỊ CƠ HỌC,"
+        },
+        {
+          "call_no": "660.28",
+          "tên sách": "THỦY LỰC VÀ KHÍ NÉN"
+        }
+      ]
+      },
+      {   "kệ sách": 408, 
+      "books": [
+        {
+          "call_no": "660.28",
+          "tên sách": "CÔNG NGHỆ LẠNH Ứ/DỤNG TRONG THỰC PHẨM - CÔNG NGHỆ SẤY THĂNG HOA"
+        },
+        {
+          "call_no": "660.28427",
+          "tên sách": "GT QUÁ TRÌNH VÀ THIẾT BỊ CNHH & TP - TẬP 2: CÁC QUÁ TRÌNH VÀ THIẾT BỊ TRUYỀN NHIỆT - PHẦN 1, 2, 3"
+        },
+        {
+          "call_no": "660.6-660.62",
+          "tên sách": "THÍ NGHIỆM VI SINH VẬT HỌC TP, CÔNG NGHỆ VI SINH VẬT - TẬP 1, 3 - CÁC KỸ THUẬT CƠ BẢN TRONG THỰC NGHIỆM VI SINH VẬT HỌC"
+        },
+        {
+          "call_no": "660.63-661",
+          "tên sách": "CÔNG NGHỆ SẢN XUẤT VÀ KIỂM TRA CÒN ETYLIC - HÓA SINH CÔNG NGHIỆP"
+        }
+      ]
+      },
+      {   "kệ sách": 409, 
+      "books": [
+        {
+          "call_no": "663-663.42",
+          "tên sách": "C/NGHỆ SẢN XUẤT TỪ SỮA & THỨC UỐNG; KHOA HỌC - C/NGHỆ MALT VÀ BIA: CÔNG NGHỆ CHẾ BIỂN CHÈ, CÀ PHÊ, CA CAO"
+        },
+        {
+          "call_no": "664",
+          "tên sách": "GT VI SINH VẬT HỌC THỰC PHẨM, HÓA HỌC THỰC PHẨM - KỸ THUẬT CHẾ BIỂN LƯƠNG THỰC - TẬP 1, 2"
+        },
+        {
+          "call_no": "664.00285-664.00289",
+          "tên sách": "B/GIẢNG PP THÍ NGHIỆM VÀ XỬ LÝ SỐ LIỆU, VỆ SINH & AN TOÀN TP"
+        },
+        {
+          "call_no": "664.024-664.028",
+          "tên sách": "THU HỒI VÀ HOÀN THIỆN SẢN PHẨM LÊN MEN - CN C/LƯỢNG XỬ LÝ NHIỆT & ĐÓNG GÓI; C/NGHỆ B/QUÂN LẠNH TP"
+        },
+        {
+          "call_no": "664.07",
+          "tên sách": "KỸ NĂNG P/TÍCH, ĐÁNH GIÁ CẢM QUAN TP, QUẢN LÝ C/LƯỢNG TP"
+        },
+        {
+          "call_no": "664.09-664.153",
+          "tên sách": "KỸ THUẬT BAO BÌ THỰC PHẨM, KỸ THUẬT SẢN XUẤT KẸO"
+        },
+        {
+          "call_no": "664.8-664.9",
+          "tên sách": "CN BẢO QUẢN & C/BIỂN RAU QUẢ, CN C/BIỂN THỊT VÀ THỦY SẢN"
+        },
+        {
+          "call_no": "665.538",
+          "tên sách": "GT CHUYÊN ĐẺ NHIÊN LIỆU DẦU MỠ"
+        },
+        {
+          "call_no": "667.2-668.4",
+          "tên sách": "CÔNG NGHỆ NHUỘM VÀ HOÀN TẤT, GT THỰC TẬP C/NGHỆ NHỰA"
+        },
+        {
+          "call_no": "668.412",
+          "tên sách": "GT ỨNG DỤNG C/NGHỆ CAD TRONG T/KẺ KHUÔN PHUN ÉP NHỰA - GT T/KẾ CƠ CÂU ĐÀN HỒI, GT T/KÉ P/TRIỂN SẢN PHẨM PHUN ÉP NHỰA"
+        }
+      ]
+      },
+      {   "kệ sách": 410, 
+      "books": [
+        {
+          "call_no": "668.412",
+          "tên sách": "THIẾT KẾ & CHẾ TẠO KHUÔN PHUN ÉP NHỰA, C/NGHỆ KHUÔN MẪU  - GT MÔ PHÒNG Q/TRÌNH PHUN ÉP NHỰA"
+        },
+        {
+          "call_no": "669-669.03",
+          "tên sách": "GT KIM LOẠI HỌC VÀ NHIỆT LUYỆN - TỪ ĐIỂN LUYỆN KIM – CƠ KHÍ ANH - VIỆT"
+        },
+        {
+          "call_no": "670-670.285",
+          "tên sách": "GT P/PHÁP THIẾT KẺ KỸ THUẬT, GT HỆ THỐNG SẢN XUẤT TÍCH HỢP - SẢN XUẤT LINH HOẠT FMS VÀ TÍCH HỢP CIM"
+        },
+        {
+          "call_no": "671",
+          "tên sách": "GT CÔNG NGHỆ KIM LOẠI"
+        },
+        {
+          "call_no": "671.334-671.35",
+          "tên sách": "GT CÔNG NGHỆ GIA CÔNG TÁM, GT CÔNG NGHỆ PHAY CNC - GT CN TIỆN VÀ GIA CÔNG LÔ, GT THIẾT BỊ VÀ C/NGHỆ HÀN CƠ BẢN"
+        },
+        {
+          "call_no": "671.52",
+          "tên sách": "THỰC TẬP KỸ THUẬT HÀN"
+        }
+      ]
+      },
+      {   "kệ sách": 411, 
+      "books": [
+        {
+            "call_no": "671.52-671.53",
+            "tên sách": "NGUYÊN LÝ CÁT KIM LOẠI, MÁY CẤT KIM LOẠI"
+        },
+        {
+            "call_no": "677",
+            "tên sách": "QUÁ TRÌNH VÀ THIẾT BỊ NHUỘM HOÀN TẤT VẬT LIỆU DỆT"
+        },
+        {
+            "call_no": "677.028-677.0283",
+            "tên sách": "VẬT LIỆU DỆT, NGUYÊN LIỆU DỆT"
+        },
+        {
+            "call_no": "677.02825-677.0286",
+            "tên sách": "GT QUẢ TRÌNH HOÀN TẤT VÀI, GT NGUYỀN PHỤ LIỆU MAY"
+        },
+        {
+            "call_no": "681.2",
+            "tên sách": "GT ĐO LƯỜNG CẢM BIẾN"
+        },
+        {
+            "call_no": "686",
+            "tên sách": "GT ĐẠI CƯƠNG VỀ SẢN XUẤT IN"
+        },
+        {
+            "call_no": "686",
+            "tên sách": "MÀU SẮC LÝ THUYẾT ỨNG DỤNG"
+        },
+        {
+            "call_no": "686",
+            "tên sách": "GT QUẢN LÝ CHẤT LƯỢNG SẢN PHẨM IN"
+        },
+        {
+            "call_no": "686",
+            "tên sách": "NGHỆ THUẬT THIẾT KẾ"
+        },
+        {
+            "call_no": "686.0685",
+            "tên sách": "GT QUẢN LÝ VÀ KIỂM TRA CHẤT LƯỢNG SẢN PHẨM IN"
+        }
+    ]
+      },
+      {   "kệ sách": 412, 
+      "books": [
+        {
+          "call_no": "686.2",
+          "tên sách": "GT CÁC CÔNG NGHỆ IN ĐẶC BIỆT, GT CÔNG NGHỆ IN"
+        },
+        {
+          "call_no": "686.2",
+          "tên sách": "GT CÔNG NGHỆ IN FLEXO, GT KỸ THUẬT DÀN TRANG"
+        },
+        {
+          "call_no": "686.2",
+          "tên sách": "B/GIẢNG CƠ SỞ T/KẾ NHÀ MÁY IN, KINH TẾ TỔ CHỨC SẢN XUẤT IN"
+        },
+        {
+          "call_no": "686.2",
+          "tên sách": "GT T/HÀNH - THÍ NGHIỆM VẬT LIỆU IN, HÓA LÝ IN, GT VẬT LIỆU IN"
+        },
+        {
+          "call_no": "686.20289",
+          "tên sách": "AN TOÀN VÀ MÔI TRƯỜNG TRONG C/NGHIỆP IN"
+        },
+        {
+          "call_no": "686.22-686.221",
+          "tên sách": "GT N/THUẬT T/BÀY ẤN PHẨM KỸ THUẬT IN; C/NGHỆ C/TẠO KHUÔN IN"
+        },
+        {
+          "call_no": "686.2252-686.2256",
+          "tên sách": "GT THỰC TẬP DÀN TRANG, THỰC TẬP SẮP CHỮ ĐIỆN TỬ\n- GT KỸ THUẬT BÌNH TRANG ĐIỆN TỬ"
+        },
+        {
+          "call_no": "686.23-686.2315",
+          "tên sách": "B/GIẢNG TỰ ĐỘNG HÓA TRONG NGÀNH IN, CÔNG NGHỆ IN LÔM\n- IN OFFSET TỜ RƠI, C/NGHỆ IN OFFSET; TT CƠ BẢN IN OFFSET TỜ RƠI"
+        },
+        {
+          "call_no": "686.3",
+          "tên sách": "CÔNG NGHỆ GIA CÔNG BẺ MẶT ẨN PHẨM, KỸ THUẬT ĐÓNG SÁCH;\n- CÔNG NGHỆ GIA CÔNG SAU IN"
+        },
+        {
+          "call_no": "687.0285",
+          "tên sách": "HD SỬ DỤNG P/MÉM ACCUMARC CHO T/KẺ QUẦN ÁO - TẬP 1\n- GT TIN HỌC Ứ/DỤNG NGÀNH MAY 1, GT Q/LÝ S/XUẤT TRÊN VI TÍNH"
+        },
+        {
+          "call_no": "687.04",
+          "tên sách": "T/ BỊ TRONG C/NGHIỆP MAY, B/GIẢNG TỔ CHỨC Q/LÝ S/XUẤT MAY CN"
+        }
+      ]
+      },
+      {   "kệ sách": 413, 
+      "books": [
+        {
+          "call_no": "687.04",
+          "tên sách": "GT CHUẨN BỊ SẢN XUẤT MAY, GT CƠ SỞ SẢN XUẤT MAY C/NGHIỆP"
+        },
+        {
+          "call_no": "687.042",
+          "tên sách": "MỸ THUẬT TRANG PHỤC, BÀI GIẢNG MÔN THIẾT KẾ THỜI TRANG 3, GT THIẾT KẾ TRANG PHỤC NỮ CƠ BẢN, GT TẠO MẪU T/PHỤC NỮ, GT CÔNG NGHỆ MAY TRANG PHỤC 2, 3"
+        },
+        {
+          "call_no": "687.068-687.0685",
+          "tên sách": "GT Q/LÝ ĐƠN HÀNG NGÀNH MAY, GT QUẢN LÝ C/LƯỢNG TRANG PHỤC, GT KIỂM TRA CHẤT LƯỢNG SẢN PHẨM NGÀNH MAY"
+        },
+        {
+          "call_no": "687.3",
+          "tên sách": "GT CÔNG NGHỆ SẢN XUẤT SẢN PHẨM DỆT KIM"
+        },
+        {
+          "call_no": "688.8",
+          "tên sách": "GT THIẾT KẾ VÀ SẢN XUẤT BAO BÌ"
+        },
+        {
+          "call_no": "690.928",
+          "tên sách": "KỸ THUẬT THI CÔNG TẬP 1, GT KỸ THUẬT THI CÔNG, HỎI VÀ ĐÁP VỀ CÁC VẤN ĐỀ KỸ THUẬT THI CÔNG XÂY DỰNG"
+        }
+      ]
+      },
+      {   "kệ sách": 414, 
+      "books": [
+        { "call_no": "690.028",
+          "tên sách": "SỐ TAY XỬ LÝ SỰ CÓ CÔNG TRÌNH XÂY DỰNG - TẬP 3 "
+        },
+        {
+          "call_no": "690.0284-690.22",
+          "tên sách": "MÁY XÂY DỰNG, GIẢI PHÁP KỸ THUẬT AN TOÀN TRONG XÂY DỰNG"
+        },
+        {
+          "call_no": "692.3",
+          "tên sách": "TÍNH TOÀN VÀ CẤU TẠO CÁC BỘ PHẬN NHÀ DÂN DỤNG"
+        },
+        {
+          "call_no": "693.892",
+          "tên sách": "HƯỚNG DẪN THIẾT KẾ THI CÔNG CHÓNG THÁM"
+        },
+        {
+          "call_no": "694-697.93",
+          "tên sách": "GT CÔNG NGHỆ CHẾ BIẾN GỖ, KỸ THUẬT ĐIỀU HÒA KHÔNG KHÍ"
+        },
+        {
+          "call_no": "709-728",
+          "tên sách": "MỸ THUẬT VIỆT NAM, K/NIỆM KIẾN TRÚC VÀ CƠ SỞ SÁNG TÁC"
+        },
+        {
+          "call_no": "741.01-741.672",
+          "tên sách": "BG VẼ MỸ THUẬT 1, 2, 3, 4; HÌNH HỌA - VẼ K/THUẬT NGÀNH MAY "
+        },
+        {
+          "call_no":"746.44",
+          "tên sách":"GT THÊU - ĐAN - MÓC, BÀI GIẢNG THÊU CÔNG NGHIỆP"
+        },
+        {
+          "call_no": "794.1-796",
+          "tên sách": "GT CỜ VUA, GT GIÁO DỤC THỂ CHẤT 1"
+        },
+        {
+          "call_no": "796.325-796.334",
+          "tên sách": "GT BÓNG CHUYỂN, GT BÓNG ĐÁ"
+        },
+        {
+          "call_no": "796.345-796.342",
+          "tên sách": "GT CẦU LÔNG, GT QUÂN VỢT"
+        },
+        {
+          "call_no": "796.8153",
+          "tên sách": "GT KARATE"
+        },
+        {
+          "call_no": "909",
+          "tên sách": "LỊCH SỬ VĂN MINH THẾ GIỚI"
+        }
+      ]
+      }
+      ]
+    }
+    ]
+    }
+}
