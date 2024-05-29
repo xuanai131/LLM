@@ -202,8 +202,8 @@ def chat_from_tool():
             msg = data["message"]
             if msg:
                 t = time.localtime(time.time())
-                response_tool = msg
-                socketio.emit('update_html', {'data': response_tool,"time": str(t.tm_hour)+ " "+ str(t.tm_min) + " "+str(t.tm_sec)})
+                voicehandle.response_generated_by_app = msg
+                socketio.emit('update_html', {'data': msg,"time": str(t.tm_hour)+ " "+ str(t.tm_min) + " "+str(t.tm_sec)})
                 return response 
             else:
                 return  "No message received."
