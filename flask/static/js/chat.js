@@ -2,7 +2,6 @@
     
 $(document).ready(function() {
     $("#messageArea").on("submit",  function(event) {
-
         handleEvent(event, "chat", "", check_tool_running);
         // console.log("click send button");
 
@@ -31,6 +30,7 @@ function handleEvent(event,action,message,tool_running){
     var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">'+ str_time + '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
     $("#text").val("");
     $("#messageFormeight").append(userHtml);
+    scrollToBottom();
     if (tool_running == false)
     {$.ajax({
         data: {
