@@ -12,6 +12,7 @@ from langchain_text_splitters import CharacterTextSplitter
 from langchain.storage import InMemoryStore, LocalFileStore
 from langchain.storage._lc_store import create_kv_docstore
 from langchain.retrievers import ParentDocumentRetriever
+from langchain.agents import AgentExecutor
 import json
 from pathlib import Path
 from numpy.linalg import norm
@@ -320,7 +321,23 @@ class DATABASE:
 
     def similarity_search(self, query, k=4):
         return self.db.similarity_search_with_score(query, k)
-    
+class customAgent(AgentExecutor):
+    interrupt:  bool = False 
+    def set_interrupt(self,state):
+        self.interrupt = state 
+    def _should_continue(self, iterations: int, time_elapsed: float) -> bool:
+        if self.max_iterations is not None and iterations >= self.max_iterations:
+            return False
+        if (
+            self.max_execution_time is not None
+            and time_elapsed >= self.max_execution_time
+        ):
+            return False
+        if (self.interrupt is not None) and (self.interrupt == True):
+            print("******************interrupt from agent**************************")
+            return False
+
+        return True
     
     
 class history_conversation:

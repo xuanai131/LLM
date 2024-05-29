@@ -1,36 +1,49 @@
 {
           "HISTORY": [
                     [],
-                    [
-                              "User : alo",
-                              "Lib : Xin chào! Tôi có thể giúp gì cho bạn hôm nay?",
-                              "User : rảnh không",
-                              "Lib : Xin lỗi, tôi chỉ là một trợ lý thư viện và không có cảm xúc. Bạn có câu hỏi cụ thể nào cần trợ giúp không?",
-                              "User : xin chào",
-                              "Lib : Xin chào! Bạn cần trợ giúp với điều gì?",
-                              "User : hello cậu",
-                              "Lib : Xin lỗi, tôi không thể chấp nhận ngôn ngữ không lịch sự. Vui lòng sử dụng ngôn ngữ lịch sự khi trò chuyện với tôi. Cảm ơn!",
-                              "User : chào cậu"
-                    ],
-                    [],
                     [],
                     [
-                              "User : tìm cuốn sách của Nguyễn Đức Huân",
-                              "Lib : Xin vui lòng cung cấp thông tin chi tiết hơn về cuốn sách bạn đang tìm để tôi có thể giúp bạn tìm kiếm.",
-                              "User : cuốn sách đó được xuất bản bởi trường đại học sư phạm kỹ thuật",
-                              "Lib : Xin lỗi, tôi không tìm thấy thông tin về cuốn sách cụ thể của Nguyễn Đức Huân được xuất bản bởi trường đại học sư phạm kỹ thuật.Bạn có thể cung cấp thêm thông tin khác về cuốn sách để tôi có thể hỗ trợ bạn tốt hơn không?",
-                              "User : cuốn sách thiết kế kỹ thuật chung cư cao tầng diamond thịnh vượng nằm ở đâu",
-                              "Lib : Xin lỗi, tôi không tìm thấy thông tin về cuốn sách cụ thể bạn đang tìm. Bạn có thể cung cấp thêm thông tin khác về cuốn sách để tôi có thể hỗ trợ bạn tốt hơn không?"
+                              "User : Trả sách",
+                              "Lib : Quá trình trả sách đã bị dừng. Hãy thử lại khi sẵn sàng."
                     ],
                     [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    [],
-                    []
+                    [
+                              "User : Trả sách",
+                              "Lib : Quá trình trả sách đã bị dừng",
+                              "User : trả sách",
+                              "Lib : Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
+                    ],
+                    [
+                              "User : Mượn sách",
+                              "Lib : Bạn đã có cuốn sách nào để mượn chưa?"
+                    ],
+                    [
+                              "User : Mượn sách",
+                              "Lib : Bạn đã có sách cần mượn chưa?",
+                              "User : có rồi",
+                              "Lib : Quá trình mượn sách không được thực hiện. Cảm ơn bạn đã sử dụng dịch vụ.",
+                              "User : tôi muốn mượn sách",
+                              "Lib : Xin vui lòng cung cấp thông tin về cuốn sách bạn muốn mượn.",
+                              "User : tôi có rồi",
+                              "Lib : Vui lòng xác nhận để hoàn tất quá trình mượn sách.",
+                              "User : không cần",
+                              "Lib : Quá trình mượn sách đã bị hủy. Nếu cần hỗ trợ, vui lòng thông báo cho chúng tôi. Cảm ơn!",
+                              "User : tôi muốn mượn sách",
+                              "Lib : Vui lòng xác nhận để hoàn tất quá trình mượn sách.",
+                              "User : không cần xấc nhận",
+                              "Lib : Quá trình mượn sách đã bị hủy. Nếu cần hỗ trợ, vui lòng thông báo cho chúng tôi. Cảm ơn!",
+                              "User : tôi muốn trả sách",
+                              "Lib : Quá trình trả sách đã bị dừng",
+                              "User : tiếp tục đi",
+                              "Lib : Quá trình trả sách đã bị dừng"
+                    ],
+                    [
+                              "User : Trả sách",
+                              "Lib : Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
+                    ],
+                    [
+                              "User : Mượn sách",
+                              "Lib : Bạn đã có cuốn sách nào chưa?"
+                    ]
           ]
 }
