@@ -1,0 +1,95 @@
+
+/* * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', monospace;
+} */
+
+ul {
+    /* list-style: none; */
+    /* background: #e84e4e; */
+    margin: 1px;
+    background: #2c2e2e;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    
+}
+ul .logo{
+    float: right; 
+    margin-right: 10px;
+    background-color: transparent;
+    /* margin-right: 2px; */
+    /* top: 0px; */
+    /* margin-left: auto; */
+    /* height:  70px; */
+    /* height:50%;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 35px; */
+}
+ul .logo img {
+    top: 0px;
+    height: 70px; /* Set height to 70px */
+    width: auto;  /* Maintain aspect ratio */
+}
+ul li {
+    display: inline-block;
+    position: relative;
+    background: #2c2e2e;
+    /* border-style:solid;
+    border-width: 5px;
+    border-color: yellow; */
+
+}
+
+ul li a {
+    display: block;
+    padding: 20px 30px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-family: monospace;
+    border: 10px;
+}
+
+ul li ul.dropdown li {
+    display: block;
+    margin: 1px 0px;
+    background: #2c2e2e;
+    
+
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    /* border-style:solid;
+    border-width: 5px;
+    border-color: yellow; */
+}
+
+ul li a:hover {
+    /* color: cyan; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 5px #ffffff, 0 0 10px #000000; */
+    text-decoration: none;
+    color: rgb(29, 254, 254);
+    /* border-style:solid;
+    border-width: 5px;
+    border-color: yellow; */
+    /* background: rgb(187, 222, 210);
+    text-decoration: none;
+    box-shadow: none;
+    color: black; */
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    text-decoration: none;
+}
