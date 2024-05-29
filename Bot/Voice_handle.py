@@ -46,6 +46,7 @@ class VoiceHandle:
         self.recognizer = None
         self.source = None
         self.stop_listening = None
+        self.speaking = False
         self.porcupine = pvporcupine.create(
             access_key=API_keys.porcupine_key,
             keywords=self.porcupine_wake_words
@@ -81,6 +82,8 @@ class VoiceHandle:
     @response_generated_by_app.setter
     def response_generated_by_app(self, value):
         self._response_generated_by_app = value
+        while self.speaking:
+            time.sleep(0.1)
         self.speak(value)
     def send_listening_for_query_status(self, ):
         requests.post(url=setting.IP_ADDRESS+"/listening_for_query", json=({"listening_status": self.listening_for_query}))
@@ -231,6 +234,7 @@ class VoiceHandle:
         response.write_to_file(filename)
     def speak(self, text, ):
         self.responding_to_user = True
+        self.speaking = True
         self.tts_openai(text, self.speak_file)
         # self.tts_zalo(text, self.speak_file)
         self.play_wav(self.speak_file)
@@ -244,6 +248,7 @@ class VoiceHandle:
             self.responding_to_user = False
             if not self.listening_for_wake_word:
                 self.listening_for_query = True
+            self.speaking = False
         threading.Thread(target=callback_speak).start()
         
     def GPTResponse(self, audio):
