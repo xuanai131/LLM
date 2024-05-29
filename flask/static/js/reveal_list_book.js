@@ -8,33 +8,46 @@ function reveal_book(data){
     // while(true) {
     // console.log("Image form socket:", data);
     console.log("Type of: ", typeof(data));
-    const arr = [];
+    
     console.log("====");
-    console.log(typeof(arr));
+    console.log(arr.length);
     // console.log(arr[0]);
     // console.log("Get data: ",arr[0]);
     // images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
+    current_arr_length = arr.length;
+
     for (i in data){
         arr.push("data:image/jpeg;base64," + data[i]['cover_image']);
     }
 
-    var swiperWrapper = $('<div class="swiper-wrapper"></div>');
+    var swiperWrapper;
+    if (current_arr_length == 0){
+        swiperWrapper = $('<div class="swiper-wrapper"></div>');
+    }
+    // swiperWrapper = $('<div class="swiper-wrapper"></div>');
+    
 
     // Loop through each image URL
     
     arr.forEach(function(image) {
-        var swiperSlide = $('<div class="swiper-slide"></div>');
-        var infoBox = $('<div class="info-box">Information about Image</div>');
-        // var imgElement = $('<img src="../static/resources/background_3.jpg">');
-        // var imgElement = $('<img src= {{'+image+'}} alt="Base64 Encoded Image">');
-        var imgElement = $('<img src="' + image + '" alt="Base64 Encoded Image">');
-        // <img src={{image}} alt="Base64 Encoded Image"></img>
-        // Append info box and image to swiper slide
-        swiperSlide.append(infoBox, imgElement);
+        if(!old_arr.includes(image)){
+            var swiperSlide = $('<div class="swiper-slide"></div>');
+            var infoBox = $('<div class="info-box">Information about Image</div>');
+            // var imgElement = $('<img src="../static/resources/background_3.jpg">');
+            // var imgElement = $('<img src= {{'+image+'}} alt="Base64 Encoded Image">');
+            var imgElement = $('<img src="' + image + '" alt="Base64 Encoded Image">');
+            // <img src={{image}} alt="Base64 Encoded Image"></img>
+            // Append info box and image to swiper slide
+            swiperSlide.append(infoBox, imgElement);
 
-        // Append swiper slide to swiper wrapper
-        swiperWrapper.append(swiperSlide);
-        
+            // Append swiper slide to swiper wrapper
+            if (current_arr_length == 0){
+                swiperWrapper.append(swiperSlide);
+            }
+            else{
+                $(".swiper-wrapper").append(swiperSlide);
+            }
+        } 
     });
     
 
@@ -42,8 +55,10 @@ function reveal_book(data){
     var swiperPagination = $('<div class="swiper-pagination"></div>');
 
     // Append swiper wrapper and pagination to a container
-    $("#bookContainer").append(swiperWrapper,swiperPagination);
-
+    if (current_arr_length == 0){
+        $("#bookContainer").append(swiperWrapper,swiperPagination);
+    }
+    
     var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
@@ -62,9 +77,6 @@ function reveal_book(data){
         },
     });
     const swiperSlides = document.querySelectorAll('.swiper-slide');
-    
-        
-
 
     swiperSlides.forEach(slide => {
         const infoBox = slide.querySelector('.info-box');
@@ -92,6 +104,8 @@ function reveal_book(data){
         });
     });
 
+    // current_arr_length = arr.length;
+    old_arr = arr;
     
 }         
     // }
@@ -258,38 +272,3 @@ function reveal_book_1(){
         // For example, updating the UI, processing the data, etc.
     });
 }
-
-    // <script>
-    //     var swiper = new Swiper(".mySwiper", {
-    //         effect: "coverflow",
-    //         grabCursor: true,
-    //         centeredSlides: true,
-    //         loop :true,
-    //         slidesPerView: "auto",
-    //         coverflowEffect: {
-    //             rotate: 50,
-    //             stretch: 0,
-    //             depth: 120,
-    //             modifier: 1,
-    //             slideShadows: false,
-    //         },
-    //         pagination: {
-    //             el: ".swiper-pagination",
-    //         },
-    //     });
-    // </script>
-    // <script>
-    //     const swiperSlides = document.querySelectorAll('.swiper-slide');
-    
-    //     swiperSlides.forEach(slide => {
-    //         const infoBox = slide.querySelector('.info-box');
-    
-    //         slide.addEventListener('mouseover', () => {
-    //             infoBox.style.display = 'block';
-    //         });
-    
-    //         slide.addEventListener('mouseout', () => {
-    //             infoBox.style.display = 'none';
-    //         });
-    //     });
-    // </script> 
