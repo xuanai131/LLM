@@ -79,8 +79,9 @@ class VoiceHandle:
     def response_generated_by_app(self):
         return self._response_generated_by_app
     @response_generated_by_app.setter
-    def response_generated_by_app(self, value):
+    def response_generated_by_app(self, value): 
         self._response_generated_by_app = value
+        # while True
         self.speak(value)
     def send_listening_for_query_status(self, ):
         requests.post(url=setting.IP_ADDRESS+"/listening_for_query", json=({"listening_status": self.listening_for_query}))
@@ -198,7 +199,7 @@ class VoiceHandle:
                     audio_data = response.read()
                 with open(filename, 'wb') as f:
                     f.write(audio_data)
-                print("File downloaded successfully as", filename)
+                print("Audio file was downloaded successfully as", filename)
                 return 
             except:
                 try_times = try_times -1
@@ -221,7 +222,7 @@ class VoiceHandle:
             print(response.text)
         json_str = response.content.decode('utf-8')
         url = json.loads(json_str)['data']['url']
-        self.download_zalo_audio(url,'test.wav')
+        self.download_zalo_audio(url, filename)
     def tts_openai(self, text, filename):
         response = self.client.audio.speech.create(
             model="tts-1",
@@ -231,8 +232,8 @@ class VoiceHandle:
         response.write_to_file(filename)
     def speak(self, text, ):
         self.responding_to_user = True
-        # self.tts_openai(text, self.speak_file)
-        self.tts_zalo(text, self.speak_file)
+        self.tts_openai(text, self.speak_file)
+        # self.tts_zalo(text, self.speak_file)
         self.play_wav(self.speak_file)
         def callback_speak():
             sd.wait()
@@ -244,6 +245,8 @@ class VoiceHandle:
             self.responding_to_user = False
             if not self.listening_for_wake_word:
                 self.listening_for_query = True
+            else:
+                self.listening_for_query = False
         threading.Thread(target=callback_speak).start()
         
     def GPTResponse(self, audio):

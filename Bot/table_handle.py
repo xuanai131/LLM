@@ -17,12 +17,13 @@ def CreateBookTable():
     conn = sqlite3.connect(setting.database_name)
     cursor = conn.cursor()
     sql = 'CREATE TABLE IF NOT EXISTS Books (\
-            ID INTEGER PRIMARY KEY,\
+            ID INTEGER,\
             name_of_book TEXT,\
             author TEXT,\
             kind_of_book TEXT,\
             publisher TEXT,\
-            position TEXT,\
+            year_of_publication,\
+            call_no TEXT,\
             shelve TEXT,\
             cover_image TEXT,\
             information TEXT)'
@@ -32,16 +33,16 @@ def CreateBookTable():
     # Commit the changes and close the connection
     conn.commit()
     conn.close()
-def InsertToBookTable(ID, name_of_book,author,kind_of_book,publisher,position,shelve,cover_image,info=None):
+def InsertToBookTable(ID, name_of_book,author,kind_of_book,publisher,year_of_publication,call_no,shelve,cover_image,info=None):
     conn = sqlite3.connect(setting.database_name)
     cursor = conn.cursor()
     # with open(image_path, 'rb') as image_file:
     #     image_data = image_file.read()
     # Insert data into the books table
     cursor.execute("""
-        INSERT INTO books (ID, name_of_book, author, kind_of_book, publisher, position, shelve, cover_image, information)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (ID, name_of_book, author, kind_of_book, publisher, position, shelve, cover_image,info))
+        INSERT INTO books (ID, name_of_book, author, kind_of_book, publisher, year_of_publication, call_no, shelve, cover_image, information)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (ID, name_of_book, author, kind_of_book, publisher, year_of_publication, call_no, shelve, cover_image,info))
 
     # Commit the changes and close the connection
     conn.commit()
