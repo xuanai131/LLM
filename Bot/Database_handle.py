@@ -40,10 +40,11 @@ def SearchBookByID(ID):
             'author': row[2],
             'kind_of_book': row[3],
             'publisher': row[4],
-            'position': row[5],
-            'shelve': row[6],
-            'cover_image': row[7],
-            'information': row[8],
+            'year_of_publication': row[5],
+            'call_no': row[6],
+            'shelve': row[7],
+            'cover_image': row[8],
+            'information': row[9],
         }
     else:
         json_data = None
@@ -69,6 +70,17 @@ def SearchAllBookName():
     cursor = conn.cursor()
     cursor.execute('''
         SELECT name_of_book FROM Books
+    ''')
+    result = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+    return result
+def SearchAllAccountBarcode():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT qr_image FROM User_info
     ''')
     result = cursor.fetchall()
 
