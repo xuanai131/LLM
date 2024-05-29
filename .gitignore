@@ -13,14 +13,11 @@ Bot/DATABASE.db
 flask/history.json
 Bot/retrieval-text/porcupine
 Bot/retrieval-text/sphinx_models
-<<<<<<< HEAD
 note.txt
 Bot/methods_backup.py
 Bot/methods_separate_backup.py
 Bot/retrieval-text/WakeWordDetection
-=======
 Bot/retrieval-text/audio/wake_detect_16000_removenoises.wav
 Bot/retrieval-text/audio/wake_detect_16000.wav
 Bot/retrieval-text/audio/speak.mp3
 Bot/retrieval-text/audio/prompt.wav
->>>>>>> abfb6c750f683d24e1c1d0ee4a479ba398242bef
