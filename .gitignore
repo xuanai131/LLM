@@ -13,3 +13,7 @@ Bot/DATABASE.db
 flask/history.json
 Bot/retrieval-text/porcupine
 Bot/retrieval-text/sphinx_models
+note.txt
+Bot/methods_backup.py
+Bot/methods_separate_backup.py
+Bot/retrieval-text/WakeWordDetection
