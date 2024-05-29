@@ -45,9 +45,8 @@ def UserInput():
 ##### LOAD VECTOR DATABASE
 embedding=OpenAIEmbeddings(chunk_size=1)
 BookInfoRetriever = RETRIEVER_CONFIG()
-BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_infos_3',
-                     embedding=embedding,
-                     parent_path=AbsoluteBotPath+"/vector_database/book_parents_3", 
+BookInfo =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/book_child',
+                     parent_path=AbsoluteBotPath+"/vector_database/book_parent", 
                      retriever_config=BookInfoRetriever)
 
 SelfKnowledgeRetriever = RETRIEVER_CONFIG()
@@ -62,8 +61,7 @@ SelfKnowledgeRetriever.parent_splitter = RecursiveCharacterTextSplitter(chunk_si
                                                  chunk_overlap= 20, 
                                                  separators=[".", "-", "--"])
 SelfKnowledgeRetriever.retriever_type = "NoCustom"
-SelfKnowledge =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/self_knowledge', 
-                          embedding=embedding, 
+SelfKnowledge =  DATABASE(db_path=AbsoluteBotPath+'/vector_database/self_knowledge',
                           parent_path=AbsoluteBotPath+"/vector_database/self_knowledge_parents", 
                           retriever_config=SelfKnowledgeRetriever)
 
@@ -101,13 +99,16 @@ BANG_XOA_DAU_FULL = str.maketrans(
 def xoa_dau_full(txt: str) -> str:
     return txt.translate(BANG_XOA_DAU_FULL)
 def search_book(query: str):
-    queries = ["cuốn sách "+query, "cuon sach "+xoa_dau_full(query)]
+    queries = [query, xoa_dau_full(query)]
     print(queries)
-    result = chain.invoke(queries)['result']
+    # result = chain.invoke(queries)
+    result = BookInfo.retriever.invoke(queries)
+    print("search book tool result: ", result)
     return result
 
 def load_book(book_ids: str):
     global load_tool_execute
+    print('////////////////load tool ///////////')
     load_tool_execute = True
     # turn_on_camera()
     imageID= {

@@ -2,6 +2,7 @@ from langchain_community.document_loaders.pdf import UnstructuredPDFLoader
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 from langchain.docstore.document import Document
 from langchain_community.document_loaders.csv_loader import CSVLoader
@@ -43,8 +44,6 @@ class CustomParentDocumentRetriever(ParentDocumentRetriever):
     def _get_relevant_documents(
         self, queries: list, *, run_manager: CallbackManagerForRetrieverRun
     ) -> List[Document]:
-        # print('/////////////////////////////////////:', query)
-        
         """Get documents relevant to a query.
         Args:
             query: String to find relevant documents for
@@ -123,14 +122,14 @@ def generate_unique_id(existing_ids): # Generate unique ID
     
     
 class DATABASE:
-    def __init__(self, db_path, embedding, parent_path=None, retriever_config:RETRIEVER_CONFIG=None):
+    def __init__(self, db_path, parent_path=None, retriever_config:RETRIEVER_CONFIG=None):
         self.db_path = db_path
         self.parent_path = parent_path
         self.document_list = set()
         self.existing_ids = set()
         self.retriever_config = retriever_config
         self.error_doc = []
-        self.db = Chroma(collection_name="split_parents", persist_directory=db_path, embedding_function=embedding)
+        self.db = Chroma(collection_name="split_parents", persist_directory=db_path, embedding_function=OpenAIEmbeddings(chunk_size=1))
         if retriever_config.parent_splitter is None:
             self.parent_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap= 20, separators=[" {'"])
         else:
@@ -211,9 +210,9 @@ class DATABASE:
         texts = text_splitter.split_documents(documents)
         self.retriever.add_documents(texts, ids=None)
         
-    def add_info_to_database(self, ID, name_of_book, kind_of_book, shelve, cover_image):
+    def add_info_to_database(self, ID, name_of_book, book_author, kind_of_book, publisher, year_of_publication, call_no, shelve, cover_image, info):
         # Books table
-        InsertToBookTable(ID,name_of_book,None,kind_of_book,None,None,shelve,cover_image)
+        InsertToBookTable(ID,name_of_book,book_author,kind_of_book,publisher,year_of_publication,call_no,shelve,cover_image,info)
         print(' - ID in database: ', ID)
         # Book items table
         ran = random.randint(1, 6)
@@ -223,11 +222,22 @@ class DATABASE:
             filename = AbsoluteBotPath+f'/Knowledge/Barcode/{name_of_book}-{barcode}.png'
             generate_barcode(barcode, filename)
             InsertToBookItemTable(barcode,ID)
+    def extract_json(self, data):
+        authors = data["Tác giả"].split(", ")
+        publisher = data["Nhà xuất bản"]
+        book_title = data["Tên sách"]
+        book_type = data["Loại sách"]
+        description = data["Mô tả"]
+        keywords_line = data["Keyword"][0]
+        keywords = keywords_line.split(": ")[1].split(", ")
+        result = authors + [publisher, book_title, book_type] + keywords + [description]
+        result = [Document(_) for _ in result]
+        return result
     def load_doccument_list(self, ):
         temp_doc_list = SearchAllBookName()
         temp_doc_list = [name[0] for name in temp_doc_list]
         self.document_list.update(temp_doc_list)
-    def load_existing_bracode(self, ):
+    def load_existing_barcode(self, ):
         temp_exist_ids = SearchAllBarcode()
         temp_exist_ids = [name[0] for name in temp_exist_ids]
         self.existing_ids.update(temp_exist_ids)
@@ -239,11 +249,21 @@ class DATABASE:
         self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))]) # Add to parents
         print('_____Add info to database')
         base64_img = pdf_page_to_base64(child_doc_file_path) # Add info to database
-        self.add_info_to_database(documents[idx]['ID'], documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
+        print(documents[idx])
+        self.add_info_to_database(documents[idx]['ID'],
+                                  documents[idx]['Tên sách'],
+                                  documents[idx]['Tác giả'],
+                                  documents[idx]['Loại sách'],
+                                  documents[idx]['Nhà xuất bản'],
+                                  documents[idx]['Năm xuất bản'],
+                                  None, 
+                                  documents[idx]['vị trí'],
+                                  base64_img,
+                                  documents[idx]['Nội dung đầu sách'])
         self.document_list.add(child_doc_file_path.split('/')[-1])
     def insert_book(self, json_file: str, jq_schema, ids=None):
         if len(self.existing_ids) < 1:
-            self.load_existing_bracode()
+            self.load_existing_barcode()
         if len(self.document_list) < 1:
             self.load_doccument_list()
             
@@ -259,45 +279,42 @@ class DATABASE:
             doc_ids = ids
         
         for idx in range(len(documents)):
+            print(".......... Adding ", documents[idx]['Nội dung đầu sách'], ' ..........')
             child_doc_file_path = AbsoluteBotPath + documents[idx]['Nội dung đầu sách']
             # Check if file already add to vector database
-            if child_doc_file_path.split('/')[-1] in self.document_list:
+            if documents[idx]['Tên sách'] in self.document_list:
+                print('_Book already exist_')
                 continue
             try:
+                print('_Load PDF')
                 try:
-                    pdf_loader = UnstructuredPDFLoader(child_doc_file_path)
-                    child_doc = pdf_loader.load()
-                except:
-                    pdf_loader = PyMuPDFLoader(child_doc_file_path,extract_images=True)
-                    child_doc = pdf_loader.load()
+                    try:
+                        pdf_loader = UnstructuredPDFLoader(child_doc_file_path)
+                        child_doc = pdf_loader.load()
+                    except:
+                        pdf_loader = PyMuPDFLoader(child_doc_file_path,extract_images=True)
+                        child_doc = pdf_loader.load()
+                except Exception as e:
+                    print(e)
                 text = ''
                 for doc in child_doc:
                     text += doc.page_content
                 text = re.sub(r'\.{6,}', '-', text)  #Repalce multiple dot with '-'
                 text = self.fix_invalid_characters(text)
-                print(".......... Adding ", documents[idx]['Nội dung đầu sách'], ' ..........')
-                documents[idx]['Nội dung đầu sách'] = text
-                # Add to parents
-                # self.retriever.docstore.mset([(doc_ids[idx], Document(str(documents[idx])))])
-                print(documents[idx])
-                # # Add info to database
-                # base64_img = pdf_page_to_base64(child_doc_file_path)
-                # self.add_info_to_database(idx+1, documents[idx]['Tên sách'], documents[idx]['Loại sách'], documents[idx]['Vị trí'], base64_img)
-                # child_doc[0].page_content = text
-                child_docs = []
+                child_docs = self.extract_json(documents[idx])
+                child_docs.extend(self.child_splitter.split_documents([Document(text)]))
                 _id = doc_ids[idx]
-                sub_docs = self.child_splitter.split_documents([Document(str(documents[idx]))])
                 if self.retriever.child_metadata_fields is not None:
-                    for _doc in sub_docs:
+                    for _doc in child_docs:
                         _doc.metadata = {
                             k: _doc.metadata[k] for k in self.retriever.child_metadata_fields
                         }
-                for _doc in sub_docs:
+                for _doc in child_docs:
                     _doc.metadata[self.retriever.id_key] = _id
-                child_docs.extend(sub_docs)
-                # self.retriever.vectorstore.add_documents(docs)
+                print(child_docs)
                 self.add_to_vectordatabse(doc_ids, idx, documents, child_docs, child_doc_file_path)
             except:
+                print('__Error__')
                 self.error_doc.append(documents[idx]['Tên sách'])
         
 

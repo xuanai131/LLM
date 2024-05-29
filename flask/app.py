@@ -16,7 +16,6 @@ import soundfile as sf
 import sounddevice as sd
 import multiprocessing
 import urllib.request
-import subaudio
 import re
 import json
 camera = cv2.VideoCapture(0)
@@ -66,7 +65,6 @@ def get_Chat_response(text):
     query = HumanMessage(text)
     OpenAIHistoryConversation.append(query)
     inputs = {
-        # "history" : [],
         "messages": OpenAIHistoryConversation
     }
     
@@ -105,27 +103,6 @@ def LoadBookCovers(book_ids):
     for book_id in book_ids:
         images.append(SearchBookByID(book_id))
     return images
-
-def text_to_speech(url,filename):
-    try_times = 3
-    while (try_times>0):
-        try :
-            download_zalo_audio(url,filename)
-            return 
-        except:
-            try_times = try_times -1
-            continue
-def download_zalo_audio(url,filename):
-# Open the URL and read the content
-    with urllib.request.urlopen(url) as response:
-        audio_data = response.read()
-# Write the content to a file
-    with open(filename, 'wb') as f:
-        f.write(audio_data)
-
-    print("File downloaded successfully as", filename)
-    # play_wav(filename)
-    subaudio.run()
 
 @app.route("/image", methods=["GET","POST"])
 def get_image():
@@ -311,6 +288,7 @@ def voice_query_background_update():
     if request.method == 'POST':
         data = request.get_json()
         socketio.emit('query_voice_background', data)
+        print('query_voice_background ', data)
     return ''
 @app.route('/update_status_from_voice_button', methods=['POST','GET'])
 def update_from_voice_button():
@@ -323,8 +301,6 @@ def update_from_voice_button():
             # print('voicehandle.responding_to_user: ', voicehandle.responding_to_user)
         else:
             voicehandle.reset_all()
-        # data = request.get_json()
-        # socketio.emit('query_voice_background', data)
     return ''
 @app.route('/camera_status', methods=['POST','GET'])
 def camera_status_update():

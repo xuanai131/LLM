@@ -89,7 +89,7 @@ def create_agent(llm: ChatOpenAI, tools: list, system_prompt: str):
 def agent_node(state, agent, name):
     # state.get("messages").pop()
     print('......STATE......: ', state)
-    if (name == "Book_researcher"): 
+    if (name == "Book_researcher1"): 
         output = ""
         query = ""
         check = False
@@ -351,7 +351,7 @@ def CreateGraph(conversation):
     research_agent = create_agent(llm, [Tools.tavily_tool], "Useful for looking up information on the web.")
     research_node = functools.partial(agent_node, agent=research_agent, name="Researcher")
 
-    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT)
+    book_research_agent = create_agent(llm, Tools.book_search_tool, BOOK_SEARCH_PROMPT2)
     book_research_node = functools.partial(agent_node, agent=book_research_agent, name="Book_researcher")
 
     # robot_research_agent = create_agent(llm, [robot_search_tool], "Bạn hữu ích cho việc trả lời các thông tin về chính bạn")
@@ -406,7 +406,7 @@ def CreateGraph(conversation):
     workflow.add_node("supervisor", supervisor_chain)
     workflow.add_node("Assistant", assistant_node)
     workflow.add_node("redirect",redirect_fun)
-    workflow.add_node("Book_researcher_inspector",book_research_inspector_node)
+    # workflow.add_node("Book_researcher_inspector",book_research_inspector_node)
     #2. Now connect all the edges in the graph.
     for member in members:
         # We want our workers to ALWAYS "report back" to the supervisor when done
@@ -426,10 +426,10 @@ def CreateGraph(conversation):
     redirect_map["Book_researcher"] = "Book_researcher"
     workflow.add_conditional_edges("redirect", lambda x: x["next"], redirect_map)
     # conditional_map["Assistant"] = END
-    workflow.add_edge("Book_researcher","Book_researcher_inspector")
+    workflow.add_edge("Book_researcher", END)
     workflow.add_edge("Self_nkowledge_search", END)
     workflow.add_edge("Assistant", END)
-    workflow.add_edge("Book_researcher_inspector",END)
+    # workflow.add_edge("Book_researcher_inspector",END)
     # workflow.add_edge("Borrow_book", "Confirm_borrow")
     # workflow.add_edge("Confirm_borrow", END)
     # workflow.add_edge("Borrow_book", "Book_researcher")
