@@ -316,7 +316,10 @@
 	width: 50px !important;
 	height: 50px !important;
 	margin-left:1px;
+<<<<<<< HEAD
 	margin-top: 0px;
+=======
+>>>>>>> ecd668170e0254d237826ce3076e41e31090e152
 }
 .microphone{
 	display: block;
@@ -345,7 +348,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
 background: #86d9f7; 
+=======
+background: #cbc9f0; 
+>>>>>>> ecd668170e0254d237826ce3076e41e31090e152
 border-radius: 10px;
 }
 

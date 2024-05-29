@@ -265,7 +265,7 @@ def SearchAllAccountBarcode():
     conn = sqlite3.connect(setting.database_name)
     cursor = conn.cursor()
     cursor.execute('''
-        SELECT qr_image FROM User_info
+        SELECT qr_image FROM User_Info
     ''')
     result = cursor.fetchall()
 
