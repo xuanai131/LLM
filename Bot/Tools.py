@@ -195,7 +195,7 @@ def scan_barcode(ten_sach: str):
             cap.release()
             # cv2.destroyAllWindows()
         
-        if (time.time() - t) > 20:
+        if (time.time() - t) > 10:
             requests.post(setting.IP_ADDRESS+'/camera_status',data = {'camera_status': False})
             requests.post(setting.IP_ADDRESS+"/user_input_state_interrupt",data = {"user_input_state":False})
             result_store['barcode_return'] = "OVERTIME"
@@ -456,8 +456,8 @@ def do_return_book(name_book:str):
         thread1.join()
         thread2.join()
         # Book_ID = scan_barcode('')
-        Book_ID = result_store["barcode_return"]
-        # Book_ID ="yUTgwMcDS"
+        # Book_ID = result_store["barcode_return"]
+        Book_ID ="yUTgwMcDS"
         if Book_ID == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
@@ -475,8 +475,8 @@ def do_return_book(name_book:str):
             send_mess("stop", "return_form")
             return "Quá trình trả sách đã bị dừng"
         else:
-            bill_info = SearchBillByBarcode(barcode)
-            # bill_info = {"student_ID":"20134013","return_date":None,'borrow_date':"2022-12-27 10:09:20.430322"}
+            # bill_info = SearchBillByBarcode(barcode)
+            bill_info = {"student_ID":"20134013","return_date":None,'borrow_date':"2022-12-27 10:09:20.430322"}
             if bill_info is None:
                 send_mess("Xin lỗi, có vẻ như cuốn sách này chưa được mượn ở thư viện.")
                 send_mess("Bạn có muốn trả cuốn sách nào nữa không?")
