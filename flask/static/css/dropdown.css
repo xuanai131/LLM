@@ -9,12 +9,8 @@ ul {
     /* list-style: none; */
     /* background: #e84e4e; */
     margin: 1px;
-<<<<<<< HEAD
     background: #2c2e2e;
     padding-left: 0px;
-=======
-    background: #5dffc6;
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     margin-bottom: 0px;
     
 }
@@ -41,11 +37,7 @@ ul .logo img {
 ul li {
     display: inline-block;
     position: relative;
-<<<<<<< HEAD
     background: #2c2e2e;
-=======
-    background: #5dffc6;
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     /* border-style:solid;
     border-width: 5px;
     border-color: yellow; */
@@ -55,11 +47,7 @@ ul li {
 ul li a {
     display: block;
     padding: 20px 30px;
-<<<<<<< HEAD
     color: #ffffff;
-=======
-    color: #000000;
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     text-decoration: none;
     text-align: center;
     font-size: 20px;
@@ -69,24 +57,15 @@ ul li a {
 
 ul li ul.dropdown li {
     display: block;
-<<<<<<< HEAD
     margin: 1px 0px;
     background: #2c2e2e;
-=======
-    margin: 2px 0px;
-    background: #5dffc6;
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     
 
 }
 
 ul li ul.dropdown {
     width: 100%;
-<<<<<<< HEAD
     background: #ffffff;
-=======
-    background: #000000;
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     position: absolute;
     z-index: 999;
     display: none;
@@ -98,15 +77,9 @@ ul li ul.dropdown {
 ul li a:hover {
     /* color: cyan; */
     /* border-radius: 10px; */
-<<<<<<< HEAD
     /* box-shadow: 0 0 5px #ffffff, 0 0 10px #000000; */
     text-decoration: none;
     color: rgb(29, 254, 254);
-=======
-    box-shadow: 0 0 5px #ffffff, 0 0 10px #000000;
-    text-decoration: none;
-    color: black;
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     /* border-style:solid;
     border-width: 5px;
     border-color: yellow; */

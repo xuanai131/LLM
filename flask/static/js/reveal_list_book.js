@@ -1,17 +1,13 @@
 var image_of_choosen;
-<<<<<<< HEAD
 
 var arr = [];
 var old_arr =[];
 var current_arr_length = 0;
 
-=======
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
 function reveal_book(data){
     // while(true) {
     // console.log("Image form socket:", data);
     console.log("Type of: ", typeof(data));
-<<<<<<< HEAD
     
     console.log("====");
     console.log(arr.length);
@@ -20,33 +16,20 @@ function reveal_book(data){
     // images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
     current_arr_length = arr.length;
 
-=======
-    const arr = [];
-    console.log("====");
-    console.log(typeof(arr));
-    // console.log(arr[0]);
-    // console.log("Get data: ",arr[0]);
-    // images.append("data:image/jpeg;base64," + str(SearchCoverImageByID(book_id)[0]))
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     for (i in data){
         arr.push("data:image/jpeg;base64," + data[i]['cover_image']);
     }
 
-<<<<<<< HEAD
     var swiperWrapper;
     if (current_arr_length == 0){
         swiperWrapper = $('<div class="swiper-wrapper"></div>');
     }
     // swiperWrapper = $('<div class="swiper-wrapper"></div>');
     
-=======
-    var swiperWrapper = $('<div class="swiper-wrapper"></div>');
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
 
     // Loop through each image URL
     
     arr.forEach(function(image) {
-<<<<<<< HEAD
         if(!old_arr.includes(image)){
             var swiperSlide = $('<div class="swiper-slide"></div>');
             var infoBox = $('<div class="info-box">Information about Image</div>');
@@ -65,20 +48,6 @@ function reveal_book(data){
                 $(".swiper-wrapper").append(swiperSlide);
             }
         } 
-=======
-        var swiperSlide = $('<div class="swiper-slide"></div>');
-        var infoBox = $('<div class="info-box">Information about Image</div>');
-        // var imgElement = $('<img src="../static/resources/background_3.jpg">');
-        // var imgElement = $('<img src= {{'+image+'}} alt="Base64 Encoded Image">');
-        var imgElement = $('<img src="' + image + '" alt="Base64 Encoded Image">');
-        // <img src={{image}} alt="Base64 Encoded Image"></img>
-        // Append info box and image to swiper slide
-        swiperSlide.append(infoBox, imgElement);
-
-        // Append swiper slide to swiper wrapper
-        swiperWrapper.append(swiperSlide);
-        
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     });
     
 
@@ -86,15 +55,10 @@ function reveal_book(data){
     var swiperPagination = $('<div class="swiper-pagination"></div>');
 
     // Append swiper wrapper and pagination to a container
-<<<<<<< HEAD
     if (current_arr_length == 0){
         $("#bookContainer").append(swiperWrapper,swiperPagination);
     }
     
-=======
-    $("#bookContainer").append(swiperWrapper,swiperPagination);
-
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
@@ -113,12 +77,6 @@ function reveal_book(data){
         },
     });
     const swiperSlides = document.querySelectorAll('.swiper-slide');
-<<<<<<< HEAD
-=======
-    
-        
-
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
 
     swiperSlides.forEach(slide => {
         const infoBox = slide.querySelector('.info-box');
@@ -146,11 +104,8 @@ function reveal_book(data){
         });
     });
 
-<<<<<<< HEAD
     // current_arr_length = arr.length;
     old_arr = arr;
-=======
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
     
 }         
     // }
@@ -317,41 +272,3 @@ function reveal_book_1(){
         // For example, updating the UI, processing the data, etc.
     });
 }
-<<<<<<< HEAD
-=======
-
-    // <script>
-    //     var swiper = new Swiper(".mySwiper", {
-    //         effect: "coverflow",
-    //         grabCursor: true,
-    //         centeredSlides: true,
-    //         loop :true,
-    //         slidesPerView: "auto",
-    //         coverflowEffect: {
-    //             rotate: 50,
-    //             stretch: 0,
-    //             depth: 120,
-    //             modifier: 1,
-    //             slideShadows: false,
-    //         },
-    //         pagination: {
-    //             el: ".swiper-pagination",
-    //         },
-    //     });
-    // </script>
-    // <script>
-    //     const swiperSlides = document.querySelectorAll('.swiper-slide');
-    
-    //     swiperSlides.forEach(slide => {
-    //         const infoBox = slide.querySelector('.info-box');
-    
-    //         slide.addEventListener('mouseover', () => {
-    //             infoBox.style.display = 'block';
-    //         });
-    
-    //         slide.addEventListener('mouseout', () => {
-    //             infoBox.style.display = 'none';
-    //         });
-    //     });
-    // </script> 
->>>>>>> ecd668170e0254d237826ce3076e41e31090e152
