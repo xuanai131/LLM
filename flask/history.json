@@ -45,6 +45,11 @@
                               "User : Mượn sách",
                               "Lib : Bạn đã có cuốn sách nào chưa?"
                     ],
-                    []
+                    [
+                              "User : Vậy á? Sao mà anh chưa đổi rồi? Hả? Đổi gì?",
+                              "User : Trả sách",
+                              "Lib : Anh chưa đổi gì cả, có chuyện gì không ạ?",
+                              "Lib : Quá trình trả sách không được thực hiện, cảm ơn bạn đã sử dụng dịch vụ."
+                    ]
           ]
 }

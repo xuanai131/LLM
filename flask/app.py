@@ -26,6 +26,19 @@ from Global_variable import *
 import Helper_Utilities
 from langchain_core.messages import HumanMessage, AIMessage
 import voice_record
+import barcode
+from barcode.writer import ImageWriter
+from PIL import Image
+from io import BytesIO
+import base64
+import uuid
+import sys
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+
 image_queue = []
 lock = threading.Lock()
 new_frame_event = threading.Event()
@@ -201,6 +214,8 @@ def chat_from_tool():
         if data and "message" in data:
             msg = data["message"]
             if msg:
+                SavedHistoryConversation.append("Lib : "+ msg )
+                voicehandle.response_generated_by_app = msg
                 t = time.localtime(time.time())
                 voicehandle.response_generated_by_app = msg
                 socketio.emit('update_html', {'data': msg,"time": str(t.tm_hour)+ " "+ str(t.tm_min) + " "+str(t.tm_sec)})
@@ -343,6 +358,117 @@ def generate():
 @app.route('/video_feed')
 def video_feed():
     return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
+@app.route('/download_audio', methods=['POST'])
+def download_audio_from_url():
+    data = request.get_json().get('url')
+    # print("the url in front end side :",data)
+    # data = "https://chunk.lab.zalo.ai/a745e9c971a198ffc1b0/a745e9c971a198ffc1b0/"
+    # download_audio_in_web(data,'audio.wav')
+    # data = request.get_json().get('data')
+    # text_to_speech(data,'audio.wav')
+    audio_thread = threading.Thread(target=text_to_speech, args=(data,'audio.wav'))
+    audio_thread.start()
+    audio_thread.join()
+    return "success"
+@app.route('/user_info', methods=['POST','GET'])
+def receive_user_signup_info():
+    if request.method == 'POST':
+        username = request.form.get("username")
+        password= request.form.get("pass")
+        is_exist = SearchAllbyUsername(username)
+        id = generate_barcode_base64()
+        if (is_exist):
+            # print("////////////////// username: ", is_exist)
+            return "0"
+        else:
+            InsertUserInfo( username, password, id)
+            send_img_to_email(id)
+            return "1"
+    else:
+        return response
+    
+def generate_barcode_base64():
+    existing_IDs = SearchAllAccountBarcode()
+    # existing_IDs = []
+    while True:
+        unique_id = uuid.uuid4().int
+    
+    # Convert the ID to a string and ensure it fits the length for EAN13
+        id = str(unique_id)[:12]
+        if id not in existing_IDs:
+            break
+    # Generate barcode
+    EAN = barcode.get_barcode_class('ean13')  # You can change the barcode type if needed
+    ean = EAN(id, writer=ImageWriter())
+    
+    # Save barcode to a BytesIO object
+    buffer = BytesIO()
+    ean.write(buffer, options={'write_text': False})  # You can add options as needed
+    
+    # Rewind the buffer to the beginning
+    buffer.seek(0)
+    
+    # Open the image with PIL and convert it to Base64
+    image = Image.open(buffer)
+    buffered = BytesIO()
+    image.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
+    
+    return img_str
+
+def send_img_to_email(base64_image, receiver_email = "vuvu3921@gmail.com"):
+    sender_email = 'ronin792002@gmail.com'
+    # receiver_email = 'vuvu3921@gmail.com'
+    password = 'Lamvu2002'
+
+    # Create the MIMEMultipart object
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = 'Test Email from Python'
+
+    # Email body
+    body = 'This is a test email sent from Python script.'
+    # base64_image = 'iVBORw0KGgoAAAANSUhEUgAAAAUA... (rest of the base64 string)'
+    msg.attach(MIMEText(body, 'plain'))
+
+    # Decode the base64 string
+    image_data = base64.b64decode(base64_image)
+
+    # Create a MIMEBase object
+    part = MIMEBase('application', 'octet-stream')
+    part.set_payload(image_data)
+
+    # Encode the payload using base64 encoding
+    encoders.encode_base64(part)
+
+    # Add header to the attachment
+    part.add_header('Content-Disposition', 'attachment; filename="image.png"')
+
+    # Attach the MIMEBase object to the MIMEMultipart object
+    msg.attach(part)
+
+    # Attach the body with the msg instance
+    # msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        # Create SMTP session
+        server = smtplib.SMTP('smtp.gmail.com', 587)  # Use Gmail's SMTP server
+        server.starttls()  # Enable security
+
+        # Login to the server
+        server.login(sender_email, "ojeq xnrh rwbg sqxj")
+
+        # Send the email
+        server.send_message(msg)
+
+        # Terminate the session
+        server.quit()
+
+        print('Email sent successfully!')
+
+    except Exception as e:
+        print(f'Failed to send email: {e}')
 if __name__ == '__main__':
     host = setting.IP if len(setting.IP) > 1 else 'localhost'
     port = int(sys.argv[2]) if len(sys.argv) > 2 else 5001

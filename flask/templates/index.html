@@ -6,14 +6,18 @@
     <title>Animated Book Selection</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="static/css/login_page.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="/https://code.jquery.com/jquery3.7.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     <!-- <script src="./js/script.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     
     <link rel="stylesheet" href="static/css/swiper.css">
 
@@ -35,6 +39,7 @@
     <link rel="stylesheet" href="static/css/text_box.css">
     
     
+    
 
     <script src="./static/js/test.js"></script>
     <script src="./static/js/reveal_list_book.js"></script>
@@ -47,6 +52,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="static/css/dropdown.css"/>
+    
 </head>
 
 <body>
@@ -64,12 +70,48 @@
             </li>
             <li><a href="#" id="chat-icon-container">Chat</a></li>
             <li><a href="#" id="refresh-icon-container">Refresh</a></li>
+            <li><a href="#" id="login-icon-container">Đăng nhập</a></li>
             <!-- <li><a href="#">Contact Us</a></li> -->
 
             <div class="logo">
                 <img src="../static/resources/Logo2.png" alt="Logo">
             </div>
         </ul>
+        <div class="login_page">
+            <div class="blur-bg-overlay"></div>
+            <div class="form-popup">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <div class="form-box signup" id="SignupArea">
+                    <div class="form-details">
+                        <h2>ĐĂNG KÍ</h2>
+                        <p>Tạo tài khoản để có thể sử dụng các dịch vụ của thư viện.</p>
+                    </div>
+                    <div class="form-content">
+                        <h2>ĐĂNG KÍ</h2>
+                        <form action="#">
+                            <div class="input-field-login">
+                                <input class="input_login_page" id="signup_username" type="text" required>
+                                <label>Nhập email</label>
+                            </div>
+                            <div class="input-field-login">
+                                <input class="input_login_page" id="signup_password" type="password" required>
+                                <label>Nhập password</label>
+                            </div>
+                            <button type="submit">Đăng kí</button>
+                        </form>
+                        <div id="messageBox11" style="display:none; border: 1px solid #ccc; padding: 10px; margin-top: 20px; background-color: #f9f9f9;">
+                            Email đã tồn tại
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="NoticeMess">
+                        <span class="close-btn material-symbols-rounded" id="close-notice-btn">close</span>
+                        <h3>Đăng kí thành công, vui lòng kiểm tra email</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Category for find book -->
         <div class="categories-background">
             <div class="exit_button" id="exit_find_book_func_bt">
@@ -419,6 +461,7 @@
     <script src="../static/js/chat.js"></script>
     <script src="../static/js/load_icon.js"></script>
     <script src="../static/js/category.js"></script>
+    <script src="../static/js/login_page.js"></script>
    
     <script>
         // Reveal list of book when user want to search book ( in reveal_list_book.js)
@@ -434,6 +477,9 @@
             table_book_and_info.style.visibility= "hidden";
             $("#bookContainer").empty();
             $("#robotContainer").show();
+            arr = [];
+            old_arr =[];
+            current_arr_length = 0;
         });
         
         socket.on('book_images', function(data) {
@@ -451,7 +497,7 @@
                 //     arr.push(data.image[i]['ID']);
                 // }
                 
-                // console.log ("data.i : ",arr);
+                console.log ("image: ", data);
 
             }
             else {

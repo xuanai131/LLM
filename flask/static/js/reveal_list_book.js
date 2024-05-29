@@ -1,4 +1,9 @@
 var image_of_choosen;
+
+var arr = [];
+var old_arr =[];
+var current_arr_length = 0;
+
 function reveal_book(data){
     // while(true) {
     // console.log("Image form socket:", data);

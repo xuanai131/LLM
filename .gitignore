@@ -5,12 +5,13 @@ flask/__pycache__
 Bot/API_keys.py
 flask/audio.wav
 Bot/graph.png
-Bot/Knowledge/Books/PDF
+Bot/Knowledge
 flask/recorded_audio.mp3
-Bot/Knowledge/Books/PDF.zip
+
 Bot/vector_database
 Bot/DATABASE.db 
 flask/history.json
+flask/audio
 Bot/retrieval-text/porcupine
 Bot/retrieval-text/sphinx_models
 note.txt

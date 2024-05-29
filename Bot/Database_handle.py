@@ -231,3 +231,44 @@ def SearchIsavailableState(book_ID):
         return result[0]
     else:
         return result
+
+def SearchAllbyUsername(username):
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT * FROM User_Info
+        WHERE username = ?
+    ''', (username,))
+    result = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+    return result
+
+def InsertUserInfo(username, password, img = "111"):
+    try:
+        with sqlite3.connect(setting.database_name) as conn:
+            cursor = conn.cursor()
+            # Insert data into the student_info table
+            cursor.execute('''
+                INSERT INTO User_Info (
+                    username, password, qr_image
+                ) VALUES (?, ?, ?)
+            ''', (username, password, img))
+
+            conn.commit()
+            print("Data inserted successfully.")
+    except sqlite3.Error as e:
+        print(f"SQLite error: {e}")
+
+def SearchAllAccountBarcode():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT qr_image FROM User_Info
+    ''')
+    result = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+    return result

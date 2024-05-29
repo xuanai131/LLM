@@ -208,3 +208,19 @@ def insert_student_info(student_id, student_name, student_year, student_departme
             print("Data inserted successfully.")
     except sqlite3.Error as e:
         print(f"SQLite error: {e}")
+
+# create user infomation table (username and pasword)
+def CreateUserInfoTable():
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    sql = 'CREATE TABLE IF NOT EXISTS User_Info (\
+            username TEXT,\
+            password TEXT,\
+            qr_image TEXT)'
+    # Create a table for books if it doesn't exist
+    cursor.execute(sql)
+
+    # Commit the changes and close the connection
+    conn.commit()
+    conn.close()
+

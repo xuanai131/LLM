@@ -98,6 +98,8 @@ BANG_XOA_DAU_FULL = str.maketrans(
 
 def xoa_dau_full(txt: str) -> str:
     return txt.translate(BANG_XOA_DAU_FULL)
+
+# SEARCH BOOK TOOL
 def search_book(query: str):
     queries = [query, xoa_dau_full(query)]
     print(queries)
@@ -263,8 +265,8 @@ def borrow_book(name_book: str):
         # Waiting for both threads to finish
         thread1.join()
         thread2.join()
-        # Student_ID = scan_barcode('')
-        Student_ID = "20134013"
+        Student_ID = scan_barcode('')
+        # Student_ID = "20134013"
         
         if result_store["barcode_return"] == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
@@ -300,8 +302,8 @@ def borrow_book(name_book: str):
         # Waiting for both threads to finish
         thread1.join()
         thread2.join()
-        barcode = "WdudlYaHl"
-        # barcode = result_store["barcode_return"]
+        # barcode = "WdudlYaHl"
+        barcode = result_store["barcode_return"]
         if barcode == "OVERTIME":
             send_mess("Xin lỗi, mình chưa quét được mã vạch, bạn có muốn quét lại không?")
             user_input = user_input_request(True)
@@ -330,7 +332,9 @@ def borrow_book(name_book: str):
                 else:
                     break
             barcode_list.append(barcode)
+            # print("---------------: ", barcode)
             book_ID = SearchBookIDByBarcode(barcode)
+            print("================: ", book_ID)
             send_borrowbook_to_form(book_ID)
             temp_book_info = SearchBookByID(book_ID)
             temp_book_info.pop('cover_image')
@@ -349,7 +353,7 @@ def borrow_book(name_book: str):
             CreateBill(bc, Student_ID, datetime.now())
             UpdateIsavailableState(False, bc)
         user_input_request(False)
-        send_mess("stop", "return_form")
+        # send_mess("stop", "return_form")
         return "đã xử lí quá trình mượn sách: " +str(result['Sách'])
     user_input_request(False)
     send_mess("stop", "return_form")
