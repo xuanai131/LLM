@@ -1,5 +1,36 @@
 {
           "HISTORY": [
-                   
+                    [],
+                    [
+                              "User : alo",
+                              "Lib : Xin chào! Tôi có thể giúp gì cho bạn hôm nay?",
+                              "User : rảnh không",
+                              "Lib : Xin lỗi, tôi chỉ là một trợ lý thư viện và không có cảm xúc. Bạn có câu hỏi cụ thể nào cần trợ giúp không?",
+                              "User : xin chào",
+                              "Lib : Xin chào! Bạn cần trợ giúp với điều gì?",
+                              "User : hello cậu",
+                              "Lib : Xin lỗi, tôi không thể chấp nhận ngôn ngữ không lịch sự. Vui lòng sử dụng ngôn ngữ lịch sự khi trò chuyện với tôi. Cảm ơn!",
+                              "User : chào cậu"
+                    ],
+                    [],
+                    [],
+                    [
+                              "User : tìm cuốn sách của Nguyễn Đức Huân",
+                              "Lib : Xin vui lòng cung cấp thông tin chi tiết hơn về cuốn sách bạn đang tìm để tôi có thể giúp bạn tìm kiếm.",
+                              "User : cuốn sách đó được xuất bản bởi trường đại học sư phạm kỹ thuật",
+                              "Lib : Xin lỗi, tôi không tìm thấy thông tin về cuốn sách cụ thể của Nguyễn Đức Huân được xuất bản bởi trường đại học sư phạm kỹ thuật.Bạn có thể cung cấp thêm thông tin khác về cuốn sách để tôi có thể hỗ trợ bạn tốt hơn không?",
+                              "User : cuốn sách thiết kế kỹ thuật chung cư cao tầng diamond thịnh vượng nằm ở đâu",
+                              "Lib : Xin lỗi, tôi không tìm thấy thông tin về cuốn sách cụ thể bạn đang tìm. Bạn có thể cung cấp thêm thông tin khác về cuốn sách để tôi có thể hỗ trợ bạn tốt hơn không?"
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
           ]
 }
