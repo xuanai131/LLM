@@ -7,7 +7,6 @@ flask/audio.wav
 Bot/graph.png
 Bot/Knowledge
 flask/recorded_audio.mp3
-
 Bot/vector_database
 Bot/DATABASE.db
 flask/history.json
