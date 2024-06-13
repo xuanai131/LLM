@@ -1,10 +1,10 @@
 .categories-background {
     position: absolute;
-    width: 1364px;
+    width: 100%;
     margin: 1px;
     margin-top: 2px;
     /* bottom: 0; */
-    height: 694px;
+    height: 95%;
     /* bottom: 0; */
     background-color:  #2c2e2e;
     visibility: hidden;
@@ -14,11 +14,11 @@
 
 .categories-container {
     position: absolute;
-    width: 1364px;
+    width: 100%;
     margin: 1px;
     margin-top: 34px;
     /* bottom: 0; */
-    height: 660px;
+    height: 92%;
     /* bottom: 0; */
     /* background-color:  #2c2e2e; */
     /* visibility: hidden; */
@@ -55,11 +55,12 @@
     height: 200px;
     background: linear-gradient(#5dffc6, rgb(255, 255, 255), #5dffc6);
     color: rgb(0, 0, 0);
+    font-family: monospace;
     font-size: 25px;
     text-align: center;
     
     /* line-height: 200px; */
-    font-family: cursive;
+    /* font-family: cursive; */
     border-radius: 20px;
     margin: 10px;
     word-wrap: break-word;

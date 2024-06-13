@@ -77,6 +77,20 @@ findBookbutton.addEventListener('click', function(event) {
     CategoryContainer.style.visibility= "visible";
 });
 
+var fullscreenbutton = document.getElementById('fullscreen-icon-container');
+fullscreenbutton.addEventListener('click', function(event) {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+        document.documentElement.msRequestFullscreen();
+    }
+});
+
+
 
 //load micro button and handle click event
 const voiceContainer = document.getElementById('voice-icon-container');
@@ -157,65 +171,3 @@ function handleRefreshClick() {
 // Add event listener with the defined function
 refresh.addEventListener('click', handleRefreshClick);
 
-
-// load chat-icon for chatbot
-// const chatContainer = document.getElementById('chat-icon-container');
-
-//     // Initial animation setup
-// let chatAnimation = bodymovin.loadAnimation({
-//     container: chatContainer,   
-//     renderer: 'svg',
-//     loop: true,
-//     autoplay: true,
-//     path: '../static/resources/chat_icon.json' 
-// });
-
-// Create refresh button to restart a session
-// const refreshContainer = document.getElementById('refresh-icon-container');
-    // Initial animation setup
-// let refreshAnimation = bodymovin.loadAnimation({
-//     container: refreshContainer,   
-//     renderer: 'svg',
-//     loop: true,
-//     autoplay: true,
-//     path: '../static/resources/refresh.json' ,
-//     rendererSettings: {
-//         scaleMode: 'noScale', // Optional, sets the scale mode
-//         scaleWidth: 0.5, // Scale factor for width
-//         scaleHeight: 0.5 // Scale factor for height
-//     }
-// });
-
-
-
-// Load bar icon and handle event
-// const barContainer = document.getElementById('bar-icon-container');
-// // Initial animation setup
-// let barAnimation = bodymovin.loadAnimation({
-//     container: barContainer,
-//     renderer: 'svg',
-//     loop: true,
-//     autoplay: true,
-//     path: '../static/resources/bar_1.json' 
-// });
-
-// let barIconContainer = document.getElementById('bar-icon-container');
-//     let toolContainer  = document.getElementsByClassName('tools');
-//     let isToolsVisible = false;
-//     let startY, offsetY = 0;
-
-//     barIconContainer.addEventListener('mousedown', function(event) {
-//         if (!isToolsVisible) {
-//             var element = document.querySelector(".small-tools");
-//             // element.style.visibility= "visible";
-//             element.classList.add("smallTools_animate");
-//             element.classList.remove("reverse_smallTools_animate");
-//         }
-//         else {
-//             var element = document.querySelector(".small-tools");
-//             element.classList.add("reverse_smallTools_animate");
-//             element.classList.remove("smallTools_animate");
-//             // element.style.visibility= "hidden";
-//         }
-//         isToolsVisible = !isToolsVisible;
-//     });

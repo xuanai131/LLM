@@ -184,12 +184,14 @@ function create_data_of_selected_book(bookname, author, id, pos){
     buttonform.id = 'confirm_info_row';
 
     var confirmButton = document.createElement('button');
+    confirmButton.type = "button";
     confirmButton.id = 'confirm_info';
     confirmButton.textContent = 'Yes';
     confirmButton.onclick = buttonClicked;
 
     // Create No button
     var unconfirmButton = document.createElement('button');
+    unconfirmButton.type = "button";
     unconfirmButton.id = 'unconfirm_info';
     unconfirmButton.textContent = 'No';
     unconfirmButton.onclick = buttonClicked;
@@ -209,9 +211,9 @@ function create_data_of_selected_book(bookname, author, id, pos){
 
 
     // Append elements to form
-    form.appendChild(leftDecoration);
-    form.appendChild(rightDecoration);
-    form.appendChild(circle);
+    // form.appendChild(leftDecoration);
+    // form.appendChild(rightDecoration);
+    // form.appendChild(circle);
     form.appendChild(formInner);
 
     // Append form to desired parent element (e.g., document.body)

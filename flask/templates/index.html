@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <link rel="stylesheet" href="static/css/login_page.css">
+    <!-- <link rel="stylesheet" href="static/css/login_page.css"> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="/https://code.jquery.com/jquery3.7.0.js"></script>
@@ -52,6 +52,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="static/css/dropdown.css"/>
+    <link rel="stylesheet" href="static/css/register_form.css"/>
     
 </head>
 
@@ -71,6 +72,7 @@
             <li><a href="#" id="chat-icon-container">Chat</a></li>
             <li><a href="#" id="refresh-icon-container">Refresh</a></li>
             <li><a href="#" id="login-icon-container">Đăng nhập</a></li>
+            <li><a href="#" id="fullscreen-icon-container">[  ]</a></li>
             <!-- <li><a href="#">Contact Us</a></li> -->
 
             <div class="logo">
@@ -79,7 +81,7 @@
         </ul>
         <div class="login_page">
             <div class="blur-bg-overlay"></div>
-            <div class="form-popup">
+            <!-- <div class="form-popup">
                 <span class="close-btn material-symbols-rounded">close</span>
                 <div class="form-box signup" id="SignupArea">
                     <div class="form-details">
@@ -110,7 +112,51 @@
                         <h3>Đăng kí thành công, vui lòng kiểm tra email</h3>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <section class="register_container">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <header>Registration Form</header>
+                <form action="#" class="form" id="SignupArea">
+                    <div class="input-box">
+                        <label>Full Name</label>
+                        <input type="text" id="signup_username" placeholder="Enter full name" required />
+                    </div>
+          
+                    <div class="input-box">
+                        <label>Email Address</label>
+                        <input type="text" id="signup_email" placeholder="Enter email address" required />
+                    </div>
+            
+                    <div class="column">
+                        <div class="input-box">
+                        <label>Phone Number</label>
+                        <input type="number" id="signup_phone" placeholder="Enter phone number" required />
+                        </div>
+                    </div>
+                    <div class="gender-box">
+                        <h3>Gender</h3>
+                        <div class="gender-option">
+                        <div class="gender">
+                            <input type="radio" id="check-male" name="gender" checked />
+                            <label for="check-male">Male</label>
+                        </div>
+                        <div class="gender">
+                            <input type="radio" id="check-female" name="gender" />
+                            <label for="check-female">Female</label>
+                        </div>
+                        <div class="gender">
+                            <input type="radio" id="check-other" name="gender" />
+                            <label for="check-other">Prefer not to say</label>
+                        </div>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="NoticeMess">
+                    <span class="close-btn material-symbols-rounded" id="close-notice-btn">close</span>
+                    <h3>Đăng kí thành công, vui lòng kiểm tra email</h3>
+                </div>
+              </section>
         </div>
         <!-- Category for find book -->
         <div class="categories-background">
@@ -120,49 +166,49 @@
             <div class = "categories-container">
                 <div class="categories-box">
                     <div class="flex-box">
-                        Box1hs jakhdjs ahdjs ahkdjhs jadhjkash dj ashd
+                        UTE. Thông tin -Thư viện
                     </div>
                     <div class="flex-box">
-                        Box2
+                        UTE. Giáo trình 65 Năm
                     </div>
                     <div class="flex-box">
-                        Box3
+                        UTE. Tạp chí
                     </div>
                     <div class="flex-box">
-                        Box4
+                        UTE. Luận văn, Luận án
                     </div>
                     <div class="flex-box">
-                        Box5
+                        UTE. Báo cáo, Đồ án
                     </div>
                     <div class="flex-box">
-                        Box6
+                        UTE. Báo cáo NCKH
                     </div>
                     <div class="flex-box">
-                        Box7
+                        UTE. Ngành Luật
                     </div>
                     <div class="flex-box">
-                        Box8
+                        UTE. Thông tin Tuyển sinh
                     </div>
                     <div class="flex-box">
-                        Box9
+                        Cơ khí chế tạo máy
                     </div>
                     <div class="flex-box">
-                        Box10
+                        Giáo trình, TL học tập
                     </div>
                     <div class="flex-box">
-                        Box11
+                        Điện - Điện tử
                     </div>
                     <div class="flex-box">
-                        Box12
+                        Cơ khí động lực
                     </div>
                     <div class="flex-box">
-                        Box13
+                        Xây dựng - Kiến trúc
                     </div>
                     <div class="flex-box">
-                        Box14
+                        CN Thực phẩm - Môi trường/Môi trường
                     </div>
                     <div class="flex-box">
-                        Box15
+                        CN Thực phẩm - Môi trường/Công nghệ thực phẩm
                     </div>
                     <div class="flex-box">
                         Box16
@@ -193,7 +239,7 @@
             </div>
             <div class="bookcard-container">
                 <div class="bookcard-box">
-                    <div class="bookcard">
+                    <!-- <div class="bookcard">
                         <div class="bookcard-image">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
                         </div>
@@ -203,74 +249,20 @@
                         <div class="bookcard-bt">
                             <button id="show_pdf_page">Read More...</button>
                         </div>
-                    </div>
-                    <div class="bookcard">
-                        <div class="bookcard-image">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                        </div>
-                        <div class="bookcard-des">
-                            <p>You can Add Desccription Here1...</p>
-                            <!-- <button>Read More...</button> -->
-                        </div>
-                        <div class="bookcard-bt">
-                            <button>Read More...</button>
-                        </div>
-                    </div>
-                    <div class="bookcard">
-                        <div class="bookcard-image">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                        </div>
-                        <div class="bookcard-des">
-                            <p>You can Add Desccription Here1...</p>
-                            <!-- <button>Read More...</button> -->
-                        </div>
-                        <div class="bookcard-bt">
-                            <button>Read More...</button>
-                        </div>
-                    </div>
-                    <div class="bookcard">
-                        <div class="bookcard-image">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                        </div>
-                        <div class="bookcard-des">
-                            <p>You can Add Desccription Here1...</p>
-                            <!-- <button>Read More...</button> -->
-                        </div>
-                        <div class="bookcard-bt">
-                            <button>Read More...</button>
-                        </div>
-                    </div>
-                    <div class="bookcard">
-                        <div class="bookcard-image">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                        </div>
-                        <div class="bookcard-des">
-                            <p>You can Add Desccription Here1...</p>
-                            <!-- <button>Read More...</button> -->
-                        </div>
-                        <div class="bookcard-bt">
-                            <button>Read More...</button>
-                        </div>
-                    </div>
-                    <div class="bookcard">
-                        <div class="bookcard-image">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg/1199px-Gfp-missouri-st-louis-clubhouse-pond-and-scenery.jpg">
-                        </div>
-                        <div class="bookcard-des">
-                            <p>You can Add Desccription Here1...</p>
-                            <!-- <button>Read More...</button> -->
-                        </div>
-                        <div class="bookcard-bt">
-                            <button>Read More...</button>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
+                
+            </div>
+            <div class="pagination_to">
+                <button id="prev" onclick="prevPage()">Previous</button>
+                <span id="page-info"></span>
+                <button id="next" onclick="nextPage()">Next</button>
             </div>
         </div>
 
         <!-- Show detail of each book -->
         <div class="pdf_page">
-            <div class="pdf_infomation">
+            <!-- <div class="pdf_infomation">
                 <div class="exit_button" id="exit_pdf_page_bt">
                     <img src="../static/resources/exit.png" alt="Logo">
                 </div>
@@ -279,20 +271,16 @@
                 <div class="pdf_detail">
                     <div class="wrapper-text-box">
                         <div class="input-data">
-                           <input type="text" value="Type your message..." required>
-                           <!-- <div class="underline"></div> -->
+                           <input type="text" value="Type your message...">
                            <label class="text-box-label">Name</label>
                         </div>
                      </div>
-                    <!-- <p>Trường Đại học Sư phạm Kỹ thuật Thành phố Hồ Chí Minh</p>
-                    <p>Tác giả: Nguyễn Huỳnh Lâm Vũ</p>
-                    <p>Tiêu đề: Nguyễn Huỳnh Lâm Vũ</p> -->
                 </div>
             </div>
             <div class ="pdf_link">
                 
                 <embed src="../static/resources/test1.pdf" type="application/pdf">
-            </div>
+            </div> -->
         </div>
 
 

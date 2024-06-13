@@ -77,8 +77,19 @@
   }
 }
 
+@keyframes fadeout1 {
+  0%{
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+
 .animate_fadein {
-  animation: fadein 1s;
+  animation: fadein 0.1s;
   animation-fill-mode: forwards;
 }
 .anime_fadeout{
@@ -87,6 +98,10 @@
 }
 .animate_fadeout{
   animation: fadeout 0.1s;
+  animation-fill-mode: forwards;
+}
+.animate_fadeout{
+  animation: fadeout1;
   animation-fill-mode: forwards;
 }
 .info-box {

@@ -215,7 +215,8 @@ def CreateUserInfoTable():
     cursor = conn.cursor()
     sql = 'CREATE TABLE IF NOT EXISTS User_Info (\
             username TEXT,\
-            password TEXT,\
+            email TEXT,\
+            phone TEXT,\
             qr_image TEXT)'
     # Create a table for books if it doesn't exist
     cursor.execute(sql)

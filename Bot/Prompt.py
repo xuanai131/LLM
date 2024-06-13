@@ -132,8 +132,9 @@ BOOK_SEARCH_PROMPT2 = """
                     Đầu tiên, bạn sử dụng công cụ [book_researcher] để lấy ID của tất cả sách có liên quan.
                     ID tìm được phải có dạng như ví dụ bên dưới:
                         ID : [31,32]
-                    Tiếp theo, cung cấp ID đó như là tham số đầu vào "book_ids" cho công cụ [load_book].
-                    Cuối cùng, phải thực thi tool [load_book] rồi trả lời cho người dùng "ĐÂY LÀ CÓ PHẢI LÀ CÁC CUỐN SÁCH BẠN MUỐN TÌM"
+                    Tiếp theo, cung cấp ID đó như là tham số đầu vào "book_ids" cho công cụ [load_book], tồi sau đó thực thi tool load_book
+                    Cuối cùng, trả lời cho người dùng "Đây là các cuốn sách có liên quan"
+                    Lưu ý: Phải trả lời cho người dùng là "Đây là các cuốn sách có liên quan ". Không được trả lời gì khác
 
 
 """

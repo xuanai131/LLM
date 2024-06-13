@@ -147,6 +147,7 @@ function buttonClicked() {
     book_table.classList.remove("animate_fadein");
     book_table.classList.add("animate_fadeout");
     $("#bookContainer").show();
+    // event.preventDefault();
 }
 function confirm_process(){
     console.log("send......");

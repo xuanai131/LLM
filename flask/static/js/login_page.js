@@ -24,6 +24,7 @@ showPopupBtn.addEventListener("click", () => {
     document.getElementById('NoticeMess').style.display = 'none';
     console.log("22222222222");
     
+    
 });
 
 // Hide login popup
@@ -53,11 +54,13 @@ $(document).ready(function() {
 
 function handleSignupEvent(){
     var signup_username = $("#signup_username").val();
-    var signup_password = $("#signup_password").val();
+    var signup_email = $("#signup_email").val();
+    var signup_phone = $("#signup_phone").val();
     $.ajax({
         data: {
             username: signup_username,
-            pass: signup_password,
+            email: signup_password,
+            phone: signup_phone,
         },
         type: "POST",
         url: "/user_info",

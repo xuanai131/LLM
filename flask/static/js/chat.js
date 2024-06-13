@@ -92,19 +92,20 @@ function add_bot_message(data, str_time) {
 }
 // Function to loading ... when waiting respond from chatbot
 function add_loading_text(){
+    txt = "..."
     var animationContainer = $('<div class="img_cont_msg"><div class="lottie-container_face"></div></div>');
 
             // Load animation for the current container
  
     // Construct the message HTML with the animation container
-    var botHtml = $('<div class="d-flex justify-content-start mb-4"><div class="msg_cotainer"></div></div>');
-    var animation1 = lottie.loadAnimation({
-        container: botHtml.find('.msg_cotainer')[0],
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '../static/resources/loading_1.json' 
-    });
+    var botHtml = $('<div class="d-flex justify-content-start mb-4"><div class="msg_cotainer">'+ txt+ '</div></div>');
+    // var animation1 = lottie.loadAnimation({
+    //     container: botHtml.find('.msg_cotainer')[0],
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: true,
+    //     path: '../static/resources/loading_1.json' 
+    // });
     // animationContainer.css({
     //     width: '40px',
     //     height: '40px'

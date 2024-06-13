@@ -245,16 +245,16 @@ def SearchAllbyUsername(username):
     conn.close()
     return result
 
-def InsertUserInfo(username, password, img = "111"):
+def InsertUserInfo(username, email, phone, img = "111"):
     try:
         with sqlite3.connect(setting.database_name) as conn:
             cursor = conn.cursor()
             # Insert data into the student_info table
             cursor.execute('''
                 INSERT INTO User_Info (
-                    username, password, qr_image
-                ) VALUES (?, ?, ?)
-            ''', (username, password, img))
+                    username, email, phone_number, qr_image
+                ) VALUES (?, ?, ?, ?)
+            ''', (username, email, phone, img))
 
             conn.commit()
             print("Data inserted successfully.")
@@ -272,3 +272,22 @@ def SearchAllAccountBarcode():
     cursor.close()
     conn.close()
     return result
+
+def SearchAllBookbyKindOfBook(type):
+    conn = sqlite3.connect(setting.database_name)
+    cursor = conn.cursor()
+    # start_index = (int(page)-1)*20 +1
+    # end_index = int(page)*20+1
+    # SQL query to search for books with the specified kind_of_book
+    query = "SELECT * FROM Books WHERE kind_of_book = ?"
+    cursor.execute(query, (type,))
+    
+    # Fetch all matching records
+    books = cursor.fetchall()
+    
+    # Print the results
+    # Close the connection
+    cursor.close()
+    conn.close()
+    
+    return books

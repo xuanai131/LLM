@@ -1,11 +1,11 @@
 .login_page{
     position: absolute;
-    width: 1364px;
+    width: 100%;
     
     margin: 1px;
     margin-top: 0px;
     /* bottom: 0; */
-    height: 694px;
+    height: 100%;
     /* margin: 10px; */
     /* bottom: 0; */
     background-color: #2c2e2e;
@@ -136,10 +136,12 @@ form .input-field-login {
     padding: 16px 15px 0;
 }
 
-.input-field-login input:is(:focus, :valid)~label {
-    transform: translateY(-120%);
+form .input-field-login input:is(:focus, :valid)~label {
+    /* transform: translateY(-120%); */
     color: #00bcd4;
     font-size: 0.75rem;
+    /* visibility: hidden; */
+    opacity: 0;
 }
 
 .form-box a {

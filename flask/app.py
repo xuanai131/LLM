@@ -60,10 +60,10 @@ SavedHistoryConversation = []  # Conversation to save when create new session
 def run_graph(inputs):
     for s in graph.stream(inputs):
         if "__end__" not in s:
-            print(s)
+            print("s in if statement: ",s)
             print('------------------------')
         else:
-            print(s)
+            print("s in else statement: ",s)
             try:
                 answer = AIMessage(s.get('__end__')['messages'][-1].content)
                 print(answer)
@@ -82,6 +82,7 @@ def get_Chat_response(text):
     }
     
     answer = run_graph(inputs)
+    print("answer of run_graph", answer)
     OpenAIHistoryConversation.append(answer)
     
     return answer.content
@@ -374,15 +375,16 @@ def download_audio_from_url():
 def receive_user_signup_info():
     if request.method == 'POST':
         username = request.form.get("username")
-        password= request.form.get("pass")
-        is_exist = SearchAllbyUsername(username)
+        email = request.form.get("email")
+        phone= request.form.get("phone")
+        is_exist = SearchAllbyUsername(email)
         id = generate_barcode_base64()
         if (is_exist):
             # print("////////////////// username: ", is_exist)
             return "0"
         else:
-            InsertUserInfo( username, password, id)
-            send_img_to_email(id)
+            InsertUserInfo(username, email, phone, id)
+            send_img_to_email(id, email)
             return "1"
     else:
         return response
@@ -416,7 +418,7 @@ def generate_barcode_base64():
     
     return img_str
 
-def send_img_to_email(base64_image, receiver_email = "vuvu3921@gmail.com"):
+def send_img_to_email(base64_image, receiver_email):
     sender_email = 'ronin792002@gmail.com'
     # receiver_email = 'vuvu3921@gmail.com'
     password = 'Lamvu2002'
@@ -469,6 +471,25 @@ def send_img_to_email(base64_image, receiver_email = "vuvu3921@gmail.com"):
 
     except Exception as e:
         print(f'Failed to send email: {e}')
+
+@app.route('/type_of_book', methods=['POST','GET'])
+def get_infomation_of_all_book():
+    if request.method == 'POST':
+        kind = request.form.get("type")
+        page = request.form.get("page")
+        print("====: ", kind)
+        print("====: ", page)
+        result = SearchAllBookbyKindOfBook(kind)
+        len_of_type = len(result)
+        print(len(result))
+        print(type(result))
+        start_index = (int(page)-1)*20
+        end_index = int(page)*20
+        ans = [result[start_index:end_index], len_of_type]
+        return ans
+    else:
+        return response
+    
 if __name__ == '__main__':
     host = setting.IP if len(setting.IP) > 1 else 'localhost'
     port = int(sys.argv[2]) if len(sys.argv) > 2 else 5001

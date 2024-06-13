@@ -50,14 +50,14 @@ ul li a {
     color: #ffffff;
     text-decoration: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-family: monospace;
     border: 10px;
 }
 
 ul li ul.dropdown li {
     display: block;
-    margin: 1px 0px;
+    margin: 2px 0px;
     background: #2c2e2e;
     
 
